@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF"
         mc:Ignorable="d"
-        Title="LogIn" Height="317" Width="465">
+        Title="LogIn" Height="317" Width="465" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="images/login_background.jpg"/>
     </Window.Background>
