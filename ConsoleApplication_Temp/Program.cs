@@ -10,7 +10,6 @@ namespace ConsoleApplication_Temp
     {
         static void Main(string[] args)
         {
-            // Ez csak egy teszt
         }
     }
 }
