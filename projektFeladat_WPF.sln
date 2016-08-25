@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projektFeladat_WPF", "projektFeladat_WPF\projektFeladat_WPF.csproj", "{C98A5B5A-1763-402F-AD02-B20FB073C832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication_Temp", "ConsoleApplication_Temp\ConsoleApplication_Temp.csproj", "{4604CD40-C6DD-41FF-9393-3129A7D165FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C98A5B5A-1763-402F-AD02-B20FB073C832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C98A5B5A-1763-402F-AD02-B20FB073C832}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C98A5B5A-1763-402F-AD02-B20FB073C832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4604CD40-C6DD-41FF-9393-3129A7D165FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4604CD40-C6DD-41FF-9393-3129A7D165FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4604CD40-C6DD-41FF-9393-3129A7D165FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4604CD40-C6DD-41FF-9393-3129A7D165FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
