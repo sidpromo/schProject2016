@@ -8,8 +8,8 @@
          Title="File Browser" Height="121.368" Width="525">
     <Grid>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="22" Margin="10,24,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="497"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="432,51,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="23"/>
-        <Button Content="Upload" HorizontalAlignment="Left" Margin="352,51,0,0" VerticalAlignment="Top" Width="75" Click="UploadButton_Click" Height="23"/>
+        <Button Content="Browse..." HorizontalAlignment="Left" Margin="352,51,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="23"/>
+        <Button Content="Upload" HorizontalAlignment="Left" Margin="432,51,0,0" VerticalAlignment="Top" Width="75" Click="UploadButton_Click" Height="23"/>
 
     </Grid>
 </Window>
