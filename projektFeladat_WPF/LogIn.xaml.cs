@@ -28,7 +28,7 @@ namespace projektFeladat_WPF
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxUsername.Text!="" && passwordBox1.Password!="")
+            if (textBoxUsername.Text!="" || passwordBox1.Password!="")
             {
                 DBConnection connObject = new DBConnection();
                 connObject.Connection();
