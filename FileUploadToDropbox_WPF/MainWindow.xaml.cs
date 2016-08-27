@@ -71,7 +71,7 @@ namespace FileUploadToDropbox_WPF
 
 
             MessageBox.Show("File uploaded successfully to Dropbox!");
-            System.Diagnostics.Process.Start("http://tinyurl.com/z7chn7n");
+            System.Diagnostics.Process.Start("https://www.dropbox.com/sh/olh3qsen9l9b3g9/AABI2xgTtWNYWl3_h7bXKB1va?dl=0");
 
         }
     }
