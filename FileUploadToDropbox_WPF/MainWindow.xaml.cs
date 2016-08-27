@@ -33,13 +33,13 @@ namespace FileUploadToDropbox_WPF
 
 
 
-            // Set filter for file PDF extension and default file extension 
+            // Szűrő beállítása PDF formátumra, default kiterjesztés: pdf
             dlg.DefaultExt = ".pdf";
             dlg.Filter = "PDF Files|*.pdf";
            
 
 
-            // Display OpenFileDialog by calling ShowDialog method 
+            //OpenFileDialog megjelenítése, ShowDialog metódus hívásával 
             Nullable<bool> result = dlg.ShowDialog();
 
 
@@ -52,6 +52,12 @@ namespace FileUploadToDropbox_WPF
             }
         }
 
+
+        /// <summary>
+        ///Dropboxba való fájl feltöltésért felelős metódus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UploadButton_Click(object sender, RoutedEventArgs e)
         {
             if (textBox1.Text == "")
@@ -62,14 +68,15 @@ namespace FileUploadToDropbox_WPF
             string filePath = textBox1.Text;
             byte[] fileBytes = File.ReadAllBytes(filePath);
             string fileName = System.IO.Path.GetFileName(filePath);
+            //Dropbox autentikáció:
             string appKey = "zh6s8ibgjqoqf7u";
             string appSecret = "gpmh7qt9cil81wn";
             string userToken = "7OkXqG_CqOAAAAAAAAAADVONYC5yTQeQk4jblq32FAbTmQ_kG98u2bRgAqVoY3CV";
-            var client = new DropNetClient(appKey, appSecret, userToken);
 
-            client.UploadFile("/Public", fileName, fileBytes);
+            var client = new DropNetClient(appKey, appSecret, userToken); //kliens létrehozása
+            client.UploadFile("/Public", fileName, fileBytes);//fájlfeltöltés
 
-
+            //teszteléshez megjeleníti a linket 
             MessageBox.Show("File uploaded successfully to Dropbox!");
             System.Diagnostics.Process.Start("https://www.dropbox.com/sh/olh3qsen9l9b3g9/AABI2xgTtWNYWl3_h7bXKB1va?dl=0");
 
