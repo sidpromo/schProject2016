@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="688fd145f5ce400babbfc47678961ba5" Name="Diagram1">
+        <EntityTypeShape EntityType="EducationDatabaseModel.Administrator" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Exam" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.ExamsUser" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Grade" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Manager" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Message" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Semester" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Student" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Subject" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.SubjectsUser" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Teacher" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.User" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Administrators_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Exams_ToSubjects" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Exams_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_ExamsUsers_ToExams" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Grades_ToExams" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_ExamsUsers_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_ExamsUsers_ToUsers2" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Grades_ToSubjects" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Grades_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Grades_ToUsers2" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Managers_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Messages_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Messages_ToUsers2" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Subjects_ToSemesters" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Users_ToSemesters" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Students_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_SubjectsUsers_ToSubjects" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_SubjectsUsers_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_SubjectsUsers_ToUsers2" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Teachers_ToUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="EducationDatabaseModel.FK_Users_ToUsers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
