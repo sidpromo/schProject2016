@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppDatabaseTesting;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -28,36 +29,32 @@ namespace projektFeladat_WPF
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxUsername.Text!="" || passwordBox1.Password!="")
+            if (textBoxEduId.Text!="" || passwordBox1.Password!="")
             {
-                DBConnection connObject = new DBConnection();
-                connObject.Connection();
-
-                //tábla neve nincs kitöltve!!
-                string sql = "SELECT COUNT(*) FROM táblaneve WHERE [USERNAME]=@Username AND [PASSWORD]=@Password ";
-
-                SqlCommand com = new SqlCommand(sql, connObject.con);
-                com.Parameters.AddWithValue("@Username", textBoxUsername.Text);
-                com.Parameters.AddWithValue("@Password", passwordBox1.Password);
-                int isValidUser = Convert.ToInt32(com.ExecuteScalar());
-
-                if (isValidUser==1)
+                EducationDatabaseEntities ent = new EducationDatabaseEntities();
+                foreach (var item in ent.Users)
                 {
-                    MessageBox.Show("LoggedIn"); //TODO: kezelni, hogy milyen jogosultsággal lépett be
+                    if (textBoxEduId.Text==item.EduId && passwordBox1.Password==item.Password)
+                    {
+                        MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
+                        break;
+                    }
+
+                    //else
+                    //{
+                    //    errormessage.Text = " Invalid username or password!";
+                    //}
                 }
-                else
-                {
-                    errormessage.Text = " Invalid username or password!";
-                }
-                connObject.con.Close();
             }
             else
             {
                 errormessage.Text = " Username and Password are required!";
-                
+                    
             }
-
-
         }
+
+        
+
+
     }
 }

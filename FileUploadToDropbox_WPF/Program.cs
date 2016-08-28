@@ -10,7 +10,7 @@ namespace ConsoleAppDatabaseTesting
     {
         static void Main(string[] args)
         {
-            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            //EducationDatabaseEntities ent = new EducationDatabaseEntities();
 
             //User u = new User()
             //{
@@ -55,15 +55,16 @@ namespace ConsoleAppDatabaseTesting
 
             //ent.Users.Add(u2);
 
-            foreach (var item in ent.Users.ToList())
-            {
-                Console.WriteLine(item.FirstName);
-            }
+            ////ent.Users.Remove(ent.Users.First(x => x.Id == 2));
+            ////ent.Users.Remove(ent.Users.First(x => x.Id == 3));
 
-            //ent.Users.Remove(ent.Users.First(x => x.Id == 2));
-            //ent.Users.Remove(ent.Users.First(x => x.Id == 3));
+            //foreach (var item in ent.Users.ToList())
+            //{
+            //    Console.WriteLine(item.FirstName);
+            //} 
+          
 
-           
+            //ent.SaveChanges();
         }
     }
 }
