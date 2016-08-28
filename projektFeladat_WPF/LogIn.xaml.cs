@@ -54,8 +54,14 @@ namespace projektFeladat_WPF
             }
         }
 
-        
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            errormessage.Text = String.Empty;
+        }
 
-
+        private void PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            errormessage.Text = String.Empty;
+        }
     }
 }
