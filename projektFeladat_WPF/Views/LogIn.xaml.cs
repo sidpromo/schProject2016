@@ -27,38 +27,31 @@ namespace projektFeladat_WPF
         public LogInWindow()
         {
             InitializeComponent();
+            textBoxEduId.Focus();
         }
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            //if (textBoxEduId.Text!="" || passwordBox1.Password!="")
-            //{
-            //    EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            //    foreach (var item in ent.Users)
-            //    {
-            //        if (textBoxEduId.Text==item.EduId && passwordBox1.Password==item.Password)
-            //        {
-            //            //MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
-            //            testWindow testWindow = new testWindow();
-            //            testWindow.Show();
-            //            return;
-            //        }
+            LoginProcedure();
+        }
 
-            //        //else
-            //        //{
-            //        //    errormessage.Text = " Invalid username or password!";
-            //        //}
-            //    }
-            //    errormessage.Text = " Invalid username or password!";
-            //    SystemSounds.Beep.Play();
-            //}
-            //else
-            //{
-            //    errormessage.Text = " Username and Password are required!";
-            //    SystemSounds.Beep.Play();
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            errormessage.Text = String.Empty;
+        }
 
-            //}
+        private void PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            errormessage.Text = String.Empty;
+        }
 
+        private void KeyDownEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) LoginProcedure();
+        }
+
+        private void LoginProcedure()
+        {
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
                 errormessage.Text = " Username and Password are required!";
@@ -73,31 +66,22 @@ namespace projektFeladat_WPF
                         if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
                         {
                             //MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
-                            testWindow testWindow = new testWindow();
+                            var testWindow = new testWindow();
+                            this.Hide();
                             testWindow.Show();
                             return;
                         }
-
-                        //else
-                        //{
-                        //    errormessage.Text = " Invalid username or password!";
-                        //}
                     }
                 }
                 errormessage.Text = " Invalid username or password!";
                 SystemSounds.Beep.Play();
-
             }
         }
 
-        private void TextChanged(object sender, TextChangedEventArgs e)
+        private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            errormessage.Text = String.Empty;
-        }
-
-        private void PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            errormessage.Text = String.Empty;
+            if (sender is TextBox) (sender as TextBox).SelectAll();
+            if (sender is PasswordBox) (sender as PasswordBox).SelectAll();
         }
     }
 }

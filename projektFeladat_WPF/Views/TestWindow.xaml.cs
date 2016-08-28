@@ -33,5 +33,10 @@ namespace projektFeladat_WPF.Views
         {
             Button1.Visibility = Visibility.Visible;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown(); // bezárja a teljes alkalmazást minden ablakával együtt
+        }
     }
 }

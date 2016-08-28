@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF"
         mc:Ignorable="d"
-        Title="LogIn" Height="317" Width="465" ResizeMode="NoResize" >
+        Title="LogIn" Height="317" Width="465" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Window.Background>
         <ImageBrush ImageSource="../images/login_background.jpg"/>
     </Window.Background>
@@ -14,8 +14,8 @@
 
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="46,92,0,0" Name="textBlock1" Text="EduId" Foreground="White" VerticalAlignment="Top" Width="67" Opacity="0.7" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="46,130,0,0" Name="textBlock2" Text="Password" Foreground="White" VerticalAlignment="Top" Width="77" Opacity="0.7" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,92,0,0" Name="textBoxEduId" VerticalAlignment="Top" Width="247" TextChanged="TextChanged"  />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,130,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" PasswordChanged="PasswordChanged"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,92,0,0" Name="textBoxEduId" VerticalAlignment="Top" Width="247" TextChanged="TextChanged" KeyDown="KeyDownEnter" GotKeyboardFocus="fieldGotKeyboardFocus" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,130,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" PasswordChanged="PasswordChanged" KeyDown="KeyDownEnter" GotKeyboardFocus="fieldGotKeyboardFocus"/>
         <Button Content="Log in" Height="23" HorizontalAlignment="Left" Margin="118,191,0,0" Name="button1" VerticalAlignment="Top" Width="247" Click="LogInButton_Click"  />
         <TextBlock Height="57" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,219,0,0"  OpacityMask="Crimson" Foreground="White" FontWeight="ExtraBold"  />
     </Grid>
