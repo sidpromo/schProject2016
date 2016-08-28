@@ -37,7 +37,7 @@ namespace projektFeladat_WPF
                     if (textBoxEduId.Text==item.EduId && passwordBox1.Password==item.Password)
                     {
                         MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
-                        break;
+                        return;
                     }
 
                     //else
@@ -45,6 +45,7 @@ namespace projektFeladat_WPF
                     //    errormessage.Text = " Invalid username or password!";
                     //}
                 }
+                errormessage.Text = " Invalid username or password!";
             }
             else
             {
