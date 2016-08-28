@@ -24,9 +24,9 @@ namespace projektFeladat_WPF.Views
             InitializeComponent();
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private void CheckBox1_Checked(object sender, RoutedEventArgs e)
         {
-            
+            Button1.Visibility = Visibility.Collapsed;
         }
     }
 }

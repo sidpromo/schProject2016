@@ -5,15 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         mc:Ignorable="d"
-        Title="Window1" Height="300" Width="300">
+        Title="Window1" Height="300" Width="216.541">
     <Grid>
-        <StackPanel>
-        <Button x:Name="Button1" Content="Button1" HorizontalAlignment="Left" Margin="207,10,0,0" VerticalAlignment="Top" Width="75" />
-            <Button Content="Button2" HorizontalAlignment="Left" Margin="207,35,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button Content="Button3" HorizontalAlignment="Left" Margin="207,60,0,0" VerticalAlignment="Top" Width="75"/>
-        </StackPanel>
-        <CheckBox Content="hide Button1" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
-        <CheckBox Content="hide Button2" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="Button1" Content="Button1" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" />
+        <Button Content="Button2" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="75" Grid.Row="2"/>
+        <Button Content="Button3" HorizontalAlignment="Left" Margin="10,2.699,0,0" VerticalAlignment="Top" Width="75" Grid.Row="3"/>
+
+        <CheckBox Content="hide Button1" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Checked="CheckBox1_Checked"/>
+        <CheckBox Content="hide Button2" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Hide Button3" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
 
     </Grid>
