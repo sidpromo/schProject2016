@@ -59,7 +59,7 @@ namespace projektFeladat_WPF
 
             //}
 
-            if (textBoxEduId.Text == String.Empty || passwordBox1.Password == String.Empty)
+            if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
                 errormessage.Text = " Username and Password are required!";
                 SystemSounds.Beep.Play();
