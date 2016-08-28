@@ -17,9 +17,9 @@ namespace projektFeladat_WPF.Views
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class testWindow : Window
     {
-        public Window1()
+        public testWindow()
         {
             InitializeComponent();
         }
@@ -27,6 +27,11 @@ namespace projektFeladat_WPF.Views
         private void CheckBox1_Checked(object sender, RoutedEventArgs e)
         {
             Button1.Visibility = Visibility.Collapsed;
+        }
+
+        private void CheckBox1_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Button1.Visibility = Visibility.Visible;
         }
     }
 }

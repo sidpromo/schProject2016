@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using projektFeladat_WPF.Views;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -20,9 +21,9 @@ namespace projektFeladat_WPF
     /// <summary>
     /// Interaction logic for LogIn.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogInWindow : Window
     {
-        public MainWindow()
+        public LogInWindow()
         {
             InitializeComponent();
         }
@@ -36,7 +37,9 @@ namespace projektFeladat_WPF
                 {
                     if (textBoxEduId.Text==item.EduId && passwordBox1.Password==item.Password)
                     {
-                        MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
+                        //MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
+                        testWindow testWindow = new testWindow();
+                        testWindow.Show();
                         return;
                     }
 
