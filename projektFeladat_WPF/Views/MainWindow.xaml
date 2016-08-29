@@ -39,6 +39,20 @@
                     <Label Content="SemesterID:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
                     <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
                     <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,7,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,97,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,157,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,217,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,247,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="104,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="104,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -50,7 +64,7 @@
 
 
             </TabItem>
-            <TabItem Header="Training data">
+            <TabItem Header="Training data" Visibility="Collapsed">
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -63,6 +77,14 @@
             </TabItem>
             <TabItem Header="Subjects">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="443*"/>
+                        <ColumnDefinition Width="446*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="57*"/>
+                    </Grid.RowDefinitions>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -70,6 +92,12 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+                    <Label Content="Taken courses:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Registered courses:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+                    <ListBox HorizontalAlignment="Left" Height="370" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="423"/>
+                    <ListBox HorizontalAlignment="Left" Height="345" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="425" Grid.Column="1"/>
+                    <Button Content="Unregister " Grid.Column="1" HorizontalAlignment="Left" Margin="315,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="29"/>
+                    <Button Content="Register for subject" Grid.Column="1" HorizontalAlignment="Left" Margin="190,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="29"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Exams">
