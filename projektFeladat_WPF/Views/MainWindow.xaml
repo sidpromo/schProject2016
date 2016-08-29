@@ -14,9 +14,31 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TabControl Height="462" Margin="0,75,0,0" VerticalAlignment="Top">
-            <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display" >
+            <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
                 <Grid>
-                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="169*"/>
+                        <ColumnDefinition Width="275*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="128*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="EduID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="E-mail:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Birthdate: " HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Nationality" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <Label Content="SemesterID:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
+                    <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
+                    <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -25,7 +47,7 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                 </Grid>
-                
+
 
             </TabItem>
             <TabItem Header="Training data">
