@@ -13,7 +13,7 @@
                 <GradientStop Color="#FFF02F63"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TabControl Height="462" Margin="0,75,0,0" VerticalAlignment="Top">
+        <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch">
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
                 <Grid>
                     <Grid.ColumnDefinitions>
