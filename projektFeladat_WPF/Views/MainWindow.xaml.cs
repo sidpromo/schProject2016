@@ -22,7 +22,7 @@ namespace projektFeladat_WPF.Views
     {
         public MainWindow(string CurrentUserEduId)
         {
-            InitializeComponent();
+            InitializeComponent(); // random comment
             using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
             {
                 User currentUser = ent.Users.FirstOrDefault(u => u.EduId == CurrentUserEduId);
