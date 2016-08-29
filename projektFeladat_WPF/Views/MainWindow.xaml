@@ -1,0 +1,38 @@
+﻿<Window x:Class="projektFeladat_WPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projektFeladat_WPF.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="581.954" Width="Auto">
+    <Grid>
+        <TabControl Height="Auto" Margin="0,0,0,0" VerticalAlignment="Top">
+            <TabItem Header="Personal Information" Height="Auto" >
+                <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20"/>
+                
+                <!--<Grid Background="#FFE5E5E5"/>-->                
+            </TabItem>
+            <TabItem Header="Training data">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Subject registration">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Exam registraion">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Messages">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Student search">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Textbook search">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        
+
+    </Grid>
+</Window>
