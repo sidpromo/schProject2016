@@ -5,34 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="581.954" Width="Auto">
+        Title="First Middle Last (EduId) - AppName" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TabControl Height="Auto" Margin="0,0,0,0" VerticalAlignment="Top">
-            <TabItem Header="Personal Information" Height="Auto" >
-                <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF535E7A" Offset="0.208"/>
+                <GradientStop Color="#FFF02F63"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TabControl Height="462" Margin="0,75,0,0" VerticalAlignment="Top">
+            <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display" >
+                <Grid>
+                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
                 
-                <!--<Grid Background="#FFE5E5E5"/>-->                
+
             </TabItem>
             <TabItem Header="Training data">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
-            <TabItem Header="Subject registration">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Subjects">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
-            <TabItem Header="Exam registraion">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Exams">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
             <TabItem Header="Messages">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
-            <TabItem Header="Student search">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Search Students">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
-            <TabItem Header="Textbook search">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Search Documents">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
             </TabItem>
         </TabControl>
-        
+        <Label Content="You are logged in as:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="14"/>
+        <Label Name="currentUserLabel" Content="First Middle Last (EduId)" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
+
 
     </Grid>
 </Window>

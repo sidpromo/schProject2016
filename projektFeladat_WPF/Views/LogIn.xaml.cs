@@ -54,7 +54,7 @@ namespace projektFeladat_WPF
         {
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
-                errormessage.Text = " Username and Password are required!";
+                errormessage.Text = " EduId and Password are required!";
                 SystemSounds.Beep.Play();
             }
             else
@@ -65,15 +65,14 @@ namespace projektFeladat_WPF
                     {
                         if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
                         {
-                            //MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
-                            var testWindow = new testWindow();
+                            var windowToOpen = new MainWindow(user.EduId);
                             this.Hide();
-                            testWindow.Show();
+                            windowToOpen.Show();
                             return;
                         }
                     }
                 }
-                errormessage.Text = " Invalid username or password!";
+                errormessage.Text = " Invalid EduId or Password!";
                 SystemSounds.Beep.Play();
             }
         }

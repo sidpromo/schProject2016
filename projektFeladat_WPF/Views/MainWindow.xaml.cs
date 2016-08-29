@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppDatabaseTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace projektFeladat_WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string CurrentUserEduId)
         {
             InitializeComponent();
+            using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
+            {
+                User currentUser = ent.Users.FirstOrDefault(u => u.EduId == CurrentUserEduId);
+                string currentUserInfo = String.Format("{0} {1} {2} ({3})", currentUser.FirstName, currentUser.MiddleName, currentUser.LastName, currentUser.EduId);
+                this.Title = currentUserInfo + "- EducationDatabase v0.2";
+                currentUserLabel.Content = currentUserInfo;
+            }
         }
     }
 }
