@@ -61,6 +61,7 @@ namespace projektFeladat_WPF
             {
                 using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
                 {
+                    
                     foreach (var user in ent.Users)
                     {
                         if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
@@ -68,7 +69,9 @@ namespace projektFeladat_WPF
                             //MessageBox.Show("LoggedIn as: "+ item.FirstName +" password:"+item.Password +" place of birth: "+ item.BirthPlace); //TODO: kezelni, hogy milyen jogosultsággal lépett be
                             var testWindow = new testWindow();
                             this.Hide();
-                            testWindow.Show();
+                            MainWindow mainW = new MainWindow();
+                            mainW.Show();
+                            //testWindow.Show();
                             return;
                         }
                     }

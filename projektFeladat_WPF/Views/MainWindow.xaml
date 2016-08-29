@@ -7,14 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="581.954" Width="Auto">
     <Grid>
-        <TabControl Height="Auto" Margin="0,0,0,0" VerticalAlignment="Top">
-            <TabItem Header="Personal Information" Height="Auto" >
-                <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" FontSize="20"/>
-                
-                <!--<Grid Background="#FFE5E5E5"/>-->                
+        <TabControl Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <TabItem Header="Personal Information" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                <Grid Height="Auto" Margin="0,22,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
+                    <TextBlock TextWrapping="Wrap" Text="Fristname here" Margin="108,57,363,422"/>
+                    <TextBlock TextWrapping="Wrap" Text="Middlename here" Margin="108,88,363,391"/>
+                    <TextBlock TextWrapping="Wrap" Text="Lastname here" Margin="108,119,363,360"/>
+                    <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Birth time:" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Birth place:" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nationality:" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top"/>
+                    <Label Content="EduID:" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Personal ID:" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Medicalcard ID:" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Semester ID:" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top"/>
+                    <Label Content="User type:" HorizontalAlignment="Left" Margin="12,455,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
             </TabItem>
             <TabItem Header="Training data">
-                <Grid Background="#FFE5E5E5"/>
+                <!--<Grid Background="#FFE5E5E5"/>-->
             </TabItem>
             <TabItem Header="Subject registration">
                 <Grid Background="#FFE5E5E5"/>
@@ -31,8 +50,9 @@
             <TabItem Header="Textbook search">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
+
         </TabControl>
-        
+
 
     </Grid>
 </Window>
