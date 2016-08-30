@@ -10,7 +10,7 @@ using System.Windows.Data;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class SucjectControlViewModel:Bindable
+    class SubjectControlViewModel:Bindable
     {
         public CollectionViewSource Collection { get; private set; }
         private EducationDatabaseEntities _ctx;
@@ -56,7 +56,7 @@ namespace projektFeladat_WPF.ViewModels
         //public RefreshCommand RefreshEvent { get; set; }
         #endregion
 
-        public SucjectControlViewModel()
+        public SubjectControlViewModel()
         {
             Collection = new CollectionViewSource();
             LoadData();

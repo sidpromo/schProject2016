@@ -10,9 +10,9 @@ namespace projektFeladat_WPF.Commands.SubjectControlCommands
 {
     class PreviousCommand : ICommand
     {
-        private SucjectControlViewModel _viewModel;
+        private SubjectControlViewModel _viewModel;
 
-        public PreviousCommand(SucjectControlViewModel viewModel)
+        public PreviousCommand(SubjectControlViewModel viewModel)
         {
             _viewModel = viewModel;
         }
