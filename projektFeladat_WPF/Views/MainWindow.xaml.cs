@@ -1,4 +1,5 @@
 ﻿using Repository;
+using Repository.UserRepos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,16 @@ namespace projektFeladat_WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(string CurrentUserEduId)
+        public MainWindow(int CurrentUserId)
         {
             InitializeComponent(); // random comment
-            using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
-            {
-                Users currentUser = ent.Users.FirstOrDefault(u => u.EduId == CurrentUserEduId);
-                string currentUserInfo = String.Format("{0} {1} {2} ({3})", currentUser.FirstName, currentUser.MiddleName, currentUser.LastName, currentUser.EduId);
-                this.Title = currentUserInfo + "- EducationDatabase v0.2";
-                currentUserLabel.Content = currentUserInfo;
-            }
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            UsersRepository userRepo = new UsersRepository(ent);
+            Users currentUser = userRepo.GetById(CurrentUserId);
+
+            string currentUserInfo = String.Format("{0} {1} {2} ({3})", currentUser.FirstName, currentUser.MiddleName, currentUser.LastName, currentUser.EduId);
+            this.Title = currentUserInfo + "- EducationDatabase v0.2";
+            currentUserLabel.Content = currentUserInfo;
         }
     }
 }

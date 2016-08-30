@@ -64,24 +64,21 @@ namespace projektFeladat_WPF
                 UsersRepository userRepo = new UsersRepository(ent);
                 if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
                 {
-                    var windowToOpen = new MainWindow(textBoxEduId.Text);
+                    int id = userRepo.GetAll().FirstOrDefault(x => x.EduId == textBoxEduId.Text).Id;
+                    var windowToOpen = new MainWindow(id);
                     this.Hide();
                     windowToOpen.Show();
-                    return;
+
+
                 }
-                //foreach (var user in ent.Users)
-                //{
-                //    if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
-                //    {
-                //        var windowToOpen = new MainWindow(user.EduId);
-                //        this.Hide();
-                //        windowToOpen.Show();
-                //        return;
-                //    }
-                //}
+                else
+                {
+                    errormessage.Text = " Invalid EduId or Password!";
+                    SystemSounds.Beep.Play();
+                }
+
             }
-            errormessage.Text = " Invalid EduId or Password!";
-            SystemSounds.Beep.Play();
+
         }
 
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class Bindable : INotifyPropertyChanged
+   public class Bindable : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
