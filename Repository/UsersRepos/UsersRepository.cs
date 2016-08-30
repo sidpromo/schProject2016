@@ -14,6 +14,11 @@ namespace Repository.UserRepos
         {
         }
 
+        public int GetUserId(Users user)
+        {
+            return GetAll().Where(x => x.Id == user.Id).FirstOrDefault().Id;
+        }
+
         public bool Login(string eduId, string password)
         {
             IEnumerable<Users> Users = GetAll();

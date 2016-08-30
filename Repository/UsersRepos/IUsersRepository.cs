@@ -10,5 +10,6 @@ namespace Repository.UserRepos
     public interface IUsersRepository : IRepository<Users>
     {
         bool Login(string eduId, string password);
+        int GetUserId(Users user);
     }
 }
