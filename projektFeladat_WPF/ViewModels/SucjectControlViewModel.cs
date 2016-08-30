@@ -1,6 +1,7 @@
 ﻿using ConsoleAppDatabaseTesting;
 using projektFeladat_WPF.Commands.SubjectControlCommands;
 using projektFeladat_WPF.Models;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace projektFeladat_WPF.ViewModels
         private EducationDatabaseEntities _ctx;
 
         #region SelectedItem
-        private SubjectInfo _selectedItem;
+        private SubjectsUser _selectedItem;
 
-        public SubjectInfo SelectedItem
+        public SubjectsUser SelectedItem
         {
             get { return _selectedItem; }
             set
@@ -55,22 +56,25 @@ namespace projektFeladat_WPF.ViewModels
         //public SaveCommand SaveEvent { get; set; }
         //public RefreshCommand RefreshEvent { get; set; }
         #endregion
-
+            
         public SubjectControlViewModel()
         {
             Collection = new CollectionViewSource();
             LoadData();
+            
         }
 
         private void LoadData()
         {
             Refresh();
-            SelectedItem = Collection.View.CurrentItem as SubjectInfo;
+            SelectedItem = Collection.View.CurrentItem as SubjectsUser;
+            
         }
 
         private void Refresh()
         {
             _ctx = new EducationDatabaseEntities(); //TODO:betölteni a táblát
+            
             
 
         }

@@ -70,7 +70,7 @@
     <Compile Include="Commands\SubjectControlCommands\NextCommand.cs" />
     <Compile Include="Commands\SubjectControlCommands\PreviousCommand.cs" />
     <Compile Include="Models\SubjectInfo.cs" />
-    <Compile Include="SubjectsControl.xaml.cs">
+    <Compile Include="UserControls\SubjectsControl.xaml.cs">
       <DependentUpon>SubjectsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Bindable.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="Views\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="SubjectsControl.xaml">
+    <Page Include="UserControls\SubjectsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,12 +138,11 @@
     <Resource Include="images\login_background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleAppDatabaseTesting\ConsoleAppDatabaseTesting.csproj">
-      <Project>{83e8b60e-8e09-43e2-a54b-f6441e52da62}</Project>
-      <Name>ConsoleAppDatabaseTesting</Name>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{68bdea95-9bdd-49d5-8b81-cf8a21cb53f1}</Project>
+      <Name>Repository</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
