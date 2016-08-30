@@ -53,35 +53,26 @@ namespace projektFeladat_WPF
 
         private void LoginProcedure()
         {
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            UsersRepository userRepo = new UsersRepository(ent);
+            bool loginOk = userRepo.Login(textBoxEduId.Text, passwordBox1.Password);
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
                 errormessage.Text = " EduId and Password are required!";
                 SystemSounds.Beep.Play();
             }
+            else if (loginOk)
+            {
+                var windowToOpen = new MainWindow(textBoxEduId.Text);
+                this.Hide();
+                windowToOpen.Show();
+                return;
+            }
             else
             {
-                EducationDatabaseEntities ent = new EducationDatabaseEntities();
-                UsersRepository userRepo = new UsersRepository(ent);
-                if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
-                {
-                    var windowToOpen = new MainWindow(textBoxEduId.Text);
-                    this.Hide();
-                    windowToOpen.Show();
-                    return;
-                }
-                //foreach (var user in ent.Users)
-                //{
-                //    if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
-                //    {
-                //        var windowToOpen = new MainWindow(user.EduId);
-                //        this.Hide();
-                //        windowToOpen.Show();
-                //        return;
-                //    }
-                //}
+                errormessage.Text = " Invalid EduId or Password!";
+                SystemSounds.Beep.Play();
             }
-            errormessage.Text = " Invalid EduId or Password!";
-            SystemSounds.Beep.Play();
         }
 
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
