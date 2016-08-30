@@ -25,7 +25,7 @@ namespace projektFeladat_WPF.Views
             InitializeComponent(); // random comment
             using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
             {
-                User currentUser = ent.Users.FirstOrDefault(u => u.EduId == CurrentUserEduId);
+                Users currentUser = ent.Users.FirstOrDefault(u => u.EduId == CurrentUserEduId);
                 string currentUserInfo = String.Format("{0} {1} {2} ({3})", currentUser.FirstName, currentUser.MiddleName, currentUser.LastName, currentUser.EduId);
                 this.Title = currentUserInfo + "- EducationDatabase v0.2";
                 currentUserLabel.Content = currentUserInfo;

@@ -12,14 +12,14 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class Message
+    public partial class Messages
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> SentDate { get; set; }
         public Nullable<int> FromUserId { get; set; }
         public Nullable<int> ToUserId { get; set; }
         public string Subject { get; set; }
-        public string Message1 { get; set; }
+        public string Message { get; set; }
         public Nullable<bool> FromHighlighted { get; set; }
         public Nullable<bool> ToHighlighted { get; set; }
         public Nullable<bool> FromDeleted { get; set; }
@@ -28,7 +28,7 @@ namespace Repository
         public Nullable<bool> ToDeletedPerm { get; set; }
         public Nullable<bool> Read { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual User User1 { get; set; }
+        public virtual Users Users { get; set; }
+        public virtual Users Users1 { get; set; }
     }
 }

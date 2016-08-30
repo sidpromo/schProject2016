@@ -25,17 +25,17 @@ namespace Repository
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Administrator> Administrators { get; set; }
-        public virtual DbSet<Exam> Exams { get; set; }
-        public virtual DbSet<ExamsUser> ExamsUsers { get; set; }
-        public virtual DbSet<Grade> Grades { get; set; }
-        public virtual DbSet<Manager> Managers { get; set; }
-        public virtual DbSet<Message> Messages { get; set; }
-        public virtual DbSet<Semester> Semesters { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
-        public virtual DbSet<SubjectsUser> SubjectsUsers { get; set; }
-        public virtual DbSet<Teacher> Teachers { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Administrators> Administrators { get; set; }
+        public virtual DbSet<Exams> Exams { get; set; }
+        public virtual DbSet<ExamsUsers> ExamsUsers { get; set; }
+        public virtual DbSet<Grades> Grades { get; set; }
+        public virtual DbSet<Managers> Managers { get; set; }
+        public virtual DbSet<Messages> Messages { get; set; }
+        public virtual DbSet<Semesters> Semesters { get; set; }
+        public virtual DbSet<Students> Students { get; set; }
+        public virtual DbSet<Subjects> Subjects { get; set; }
+        public virtual DbSet<SubjectsUsers> SubjectsUsers { get; set; }
+        public virtual DbSet<Teachers> Teachers { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

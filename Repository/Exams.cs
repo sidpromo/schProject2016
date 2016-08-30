@@ -12,13 +12,13 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class Exam
+    public partial class Exams
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Exam()
+        public Exams()
         {
-            this.ExamsUsers = new HashSet<ExamsUser>();
-            this.Grades = new HashSet<Grade>();
+            this.ExamsUsers = new HashSet<ExamsUsers>();
+            this.Grades = new HashSet<Grades>();
         }
     
         public int Id { get; set; }
@@ -31,11 +31,11 @@ namespace Repository
         public Nullable<int> Limit { get; set; }
         public string Description { get; set; }
     
-        public virtual Subject Subject { get; set; }
-        public virtual User User { get; set; }
+        public virtual Subjects Subjects { get; set; }
+        public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamsUser> ExamsUsers { get; set; }
+        public virtual ICollection<ExamsUsers> ExamsUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grade> Grades { get; set; }
+        public virtual ICollection<Grades> Grades { get; set; }
     }
 }

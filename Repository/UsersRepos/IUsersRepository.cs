@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.UserRepos
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUsersRepository : IRepository<Users>
     {
         bool Login(string eduId, string password);
     }

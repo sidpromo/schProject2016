@@ -60,30 +60,28 @@ namespace projektFeladat_WPF
             }
             else
             {
-                using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
+                EducationDatabaseEntities ent = new EducationDatabaseEntities();
+                UsersRepository userRepo = new UsersRepository(ent);
+                if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
                 {
-                    UserRepository userRepo = new UserRepository(ent);
-                    if (userRepo.Login(textBoxEduId.Text,passwordBox1.Password))
-                    {
-                        var windowToOpen = new MainWindow(textBoxEduId.Text);
-                        this.Hide();
-                        windowToOpen.Show();
-                        return;
-                    }
-                    //foreach (var user in ent.Users)
-                    //{
-                    //    if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
-                    //    {
-                    //        var windowToOpen = new MainWindow(user.EduId);
-                    //        this.Hide();
-                    //        windowToOpen.Show();
-                    //        return;
-                    //    }
-                    //}
+                    var windowToOpen = new MainWindow(textBoxEduId.Text);
+                    this.Hide();
+                    windowToOpen.Show();
+                    return;
                 }
-                errormessage.Text = " Invalid EduId or Password!";
-                SystemSounds.Beep.Play();
+                //foreach (var user in ent.Users)
+                //{
+                //    if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
+                //    {
+                //        var windowToOpen = new MainWindow(user.EduId);
+                //        this.Hide();
+                //        windowToOpen.Show();
+                //        return;
+                //    }
+                //}
             }
+            errormessage.Text = " Invalid EduId or Password!";
+            SystemSounds.Beep.Play();
         }
 
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)

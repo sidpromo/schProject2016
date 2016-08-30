@@ -12,26 +12,21 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class Subject
+    public partial class Semesters
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subject()
+        public Semesters()
         {
-            this.Exams = new HashSet<Exam>();
-            this.Grades = new HashSet<Grade>();
-            this.SubjectsUsers = new HashSet<SubjectsUser>();
+            this.Subjects = new HashSet<Subjects>();
+            this.Users = new HashSet<Users>();
         }
     
         public int Id { get; set; }
-        public string SubjectName { get; set; }
-        public Nullable<int> SemesterId { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Exam> Exams { get; set; }
+        public virtual ICollection<Subjects> Subjects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grade> Grades { get; set; }
-        public virtual Semester Semester { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubjectsUser> SubjectsUsers { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

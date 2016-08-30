@@ -12,12 +12,12 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class Administrator
+    public partial class Teachers
     {
         public int Id { get; set; }
-        public string AdminIdentifier { get; set; }
+        public Nullable<int> Rank { get; set; }
         public Nullable<int> UserId { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

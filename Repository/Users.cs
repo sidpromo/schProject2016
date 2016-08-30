@@ -12,25 +12,25 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Users()
         {
-            this.Administrators = new HashSet<Administrator>();
-            this.Exams = new HashSet<Exam>();
-            this.ExamsUsers = new HashSet<ExamsUser>();
-            this.ExamsUsers1 = new HashSet<ExamsUser>();
-            this.Grades = new HashSet<Grade>();
-            this.Grades1 = new HashSet<Grade>();
-            this.Managers = new HashSet<Manager>();
-            this.Messages = new HashSet<Message>();
-            this.Messages1 = new HashSet<Message>();
-            this.Students = new HashSet<Student>();
-            this.SubjectsUsers = new HashSet<SubjectsUser>();
-            this.SubjectsUsers1 = new HashSet<SubjectsUser>();
-            this.Teachers = new HashSet<Teacher>();
-            this.Users1 = new HashSet<User>();
+            this.Administrators = new HashSet<Administrators>();
+            this.Exams = new HashSet<Exams>();
+            this.ExamsUsers = new HashSet<ExamsUsers>();
+            this.ExamsUsers1 = new HashSet<ExamsUsers>();
+            this.Grades = new HashSet<Grades>();
+            this.Grades1 = new HashSet<Grades>();
+            this.Managers = new HashSet<Managers>();
+            this.Messages = new HashSet<Messages>();
+            this.Messages1 = new HashSet<Messages>();
+            this.Students = new HashSet<Students>();
+            this.SubjectsUsers = new HashSet<SubjectsUsers>();
+            this.SubjectsUsers1 = new HashSet<SubjectsUsers>();
+            this.Teachers = new HashSet<Teachers>();
+            this.Users1 = new HashSet<Users>();
         }
     
         public int Id { get; set; }
@@ -56,34 +56,34 @@ namespace Repository
         public string Email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Administrator> Administrators { get; set; }
+        public virtual ICollection<Administrators> Administrators { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Exam> Exams { get; set; }
+        public virtual ICollection<Exams> Exams { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamsUser> ExamsUsers { get; set; }
+        public virtual ICollection<ExamsUsers> ExamsUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExamsUser> ExamsUsers1 { get; set; }
+        public virtual ICollection<ExamsUsers> ExamsUsers1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grade> Grades { get; set; }
+        public virtual ICollection<Grades> Grades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grade> Grades1 { get; set; }
+        public virtual ICollection<Grades> Grades1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Manager> Managers { get; set; }
+        public virtual ICollection<Managers> Managers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Messages> Messages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Message> Messages1 { get; set; }
-        public virtual Semester Semester { get; set; }
+        public virtual ICollection<Messages> Messages1 { get; set; }
+        public virtual Semesters Semesters { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Students> Students { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubjectsUser> SubjectsUsers { get; set; }
+        public virtual ICollection<SubjectsUsers> SubjectsUsers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubjectsUser> SubjectsUsers1 { get; set; }
+        public virtual ICollection<SubjectsUsers> SubjectsUsers1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Teacher> Teachers { get; set; }
+        public virtual ICollection<Teachers> Teachers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users1 { get; set; }
-        public virtual User User1 { get; set; }
+        public virtual ICollection<Users> Users1 { get; set; }
+        public virtual Users Users2 { get; set; }
     }
 }

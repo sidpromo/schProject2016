@@ -500,16 +500,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EducationDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Administrator">
+        <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AdminIdentifier" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Administrators_ToUsers" FromRole="Administrators" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Administrators_ToUsers" FromRole="Administrators" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Exam">
+        <EntityType Name="Exams">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -522,12 +522,12 @@
           <Property Name="ExamDate" Type="DateTime" Precision="3" />
           <Property Name="Limit" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK_Exams_ToSubjects" FromRole="Exams" ToRole="Subjects" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Exams_ToUsers" FromRole="Exams" ToRole="Users" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_Exams_ToSubjects" FromRole="Exams" ToRole="Subjects" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Exams_ToUsers" FromRole="Exams" ToRole="Users" />
           <NavigationProperty Name="ExamsUsers" Relationship="Self.FK_ExamsUsers_ToExams" FromRole="Exams" ToRole="ExamsUsers" />
           <NavigationProperty Name="Grades" Relationship="Self.FK_Grades_ToExams" FromRole="Exams" ToRole="Grades" />
         </EntityType>
-        <EntityType Name="ExamsUser">
+        <EntityType Name="ExamsUsers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -537,11 +537,11 @@
           <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="ExamId" Type="Int32" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="Exam" Relationship="Self.FK_ExamsUsers_ToExams" FromRole="ExamsUsers" ToRole="Exams" />
-          <NavigationProperty Name="User" Relationship="Self.FK_ExamsUsers_ToUsers" FromRole="ExamsUsers" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_ExamsUsers_ToUsers2" FromRole="ExamsUsers" ToRole="Users" />
+          <NavigationProperty Name="Exams" Relationship="Self.FK_ExamsUsers_ToExams" FromRole="ExamsUsers" ToRole="Exams" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_ExamsUsers_ToUsers" FromRole="ExamsUsers" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK_ExamsUsers_ToUsers2" FromRole="ExamsUsers" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Grade">
+        <EntityType Name="Grades">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -549,25 +549,25 @@
           <Property Name="InsertDate" Type="DateTime" Precision="3" />
           <Property Name="ModifyDate" Type="DateTime" Precision="3" />
           <Property Name="ModifiedBy" Type="Int32" />
-          <Property Name="Grade1" Type="Int16" />
+          <Property Name="Grade" Type="Int16" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="SubjectId" Type="Int32" />
           <Property Name="ExamId" Type="Int32" />
-          <NavigationProperty Name="Exam" Relationship="Self.FK_Grades_ToExams" FromRole="Grades" ToRole="Exams" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK_Grades_ToSubjects" FromRole="Grades" ToRole="Subjects" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Grades_ToUsers" FromRole="Grades" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_Grades_ToUsers2" FromRole="Grades" ToRole="Users" />
+          <NavigationProperty Name="Exams" Relationship="Self.FK_Grades_ToExams" FromRole="Grades" ToRole="Exams" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_Grades_ToSubjects" FromRole="Grades" ToRole="Subjects" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Grades_ToUsers" FromRole="Grades" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK_Grades_ToUsers2" FromRole="Grades" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Manager">
+        <EntityType Name="Managers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="ManagerIdentifier" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Managers_ToUsers" FromRole="Managers" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Managers_ToUsers" FromRole="Managers" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Message">
+        <EntityType Name="Messages">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -576,7 +576,7 @@
           <Property Name="FromUserId" Type="Int32" />
           <Property Name="ToUserId" Type="Int32" />
           <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Message1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="FromHighlighted" Type="Boolean" />
           <Property Name="ToHighlighted" Type="Boolean" />
           <Property Name="FromDeleted" Type="Boolean" />
@@ -584,10 +584,10 @@
           <Property Name="FromDeletedPerm" Type="Boolean" />
           <Property Name="ToDeletedPerm" Type="Boolean" />
           <Property Name="Read" Type="Boolean" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Messages_ToUsers" FromRole="Messages" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_Messages_ToUsers2" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Messages_ToUsers" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK_Messages_ToUsers2" FromRole="Messages" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Semester">
+        <EntityType Name="Semesters">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -596,16 +596,16 @@
           <NavigationProperty Name="Subjects" Relationship="Self.FK_Subjects_ToSemesters" FromRole="Semesters" ToRole="Subjects" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_ToSemesters" FromRole="Semesters" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Student">
+        <EntityType Name="Students">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StudyForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Students_ToUsers" FromRole="Students" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Students_ToUsers" FromRole="Students" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Subject">
+        <EntityType Name="Subjects">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -614,10 +614,10 @@
           <Property Name="SemesterId" Type="Int32" />
           <NavigationProperty Name="Exams" Relationship="Self.FK_Exams_ToSubjects" FromRole="Subjects" ToRole="Exams" />
           <NavigationProperty Name="Grades" Relationship="Self.FK_Grades_ToSubjects" FromRole="Subjects" ToRole="Grades" />
-          <NavigationProperty Name="Semester" Relationship="Self.FK_Subjects_ToSemesters" FromRole="Subjects" ToRole="Semesters" />
+          <NavigationProperty Name="Semesters" Relationship="Self.FK_Subjects_ToSemesters" FromRole="Subjects" ToRole="Semesters" />
           <NavigationProperty Name="SubjectsUsers" Relationship="Self.FK_SubjectsUsers_ToSubjects" FromRole="Subjects" ToRole="SubjectsUsers" />
         </EntityType>
-        <EntityType Name="SubjectsUser">
+        <EntityType Name="SubjectsUsers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -627,20 +627,20 @@
           <Property Name="ModifiedBy" Type="Int32" />
           <Property Name="SubjectId" Type="Int32" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="Subject" Relationship="Self.FK_SubjectsUsers_ToSubjects" FromRole="SubjectsUsers" ToRole="Subjects" />
-          <NavigationProperty Name="User" Relationship="Self.FK_SubjectsUsers_ToUsers" FromRole="SubjectsUsers" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_SubjectsUsers_ToUsers2" FromRole="SubjectsUsers" ToRole="Users" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_SubjectsUsers_ToSubjects" FromRole="SubjectsUsers" ToRole="Subjects" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_SubjectsUsers_ToUsers" FromRole="SubjectsUsers" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK_SubjectsUsers_ToUsers2" FromRole="SubjectsUsers" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Teacher">
+        <EntityType Name="Teachers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rank" Type="Int32" />
           <Property Name="UserId" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Teachers_ToUsers" FromRole="Teachers" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Teachers_ToUsers" FromRole="Teachers" ToRole="Users" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -674,17 +674,17 @@
           <NavigationProperty Name="Managers" Relationship="Self.FK_Managers_ToUsers" FromRole="Users" ToRole="Managers" />
           <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_ToUsers" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="Messages1" Relationship="Self.FK_Messages_ToUsers2" FromRole="Users" ToRole="Messages" />
-          <NavigationProperty Name="Semester" Relationship="Self.FK_Users_ToSemesters" FromRole="Users" ToRole="Semesters" />
+          <NavigationProperty Name="Semesters" Relationship="Self.FK_Users_ToSemesters" FromRole="Users" ToRole="Semesters" />
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_ToUsers" FromRole="Users" ToRole="Students" />
           <NavigationProperty Name="SubjectsUsers" Relationship="Self.FK_SubjectsUsers_ToUsers" FromRole="Users" ToRole="SubjectsUsers" />
           <NavigationProperty Name="SubjectsUsers1" Relationship="Self.FK_SubjectsUsers_ToUsers2" FromRole="Users" ToRole="SubjectsUsers" />
           <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_ToUsers" FromRole="Users" ToRole="Teachers" />
           <NavigationProperty Name="Users1" Relationship="Self.FK_Users_ToUsers" FromRole="Users" ToRole="Users1" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_Users_ToUsers" FromRole="Users1" ToRole="Users" />
+          <NavigationProperty Name="Users2" Relationship="Self.FK_Users_ToUsers" FromRole="Users1" ToRole="Users" />
         </EntityType>
         <Association Name="FK_Administrators_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Administrators" Type="Self.Administrator" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Administrators" Type="Self.Administrators" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -695,8 +695,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Exams_ToSubjects">
-          <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
-          <End Role="Exams" Type="Self.Exam" Multiplicity="*" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+          <End Role="Exams" Type="Self.Exams" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subjects">
               <PropertyRef Name="Id" />
@@ -707,8 +707,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Exams_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Exams" Type="Self.Exam" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Exams" Type="Self.Exams" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -719,8 +719,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExamsUsers_ToExams">
-          <End Role="Exams" Type="Self.Exam" Multiplicity="0..1" />
-          <End Role="ExamsUsers" Type="Self.ExamsUser" Multiplicity="*" />
+          <End Role="Exams" Type="Self.Exams" Multiplicity="0..1" />
+          <End Role="ExamsUsers" Type="Self.ExamsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Exams">
               <PropertyRef Name="Id" />
@@ -731,8 +731,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Grades_ToExams">
-          <End Role="Exams" Type="Self.Exam" Multiplicity="0..1" />
-          <End Role="Grades" Type="Self.Grade" Multiplicity="*" />
+          <End Role="Exams" Type="Self.Exams" Multiplicity="0..1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Exams">
               <PropertyRef Name="Id" />
@@ -743,8 +743,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExamsUsers_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="ExamsUsers" Type="Self.ExamsUser" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ExamsUsers" Type="Self.ExamsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -755,8 +755,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExamsUsers_ToUsers2">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="ExamsUsers" Type="Self.ExamsUser" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="ExamsUsers" Type="Self.ExamsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -767,8 +767,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Grades_ToSubjects">
-          <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
-          <End Role="Grades" Type="Self.Grade" Multiplicity="*" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subjects">
               <PropertyRef Name="Id" />
@@ -779,8 +779,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Grades_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Grades" Type="Self.Grade" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -791,8 +791,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Grades_ToUsers2">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Grades" Type="Self.Grade" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -803,8 +803,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Managers_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Managers" Type="Self.Manager" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Managers" Type="Self.Managers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -815,8 +815,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -827,8 +827,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_ToUsers2">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -839,8 +839,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subjects_ToSemesters">
-          <End Role="Semesters" Type="Self.Semester" Multiplicity="0..1" />
-          <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+          <End Role="Semesters" Type="Self.Semesters" Multiplicity="0..1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Semesters">
               <PropertyRef Name="Id" />
@@ -851,8 +851,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_ToSemesters">
-          <End Role="Semesters" Type="Self.Semester" Multiplicity="0..1" />
-          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <End Role="Semesters" Type="Self.Semesters" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Semesters">
               <PropertyRef Name="Id" />
@@ -863,8 +863,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -875,8 +875,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SubjectsUsers_ToSubjects">
-          <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
-          <End Role="SubjectsUsers" Type="Self.SubjectsUser" Multiplicity="*" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="0..1" />
+          <End Role="SubjectsUsers" Type="Self.SubjectsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subjects">
               <PropertyRef Name="Id" />
@@ -887,8 +887,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SubjectsUsers_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="SubjectsUsers" Type="Self.SubjectsUser" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="SubjectsUsers" Type="Self.SubjectsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -899,8 +899,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SubjectsUsers_ToUsers2">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="SubjectsUsers" Type="Self.SubjectsUser" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="SubjectsUsers" Type="Self.SubjectsUsers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -911,8 +911,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Teachers_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Teachers" Type="Self.Teacher" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -923,8 +923,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_ToUsers">
-          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Users1" Type="Self.User" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users1" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="Id" />
@@ -935,18 +935,18 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EducationDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Administrators" EntityType="Self.Administrator" />
-          <EntitySet Name="Exams" EntityType="Self.Exam" />
-          <EntitySet Name="ExamsUsers" EntityType="Self.ExamsUser" />
-          <EntitySet Name="Grades" EntityType="Self.Grade" />
-          <EntitySet Name="Managers" EntityType="Self.Manager" />
-          <EntitySet Name="Messages" EntityType="Self.Message" />
-          <EntitySet Name="Semesters" EntityType="Self.Semester" />
-          <EntitySet Name="Students" EntityType="Self.Student" />
-          <EntitySet Name="Subjects" EntityType="Self.Subject" />
-          <EntitySet Name="SubjectsUsers" EntityType="Self.SubjectsUser" />
-          <EntitySet Name="Teachers" EntityType="Self.Teacher" />
-          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Administrators" EntityType="Self.Administrators" />
+          <EntitySet Name="Exams" EntityType="Self.Exams" />
+          <EntitySet Name="ExamsUsers" EntityType="Self.ExamsUsers" />
+          <EntitySet Name="Grades" EntityType="Self.Grades" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" />
+          <EntitySet Name="Semesters" EntityType="Self.Semesters" />
+          <EntitySet Name="Students" EntityType="Self.Students" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" />
+          <EntitySet Name="SubjectsUsers" EntityType="Self.SubjectsUsers" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="FK_Administrators_ToUsers" Association="Self.FK_Administrators_ToUsers">
             <End Role="Users" EntitySet="Users" />
             <End Role="Administrators" EntitySet="Administrators" />
@@ -1039,7 +1039,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EducationDatabaseModelStoreContainer" CdmEntityContainer="EducationDatabaseEntities">
           <EntitySetMapping Name="Administrators">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Administrator">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Administrators">
               <MappingFragment StoreEntitySet="Administrators">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="AdminIdentifier" ColumnName="AdminIdentifier" />
@@ -1048,7 +1048,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Exams">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Exam">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Exams">
               <MappingFragment StoreEntitySet="Exams">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
@@ -1063,7 +1063,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ExamsUsers">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.ExamsUser">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.ExamsUsers">
               <MappingFragment StoreEntitySet="ExamsUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
@@ -1075,13 +1075,13 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Grades">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Grade">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Grades">
               <MappingFragment StoreEntitySet="Grades">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
                 <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="Grade1" ColumnName="Grade" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
                 <ScalarProperty Name="ExamId" ColumnName="ExamId" />
@@ -1089,7 +1089,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Managers">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Manager">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Managers">
               <MappingFragment StoreEntitySet="Managers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ManagerIdentifier" ColumnName="ManagerIdentifier" />
@@ -1098,14 +1098,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Messages">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Message">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Messages">
               <MappingFragment StoreEntitySet="Messages">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SentDate" ColumnName="SentDate" />
                 <ScalarProperty Name="FromUserId" ColumnName="FromUserId" />
                 <ScalarProperty Name="ToUserId" ColumnName="ToUserId" />
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="Message1" ColumnName="Message" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="FromHighlighted" ColumnName="FromHighlighted" />
                 <ScalarProperty Name="ToHighlighted" ColumnName="ToHighlighted" />
                 <ScalarProperty Name="FromDeleted" ColumnName="FromDeleted" />
@@ -1117,7 +1117,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Semesters">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Semester">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Semesters">
               <MappingFragment StoreEntitySet="Semesters">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -1125,7 +1125,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Student">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Students">
               <MappingFragment StoreEntitySet="Students">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StudyForm" ColumnName="StudyForm" />
@@ -1134,7 +1134,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Subjects">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Subject">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Subjects">
               <MappingFragment StoreEntitySet="Subjects">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
@@ -1143,7 +1143,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SubjectsUsers">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.SubjectsUser">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.SubjectsUsers">
               <MappingFragment StoreEntitySet="SubjectsUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EnrollDate" ColumnName="EnrollDate" />
@@ -1155,7 +1155,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.Teacher">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Teachers">
               <MappingFragment StoreEntitySet="Teachers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Rank" ColumnName="Rank" />
@@ -1164,7 +1164,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="EducationDatabaseModel.User">
+            <EntityTypeMapping TypeName="EducationDatabaseModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
@@ -1204,7 +1204,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

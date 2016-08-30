@@ -11,7 +11,7 @@ namespace projektFeladat_WPF.Models
     {
         
         
-        public Subject SubjectName { get; private set; }
+        public Subjects SubjectName { get; private set; }
         public bool ActiveInThisSemester { get; private set; }
         public string Teacher { get; private set; }
         public int RegisteredStudents { get; private set; }

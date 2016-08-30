@@ -16,9 +16,9 @@ namespace projektFeladat_WPF.ViewModels
         private EducationDatabaseEntities _ctx;
 
         #region SelectedItem
-        private SubjectsUser _selectedItem;
+        private SubjectsUsers _selectedItem;
 
-        public SubjectsUser SelectedItem
+        public SubjectsUsers SelectedItem
         {
             get { return _selectedItem; }
             set
@@ -66,7 +66,7 @@ namespace projektFeladat_WPF.ViewModels
         private void LoadData()
         {
             Refresh();
-            SelectedItem = Collection.View.CurrentItem as SubjectsUser;
+            SelectedItem = Collection.View.CurrentItem as SubjectsUsers;
             
         }
 

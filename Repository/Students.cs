@@ -12,17 +12,12 @@ namespace Repository
     using System;
     using System.Collections.Generic;
     
-    public partial class SubjectsUser
+    public partial class Students
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> EnrollDate { get; set; }
-        public Nullable<System.DateTime> ModifyDate { get; set; }
-        public Nullable<int> ModifiedBy { get; set; }
-        public Nullable<int> SubjectId { get; set; }
+        public string StudyForm { get; set; }
         public Nullable<int> UserId { get; set; }
     
-        public virtual Subject Subject { get; set; }
-        public virtual User User { get; set; }
-        public virtual User User1 { get; set; }
+        public virtual Users Users { get; set; }
     }
 }
