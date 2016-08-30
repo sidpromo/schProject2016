@@ -1,9 +1,10 @@
-﻿<Window x:Class="projektFeladat_WPF.Views.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
+        xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" x:Class="projektFeladat_WPF.Views.MainWindow"
         mc:Ignorable="d"
         Title="First Middle Last (EduId) - AppName" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -24,6 +25,13 @@
                         <RowDefinition Height="17*"/>
                         <RowDefinition Height="128*"/>
                     </Grid.RowDefinitions>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
                     <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
@@ -53,18 +61,11 @@
                     <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
                     <TextBlock HorizontalAlignment="Left" Margin="104,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
                     <TextBlock HorizontalAlignment="Left" Margin="104,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FFFCFFFC"/>
-                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
-                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
                 </Grid>
 
 
             </TabItem>
-            <TabItem Header="Training data" Visibility="Collapsed">
+            <TabItem Header="Semester info" >
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -77,14 +78,7 @@
             </TabItem>
             <TabItem Header="Subjects">
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="443*"/>
-                        <ColumnDefinition Width="446*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="10*"/>
-                        <RowDefinition Height="57*"/>
-                    </Grid.RowDefinitions>
+                    
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -92,12 +86,8 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Label Content="Taken courses:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-                    <Label Content="Registered courses:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-                    <ListBox HorizontalAlignment="Left" Height="370" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="423"/>
-                    <ListBox HorizontalAlignment="Left" Height="345" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="425" Grid.Column="1"/>
-                    <Button Content="Unregister " Grid.Column="1" HorizontalAlignment="Left" Margin="315,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="29"/>
-                    <Button Content="Register for subject" Grid.Column="1" HorizontalAlignment="Left" Margin="190,360,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Height="29"/>
+                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401"/>
+                    <Label Content="Subjects:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Exams">
@@ -122,7 +112,7 @@
                     </Grid.Background>
                 </Grid>
             </TabItem>
-            <TabItem Header="Search Students">
+            <TabItem Header="Manage users">
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -146,7 +136,7 @@
             </TabItem>
         </TabControl>
         <Label Content="You are logged in as:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="14"/>
-        <Label Name="currentUserLabel" Content="First Middle Last (EduId)" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
+        <Label x:Name="currentUserLabel" Content="First Middle Last (EduId)" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
 
 
     </Grid>

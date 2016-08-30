@@ -67,12 +67,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\SubjectControlCommands\NextCommand.cs" />
+    <Compile Include="Commands\SubjectControlCommands\PreviousCommand.cs" />
+    <Compile Include="Models\SubjectInfo.cs" />
+    <Compile Include="SubjectsControl.xaml.cs">
+      <DependentUpon>SubjectsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Bindable.cs" />
+    <Compile Include="ViewModels\SucjectControlViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="SubjectsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LogIn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
