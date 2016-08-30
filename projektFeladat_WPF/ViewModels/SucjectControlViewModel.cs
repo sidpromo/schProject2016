@@ -1,5 +1,4 @@
-﻿using ConsoleAppDatabaseTesting;
-using projektFeladat_WPF.Commands.SubjectControlCommands;
+﻿using projektFeladat_WPF.Commands.SubjectControlCommands;
 using projektFeladat_WPF.Models;
 using Repository;
 using System;

@@ -1,5 +1,4 @@
-﻿using ConsoleAppDatabaseTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -16,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
+using Repository;
+using Repository.UserRepos;
 
 namespace projektFeladat_WPF
 {
@@ -61,16 +62,24 @@ namespace projektFeladat_WPF
             {
                 using (EducationDatabaseEntities ent = new EducationDatabaseEntities())
                 {
-                    foreach (var user in ent.Users)
+                    UserRepository userRepo = new UserRepository(ent);
+                    if (userRepo.Login(textBoxEduId.Text,passwordBox1.Password))
                     {
-                        if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
-                        {
-                            var windowToOpen = new MainWindow(user.EduId);
-                            this.Hide();
-                            windowToOpen.Show();
-                            return;
-                        }
+                        var windowToOpen = new MainWindow(textBoxEduId.Text);
+                        this.Hide();
+                        windowToOpen.Show();
+                        return;
                     }
+                    //foreach (var user in ent.Users)
+                    //{
+                    //    if (textBoxEduId.Text == user.EduId && passwordBox1.Password == user.Password)
+                    //    {
+                    //        var windowToOpen = new MainWindow(user.EduId);
+                    //        this.Hide();
+                    //        windowToOpen.Show();
+                    //        return;
+                    //    }
+                    //}
                 }
                 errormessage.Text = " Invalid EduId or Password!";
                 SystemSounds.Beep.Play();
