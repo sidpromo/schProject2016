@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.GenericRepos
 {
-    class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
 

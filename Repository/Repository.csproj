@@ -105,6 +105,8 @@
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRepos\IUserRepository.cs" />
+    <Compile Include="UserRepos\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model1.edmx">
@@ -146,7 +148,6 @@
     <Folder Include="SubjectRepos\" />
     <Folder Include="SubjectsUserRepos\" />
     <Folder Include="TeacherRepos\" />
-    <Folder Include="UserRepos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
