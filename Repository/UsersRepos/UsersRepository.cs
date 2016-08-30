@@ -14,11 +14,22 @@ namespace Repository.UserRepos
         {
         }
 
+        /// <summary>
+        /// A megadott user id-ját adja vissza.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public int GetUserId(Users user)
         {
             return GetAll().Where(x => x.Id == user.Id).FirstOrDefault().Id;
         }
 
+        /// <summary>
+        /// Igazat ad vissza, ha egyezést talált a megadott EduId és jelszó párosra.)
+        /// </summary>
+        /// <param name="eduId"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool Login(string eduId, string password)
         {
             IEnumerable<Users> Users = GetAll();

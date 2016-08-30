@@ -9,12 +9,13 @@ namespace Repository.GenericRepos
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
-        TEntity GetById(int EntityToGetById);
+        TEntity GetById(int entityToGetById);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filterPredicate);
 
         void Add(TEntity entityToAdd);
         void Remove(TEntity entityToRemove);
         void RemoveById(int entityToRemoveById);
+        void SaveChanges();
     }
 }

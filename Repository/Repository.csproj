@@ -54,23 +54,35 @@
     <Compile Include="Administrators.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdministratorsRepos\IAdministratorsRepository.cs" />
+    <Compile Include="AdministratorsRepos\AdministratorsRepository.cs" />
     <Compile Include="Exams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExamsRepos\ExamsRepository.cs" />
+    <Compile Include="ExamsRepos\IExamsRepository.cs" />
     <Compile Include="ExamsUsers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExamsUsersRepos\ExamsUsersRepository.cs" />
+    <Compile Include="ExamsUsersRepos\IExamsUsersRepository.cs" />
     <Compile Include="GenericRepos\IRepository.cs" />
     <Compile Include="GenericRepos\Repository.cs" />
     <Compile Include="Grades.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="GradesRepos\GradesRepository.cs" />
+    <Compile Include="GradesRepos\IGradesRepository.cs" />
     <Compile Include="Managers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ManagersRepos\ManagersRepository.cs" />
+    <Compile Include="ManagersRepos\IManagersRepository.cs" />
     <Compile Include="Messages.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MessagesRepos\IMessagesRepository.cs" />
+    <Compile Include="MessagesRepos\MessagesRepository.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,18 +102,28 @@
     <Compile Include="Semesters.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SemestersRepos\ISemestersRepository.cs" />
+    <Compile Include="SemestersRepos\SemestersRepository.cs" />
     <Compile Include="Students.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="StudentsRepos\IStudentsRepository.cs" />
+    <Compile Include="StudentsRepos\StudentsRepository.cs" />
     <Compile Include="Subjects.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SubjectsRepos\ISubjectsRepository.cs" />
+    <Compile Include="SubjectsRepos\SubjectsRepository.cs" />
     <Compile Include="SubjectsUsers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SubjectsUsersRepos\ISubjectsUsersRepository.cs" />
+    <Compile Include="SubjectsUsersRepos\SubjectsUsersRepository.cs" />
     <Compile Include="Teachers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TeachersRepos\ITeachersRepository.cs" />
+    <Compile Include="TeachersRepos\TeachersRepository.cs" />
     <Compile Include="UsersRepos\IUsersRepository.cs" />
     <Compile Include="UsersRepos\UsersRepository.cs" />
     <Compile Include="Users.cs">
@@ -122,19 +144,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AdministratorsRepos\" />
-    <Folder Include="ExamsRepos\" />
-    <Folder Include="ExamsUsersRepos\" />
-    <Folder Include="GradesRepos\" />
-    <Folder Include="ManagersRepos\" />
-    <Folder Include="MessagesRepos\" />
-    <Folder Include="SemestersRepos\" />
-    <Folder Include="StudentsRepos\" />
-    <Folder Include="SubjectsRepos\" />
-    <Folder Include="SubjectsUsersRepos\" />
-    <Folder Include="TeachersRepos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

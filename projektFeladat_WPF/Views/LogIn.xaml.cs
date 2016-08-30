@@ -54,8 +54,8 @@ namespace projektFeladat_WPF
         private void LoginProcedure()
         {
             EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            UsersRepository userRepo = new UsersRepository(ent);
-            bool loginOk = userRepo.Login(textBoxEduId.Text, passwordBox1.Password);
+            UsersRepository usersRepo = new UsersRepository(ent);
+            bool loginOk = usersRepo.Login(textBoxEduId.Text, passwordBox1.Password);
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
                 errormessage.Text = " EduId and Password are required!";
