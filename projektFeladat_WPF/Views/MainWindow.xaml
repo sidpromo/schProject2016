@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
-        xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" x:Class="projektFeladat_WPF.Views.MainWindow"
-        mc:Ignorable="d"
+        xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" xmlns:UserControls="clr-namespace:projektFeladat_WPF.UserControls" x:Class="projektFeladat_WPF.Views.MainWindow"
+        xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"    
+    mc:Ignorable="d"
         Title="First Middle Last (EduId) - AppName" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -78,7 +80,7 @@
             </TabItem>
             <TabItem Header="Subjects">
                 <Grid>
-                    
+
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -121,6 +123,8 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+                    
+                    <UserControls:ManageUsersControl HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="569"/>                    
                 </Grid>
             </TabItem>
             <TabItem Header="Search Documents">

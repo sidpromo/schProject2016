@@ -70,17 +70,25 @@
     <Compile Include="Commands\SubjectControlCommands\NextCommand.cs" />
     <Compile Include="Commands\SubjectControlCommands\PreviousCommand.cs" />
     <Compile Include="Models\SubjectInfo.cs" />
+    <Compile Include="UserControls\ManageUsersControl.xaml.cs">
+      <DependentUpon>ManageUsersControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SubjectsControl.xaml.cs">
       <DependentUpon>SubjectsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Bindable.cs" />
-    <Compile Include="ViewModels\SucjectControlViewModel.cs" />
+    <Compile Include="ViewModels\ManageUserViewModel.cs" />
+    <Compile Include="ViewModels\SucjebtControlViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestWindow.xaml.cs">
       <DependentUpon>TestWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControls\ManageUsersControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\SubjectsControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

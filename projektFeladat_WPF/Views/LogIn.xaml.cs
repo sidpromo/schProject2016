@@ -53,26 +53,32 @@ namespace projektFeladat_WPF
 
         private void LoginProcedure()
         {
-            EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            UsersRepository usersRepo = new UsersRepository(ent);
-            bool loginOk = usersRepo.Login(textBoxEduId.Text, passwordBox1.Password);
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
             {
                 errormessage.Text = " EduId and Password are required!";
                 SystemSounds.Beep.Play();
             }
-            else if (loginOk)
-            {
-                var windowToOpen = new MainWindow(textBoxEduId.Text);
-                this.Hide();
-                windowToOpen.Show();
-                return;
-            }
             else
             {
-                errormessage.Text = " Invalid EduId or Password!";
-                SystemSounds.Beep.Play();
+                EducationDatabaseEntities ent = new EducationDatabaseEntities();
+                UsersRepository userRepo = new UsersRepository(ent);
+                if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
+                {
+                    int id = userRepo.GetAll().FirstOrDefault(x => x.EduId == textBoxEduId.Text).Id;
+                    var windowToOpen = new MainWindow(id);
+                    this.Hide();
+                    windowToOpen.Show();
+
+
+                }
+                else
+                {
+                    errormessage.Text = " Invalid EduId or Password!";
+                    SystemSounds.Beep.Play();
+                }
+
             }
+
         }
 
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
