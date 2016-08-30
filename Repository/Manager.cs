@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleAppDatabaseTesting
+namespace Repository
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Teacher
+    public partial class Manager
     {
         public int Id { get; set; }
-        public Nullable<int> Rank { get; set; }
+        public string ManagerIdentifier { get; set; }
         public Nullable<int> UserId { get; set; }
     
         public virtual User User { get; set; }

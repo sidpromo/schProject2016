@@ -54,82 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EducationDatabaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EducationDatabaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EducationDatabaseModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EducationDatabaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EducationDatabaseModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Exam.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ExamsUser.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Grade.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Manager.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Message.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Semester.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Subject.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SubjectsUser.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>EducationDatabaseModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="EducationDatabaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EducationDatabaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EducationDatabaseModel.edmx.diagram">
-      <DependentUpon>EducationDatabaseModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EducationDatabaseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EducationDatabaseModel.edmx</DependentUpon>
-      <LastGenOutput>EducationDatabaseModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EducationDatabaseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EducationDatabaseModel.edmx</DependentUpon>
-      <LastGenOutput>EducationDatabaseModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

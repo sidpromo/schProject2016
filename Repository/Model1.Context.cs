@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleAppDatabaseTesting
+namespace Repository
 {
     using System;
     using System.Data.Entity;

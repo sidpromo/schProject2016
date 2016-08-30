@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="Id" />
@@ -495,7 +495,8 @@
             <End Role="Users1" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EducationDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -663,6 +664,7 @@
           <Property Name="SemesterId" Type="Int32" />
           <Property Name="SemesterState" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="EduCardId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Administrators" Relationship="Self.FK_Administrators_ToUsers" FromRole="Users" ToRole="Administrators" />
           <NavigationProperty Name="Exams" Relationship="Self.FK_Exams_ToUsers" FromRole="Users" ToRole="Exams" />
           <NavigationProperty Name="ExamsUsers" Relationship="Self.FK_ExamsUsers_ToUsers" FromRole="Users" ToRole="ExamsUsers" />
@@ -679,7 +681,6 @@
           <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_ToUsers" FromRole="Users" ToRole="Teachers" />
           <NavigationProperty Name="Users1" Relationship="Self.FK_Users_ToUsers" FromRole="Users" ToRole="Users1" />
           <NavigationProperty Name="User1" Relationship="Self.FK_Users_ToUsers" FromRole="Users1" ToRole="Users" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Administrators_ToUsers">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
@@ -1165,7 +1166,6 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="EducationDatabaseModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
                 <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
@@ -1186,6 +1186,7 @@
                 <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
                 <ScalarProperty Name="SemesterState" ColumnName="SemesterState" />
                 <ScalarProperty Name="EduCardId" ColumnName="EduCardId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
