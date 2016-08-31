@@ -14,7 +14,15 @@ namespace projektFeladat_WPF.ViewModels
 {
     public class ManageUserViewModel : Bindable
     {
-        public IEnumerable<Users> UserList { get; private set; }
+       // public IEnumerable<Users> UserList { get; private set; }
+        private IEnumerable<Users> myuserListVar;
+
+        public IEnumerable<Users> UserList
+        {
+            get { return myuserListVar; }
+            set { myuserListVar = value;OnPropertyChanged(); }
+        }
+
         private Users selectedUser;
         //public string FullName { get;  set; }
         public Users SelectedUser
@@ -37,6 +45,10 @@ namespace projektFeladat_WPF.ViewModels
 
         public void DeleteMethod()
         {
+            if (SelectedUser == null)
+            {
+                return;
+            }
             userRepo.Remove(SelectedUser);
         }
 
@@ -50,6 +62,10 @@ namespace projektFeladat_WPF.ViewModels
 
         public void EditMethod()
         {
+            if (SelectedUser==null)
+            {
+                return;
+            }
             var newWindow = new UserManagerWindow(SelectedUser);
             newWindow.Show();
         }
@@ -59,6 +75,7 @@ namespace projektFeladat_WPF.ViewModels
             List<Users> newList = new List<Users>();
             UserList = newList;
             UserList = userRepo.GetAll().Where(x => (x.UserType).ToUpper() != "ADMIN");
+            //OnPropertyChanged("UserList");
 
         }
         public ManageUserViewModel()

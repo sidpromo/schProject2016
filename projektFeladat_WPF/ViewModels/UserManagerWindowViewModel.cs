@@ -37,20 +37,26 @@ namespace projektFeladat_WPF.ViewModels
 
         public UserManagerWindowViewModel(Users userToEdit)
         {
-            EditedUser = userToEdit;
+            EditedUser = userRepo.GetById(userToEdit.Id);
+            userRepo.Remove(userRepo.GetById(userToEdit.Id));
             SaveCommand = new RelayCommand(SaveChanges);
         }
 
         public void Add()
         {
+            if (EditedUser.InsertDate==null)
+            {
+                EditedUser.InsertDate = DateTime.Now;
+            }
+            EditedUser.ModifyDate = DateTime.Now;
             userRepo.Add(EditedUser);
         }
 
         public void SaveChanges()
         {
             Add();
-            EditedUser = new Users();
-            //MessageBox.Show("User saved");
+            EditedUser = new Users();           
+            
         }
     }
 }
