@@ -123,8 +123,8 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    
-                    <UserControls:ManageUsersControl HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="569"/>                    
+                    <Label Content="User manager:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto"/>                    
                 </Grid>
             </TabItem>
             <TabItem Header="Search Documents">

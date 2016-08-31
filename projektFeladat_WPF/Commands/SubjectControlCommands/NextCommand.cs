@@ -15,6 +15,7 @@ namespace projektFeladat_WPF.Commands.SubjectControlCommands
         public NextCommand(SubjectControlViewModel viewModel)
         {
             _viewModel = viewModel;
+            
         }
         public event EventHandler CanExecuteChanged
         {

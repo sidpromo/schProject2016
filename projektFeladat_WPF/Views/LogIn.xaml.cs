@@ -69,6 +69,10 @@ namespace projektFeladat_WPF
                     this.Hide();
                     windowToOpen.Show();
 
+                    //var windowToOpen = new UserManagerWindow();
+                    //this.Hide();
+                    //windowToOpen.Show();
+
 
                 }
                 else
