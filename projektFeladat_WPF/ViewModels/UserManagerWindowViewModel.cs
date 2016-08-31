@@ -26,14 +26,19 @@ namespace projektFeladat_WPF.ViewModels
         static EducationDatabaseEntities ent = new EducationDatabaseEntities();
         static UsersRepository userRepo = new UsersRepository(ent);
 
-        public ICommand SaveCommand { get; private set; }
-        public ICommand CloseCommand { get; private set; }
+        public ICommand SaveCommand { get; private set; }        
 
         public UserManagerWindowViewModel()
         {
             EditedUser = new Users { };
             SaveCommand = new RelayCommand(SaveChanges);
                 
+        }
+
+        public UserManagerWindowViewModel(Users userToEdit)
+        {
+            EditedUser = userToEdit;
+            SaveCommand = new RelayCommand(SaveChanges);
         }
 
         public void Add()

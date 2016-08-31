@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         mc:Ignorable="d"
-        Title="UserManagerWindow" Height="485" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="UserManagerWindow" Height="485" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -48,7 +48,7 @@
             <Label Content="User state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.Active, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
         </StackPanel>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="211,415,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="211,415,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" IsCancel="True" Click="Button_Click"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="131,415,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
 
     </Grid>
