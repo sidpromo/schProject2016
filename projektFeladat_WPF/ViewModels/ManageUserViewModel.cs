@@ -50,6 +50,7 @@ namespace projektFeladat_WPF.ViewModels
                 return;
             }
             userRepo.Remove(SelectedUser);
+            RefreshMethod();
         }
 
         public void AddMethod()
