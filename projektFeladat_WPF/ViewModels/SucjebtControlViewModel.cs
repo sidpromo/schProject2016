@@ -1,6 +1,5 @@
-﻿using projektFeladat_WPF.Commands.SubjectControlCommands;
-using projektFeladat_WPF.Models;
-using Repository;
+﻿using Repository;
+using Repository.UserRepos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,72 +9,75 @@ using System.Windows.Data;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class SubjectControlViewModel:Bindable
+    class SubjectControlViewModel : Bindable
     {
-        public CollectionViewSource Collection { get; private set; }
-        private EducationDatabaseEntities _ctx;
+        private IEnumerable<Subjects> subjectList;
 
-        #region SelectedItem
-        private SubjectsUsers _selectedItem;
+        public IEnumerable<Subjects> SubjectList
+        {
+            get { return subjectList; }
+            set { subjectList = value; OnPropertyChanged(); }
+        }
 
-        public SubjectsUsers SelectedItem
+        private Subjects _selectedItem;
+
+        public Subjects SelectedItem
         {
             get { return _selectedItem; }
             set
             {
                 _selectedItem = value;
                 OnPropertyChanged();
-                ButtonAddContent = "Add";
             }
         }
+        private string teachername;
 
-        #endregion
-
-        #region ButtonAddContent Full Property
-        private string _buttonAddContent;
-        public string ButtonAddContent
+        public string TeacherName
         {
-            get
-            {
-                return _buttonAddContent;
-            }
-
-            set
-            {
-                _buttonAddContent = value;
-                OnPropertyChanged(); ;
-            }
+            get { return teachername; }
+            set { teachername = value;OnPropertyChanged(); }
         }
-        #endregion
 
-        #region Commands
-        public NextCommand NextEvent { get; private set; }
-        public PreviousCommand PreviousEvent { get; set; }
-        //public AddCommand AddEvent { get; set; }
-        //public SaveCommand SaveEvent { get; set; }
-        //public RefreshCommand RefreshEvent { get; set; }
-        #endregion
-            
+
+        public SubjectsUsers CurrentSubjectUser { get; private set; }
+        //public Teachers CurrentTeacher { get; private set; }
+        public Users CurrentUser { get; private set; }
+
+       
+
+        static EducationDatabaseEntities ent = new EducationDatabaseEntities();
+        static SubjectsRepository subjectRepo = new SubjectsRepository(ent);
+        static SubjectsUsersRepository subjectUserRepo = new SubjectsUsersRepository(ent);
+        static TeachersRepository teacherRepo = new TeachersRepository(ent);
+        static UsersRepository userRepo = new UsersRepository(ent);       
+
+        private SubjectsUsers GetSubjectUser()
+        {
+            SubjectsUsers subjUser = new SubjectsUsers();
+            subjUser = subjectUserRepo.GetAll().Where(u => u.SubjectId == SelectedItem.Id).FirstOrDefault();
+            return subjUser;
+        }
+
+        private Teachers GetTeacher()
+        {
+            Teachers teacher = new Teachers();
+            teacher = teacherRepo.GetAll().Where(t => t.UserId == GetSubjectUser().UserId).FirstOrDefault();
+            return teacher;
+        }
+
+        private string GetTeacherName()
+        {
+            string name = null;
+            CurrentUser = userRepo.GetAll().Where(u => u.Id == GetTeacher().UserId).FirstOrDefault();
+            name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";
+            return name;
+        }
         public SubjectControlViewModel()
         {
-            Collection = new CollectionViewSource();
-            LoadData();
+            SubjectList = subjectRepo.GetAll();
+            
             
         }
 
-        private void LoadData()
-        {
-            Refresh();
-            SelectedItem = Collection.View.CurrentItem as SubjectsUsers;
-            
-        }
-
-        private void Refresh()
-        {
-            _ctx = new EducationDatabaseEntities(); //TODO:betölteni a táblát
-            
-            
-
-        }
     }
 }

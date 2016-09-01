@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projektFeladat_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace projektFeladat_WPF
     /// </summary>
     public partial class SubjectsControl : UserControl
     {
+        SubjectControlViewModel VM;
         public SubjectsControl()
         {
             InitializeComponent();
+            VM = new SubjectControlViewModel();
+            (Content as FrameworkElement).DataContext = VM;
         }
     }
 }

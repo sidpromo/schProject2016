@@ -15,12 +15,12 @@ namespace projektFeladat_WPF.ViewModels
     public class ManageUserViewModel : Bindable
     {
        // public IEnumerable<Users> UserList { get; private set; }
-        private IEnumerable<Users> myuserListVar;
+        private IEnumerable<Users> userList;
 
         public IEnumerable<Users> UserList
         {
-            get { return myuserListVar; }
-            set { myuserListVar = value;OnPropertyChanged(); }
+            get { return userList; }
+            set { userList = value;OnPropertyChanged(); }
         }
 
         private Users selectedUser;
@@ -76,7 +76,7 @@ namespace projektFeladat_WPF.ViewModels
             List<Users> newList = new List<Users>();
             UserList = newList;
             UserList = userRepo.GetAll().Where(x => (x.UserType).ToUpper() != "ADMIN");
-            //OnPropertyChanged("UserList");
+            
 
         }
         public ManageUserViewModel()

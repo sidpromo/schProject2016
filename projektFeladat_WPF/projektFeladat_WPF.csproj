@@ -68,9 +68,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Commands\SubjectControlCommands\NextCommand.cs" />
-    <Compile Include="Commands\SubjectControlCommands\PreviousCommand.cs" />
-    <Compile Include="Models\SubjectInfo.cs" />
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
     </Compile>

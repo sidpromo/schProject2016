@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         mc:Ignorable="d"
-        Title="UserManagerWindow" Height="485" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="UserManagerWindow" Height="503" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Height="410" VerticalAlignment="Top" >
+        <StackPanel Grid.Column="0" Height="456" VerticalAlignment="Top" >
             <Label Content="Fistname:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.FirstName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
@@ -28,6 +28,8 @@
             <TextBox Text="{Binding EditedUser.BirthDate, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.BirthPlace, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Email:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.Email, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
 
         </StackPanel>
         <StackPanel Grid.Column="1" Height="410" VerticalAlignment="Top" >
@@ -45,11 +47,11 @@
             <TextBox Text="{Binding EditedUser.SemesterId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.SemesterState, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
-            <Label Content="User state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <Label Content="Active user:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.Active, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
         </StackPanel>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="211,415,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" IsCancel="True" Click="Button_Click"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="131,415,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="206,431,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" IsCancel="True" Click="Button_Click"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="126,431,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
 
     </Grid>
 </Window>
