@@ -25,6 +25,8 @@ namespace Repository
         public int Id { get; set; }
         public string SubjectName { get; set; }
         public Nullable<int> SemesterId { get; set; }
+        public Nullable<byte> Credits { get; set; }
+        public string SubjectCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Exams> Exams { get; set; }
