@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="Id" />
@@ -99,6 +99,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SubjectName" Type="varchar" MaxLength="50" />
           <Property Name="SemesterId" Type="int" />
+          <Property Name="Credits" Type="tinyint" />
+          <Property Name="SubjectCode" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="SubjectsUsers">
           <Key>
@@ -495,8 +497,7 @@
             <End Role="Users1" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EducationDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -616,6 +617,8 @@
           <NavigationProperty Name="Grades" Relationship="Self.FK_Grades_ToSubjects" FromRole="Subjects" ToRole="Grades" />
           <NavigationProperty Name="Semesters" Relationship="Self.FK_Subjects_ToSemesters" FromRole="Subjects" ToRole="Semesters" />
           <NavigationProperty Name="SubjectsUsers" Relationship="Self.FK_SubjectsUsers_ToSubjects" FromRole="Subjects" ToRole="SubjectsUsers" />
+          <Property Name="Credits" Type="Byte" />
+          <Property Name="SubjectCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SubjectsUsers">
           <Key>
@@ -1136,6 +1139,8 @@
           <EntitySetMapping Name="Subjects">
             <EntityTypeMapping TypeName="EducationDatabaseModel.Subjects">
               <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="SubjectCode" ColumnName="SubjectCode" />
+                <ScalarProperty Name="Credits" ColumnName="Credits" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
                 <ScalarProperty Name="SemesterId" ColumnName="SemesterId" />
