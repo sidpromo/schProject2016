@@ -7,7 +7,7 @@
         xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" xmlns:UserControls="clr-namespace:projektFeladat_WPF.UserControls" x:Class="projektFeladat_WPF.Views.MainWindow"
         xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"    
     mc:Ignorable="d"
-        Title="First Middle Last (EduId) - AppName" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="- EducationDatabase v0.2" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     
     <Grid>
         <Grid.Background>
@@ -18,11 +18,7 @@
         </Grid.Background>
         <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch">
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="169*"/>
-                        <ColumnDefinition Width="275*"/>
-                    </Grid.ColumnDefinitions>
+                <Grid>                    
                     <Grid.RowDefinitions>
                         <RowDefinition Height="17*"/>
                         <RowDefinition Height="128*"/>
@@ -34,7 +30,7 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
                     <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
@@ -46,29 +42,26 @@
                     <Label Content="Nationality" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
                     <Label Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="SemesterID:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
-                    <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1" Grid.Column="1"/>
-                    <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,7,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,97,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,157,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,217,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,247,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="104,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="104,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="Auto" Grid.Column="1"/>
+                    <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,7,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.FirstName}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MiddleName}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.LastName}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,97,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.EduId}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Email}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,157,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MothersName}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthDate}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,217,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthPlace}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,247,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Nationality}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.PersonalId}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MedicalCardId}" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.UserType}" VerticalAlignment="Top" Width="150"/>
                 </Grid>
 
 
             </TabItem>
             <TabItem Header="Semester info" >
                 <Grid>
+                    
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -79,8 +72,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Subjects">
-                <Grid>
-
+                <Grid>                    
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -88,12 +80,18 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401"/>
-                    <Label Content="Subjects:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Subjects:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
+                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401" />
+                    
                 </Grid>
             </TabItem>
             <TabItem Header="Exams">
+                
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="17*"/>
+                        <RowDefinition Height="128*"/>
+                    </Grid.RowDefinitions>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -116,6 +114,7 @@
             </TabItem>
             <TabItem Header="Manage users">
                 <Grid>
+                    
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -123,8 +122,8 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    
-                    <UserControls:ManageUsersControl HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="569"/>                    
+                    <Label Content="User manager:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
+                    <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto" />                    
                 </Grid>
             </TabItem>
             <TabItem Header="Search Documents">
@@ -140,7 +139,7 @@
             </TabItem>
         </TabControl>
         <Label Content="You are logged in as:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="14"/>
-        <Label x:Name="currentUserLabel" Content="First Middle Last (EduId)" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
+        <Label x:Name="currentUserLabel" Content="{Binding CurrentUserInfo}" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
 
 
     </Grid>

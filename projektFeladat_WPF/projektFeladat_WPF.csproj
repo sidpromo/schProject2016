@@ -67,9 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\SubjectControlCommands\NextCommand.cs" />
-    <Compile Include="Commands\SubjectControlCommands\PreviousCommand.cs" />
-    <Compile Include="Models\SubjectInfo.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
     </Compile>
@@ -77,13 +75,15 @@
       <DependentUpon>SubjectsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Bindable.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManageUserViewModel.cs" />
     <Compile Include="ViewModels\SucjebtControlViewModel.cs" />
+    <Compile Include="ViewModels\UserManagerWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TestWindow.xaml.cs">
-      <DependentUpon>TestWindow.xaml</DependentUpon>
+    <Compile Include="Views\UserManagerWindow.xaml.cs">
+      <DependentUpon>UserManagerWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControls\ManageUsersControl.xaml">
       <SubType>Designer</SubType>
@@ -109,7 +109,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TestWindow.xaml">
+    <Page Include="Views\UserManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

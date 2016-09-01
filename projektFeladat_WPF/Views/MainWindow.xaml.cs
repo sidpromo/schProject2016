@@ -1,4 +1,6 @@
-﻿using Repository;
+﻿using projektFeladat_WPF.UserControls;
+using projektFeladat_WPF.ViewModels;
+using Repository;
 using Repository.UserRepos;
 using System;
 using System.Collections.Generic;
@@ -28,9 +30,8 @@ namespace projektFeladat_WPF.Views
             UsersRepository userRepo = new UsersRepository(ent);
             Users currentUser = userRepo.GetById(CurrentUserId);
 
-            string currentUserInfo = String.Format("{0} {1} {2} ({3})", currentUser.FirstName, currentUser.MiddleName, currentUser.LastName, currentUser.EduId);
-            this.Title = currentUserInfo + "- EducationDatabase v0.2";
-            currentUserLabel.Content = currentUserInfo;
+            MainWindowViewModel VM = new MainWindowViewModel(CurrentUserId);
+            DataContext = VM;         
         }
     }
 }

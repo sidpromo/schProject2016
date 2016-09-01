@@ -6,23 +6,36 @@
              xmlns:local="clr-namespace:projektFeladat_WPF.UserControls" 
              xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"
              mc:Ignorable="d"             
-             Height="378.587" Width="568.173">
-    <Grid>
+             d:DesignHeight="378.587" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="592.173">
+    <Grid Margin="0,0,10,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
-        <ListBox HorizontalAlignment="Stretch" Height="auto " Margin="10,10,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path=UserList}" SelectedItem="{Binding Path=SelectedUser}"  />
-        <Label Content="Name:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Usertype:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
-        <Label Content="EduID:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
+        <!--<ListBox HorizontalAlignment="Stretch" Height="auto " Margin="10,10,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path=UserList}" SelectedItem="{Binding Path=SelectedUser}" DisplayMemberPath="EduId" />-->
+        <DataGrid x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"  RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}">
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
+                <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>
+                <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Lastname" Width="Auto"/>-->
+                <DataGridTextColumn x:Name="eduIdColumn" Binding="{Binding EduId}" Header="EduID" Width="Auto"/>
+                <DataGridTextColumn x:Name="userTypeColumn" Binding="{Binding UserType}" Header="Usertype" Width="Auto"/>
+                <DataGridTextColumn x:Name="userStateColumn" Binding="{Binding Active}" Header="Userstate" Width="Auto"/>
+                <DataGridTextColumn x:Name="insertDateColumn" Binding="{Binding InsertDate}" Header="Inserted" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Fisrtname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lastname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="Middlename:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,36,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.FirstName}"   VerticalAlignment="Top" Width="Auto" />
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,95,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.UserType}" VerticalAlignment="Top" Width="Auto"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,154,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.EduId}" VerticalAlignment="Top" Width="Auto"/>
-        <Button Content="Add" Grid.Column="1" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Edit" Grid.Column="1" HorizontalAlignment="Left" Margin="90,346,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="170,346,-9,0" VerticalAlignment="Top" Width="75"/>
-
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,154,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.LastName}" VerticalAlignment="Top" Width="Auto"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="22" Margin="10,213,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.Email}" VerticalAlignment="Top" Width="Auto"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,95,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.MiddleName}"   VerticalAlignment="Top" Width="Auto" />
+        <Button Content="Add" Grid.Column="1" Margin="0,346,167,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=AddUserCommand}"/>
+        <Button Content="Edit" Grid.Column="1" Margin="0,346,87,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=EditUserCommand}" />
+        <Button Content="Delete" Grid.Column="1" Margin="0,346,7,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=DeleteUserCommand}"/>
+        <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=RefreshComnand}"/>
 
     </Grid>
 </UserControl>

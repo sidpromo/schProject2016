@@ -1,0 +1,57 @@
+﻿<Window x:Class="projektFeladat_WPF.Views.UserManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projektFeladat_WPF.Views"
+        mc:Ignorable="d"
+        Title="UserManagerWindow" Height="503" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Height="456" VerticalAlignment="Top" >
+            <Label Content="Fistname:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.FirstName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.MiddleName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.LastName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+            <Label Content="EduID:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.EduId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Password:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+            <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.UserType, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Birthdate::" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.BirthDate, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.BirthPlace, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Email:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.Email, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Height="410" VerticalAlignment="Top" >
+            <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.MothersName, Mode=TwoWay}"  HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Nationality:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.Nationality, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.PersonalId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label  Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.MedicalCardId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.EduCardId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="SemesterID:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.SemesterId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.SemesterState, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Content="Active user:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding EditedUser.Active, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+        </StackPanel>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="206,431,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" IsCancel="True" Click="Button_Click"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="126,431,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Command="{Binding Path=SaveCommand}"/>
+
+    </Grid>
+</Window>
