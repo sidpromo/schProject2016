@@ -51,27 +51,7 @@ namespace projektFeladat_WPF.ViewModels
         static TeachersRepository teacherRepo = new TeachersRepository(ent);
         static UsersRepository userRepo = new UsersRepository(ent);       
 
-        private SubjectsUsers GetSubjectUser()
-        {
-            SubjectsUsers subjUser = new SubjectsUsers();
-            subjUser = subjectUserRepo.GetAll().Where(u => u.SubjectId == SelectedItem.Id).FirstOrDefault();
-            return subjUser;
-        }
-
-        private Teachers GetTeacher()
-        {
-            Teachers teacher = new Teachers();
-            teacher = teacherRepo.GetAll().Where(t => t.UserId == GetSubjectUser().UserId).FirstOrDefault();
-            return teacher;
-        }
-
-        private string GetTeacherName()
-        {
-            string name = null;
-            CurrentUser = userRepo.GetAll().Where(u => u.Id == GetTeacher().UserId).FirstOrDefault();
-            name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";
-            return name;
-        }
+      
         public SubjectControlViewModel()
         {
             SubjectList = subjectRepo.GetAll();
