@@ -61,20 +61,16 @@ namespace projektFeladat_WPF
             }
             else
             {
-                EducationDatabaseEntities ent = new EducationDatabaseEntities();
-                UsersRepository userRepo = new UsersRepository(ent);
-                IService service = new Service();
                 
-                if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
+                IService service = new Service();
+                string eduId = textBoxEduId.Text, password = passwordBox1.Password;
+
+                if (service.Login(eduId,password))
                 {
-                    int id = userRepo.GetAll().FirstOrDefault(x => x.EduId == textBoxEduId.Text).Id;
+                    int id =service.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
                     var windowToOpen = new MainWindow(id);                    
                     windowToOpen.Show();
                     this.Close();
-
-
-
-
                 }
                 else
                 {
