@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Data.Entity;
 using Entities;
+using System;
 
 namespace Repository
 {
@@ -8,6 +9,26 @@ namespace Repository
     {
         public SubjectsUsersRepository(DbContext context) : base(context)
         {
+        }
+
+        public string GetSubjectTeacherName(Subjects subject)
+        {
+            SubjectsUsers subjUser = new SubjectsUsers();
+            subjUser = GetAll().Where(u => u.SubjectId == subject.Id).FirstOrDefault();
+
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            TeachersRepository teacherRepo = new TeachersRepository(ent);
+            UsersRepository userRepo = new UsersRepository(ent);
+
+            Teachers teacher = new Teachers();
+            teacher = teacherRepo.GetAll().Where(t => t.UserId == subjUser.UserId).FirstOrDefault();
+            if (teacher.UserId != null)
+            {
+                Users CurrentUser = userRepo.GetAll().Where(u => u.Id == teacher.UserId).FirstOrDefault();
+                string name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";
+                return name;
+            }
+            return null;
         }
 
         /// <summary>

@@ -165,6 +165,8 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<SubjectsUsers> GetAllSubjectsUsers();
         [OperationContract]
+        string GetSubjectTeacherName(Subjects subject);
+        [OperationContract]
         SubjectsUsers GetSubjectsUserById(int entityToGetById);
         [OperationContract]
         int GetIdOfSubjectsUser(SubjectsUsers entityToGetId);

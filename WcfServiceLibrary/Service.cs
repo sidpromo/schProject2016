@@ -6,11 +6,18 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Entities;
+using Repository;
 
 namespace WcfServiceLibrary
 {
     public class Service : IService
     {
+
+        private EducationDatabaseEntities getEntities()
+        {
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            return ent;
+        }
 
         /*
         public CompositeType GetDataUsingDataContract(CompositeType composite)
@@ -28,437 +35,530 @@ namespace WcfServiceLibrary
         */
         public void AddAdministrator(Administrators entityToAdd)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddExam(Exams entityToAdd)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddExamsUser(ExamsUsers entityToAdd)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddGrade(Grades entityToAdd)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddManager(Managers entityToAdd)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddMessage(Messages entityToAdd)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddSemester(Semesters entityToAdd)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddStudent(Students entityToAdd)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddSubject(Subjects entityToAdd)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddSubjectsUser(SubjectsUsers entityToAdd)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddTeacher(Teachers entityToAdd)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public void AddUser(Users entityToAdd)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            repo.Add(entityToAdd);
         }
 
         public IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.Find(filterPredicate);
         }
 
         public Administrators GetAdministratorById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public IEnumerable<Administrators> GetAllAdministrators()
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Exams> GetAllExams()
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<ExamsUsers> GetAllExamsUsers()
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Grades> GetAllGrades()
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Managers> GetAllManagers()
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Messages> GetAllMessages()
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Semesters> GetAllSemesters()
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Students> GetAllStudents()
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Subjects> GetAllSubjects()
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<SubjectsUsers> GetAllSubjectsUsers()
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Teachers> GetAllTeachers()
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public IEnumerable<Users> GetAllUsers()
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.GetAll();
         }
 
         public Exams GetExamById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public ExamsUsers GetExamsUserById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public Grades GetGradeById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public int GetIdOfAdministrator(Administrators entityToGetId)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            return repo.GetAdminId(entityToGetId);
         }
 
         public int GetIdOfExam(Exams entityToGetId)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            return repo.GetExamId(entityToGetId);
         }
 
         public int GetIdOfExamsUser(ExamsUsers entityToGetId)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            return repo.GetExamUserId(entityToGetId);
         }
 
         public int GetIdOfGrade(Grades entityToGetId)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            return repo.GetGradeId(entityToGetId);
         }
 
         public int GetIdOfManager(Managers entityToGetId)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            return repo.GetManagerId(entityToGetId);
         }
 
         public int GetIdOfMessage(Messages entityToGetId)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.GetMessageId(entityToGetId);
         }
 
         public int GetIdOfSemester(Semesters entityToGetId)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            return repo.GetSemesterId(entityToGetId);
         }
 
         public int GetIdOfStudent(Students entityToGetId)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            return repo.GetStudentId(entityToGetId);
         }
 
         public int GetIdOfSubject(Subjects entityToGetId)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            return repo.GetSubjectId(entityToGetId);
         }
 
         public int GetIdOfSubjectsUser(SubjectsUsers entityToGetId)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetSubjectUserId(entityToGetId);
         }
 
         public int GetIdOfTeacher(Teachers entityToGetId)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            return repo.GetTeacherId(entityToGetId);
         }
 
         public int GetIdOfUser(Users entityToGetId)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.GetUserId(entityToGetId);
         }
 
         public Managers GetManagerById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public Messages GetMessageById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public Semesters GetSemesterById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public Students GetStudentById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public Subjects GetSubjectById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public SubjectsUsers GetSubjectsUserById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetById(entityToGetById);
+        }
+
+        public string GetSubjectTeacherName(Subjects subject)
+        {
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetSubjectTeacherName(subject);
         }
 
         public Teachers GetTeacherById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public IEnumerable<Users> GetTeachersFromUsers()
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.GetTeachersFromUsers();
         }
 
         public Users GetUserById(int entityToGetById)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.GetById(entityToGetById);
         }
 
         public int GetUserId(Users user)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.GetUserId(user);
         }
 
         public bool Login(string eduId, string password)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            return repo.Login(eduId, password);
         }
 
         public void RemoveAdministrator(Administrators entityToRemove)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveAdministratorById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveExam(Exams entityToRemove)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveExamById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveExamsUser(ExamsUsers entityToRemove)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveExamsUserById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveGrade(Grades entityToRemove)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveGradeById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IGradesRepository repo = new GradesRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveManager(Managers entityToRemove)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveManagerById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveMessage(Messages entityToRemove)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveMessageById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveSemester(Semesters entityToRemove)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveSemesterById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveStudent(Students entityToRemove)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveStudentById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveSubject(Subjects entityToRemove)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveSubjectById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveSubjectsUser(SubjectsUsers entityToRemove)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveSubjectsUserById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveTeacher(Teachers entityToRemove)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveTeacherById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
 
         public void RemoveUser(Users entityToRemove)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            repo.Remove(entityToRemove);
         }
 
         public void RemoveUserById(int entityToRemoveById)
         {
-            throw new NotImplementedException();
+            IUsersRepository repo = new UsersRepository(getEntities());
+            repo.RemoveById(entityToRemoveById);
         }
     }
 }
