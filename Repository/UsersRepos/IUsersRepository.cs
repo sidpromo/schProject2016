@@ -11,5 +11,6 @@ namespace Repository.UserRepos
     {
         bool Login(string eduId, string password);
         int GetUserId(Users user);
+        IEnumerable<Users> GetTeachers();
     }
 }

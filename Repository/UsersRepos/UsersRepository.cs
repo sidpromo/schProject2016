@@ -14,6 +14,11 @@ namespace Repository.UserRepos
         {
         }
 
+        public IEnumerable<Users> GetTeachers()
+        {
+            return GetAll().Where(x => x.UserType == "Teacher");
+        }
+
         /// <summary>
         /// A megadott user id-ját adja vissza.
         /// </summary>
