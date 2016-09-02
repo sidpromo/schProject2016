@@ -78,10 +78,14 @@
     <Compile Include="ViewModels\Bindable.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManageUserViewModel.cs" />
+    <Compile Include="ViewModels\SubjectManagerWindowViewModel.cs" />
     <Compile Include="ViewModels\SucjebtControlViewModel.cs" />
     <Compile Include="ViewModels\UserManagerWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubjectManagerWindow.xaml.cs">
+      <DependentUpon>SubjectManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserManagerWindow.xaml.cs">
       <DependentUpon>UserManagerWindow.xaml</DependentUpon>
@@ -107,6 +111,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubjectManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,11 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{68bdea95-9bdd-49d5-8b81-cf8a21cb53f1}</Project>
+      <Project>{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}</Project>
       <Name>Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WcfServiceLibrary\WcfServiceLibrary.csproj">
+      <Project>{91f4cadb-871d-42f9-8644-284402712a8f}</Project>
+      <Name>WcfServiceLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

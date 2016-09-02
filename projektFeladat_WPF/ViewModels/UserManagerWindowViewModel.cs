@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
@@ -23,8 +24,9 @@ namespace projektFeladat_WPF.ViewModels
         }
 
 
-        static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        static UsersRepository userRepo = new UsersRepository(ent);
+        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
+        //static IUsersRepository userRepo = new UsersRepository(ent);
+        IService _service = new Service();
 
         public ICommand SaveCommand { get; private set; }        
 
@@ -37,8 +39,10 @@ namespace projektFeladat_WPF.ViewModels
 
         public UserManagerWindowViewModel(Users userToEdit)
         {
-            EditedUser = userRepo.GetById(userToEdit.Id);
-            userRepo.Remove(userRepo.GetById(userToEdit.Id));
+            EditedUser = _service.GetUserById(userToEdit.Id);
+            _service.RemoveUser(_service.GetUserById(userToEdit.Id));
+            //userRepo.GetById(userToEdit.Id);
+            //userRepo.Remove(userRepo.GetById(userToEdit.Id));
             SaveCommand = new RelayCommand(SaveChanges);
         }
 
@@ -49,7 +53,7 @@ namespace projektFeladat_WPF.ViewModels
                 EditedUser.InsertDate = DateTime.Now;
             }
             EditedUser.ModifyDate = DateTime.Now;
-            userRepo.Add(EditedUser);
+            _service.AddUser(EditedUser);
         }
 
         public void SaveChanges()

@@ -16,7 +16,7 @@
                 <GradientStop Color="#FFF02F63"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch">
+        <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch" >
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
                 <Grid>                    
                     <Grid.RowDefinitions>
@@ -81,8 +81,7 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                     <Label Content="Subjects:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
-                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401" />
-                    
+                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401" />                    
                 </Grid>
             </TabItem>
             <TabItem Header="Exams">

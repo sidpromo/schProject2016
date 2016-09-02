@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.Views
 {
@@ -26,12 +27,14 @@ namespace projektFeladat_WPF.Views
         public MainWindow(int CurrentUserId)
         {
             InitializeComponent(); // random comment
-            EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            UsersRepository userRepo = new UsersRepository(ent);
-            Users currentUser = userRepo.GetById(CurrentUserId);
+            //EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            //UsersRepository userRepo = new UsersRepository(ent);
+            IService service = new Service();
+            Users currentUser = service.GetUserById(CurrentUserId);
 
             MainWindowViewModel VM = new MainWindowViewModel(CurrentUserId);
             DataContext = VM;         
+            
         }
     }
 }
