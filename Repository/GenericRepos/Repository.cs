@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Repository.GenericRepos
+namespace Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

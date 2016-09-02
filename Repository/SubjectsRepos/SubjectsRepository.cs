@@ -1,13 +1,8 @@
-﻿using Repository.GenericRepos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Data.Entity;
 using Entities;
 
-namespace Repository.UserRepos
+namespace Repository
 {
     public class SubjectsRepository : Repository<Subjects>, ISubjectsRepository
     {
