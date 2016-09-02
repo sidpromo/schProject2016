@@ -1,4 +1,5 @@
 ﻿using Entities;
+using projektFeladat_WPF.Commands;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -34,19 +35,39 @@ namespace projektFeladat_WPF.ViewModels
         {
             get { return editedSubject; }
             set { editedSubject = value;OnPropertyChanged(); }
-        }
-
-        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        //ISubjectsRepository subjectRepo = new SubjectsRepository(ent);
-        //IUsersRepository userRepo = new UsersRepository(ent);
+        }       
 
         IService _service = new Service();
 
         public ICommand SaveCommand { get; private set; }
 
+        void CommonMethods()
+        {
+            TeacherList = _service.GetTeachersFromUsers();
+            SaveCommand = new RelayCommand(SaveMethod);
+        }
+
         public SubjectManagerWindowViewModel()
         {
-            //TeacherList = _service();
+            CommonMethods();
+            EditedSubject = new Subjects();
+        }
+       
+        public SubjectManagerWindowViewModel(Subjects subjectToEdit)
+        {
+            CommonMethods();
+            EditedSubject = subjectToEdit;
+            _service.RemoveSubject(_service.GetSubjectById(subjectToEdit.Id));
+        }
+        void Add()
+        {
+            _service.AddSubject(EditedSubject);
+            //TODO: Regisztrálni tanárt hozzá!!!!
+        }
+        void SaveMethod()
+        {
+            Add();
+            EditedSubject = new Subjects();
         }
 
     }

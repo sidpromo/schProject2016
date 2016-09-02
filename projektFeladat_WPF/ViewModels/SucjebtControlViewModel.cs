@@ -1,11 +1,15 @@
 ﻿using Entities;
+using projektFeladat_WPF.Commands;
+using projektFeladat_WPF.Views;
 using Repository;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Windows.Input;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
@@ -31,34 +35,60 @@ namespace projektFeladat_WPF.ViewModels
                 OnPropertyChanged();
             }
         }
-        private string teachername;
 
-        public string TeacherName
-        {
-            get { return teachername; }
-            set { teachername = value;OnPropertyChanged(); }
-        }
+        public ICommand AddCommand { get; private set; }
+        public ICommand EdiCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
+        public ICommand RefreshCommand { get; private set; }
 
 
-        public SubjectsUsers CurrentSubjectUser { get; private set; }
-        //public Teachers CurrentTeacher { get; private set; }
-        public Users CurrentUser { get; private set; }
-
-
-
-        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        //static SubjectsRepository subjectRepo = new SubjectsRepository(ent);
-        //static SubjectsUsersRepository subjectUserRepo = new SubjectsUsersRepository(ent);
-        //static TeachersRepository teacherRepo = new TeachersRepository(ent);
-        //static UsersRepository userRepo = new UsersRepository(ent);       
         IService _service = new Service();
-      
+
         public SubjectControlViewModel()
         {
-            SubjectList = _service.GetAllSubjects();
-            
-            
+            RefreshMethod();
+            RefreshCommand = new RelayCommand(RefreshMethod);
+            AddCommand = new RelayCommand(AddMethod);
+            EdiCommand = new RelayCommand(EditMethod);
+            DeleteCommand = new RelayCommand(DeleteMethod);
         }
 
+        void RefreshMethod()
+        {
+            List<Subjects> newList = new List<Subjects>();
+            SubjectList = newList;
+            SubjectList = _service.GetAllSubjects();
+        }
+
+        public void AddMethod()
+        {
+            var newWindow = new SubjectManagerWindow();
+            newWindow.Show();
+        }
+
+        public void EditMethod()
+        {
+            if (SelectedItem == null)
+            {
+                return;
+            }
+            var newWindow = new SubjectManagerWindow(SelectedItem);
+            newWindow.Show();
+        }
+
+        public void DeleteMethod()
+        {
+            if (SelectedItem == null)
+            {
+                return;
+            }
+            _service.RemoveSubject(SelectedItem);
+            RefreshMethod();
+        }
+
+        void MoveNextMethod()
+        {
+            
+        }
     }
 }

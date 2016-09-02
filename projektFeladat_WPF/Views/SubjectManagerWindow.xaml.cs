@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entities;
+using projektFeladat_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,25 @@ namespace projektFeladat_WPF.Views
     /// </summary>
     public partial class SubjectManagerWindow : Window
     {
+        SubjectManagerWindowViewModel VM;
         public SubjectManagerWindow()
         {
             InitializeComponent();
+            VM = new SubjectManagerWindowViewModel();
+            DataContext = VM;
+
+        }
+
+        public SubjectManagerWindow(Subjects subjectToEdit)
+        {
+            InitializeComponent();
+            VM = new SubjectManagerWindowViewModel(subjectToEdit);
+            DataContext = VM;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

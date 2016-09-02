@@ -23,16 +23,14 @@ namespace projektFeladat_WPF.ViewModels
             set { editedUser = value;OnPropertyChanged(); }
         }
 
-
-        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        //static IUsersRepository userRepo = new UsersRepository(ent);
+                
         IService _service = new Service();
 
         public ICommand SaveCommand { get; private set; }        
 
         public UserManagerWindowViewModel()
         {
-            EditedUser = new Users { };
+            EditedUser = new Users();
             SaveCommand = new RelayCommand(SaveChanges);
                 
         }
@@ -40,9 +38,7 @@ namespace projektFeladat_WPF.ViewModels
         public UserManagerWindowViewModel(Users userToEdit)
         {
             EditedUser = _service.GetUserById(userToEdit.Id);
-            _service.RemoveUser(_service.GetUserById(userToEdit.Id));
-            //userRepo.GetById(userToEdit.Id);
-            //userRepo.Remove(userRepo.GetById(userToEdit.Id));
+            _service.RemoveUser(_service.GetUserById(userToEdit.Id));           ;
             SaveCommand = new RelayCommand(SaveChanges);
         }
 

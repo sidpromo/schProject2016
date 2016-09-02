@@ -59,8 +59,6 @@ namespace projektFeladat_WPF.ViewModels
         {
             var newWindow = new UserManagerWindow();
             newWindow.Show();
-           
-
         }
 
         public void EditMethod()
@@ -78,24 +76,14 @@ namespace projektFeladat_WPF.ViewModels
             List<Users> newList = new List<Users>();
             UserList = newList;
            UserList =_service.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
-            //UserList = userRepo.GetAll();
-
-
-
         }
         public ManageUserViewModel()
         {
-            //EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            //UsersRepository userRepo = new UsersRepository(ent);
-            //UserList = userRepo.GetAll().Where(x=>(x.UserType).ToUpper()!="ADMIN");
             RefreshMethod();
             DeleteUserCommand = new RelayCommand(DeleteMethod);
             AddUserCommand = new RelayCommand(AddMethod);
             RefreshComnand = new RelayCommand(RefreshMethod);
             EditUserCommand = new RelayCommand(EditMethod);
-
         }
-
-
     }
 }
