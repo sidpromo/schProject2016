@@ -73,6 +73,9 @@
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MessagesUserControl.xaml.cs">
+      <DependentUpon>MessagesUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PersonalInfoUserControl.xaml.cs">
       <DependentUpon>PersonalInfoUserControl.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <DependentUpon>UserManagerWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControls\ManageUsersControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MessagesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
