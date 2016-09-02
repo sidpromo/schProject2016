@@ -1,7 +1,7 @@
-﻿using projektFeladat_WPF.Commands;
+﻿using Entities;
+using projektFeladat_WPF.Commands;
 using projektFeladat_WPF.Views;
 using Repository;
-using Repository.UserRepos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

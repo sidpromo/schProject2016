@@ -1,4 +1,5 @@
-﻿using projektFeladat_WPF.ViewModels;
+﻿using Entities;
+using projektFeladat_WPF.ViewModels;
 using Repository;
 using System;
 using System.Collections.Generic;

@@ -12,7 +12,6 @@ namespace WcfServiceLibrary
     public class Service : IService
     {
 
-
         /*
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
@@ -29,7 +28,7 @@ namespace WcfServiceLibrary
         */
         public void AddAdministrator(Administrators entityToAdd)
         {
-            using(Repository.)
+            throw new NotImplementedException();
         }
 
         public void AddExam(Exams entityToAdd)
@@ -83,126 +82,6 @@ namespace WcfServiceLibrary
         }
 
         public void AddUser(Users entityToAdd)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditAdministrator(Administrators entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditAdministratorById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditExam(Exams entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditExamById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditExamsUser(ExamsUsers entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditExamsUserById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditGrade(Grades entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditGradeById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditManager(Managers entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditManagerById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditMessage(Messages entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditMessageById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSemester(Semesters entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSemesterById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditStudent(Students entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditStudentById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSubject(Subjects entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSubjectById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSubjectsUser(SubjectsUsers entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditSubjectsUserById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditTeacher(Teachers entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditTeacherById(int entityToEditById)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditUser(Users entityToEdit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EditUserById(int entityToEditById)
         {
             throw new NotImplementedException();
         }

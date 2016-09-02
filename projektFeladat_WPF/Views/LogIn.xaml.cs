@@ -16,8 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
 using Repository;
-using Repository.UserRepos;
 using WcfServiceLibrary;
+using Entities;
 
 namespace projektFeladat_WPF
 {

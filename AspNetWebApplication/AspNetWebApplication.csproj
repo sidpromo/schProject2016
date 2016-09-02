@@ -288,6 +288,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Entities.csproj">
+      <Project>{EA89D1CB-F926-4A49-8A27-4F91FF41411F}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{68bdea95-9bdd-49d5-8b81-cf8a21cb53f1}</Project>
       <Name>Repository</Name>

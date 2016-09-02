@@ -9,8 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AspNetWebApplication.Models;
-using Repository.UserRepos;
 using Repository;
+using Entities;
 
 namespace AspNetWebApplication.Controllers
 {

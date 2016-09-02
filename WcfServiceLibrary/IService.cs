@@ -19,10 +19,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate);
         [OperationContract]
-        void EditAdministrator(Administrators entityToEdit);
-        [OperationContract]
-        void EditAdministratorById(int entityToEditById);
-        [OperationContract]
         IEnumerable<Administrators> GetAllAdministrators();
         [OperationContract]
         Administrators GetAdministratorById(int entityToGetById);
@@ -38,10 +34,6 @@ namespace WcfServiceLibrary
         void AddExam(Exams entityToAdd);
         [OperationContract]
         IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate);
-        [OperationContract]
-        void EditExam(Exams entityToEdit);
-        [OperationContract]
-        void EditExamById(int entityToEditById);
         [OperationContract]
         IEnumerable<Exams> GetAllExams();
         [OperationContract]
@@ -59,10 +51,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate);
         [OperationContract]
-        void EditExamsUser(ExamsUsers entityToEdit);
-        [OperationContract]
-        void EditExamsUserById(int entityToEditById);
-        [OperationContract]
         IEnumerable<ExamsUsers> GetAllExamsUsers();
         [OperationContract]
         ExamsUsers GetExamsUserById(int entityToGetById);
@@ -78,10 +66,6 @@ namespace WcfServiceLibrary
         void AddGrade(Grades entityToAdd);
         [OperationContract]
         IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate);
-        [OperationContract]
-        void EditGrade(Grades entityToEdit);
-        [OperationContract]
-        void EditGradeById(int entityToEditById);
         [OperationContract]
         IEnumerable<Grades> GetAllGrades();
         [OperationContract]
@@ -99,10 +83,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate);
         [OperationContract]
-        void EditManager(Managers entityToEdit);
-        [OperationContract]
-        void EditManagerById(int entityToEditById);
-        [OperationContract]
         IEnumerable<Managers> GetAllManagers();
         [OperationContract]
         Managers GetManagerById(int entityToGetById);
@@ -118,10 +98,6 @@ namespace WcfServiceLibrary
         void AddMessage(Messages entityToAdd);
         [OperationContract]
         IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate);
-        [OperationContract]
-        void EditMessage(Messages entityToEdit);
-        [OperationContract]
-        void EditMessageById(int entityToEditById);
         [OperationContract]
         IEnumerable<Messages> GetAllMessages();
         [OperationContract]
@@ -139,10 +115,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate);
         [OperationContract]
-        void EditSemester(Semesters entityToEdit);
-        [OperationContract]
-        void EditSemesterById(int entityToEditById);
-        [OperationContract]
         IEnumerable<Semesters> GetAllSemesters();
         [OperationContract]
         Semesters GetSemesterById(int entityToGetById);
@@ -158,10 +130,6 @@ namespace WcfServiceLibrary
         void AddStudent(Students entityToAdd);
         [OperationContract]
         IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate);
-        [OperationContract]
-        void EditStudent(Students entityToEdit);
-        [OperationContract]
-        void EditStudentById(int entityToEditById);
         [OperationContract]
         IEnumerable<Students> GetAllStudents();
         [OperationContract]
@@ -179,10 +147,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate);
         [OperationContract]
-        void EditSubject(Subjects entityToEdit);
-        [OperationContract]
-        void EditSubjectById(int entityToEditById);
-        [OperationContract]
         IEnumerable<Subjects> GetAllSubjects();
         [OperationContract]
         Subjects GetSubjectById(int entityToGetById);
@@ -198,10 +162,6 @@ namespace WcfServiceLibrary
         void AddSubjectsUser(SubjectsUsers entityToAdd);
         [OperationContract]
         IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate);
-        [OperationContract]
-        void EditSubjectsUser(SubjectsUsers entityToEdit);
-        [OperationContract]
-        void EditSubjectsUserById(int entityToEditById);
         [OperationContract]
         IEnumerable<SubjectsUsers> GetAllSubjectsUsers();
         [OperationContract]
@@ -219,10 +179,6 @@ namespace WcfServiceLibrary
         [OperationContract]
         IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate);
         [OperationContract]
-        void EditTeacher(Teachers entityToEdit);
-        [OperationContract]
-        void EditTeacherById(int entityToEditById);
-        [OperationContract]
         IEnumerable<Teachers> GetAllTeachers();
         [OperationContract]
         Teachers GetTeacherById(int entityToGetById);
@@ -238,10 +194,6 @@ namespace WcfServiceLibrary
         void AddUser(Users entityToAdd);
         [OperationContract]
         IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate);
-        [OperationContract]
-        void EditUser(Users entityToEdit);
-        [OperationContract]
-        void EditUserById(int entityToEditById);
         [OperationContract]
         IEnumerable<Users> GetAllUsers();
         [OperationContract]
