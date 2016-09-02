@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AspNetWebApplication.Models;
+using Repository.UserRepos;
+using Repository;
 
 namespace AspNetWebApplication.Controllers
 {
@@ -68,14 +70,26 @@ namespace AspNetWebApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            SignInStatus result = new SignInStatus();
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            UsersRepository userRepo = new UsersRepository(ent);
+            if (userRepo.Login(model.Email, model.Password))
             {
-                return View(model);
+
+                var user = new Users();
+                user = userRepo.GetAll().FirstOrDefault(x => x.EduId == model.Email);
+                if (user != null)
+                {
+                    result = SignInStatus.Success;
+                }
+                else
+                {
+                    result = SignInStatus.Failure;
+                }
             }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
