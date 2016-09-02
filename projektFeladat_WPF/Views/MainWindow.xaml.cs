@@ -36,5 +36,11 @@ namespace projektFeladat_WPF.Views
             DataContext = VM;         
             
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application app = Application.Current;
+            app.Shutdown();
+        }
     }
 }
