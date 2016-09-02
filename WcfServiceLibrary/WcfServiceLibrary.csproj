@@ -53,6 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Entities.csproj">
+      <Project>{ea89d1cb-f926-4a49-8a27-4f91ff41411f}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repository\Repository.csproj">
       <Project>{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}</Project>
       <Name>Repository</Name>

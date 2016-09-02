@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using Entities;
 
 namespace Repository.UserRepos
 {
@@ -14,9 +15,9 @@ namespace Repository.UserRepos
         {
         }
 
-        public IEnumerable<Users> GetTeachers()
+        public IEnumerable<Users> GetTeachersFromUsers()
         {
-            return GetAll().Where(x => x.UserType == "Teacher");
+            return GetAll().Where(x => x.UserType.ToUpper() == "TEACHER");
         }
 
         /// <summary>

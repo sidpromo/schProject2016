@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Managers
+    public partial class Teachers
     {
         public int Id { get; set; }
-        public string ManagerIdentifier { get; set; }
+        public Nullable<int> Rank { get; set; }
         public Nullable<int> UserId { get; set; }
     
         public virtual Users Users { get; set; }

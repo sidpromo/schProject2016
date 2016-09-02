@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace Entities
 {
     using System;
     using System.Collections.Generic;

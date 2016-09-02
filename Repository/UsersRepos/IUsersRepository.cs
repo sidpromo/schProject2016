@@ -1,4 +1,5 @@
-﻿using Repository.GenericRepos;
+﻿using Entities;
+using Repository.GenericRepos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace Repository.UserRepos
     {
         bool Login(string eduId, string password);
         int GetUserId(Users user);
-        IEnumerable<Users> GetTeachers();
+        IEnumerable<Users> GetTeachersFromUsers();
     }
 }

@@ -7,33 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Subjects
+    public partial class Semesters
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subjects()
+        public Semesters()
         {
-            this.Exams = new HashSet<Exams>();
-            this.Grades = new HashSet<Grades>();
-            this.SubjectsUsers = new HashSet<SubjectsUsers>();
+            this.Subjects = new HashSet<Subjects>();
+            this.Users = new HashSet<Users>();
         }
     
         public int Id { get; set; }
-        public string SubjectName { get; set; }
-        public Nullable<int> SemesterId { get; set; }
-        public Nullable<byte> Credits { get; set; }
-        public string SubjectCode { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Exams> Exams { get; set; }
+        public virtual ICollection<Subjects> Subjects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Grades> Grades { get; set; }
-        public virtual Semesters Semesters { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubjectsUsers> SubjectsUsers { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

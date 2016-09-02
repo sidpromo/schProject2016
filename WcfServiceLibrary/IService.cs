@@ -252,11 +252,17 @@ namespace WcfServiceLibrary
         [OperationContract]
         void RemoveUserById(int entityToRemoveById);
 
+        int GetUserId(Users user);
+        IEnumerable<Users> GetTeachersFromUsers();
+        bool Login(string eduId, string password);
+
 
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfServiceLibrary.ContractType".
+
+
 
     /*
     [DataContract]
@@ -279,5 +285,4 @@ namespace WcfServiceLibrary
             set { stringValue = value; }
         }
         */
-}
 }

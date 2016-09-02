@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="32f0b7e06ed844da8e81d1edfd709959" Name="Diagram1">
-        <EntityTypeShape EntityType="EducationDatabaseModel.Administrators" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+      <Diagram DiagramId="b1dd38ed8b204ddd9404e72379476343" Name="Diagram1">
+        <EntityTypeShape EntityType="EducationDatabaseModel.Administrators" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationDatabaseModel.Exams" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationDatabaseModel.ExamsUsers" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationDatabaseModel.Grades" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Managers" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Messages" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Managers" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Messages" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationDatabaseModel.Semesters" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Students" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Subjects" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Students" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Subjects" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EducationDatabaseModel.SubjectsUsers" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Teachers" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EducationDatabaseModel.Users" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Teachers" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EducationDatabaseModel.Users" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
         <AssociationConnector Association="EducationDatabaseModel.FK_Administrators_ToUsers" ManuallyRouted="false" />
         <AssociationConnector Association="EducationDatabaseModel.FK_Exams_ToSubjects" ManuallyRouted="false" />
         <AssociationConnector Association="EducationDatabaseModel.FK_Exams_ToUsers" ManuallyRouted="false" />

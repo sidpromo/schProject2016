@@ -7,25 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Grades
+    public partial class Managers
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> InsertDate { get; set; }
-        public Nullable<System.DateTime> ModifyDate { get; set; }
-        public Nullable<int> ModifiedBy { get; set; }
-        public Nullable<short> Grade { get; set; }
+        public string ManagerIdentifier { get; set; }
         public Nullable<int> UserId { get; set; }
-        public Nullable<int> SubjectId { get; set; }
-        public Nullable<int> ExamId { get; set; }
     
-        public virtual Exams Exams { get; set; }
-        public virtual Subjects Subjects { get; set; }
         public virtual Users Users { get; set; }
-        public virtual Users Users1 { get; set; }
     }
 }

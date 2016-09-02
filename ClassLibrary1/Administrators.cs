@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Repository
+namespace Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Students
+    public partial class Administrators
     {
         public int Id { get; set; }
-        public string StudyForm { get; set; }
+        public string AdminIdentifier { get; set; }
         public Nullable<int> UserId { get; set; }
     
         public virtual Users Users { get; set; }
