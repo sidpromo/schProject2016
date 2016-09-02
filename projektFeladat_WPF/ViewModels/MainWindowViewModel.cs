@@ -1,4 +1,5 @@
 ﻿using Entities;
+using projektFeladat_WPF.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace projektFeladat_WPF.ViewModels
         {
             CurrentUser = _service.GetUserById(id);
             CurrentUserInfo = String.Format("{0} {1} {2} ({3})", CurrentUser.FirstName, CurrentUser.MiddleName, CurrentUser.LastName, CurrentUser.EduId);
-           
+            Singleton.Instance.SetId(id);
+            
 
         }
         ///service locator statikus osztály

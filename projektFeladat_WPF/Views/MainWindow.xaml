@@ -125,7 +125,7 @@
                     <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto" />                    
                 </Grid>
             </TabItem>
-            <TabItem Header="Search Documents">
+            <TabItem Header="Search Documents"  Visibility="Hidden">
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">

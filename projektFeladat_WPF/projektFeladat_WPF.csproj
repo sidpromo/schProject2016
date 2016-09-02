@@ -68,6 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\Singleton.cs" />
     <Compile Include="Converters\SubjectToTeacherNameConverter.cs" />
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
