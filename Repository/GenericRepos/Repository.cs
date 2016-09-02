@@ -12,7 +12,7 @@ namespace Repository.GenericRepos
         protected readonly DbContext Context;
 
         /// <summary>
-        /// Példányosításnál az Entity objektumot (EducationDatabaseEntities), ez lesz a context.
+        /// Példányosításnál meg kell adni az Entity objektumot (EducationDatabaseEntities), ez lesz a context.
         /// </summary>
         /// <param name="context"></param>
         public Repository(DbContext context)

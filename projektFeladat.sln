@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppDatabaseTesting",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary", "WcfServiceLibrary\WcfServiceLibrary.csproj", "{5F9CF145-8C47-4B54-80B3-1B0ADD984E57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary", "WcfServiceLibrary\WcfServiceLibrary.csproj", "{91F4CADB-871D-42F9-8644-284402712A8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68BDEA95-9BDD-49D5-8B81-CF8A21CB53F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F9CF145-8C47-4B54-80B3-1B0ADD984E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F9CF145-8C47-4B54-80B3-1B0ADD984E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F9CF145-8C47-4B54-80B3-1B0ADD984E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F9CF145-8C47-4B54-80B3-1B0ADD984E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F4CADB-871D-42F9-8644-284402712A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F4CADB-871D-42F9-8644-284402712A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F4CADB-871D-42F9-8644-284402712A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F4CADB-871D-42F9-8644-284402712A8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
