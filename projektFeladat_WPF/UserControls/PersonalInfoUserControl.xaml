@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="projektFeladat_WPF.UserControls.PersonalInfoUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projektFeladat_WPF.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="128*"/>
+        </Grid.RowDefinitions>        
+        <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
+        <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="EduID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Birthdate: " HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Nationality" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,7,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.FirstName}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MiddleName}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.LastName}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,97,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.EduId}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Email}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,157,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MothersName}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthDate}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,217,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthPlace}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,247,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Nationality}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.PersonalId}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MedicalCardId}" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.UserType}" VerticalAlignment="Top" Width="150"/>
+    </Grid>
+</UserControl>
