@@ -206,10 +206,12 @@ namespace WcfServiceLibrary
         void RemoveUser(Users entityToRemove);
         [OperationContract]
         void RemoveUserById(int entityToRemoveById);
-
         int GetUserId(Users user);
         IEnumerable<Users> GetTeachersFromUsers();
         bool Login(string eduId, string password);
+
+        // Other operations
+        AppInfo GetAppInfo();
 
 
     }
@@ -218,6 +220,13 @@ namespace WcfServiceLibrary
     // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfServiceLibrary.ContractType".
 
 
+    [DataContract]
+    public class AppInfo
+    {
+        [DataMember]
+        public string Version { get; set; } = "0.7";
+        public string AppName { get; set; } = "EducationDatabase";
+    }
 
     /*
     [DataContract]

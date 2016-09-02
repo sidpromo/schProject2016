@@ -33,7 +33,9 @@ namespace projektFeladat_WPF.Views
             Users currentUser = service.GetUserById(CurrentUserId);
 
             MainWindowViewModel VM = new MainWindowViewModel(CurrentUserId);
-            DataContext = VM;         
+            DataContext = VM;
+
+            Title = String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {service.GetAppInfo().AppName} v{service.GetAppInfo().Version}");
             
         }
 

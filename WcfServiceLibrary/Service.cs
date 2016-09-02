@@ -560,5 +560,10 @@ namespace WcfServiceLibrary
             IUsersRepository repo = new UsersRepository(getEntities());
             repo.RemoveById(entityToRemoveById);
         }
+
+        public AppInfo GetAppInfo()
+        {
+            return new AppInfo();
+        }
     }
 }
