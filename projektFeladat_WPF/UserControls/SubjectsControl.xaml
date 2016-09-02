@@ -23,9 +23,7 @@
 
         <StackPanel Grid.Row="1" Name="StackPanelInfo">
             <TextBlock Margin="0,0,0,10" Text="Subject name:"></TextBlock>
-            <TextBox Text="{Binding SelectedItem.SubjectName}"></TextBox>
-            <!--<TextBlock Margin="0,10,0,10" Text="Active in this semester:"></TextBlock>
-            <TextBox Text="{Binding SelectedItem.ActiveInThisSemester}"></TextBox>-->
+            <TextBox Text="{Binding SelectedItem.SubjectName}"></TextBox>            
             <TextBlock Margin="0,10,0,10" Text="Teacher:"></TextBlock>
             <TextBox Text="{Binding SelectedItem ,Converter={StaticResource SubjectToTeacherNameConverter}}"></TextBox>
             <TextBlock Margin="0,10,0,10" Text="Registered Students:"></TextBlock>
@@ -35,6 +33,8 @@
             
             <UniformGrid Margin="0,10,0,10" Rows="1" >
                 <Button Margin="0,0,10,0" Content="Refresh"></Button>
+                <Button Margin="0,0,10,0" Content="Add"></Button>
+                <Button Margin="0,0,10,0" Content="Edit"></Button>
                 <Button Margin="10,0,10,0" Content="Delete" Name="ButtonDelete" ></Button>
             </UniformGrid>
 

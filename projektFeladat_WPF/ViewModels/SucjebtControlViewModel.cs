@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
@@ -43,18 +44,18 @@ namespace projektFeladat_WPF.ViewModels
         //public Teachers CurrentTeacher { get; private set; }
         public Users CurrentUser { get; private set; }
 
-       
 
-        static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        static SubjectsRepository subjectRepo = new SubjectsRepository(ent);
-        static SubjectsUsersRepository subjectUserRepo = new SubjectsUsersRepository(ent);
-        static TeachersRepository teacherRepo = new TeachersRepository(ent);
-        static UsersRepository userRepo = new UsersRepository(ent);       
 
+        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
+        //static SubjectsRepository subjectRepo = new SubjectsRepository(ent);
+        //static SubjectsUsersRepository subjectUserRepo = new SubjectsUsersRepository(ent);
+        //static TeachersRepository teacherRepo = new TeachersRepository(ent);
+        //static UsersRepository userRepo = new UsersRepository(ent);       
+        IService _service = new Service();
       
         public SubjectControlViewModel()
         {
-            SubjectList = subjectRepo.GetAll();
+            SubjectList = _service.GetAllSubjects();
             
             
         }

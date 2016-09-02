@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
@@ -35,8 +36,9 @@ namespace projektFeladat_WPF.ViewModels
             }
         }
 
-        static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        static UsersRepository userRepo = new UsersRepository(ent);
+        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
+        //static IUsersRepository userRepo = new UsersRepository(ent);
+        IService _service = new Service();
 
         public ICommand DeleteUserCommand { get; private set; }
         public ICommand AddUserCommand { get; private set; }
@@ -49,7 +51,7 @@ namespace projektFeladat_WPF.ViewModels
             {
                 return;
             }
-            userRepo.Remove(SelectedUser);
+            _service.RemoveUser(SelectedUser);            
             RefreshMethod();
         }
 
@@ -75,8 +77,10 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Users> newList = new List<Users>();
             UserList = newList;
-            UserList = userRepo.GetAll().Where(x => (x.UserType).ToUpper() != "ADMIN");
-            
+           UserList =_service.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
+            //UserList = userRepo.GetAll();
+
+
 
         }
         public ManageUserViewModel()

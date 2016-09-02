@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Media;
 using Repository;
 using Repository.UserRepos;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF
 {
@@ -62,16 +63,16 @@ namespace projektFeladat_WPF
             {
                 EducationDatabaseEntities ent = new EducationDatabaseEntities();
                 UsersRepository userRepo = new UsersRepository(ent);
+                IService service = new Service();
+                
                 if (userRepo.Login(textBoxEduId.Text, passwordBox1.Password))
                 {
                     int id = userRepo.GetAll().FirstOrDefault(x => x.EduId == textBoxEduId.Text).Id;
-                    var windowToOpen = new MainWindow(id);
-                    this.Hide();
+                    var windowToOpen = new MainWindow(id);                    
                     windowToOpen.Show();
+                    this.Close();
 
-                    //var windowToOpen = new UserManagerWindow();
-                    //this.Hide();
-                    //windowToOpen.Show();
+
 
 
                 }
