@@ -26,16 +26,11 @@ namespace projektFeladat_WPF.Views
     {
         public MainWindow(int CurrentUserId)
         {
-            InitializeComponent(); // random comment
-            //EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            //UsersRepository userRepo = new UsersRepository(ent);
+            InitializeComponent();            
             IService service = new Service();
-            Users currentUser = service.GetUserById(CurrentUserId);
-
+            //Users currentUser = service.GetUserById(CurrentUserId);
             MainWindowViewModel VM = new MainWindowViewModel(CurrentUserId);
-            DataContext = VM;
-
-            Title = String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {service.GetAppInfo().AppName} v{service.GetAppInfo().Version}");
+            DataContext = VM;            
             
         }
 

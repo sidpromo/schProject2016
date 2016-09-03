@@ -14,6 +14,7 @@ namespace projektFeladat_WPF.ViewModels
         IService _service = new Service();
 
         public string CurrentUserInfo { get; private set; }
+        public string WindowTitle { get; private set; }
         private Users currentUser;
 
         public Users CurrentUser
@@ -25,6 +26,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             CurrentUser = _service.GetUserById(id);
             CurrentUserInfo = String.Format("{0} {1} {2} ({3})", CurrentUser.FirstName, CurrentUser.MiddleName, CurrentUser.LastName, CurrentUser.EduId);
+            WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {_service.GetAppInfo().AppName} v{_service.GetAppInfo().Version}");
             Singleton.Instance.SetId(id);
             
 

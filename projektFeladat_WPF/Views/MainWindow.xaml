@@ -7,7 +7,7 @@
         xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" xmlns:UserControls="clr-namespace:projektFeladat_WPF.UserControls" x:Class="projektFeladat_WPF.Views.MainWindow"
         xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"    
     mc:Ignorable="d"
-        Title="- EducationDatabase v0.2" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="{Binding WindowTitle}" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     
     <Grid>
         <Grid.Background>
