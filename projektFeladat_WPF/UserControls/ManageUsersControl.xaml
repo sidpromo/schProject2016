@@ -28,10 +28,10 @@
         <Label Content="Lastname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
         <Label Content="Email:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
         <Label Content="Middlename:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,36,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.FirstName}"   VerticalAlignment="Top" Width="Auto" />
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,154,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.LastName}" VerticalAlignment="Top" Width="Auto"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="22" Margin="10,213,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.Email}" VerticalAlignment="Top" Width="Auto"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,95,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.MiddleName}"   VerticalAlignment="Top" Width="Auto" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,36,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.FirstName}"   VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,154,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.LastName}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="22" Margin="10,213,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.Email}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,95,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.MiddleName}"   VerticalAlignment="Top" Width="Auto"  IsReadOnly="True"/>
         <Button Content="Add" Grid.Column="1" Margin="0,346,167,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=AddUserCommand}"/>
         <Button Content="Edit" Grid.Column="1" Margin="0,346,87,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=EditUserCommand}" />
         <Button Content="Delete" Grid.Column="1" Margin="0,346,7,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=DeleteUserCommand}"/>
