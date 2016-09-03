@@ -70,7 +70,7 @@ namespace Repository
         public void Remove(TEntity entityToRemove)
         {
             Context.Set<TEntity>().Remove(entityToRemove);
-            Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
+            //Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
             SaveChanges();
         }
 
