@@ -22,7 +22,7 @@ namespace Repository
 
             Teachers teacher = new Teachers();
             teacher = teacherRepo.GetAll().Where(t => t.UserId == subjUser.UserId).FirstOrDefault();
-            if (teacher.UserId != null)
+            if (teacher != null)
             {
                 Users CurrentUser = userRepo.GetAll().Where(u => u.Id == teacher.UserId).FirstOrDefault();
                 string name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";

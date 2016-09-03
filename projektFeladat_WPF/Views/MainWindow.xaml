@@ -8,7 +8,7 @@
         xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"    
     mc:Ignorable="d"
         Title="{Binding WindowTitle}" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
-    
+
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -18,7 +18,7 @@
         </Grid.Background>
         <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch" >
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
-                <Grid>                    
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="17*"/>
                         <RowDefinition Height="128*"/>
@@ -61,7 +61,7 @@
             </TabItem>
             <TabItem Header="Semester info" >
                 <Grid>
-                    
+
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -72,7 +72,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Subjects">
-                <Grid>                    
+                <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -81,11 +81,11 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                     <Label Content="Subjects:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
-                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401" />                    
+                    <projektFeladat_WPF:SubjectsControl HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="868" Height="401" />
                 </Grid>
             </TabItem>
             <TabItem Header="Exams">
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="17*"/>
@@ -109,11 +109,12 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+                    <UserControls:MessagesUserControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="868"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Manage users">
                 <Grid>
-                    
+
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -122,7 +123,7 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                     <Label Content="User manager:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
-                    <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto" />                    
+                    <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto" />
                 </Grid>
             </TabItem>
             <TabItem Header="Search Documents"  Visibility="Hidden">

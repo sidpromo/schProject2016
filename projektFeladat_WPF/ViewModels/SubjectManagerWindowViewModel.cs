@@ -56,13 +56,14 @@ namespace projektFeladat_WPF.ViewModels
         public SubjectManagerWindowViewModel(Subjects subjectToEdit)
         {
             CommonMethods();
-            EditedSubject = subjectToEdit;
-            _service.RemoveSubject(_service.GetSubjectById(subjectToEdit.Id));
+            EditedSubject = _service.GetSubjectById(subjectToEdit.Id);
+            _service.RemoveSubject(subjectToEdit);
         }
         void Add()
         {
             _service.AddSubject(EditedSubject);
             //TODO: Regisztrálni tanárt hozzá!!!!
+            
         }
         void SaveMethod()
         {

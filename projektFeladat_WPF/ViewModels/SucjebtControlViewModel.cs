@@ -14,7 +14,7 @@ using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class SubjectControlViewModel : Bindable
+   public class SubjectControlViewModel : Bindable
     {
         private IEnumerable<Subjects> subjectList;
 
@@ -57,7 +57,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Subjects> newList = new List<Subjects>();
             SubjectList = newList;
-            SubjectList = _service.GetAllSubjects();
+            SubjectList = _service.GetAllSubjects();            
         }
 
         public void AddMethod()
@@ -68,12 +68,12 @@ namespace projektFeladat_WPF.ViewModels
 
         public void EditMethod()
         {
-            if (SelectedItem == null)
+            if (SelectedItem != null)
             {
-                return;
+                var newWindow = new SubjectManagerWindow(SelectedItem);
+                newWindow.Show();
             }
-            var newWindow = new SubjectManagerWindow(SelectedItem);
-            newWindow.Show();
+           
         }
 
         public void DeleteMethod()

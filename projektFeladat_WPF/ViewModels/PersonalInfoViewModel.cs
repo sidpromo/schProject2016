@@ -9,7 +9,7 @@ using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class PersonalInfoViewModel
+    public class PersonalInfoViewModel
     {
         IService _service = new Service();
 

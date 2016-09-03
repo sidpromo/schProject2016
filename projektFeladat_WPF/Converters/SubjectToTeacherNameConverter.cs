@@ -16,20 +16,14 @@ namespace projektFeladat_WPF.Converters
        
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-           Subjects subejct = (Subjects)value;
+           Subjects subject = (Subjects)value;
             IService service = new Service();
+            string name = service.GetSubjectTeacherName(subject);
 
-            //SubjectsUsers subjUser = new SubjectsUsers();
-            //subjUser = subjectUserRepo.GetAll().Where(u => u.SubjectId == subejct.Id).FirstOrDefault();
-
-            //Teachers teacher = new Teachers();
-            //teacher = teacherRepo.GetAll().Where(t => t.UserId == subjUser.UserId).FirstOrDefault();
-            //if (teacher.UserId != null)
-            //{
-            //    Users CurrentUser = userRepo.GetAll().Where(u => u.Id == teacher.UserId).FirstOrDefault();
-            //    string name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";
-            //    return name;
-            //}
+            if (name!=null)
+            {
+                return name;
+            }
 
             return "Converter error";
         }

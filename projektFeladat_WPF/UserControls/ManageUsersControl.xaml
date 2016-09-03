@@ -18,10 +18,10 @@
                 <!--<DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
                 <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>
                 <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Lastname" Width="Auto"/>-->
-                <DataGridTextColumn x:Name="eduIdColumn" Binding="{Binding EduId}" Header="EduID" Width="Auto"/>
-                <DataGridTextColumn x:Name="userTypeColumn" Binding="{Binding UserType}" Header="Usertype" Width="Auto"/>
-                <DataGridTextColumn x:Name="userStateColumn" Binding="{Binding Active}" Header="Active user" Width="Auto"/>
-                <DataGridTextColumn x:Name="insertDateColumn" Binding="{Binding InsertDate}" Header="Inserted" Width="Auto"/>
+                <DataGridTextColumn x:Name="eduIdColumn" Binding="{Binding EduId}" Header="EduID" Width="15*"/>
+                <DataGridTextColumn x:Name="userTypeColumn" Binding="{Binding UserType}" Header="Usertype" Width="13*"/>
+                <DataGridTextColumn x:Name="userStateColumn" Binding="{Binding Active}" Header="Active " Width="10*"/>
+                <DataGridTextColumn x:Name="insertDateColumn" Binding="{Binding InsertDate}" Header="Inserted" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Firstname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>

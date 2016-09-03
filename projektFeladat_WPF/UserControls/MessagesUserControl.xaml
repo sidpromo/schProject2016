@@ -5,28 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projektFeladat_WPF.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="900" MaxHeight="600">
+             d:DesignHeight="500" d:DesignWidth="900" Height="449" MaxHeight="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" Height="210" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+        <DataGrid Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" />
-                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" />
-                <DataGridTextColumn Binding="{Binding Credits}" Header="Recieve date:" />
+                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>
+                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" Width="15*"/>
+                <DataGridTextColumn Binding="{Binding Credits}" Header="Recieve date:" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" Height="210" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300">
+        <DataGrid Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,0,0,154">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient:" />
-                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" />
-                <DataGridTextColumn Binding="{Binding Credits}" Header="Date sent" />
+                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient:" Width="10*" />
+                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" Width="15*" />
+                <DataGridTextColumn Binding="{Binding Credits}" Header="Date sent" Width="15*" />
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Inbox:" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15"/>
-        <Label Content="Sent messages" HorizontalAlignment="Left" Margin="0,0,0,210" Width="180" Grid.Row="1" FontSize="15" Height="35" VerticalAlignment="Bottom"/>
+        <Label Content="Sent messages" HorizontalAlignment="Left" Margin="10,10,0,0" Width="180" FontSize="15" Height="35" VerticalAlignment="Top" Grid.Row="1"/>
+        <RichTextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,60"  IsReadOnly="True" Grid.RowSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="Message:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
+        <Button Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1"/>
+        <Button Content="New email" Grid.Column="1" Margin="0,197,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Grid.Row="1"/>
     </Grid>
 </UserControl>
