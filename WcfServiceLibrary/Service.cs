@@ -565,5 +565,23 @@ namespace WcfServiceLibrary
         {
             return new AppInfo();
         }
+
+        public int GetRegisteredStudentsCount(Subjects subject)
+        {
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetRegisteredStudentsCount(subject);
+        }
+
+        public int GetRegisteredTeachersCount(Subjects subject)
+        {
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            return repo.GetRegisteredTeachersCount(subject);
+        }
+
+        public void RegisterUserToSubject(Users user, Subjects subject)
+        {
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            repo.RegisterUserToSubject(user, subject);
+        }
     }
 }

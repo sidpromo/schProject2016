@@ -11,14 +11,28 @@ namespace Repository
         {
         }
 
+        public int GetRegisteredStudentsCount(Subjects subject)
+        {
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            ISubjectsUsersRepository suRepo = new SubjectsUsersRepository(ent);
+            return suRepo.GetAll().Where(x => x.SubjectId == subject.Id).Where(x => x.Users.UserType == "Student").Count();
+        }
+
+        public int GetRegisteredTeachersCount(Subjects subject)
+        {
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            ISubjectsUsersRepository suRepo = new SubjectsUsersRepository(ent);
+            return suRepo.GetAll().Where(x => x.SubjectId == subject.Id).Where(x => x.Users.UserType == "Teacher").Count();
+        }
+
         public string GetSubjectTeacherName(Subjects subject)
         {
             SubjectsUsers subjUser = new SubjectsUsers();
             subjUser = GetAll().Where(u => u.SubjectId == subject.Id).FirstOrDefault();
 
             EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            TeachersRepository teacherRepo = new TeachersRepository(ent);
-            UsersRepository userRepo = new UsersRepository(ent);
+            ITeachersRepository teacherRepo = new TeachersRepository(ent);
+            IUsersRepository userRepo = new UsersRepository(ent);
 
             Teachers teacher = new Teachers();
             teacher = teacherRepo.GetAll().Where(t => t.UserId == subjUser.UserId).FirstOrDefault();
@@ -41,5 +55,20 @@ namespace Repository
             return GetAll().Where(x => x.Id == subjectuser.Id).FirstOrDefault().Id;
         }
 
+        public void RegisterUserToSubject(Users user, Subjects subject)
+        {
+            EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            ISubjectsUsersRepository suRepo = new SubjectsUsersRepository(ent);
+            bool allowOperation = (suRepo.GetAll().Where(x => x.UserId == user.Id).Where(x => x.SubjectId == subject.Id).Count() > 0); // Szerepel már benne?
+            if (allowOperation)
+            {
+                suRepo.Add(new SubjectsUsers()
+                {
+                    EnrollDate = DateTime.Now,
+                    SubjectId = subject.Id,
+                    UserId = user.Id
+                });
+            }
+        }
     }
 }
