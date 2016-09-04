@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projektFeladat_WPF.UserControls"
+             xmlns:Converters="clr-namespace:projektFeladat_WPF.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="900" Height="449" MaxHeight="600">
+    <UserControl.Resources>
+        <Converters:MessageToSenderNameConverter x:Key="MessageToSenderNameConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -16,31 +20,42 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
+        <DataGrid x:Name="InboxDataGrid"  Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>
-                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" Width="15*"/>
-                <DataGridTextColumn Binding="{Binding Credits}" Header="Recieve date:" Width="15*"/>
+                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*"/>
+                <DataGridTextColumn Binding="{Binding SentDate}" Header="Recieve date:" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,0,0,154">
+        <DataGrid x:Name="sentMessagesDataGrid"  Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,0,0,154">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding SubjectCode}" Header="Subject:" Width="15*" />
-                <DataGridTextColumn Binding="{Binding Credits}" Header="Date sent" Width="15*" />
+                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*" />
+                <DataGridTextColumn Binding="{Binding SentDate}" Header="Date sent" Width="15*" />
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Inbox:" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15"/>
         <Label Content="Sent messages" HorizontalAlignment="Left" Margin="10,10,0,0" Width="180" FontSize="15" Height="35" VerticalAlignment="Top" Grid.Row="1"/>
-        <RichTextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,60"  IsReadOnly="True" Grid.RowSpan="2">
+        <RichTextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,60"  IsReadOnly="True" Grid.RowSpan="2" >
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="RichTextBox"/>
+                    <Run Text="From:"/>
+                    <Run Text="{Binding SelectedMessage,Converter={StaticResource MessageToSenderNameConverter}}"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Subject:"/>
+                    <Run Text="{Binding SelectedMessage.Subject}"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="====================================================================="/>                    
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="{Binding SelectedMessage.Message}"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
         <Label Content="Message:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
         <Button Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1"/>
-        <Button Content="New email" Grid.Column="1" Margin="0,197,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Grid.Row="1"/>
+        <Button Content="New message" Grid.Column="1" Margin="0,197,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Grid.Row="1" Command="{Binding SendCommand}"/>
     </Grid>
 </UserControl>

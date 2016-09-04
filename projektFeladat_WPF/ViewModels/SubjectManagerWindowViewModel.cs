@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WcfServiceLibrary;
@@ -38,6 +39,7 @@ namespace projektFeladat_WPF.ViewModels
         }       
 
         IService _service = new Service();
+        int idToRemove=0;
 
         public ICommand SaveCommand { get; private set; }
 
@@ -56,12 +58,21 @@ namespace projektFeladat_WPF.ViewModels
         public SubjectManagerWindowViewModel(Subjects subjectToEdit)
         {
             CommonMethods();
+            EditedSubject = new Subjects();
             EditedSubject = _service.GetSubjectById(subjectToEdit.Id);
-            _service.RemoveSubject(subjectToEdit);
+            //TODO: Betölteni az aktuális tanárt            
+            idToRemove = subjectToEdit.Id;
+            
         }
         void Add()
         {
-            _service.AddSubject(EditedSubject);
+            if (idToRemove!=0)
+            {
+                _service.RemoveSubjectById(idToRemove);
+            }
+            
+            _service.AddSubject(EditedSubject);            
+            _service.RegisterUserToSubject(SelectedTeacher, EditedSubject);
             //TODO: Regisztrálni tanárt hozzá!!!!
             
         }

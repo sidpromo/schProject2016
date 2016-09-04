@@ -1,5 +1,4 @@
 ﻿using Entities;
-using Repository;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,28 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.Converters
 {
-    class SubjectToTeacherNameConverter : IValueConverter
+    class UserNameToStringConverter : IValueConverter
     {
-       
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Subjects subject = (Subjects)value;
-            IService service = new Service();
-            string name = service.GetSubjectTeacherName(subject);
-
-            if (name != null)
+            Users user = (Users)value;
+            if (user!=null)
             {
+                string name = $"{user.FirstName} {user.MiddleName} {user.LastName}";
                 return name;
             }
-
-            return "Converter error";
-            ////////////////////////////////////////
-
-
+            return "";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

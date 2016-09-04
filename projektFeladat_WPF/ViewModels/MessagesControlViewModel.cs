@@ -1,9 +1,12 @@
 ﻿using Entities;
+using projektFeladat_WPF.Commands;
+using projektFeladat_WPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
@@ -36,10 +39,17 @@ namespace projektFeladat_WPF.ViewModels
         }
 
         IService _service = new Service();
-
-        void foo()
+        public ICommand DeleteCommand { get; private set; }
+        public ICommand SendCommand { get; private set; }
+        public MessagesControlViewModel()
         {
-           
+            SendCommand = new RelayCommand(SendMethod);
+        }
+
+        void SendMethod()
+        {
+            MessageWriterWindow newWindow = new MessageWriterWindow();
+            newWindow.Show();
         }
 
 

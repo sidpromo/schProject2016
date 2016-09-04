@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projektFeladat_WPF.UserControls" 
              xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"
+             xmlns:Converters="clr-namespace:projektFeladat_WPF.Converters"
              mc:Ignorable="d"             
              d:DesignHeight="378.587" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="592.173">
     <Grid Margin="0,0,10,0">

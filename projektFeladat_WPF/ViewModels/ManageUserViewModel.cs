@@ -51,7 +51,7 @@ namespace projektFeladat_WPF.ViewModels
             {
                 return;
             }
-            _service.RemoveUser(SelectedUser);            
+            _service.RemoveUserById(SelectedUser.Id);            
             RefreshMethod();
         }
 

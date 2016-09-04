@@ -11,22 +11,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace projektFeladat_WPF.UserControls
+namespace projektFeladat_WPF.Views
 {
     /// <summary>
-    /// Interaction logic for MessagesUserControl.xaml
+    /// Interaction logic for MessageWriterWindow.xaml
     /// </summary>
-    public partial class MessagesUserControl : UserControl
+    public partial class MessageWriterWindow : Window
     {
-        MessagesControlViewModel VM;
-        public MessagesUserControl()
+        MessageWriterWindowViewModel VM;
+        public MessageWriterWindow()
         {
             InitializeComponent();
-            VM = new MessagesControlViewModel();
+            VM = new MessageWriterWindowViewModel();
             DataContext = VM;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

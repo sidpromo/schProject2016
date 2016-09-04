@@ -25,6 +25,7 @@ namespace projektFeladat_WPF.ViewModels
 
                 
         IService _service = new Service();
+        int idToRemove = 0;
 
         public ICommand SaveCommand { get; private set; }        
 
@@ -38,12 +39,16 @@ namespace projektFeladat_WPF.ViewModels
         public UserManagerWindowViewModel(Users userToEdit)
         {
             EditedUser = _service.GetUserById(userToEdit.Id);
-            _service.RemoveUser(_service.GetUserById(userToEdit.Id));           ;
+            idToRemove = userToEdit.Id;          
             SaveCommand = new RelayCommand(SaveChanges);
         }
 
         public void Add()
         {
+            if (idToRemove!=0)
+            {
+                _service.RemoveUserById(idToRemove);
+            }
             if (EditedUser.InsertDate==null)
             {
                 EditedUser.InsertDate = DateTime.Now;
@@ -58,5 +63,7 @@ namespace projektFeladat_WPF.ViewModels
             EditedUser = new Users();           
             
         }
+
+        
     }
 }

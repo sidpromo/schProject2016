@@ -43,7 +43,7 @@ namespace projektFeladat_WPF.ViewModels
 
 
         IService _service = new Service();
-
+         
         public SubjectControlViewModel()
         {
             RefreshMethod();
@@ -82,7 +82,7 @@ namespace projektFeladat_WPF.ViewModels
             {
                 return;
             }
-            _service.RemoveSubject(SelectedItem);
+            _service.RemoveSubjectById(SelectedItem.Id);
             RefreshMethod();
         }
 
