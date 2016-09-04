@@ -69,9 +69,13 @@ namespace Repository
         /// <param name="entityToRemove"></param>
         public void Remove(TEntity entityToRemove)
         {
-            Context.Set<TEntity>().Remove(entityToRemove);
-            //Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
-            SaveChanges();
+            if (entityToRemove != null)
+            {
+                Context.Set<TEntity>().Remove(entityToRemove);
+                Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
+                SaveChanges();
+            }
+            else throw new NullReferenceException();
         }
 
         /// <summary>
@@ -81,9 +85,12 @@ namespace Repository
         public void RemoveById(int entityToRemoveById)
         {
             TEntity entToRemove = GetById(entityToRemoveById);
-            if (entToRemove == null) throw new ArgumentException("NO DATA");
-            Remove(entToRemove);
-            SaveChanges();
+            if (entToRemove != null)
+            {
+                Remove(entToRemove);
+                SaveChanges();
+            }
+            else throw new ArgumentException("NO DATA");
         }
 
         /// <summary>
