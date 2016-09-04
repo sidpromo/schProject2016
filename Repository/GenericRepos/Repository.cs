@@ -72,7 +72,7 @@ namespace Repository
             if (entityToRemove != null)
             {
                 Context.Set<TEntity>().Remove(entityToRemove);
-                Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
+                //Context.Entry<TEntity>(entityToRemove).State = EntityState.Deleted;
                 SaveChanges();
             }
             else throw new NullReferenceException();
