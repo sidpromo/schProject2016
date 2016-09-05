@@ -26,12 +26,10 @@ namespace projektFeladat_WPF.ViewModels
         {
             CurrentUser = _service.GetUserById(id);
             CurrentUserInfo = String.Format("{0} {1} {2} ({3})", CurrentUser.FirstName, CurrentUser.MiddleName, CurrentUser.LastName, CurrentUser.EduId);
-            WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {_service.GetAppInfo().AppName} v{_service.GetAppInfo().Version}");
-           
-            
-            
-
+            WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {_service.GetAppInfo().AppName} v{_service.GetAppInfo().Version}");           
         }
-        ///service locator statikus osztály
+
+        //service locator statikus osztály
+        //Semester info.: Chart - NuGet
     }
 }

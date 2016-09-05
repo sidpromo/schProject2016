@@ -50,6 +50,8 @@ namespace projektFeladat_WPF.ViewModels
             NewMessage.SentDate = DateTime.Now;
             NewMessage.FromUserId = Singleton.Instance.ID;
             NewMessage.ToUserId = SelectedUser.Id;
+            NewMessage.FromDeleted = false;
+            NewMessage.ToDeleted = false;            
             _service.AddMessage(NewMessage);
         }
         void SendMethod()

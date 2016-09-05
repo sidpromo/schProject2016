@@ -72,6 +72,9 @@
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />
     <Compile Include="Converters\SubjectToTeacherNameConverter.cs" />
     <Compile Include="Converters\UserNameToStringConverter.cs" />
+    <Compile Include="UserControls\ExamsControl.xaml.cs">
+      <DependentUpon>ExamsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
     <Compile Include="Views\UserManagerWindow.xaml.cs">
       <DependentUpon>UserManagerWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControls\ExamsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ManageUsersControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +201,9 @@
       <Project>{91f4cadb-871d-42f9-8644-284402712a8f}</Project>
       <Name>WcfServiceLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

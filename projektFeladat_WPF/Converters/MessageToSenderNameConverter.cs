@@ -25,7 +25,7 @@ namespace projektFeladat_WPF.Converters
                     return name;
                 } 
             }
-            return "MessageToSenderNameConverter error..";
+            return null;
             
             
         }

@@ -42,7 +42,7 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand RefreshCommand { get; private set; }
 
 
-        IService _service = new Service();
+        IService _service = new Service(); //nem service példány, csak egy kliens
          
         public SubjectControlViewModel()
         {
@@ -80,8 +80,8 @@ namespace projektFeladat_WPF.ViewModels
         {
             if (SelectedItem != null)
             {
-                //_service.RemoveSubjectById(SelectedItem.Id); <== ezzel a módszerrel töröl
-                _service.RemoveSubject(SelectedItem);      //ez a módszer hiát dob
+                _service.RemoveSubjectById(SelectedItem.Id); //<== ezzel a módszerrel töröl
+                //_service.RemoveSubject(SelectedItem);      //ez a módszer hiát dob
                 RefreshMethod();
             }
            

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
@@ -56,15 +57,31 @@ namespace projektFeladat_WPF.ViewModels
 
         void DeleteMethod()
         {
-            _service.RemoveMessageById(SelectedMessage.Id);
+            
+            if (SelectedMessage.FromUserId==Singleton.Instance.ID)
+            {
+                //SelectedMessage.FromDeleted = true;
+                _service.GetMessageById(SelectedMessage.Id).FromDeleted = true;                
+                MessageBox.Show("Message has been deleted from Sent messages");
+            }
+            else if (SelectedMessage.ToUserId == Singleton.Instance.ID)
+            {
+                //SelectedMessage.ToDeleted = true;
+                _service.GetMessageById(SelectedMessage.Id).ToDeleted = true;
+                MessageBox.Show("Message has been deleted from Inbox");
+            }
+            if (SelectedMessage.ToDeleted==true && SelectedMessage.FromDeleted==true)
+            {
+                _service.RemoveMessageById(SelectedMessage.Id);
+            }
             RefreshMethod();
         }
         void RefreshMethod()
         {
             SentMsgList = new List<Messages>();
             ReceivedMsgList= new List<Messages>();
-            SentMsgList = _service.GetSentMessages((int)Singleton.Instance.ID);
-            ReceivedMsgList = _service.GetReceivedMessages((int)Singleton.Instance.ID);
+            SentMsgList = _service.GetSentMessages((int)Singleton.Instance.ID).Where(m=>m.FromDeleted==false);
+            ReceivedMsgList = _service.GetReceivedMessages((int)Singleton.Instance.ID).Where(m => m.ToDeleted == false);
         }
 
 
