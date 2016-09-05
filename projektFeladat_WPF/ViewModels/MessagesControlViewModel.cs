@@ -43,7 +43,9 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand SendCommand { get; private set; }
         public MessagesControlViewModel()
         {
+            RefreshMethod();
             SendCommand = new RelayCommand(SendMethod);
+            DeleteCommand = new RelayCommand(DeleteMethod);
         }
 
         void SendMethod()
@@ -52,6 +54,18 @@ namespace projektFeladat_WPF.ViewModels
             newWindow.Show();
         }
 
+        void DeleteMethod()
+        {
+            _service.RemoveMessageById(SelectedMessage.Id);
+            RefreshMethod();
+        }
+        void RefreshMethod()
+        {
+            SentMsgList = new List<Messages>();
+            ReceivedMsgList= new List<Messages>();
+            SentMsgList = _service.GetSentMessages((int)Singleton.Instance.ID);
+            ReceivedMsgList = _service.GetReceivedMessages((int)Singleton.Instance.ID);
+        }
 
 
     }

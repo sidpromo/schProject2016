@@ -18,6 +18,7 @@ using System.Media;
 using Repository;
 using WcfServiceLibrary;
 using Entities;
+using projektFeladat_WPF.Commands;
 
 namespace projektFeladat_WPF
 {
@@ -68,6 +69,7 @@ namespace projektFeladat_WPF
                 if (service.Login(eduId,password))
                 {
                     int id =service.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
+                    Singleton.Instance.SetId(id);
                     var windowToOpen = new MainWindow(id);                    
                     windowToOpen.Show();
                     this.Close();

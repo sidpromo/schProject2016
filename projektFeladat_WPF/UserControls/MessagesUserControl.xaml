@@ -20,14 +20,14 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="InboxDataGrid"  Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
+        <DataGrid x:Name="InboxDataGrid"  Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>
+                <!--<DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>-->
                 <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*"/>
                 <DataGridTextColumn Binding="{Binding SentDate}" Header="Recieve date:" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="sentMessagesDataGrid"  Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,0,0,154">
+        <DataGrid x:Name="sentMessagesDataGrid"  Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,45,0,0"  VerticalAlignment="Top" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient:" Width="10*" />
                 <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*" />
@@ -35,7 +35,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Inbox:" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15"/>
-        <Label Content="Sent messages" HorizontalAlignment="Left" Margin="10,10,0,0" Width="180" FontSize="15" Height="35" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Sent messages" HorizontalAlignment="Left" Margin="10,10,0,0" Width="180" FontSize="15" Grid.Row="1" Height="35" VerticalAlignment="Top"/>
         <RichTextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,60"  IsReadOnly="True" Grid.RowSpan="2" >
             <FlowDocument>
                 <Paragraph>
@@ -47,7 +47,7 @@
                     <Run Text="{Binding SelectedMessage.Subject}"/>
                 </Paragraph>
                 <Paragraph>
-                    <Run Text="====================================================================="/>                    
+                    <Run Text="====================================================================="/>
                 </Paragraph>
                 <Paragraph>
                     <Run Text="{Binding SelectedMessage.Message}"/>
@@ -55,7 +55,7 @@
             </FlowDocument>
         </RichTextBox>
         <Label Content="Message:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
-        <Button Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1"/>
+        <Button Content="Delete" Grid.Column="1" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="85" Grid.Row="1" Command="{Binding DeleteCommand}"/>
         <Button Content="New message" Grid.Column="1" Margin="0,197,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Grid.Row="1" Command="{Binding SendCommand}"/>
     </Grid>
 </UserControl>

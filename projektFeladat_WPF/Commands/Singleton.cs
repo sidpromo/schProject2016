@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace projektFeladat_WPF.Commands
 {
@@ -10,7 +11,7 @@ namespace projektFeladat_WPF.Commands
     {
         private static Singleton instance = null;
         private static readonly object padlock = new object();
-        public int?  ID { get; private set; }
+        public int? ID { get; private set; } 
 
         Singleton()
         {
@@ -36,6 +37,7 @@ namespace projektFeladat_WPF.Commands
             if (ID==null)
             {
                 ID = id;
+                //MessageBox.Show($"ID has been set:{ID}");
             }
         }
     }

@@ -15,14 +15,17 @@ namespace projektFeladat_WPF.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Messages msg = (Messages)value;
-            IService service = new Service();
-//            Users user = service.GetUserById((int)msg.FromUserId);
-//            if (user!=null)
-//            {
-//string name = $"{user.FirstName} {user.MiddleName} {user.LastName}";
-//            return name;
-//            }
-            return "failz";
+            if (msg!=null)
+            {
+                IService service = new Service();
+                Users user = service.GetUserById((int)msg.FromUserId);
+                if (user != null)
+                {
+                    string name = $"{user.FirstName} {user.MiddleName} {user.LastName}";
+                    return name;
+                } 
+            }
+            return "MessageToSenderNameConverter error..";
             
             
         }

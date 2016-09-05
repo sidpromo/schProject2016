@@ -17,14 +17,17 @@ namespace projektFeladat_WPF.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Subjects subject = (Subjects)value;
-            IService service = new Service();
-            string name = service.GetSubjectTeacherName(subject);
-
-            if (name != null)
+            if (subject!=null)
             {
-                return name;
-            }
+                IService service = new Service();
+                string name = service.GetSubjectTeacherName(subject);
 
+                if (name != null)
+                {
+                    return name;
+                }
+
+            }
             return "Converter error";
             ////////////////////////////////////////
 

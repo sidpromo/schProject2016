@@ -78,12 +78,13 @@ namespace projektFeladat_WPF.ViewModels
 
         public void DeleteMethod()
         {
-            if (SelectedItem == null)
+            if (SelectedItem != null)
             {
-                return;
+                //_service.RemoveSubjectById(SelectedItem.Id); <== ezzel a módszerrel töröl
+                _service.RemoveSubject(SelectedItem);      //ez a módszer hiát dob
+                RefreshMethod();
             }
-            _service.RemoveSubjectById(SelectedItem.Id);
-            RefreshMethod();
+           
         }
 
         void MoveNextMethod()
