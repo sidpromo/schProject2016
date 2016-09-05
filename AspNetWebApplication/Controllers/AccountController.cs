@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using AspNetWebApplication.Models;
 using Repository;
 using Entities;
+using WcfServiceLibrary;
 
 namespace AspNetWebApplication.Controllers
 {
@@ -71,13 +72,19 @@ namespace AspNetWebApplication.Controllers
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             SignInStatus result = new SignInStatus();
-            EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            UsersRepository userRepo = new UsersRepository(ent);
-            if (userRepo.Login(model.Email, model.Password))
-            {
+            //EducationDatabaseEntities ent = new EducationDatabaseEntities();
+            //UsersRepository userRepo = new UsersRepository(ent);
+            IService service = new Service();
+            string eduId = model.Email, password = model.Password;
+
+          // if(userRepo.Login(model.Email, model.Password))
+          if(service.Login(eduId, password))
+            {    
 
                 var user = new Users();
-                user = userRepo.GetAll().FirstOrDefault(x => x.EduId == model.Email);
+               // user = userRepo.GetAll().FirstOrDefault(x => x.EduId == model.Email);
+                user = service.GetAllUsers().FirstOrDefault(x => x.EduId == eduId);
+
                 if (user != null)
                 {
                     result = SignInStatus.Success;

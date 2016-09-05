@@ -29,5 +29,7 @@ namespace AspNetWebApplication.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Entities.Messages> Messages { get; set; }
     }
 }
