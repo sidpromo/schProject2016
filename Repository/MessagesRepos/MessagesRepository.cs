@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Data.Entity;
 using Entities;
+using System;
+using System.Collections.Generic;
 
 namespace Repository
 {
@@ -20,5 +22,24 @@ namespace Repository
             return GetAll().Where(x => x.Id == message.Id).FirstOrDefault().Id;
         }
 
+        /// <summary>
+        /// A megadott id-jú felhasználó fogadott üzeneteit adja vissza.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public IEnumerable<Messages> GetReceivedMessages(int userId)
+        {
+            return GetAll().Where(x => x.ToUserId == userId);
+        }
+
+        /// <summary>
+        /// A megadott id-jú felhasználó küldött üzeneteit adja vissza.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public IEnumerable<Messages> GetSentMessages(int userId)
+        {
+            return GetAll().Where(x => x.FromUserId == userId);
+        }
     }
 }

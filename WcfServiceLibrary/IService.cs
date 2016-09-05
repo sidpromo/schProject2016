@@ -108,6 +108,10 @@ namespace WcfServiceLibrary
         void RemoveMessage(Messages entityToRemove);
         [OperationContract]
         void RemoveMessageById(int entityToRemoveById);
+        [OperationContract]
+        IEnumerable<Messages> GetReceivedMessages(int userId);
+        [OperationContract]
+        IEnumerable<Messages> GetSentMessages(int userId);
 
         //Semesters operations
         [OperationContract]

@@ -583,5 +583,17 @@ namespace WcfServiceLibrary
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             repo.RegisterUserToSubject(user, subject);
         }
+
+        public IEnumerable<Messages> GetReceivedMessages(int userId)
+        {
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.GetReceivedMessages(userId);
+        }
+
+        public IEnumerable<Messages> GetSentMessages(int userId)
+        {
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            return repo.GetSentMessages(userId);
+        }
     }
 }
