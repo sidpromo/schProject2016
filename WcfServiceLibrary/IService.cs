@@ -216,8 +216,11 @@ namespace WcfServiceLibrary
         void RemoveUser(Users entityToRemove);
         [OperationContract]
         void RemoveUserById(int entityToRemoveById);
+        [OperationContract]
         int GetUserId(Users user);
+        [OperationContract]
         IEnumerable<Users> GetTeachersFromUsers();
+        [OperationContract]
         bool Login(string eduId, string password);
 
         // Other operations
