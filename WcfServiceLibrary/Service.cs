@@ -589,11 +589,22 @@ namespace WcfServiceLibrary
             IMessagesRepository repo = new MessagesRepository(getEntities());
             return repo.GetReceivedMessages(userId);
         }
+        [DataContract]
+        class UserDTO
+        {
+            [DataMember]
+            public string uname { get; set; }
+        }
 
         public IEnumerable<Messages> GetSentMessages(int userId)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             return repo.GetSentMessages(userId);
+        }
+
+        public void SaveChanges()
+        {
+            getEntities().SaveChanges();
         }
     }
 }

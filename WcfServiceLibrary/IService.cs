@@ -225,6 +225,7 @@ namespace WcfServiceLibrary
 
         // Other operations
         AppInfo GetAppInfo();
+        void SaveChanges();
 
 
     }
