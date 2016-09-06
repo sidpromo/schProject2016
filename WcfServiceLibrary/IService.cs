@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using AutoMapper;
+using Entities;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace WcfServiceLibrary
     [ServiceContract]
     public interface IService
     {
-        //Administrators operations
+        #region Administrators operations
         [OperationContract]
         void AddAdministrator(Administrators entityToAdd);
         [OperationContract]
@@ -28,8 +29,9 @@ namespace WcfServiceLibrary
         void RemoveAdministrator(Administrators entityToRemove);
         [OperationContract]
         void RemoveAdministratorById(int entityToRemoveById);
+        #endregion
 
-        //Exams operations
+        #region Exams operations
         [OperationContract]
         void AddExam(Exams entityToAdd);
         [OperationContract]
@@ -44,8 +46,9 @@ namespace WcfServiceLibrary
         void RemoveExam(Exams entityToRemove);
         [OperationContract]
         void RemoveExamById(int entityToRemoveById);
+        #endregion
 
-        //ExamsUsers operations
+        #region ExamsUsers operations
         [OperationContract]
         void AddExamsUser(ExamsUsers entityToAdd);
         [OperationContract]
@@ -60,8 +63,9 @@ namespace WcfServiceLibrary
         void RemoveExamsUser(ExamsUsers entityToRemove);
         [OperationContract]
         void RemoveExamsUserById(int entityToRemoveById);
+        #endregion
 
-        //Grades operations
+        #region Grades operations
         [OperationContract]
         void AddGrade(Grades entityToAdd);
         [OperationContract]
@@ -76,8 +80,9 @@ namespace WcfServiceLibrary
         void RemoveGrade(Grades entityToRemove);
         [OperationContract]
         void RemoveGradeById(int entityToRemoveById);
+        #endregion
 
-        //Managers operations
+        #region Managers operations
         [OperationContract]
         void AddManager(Managers entityToAdd);
         [OperationContract]
@@ -92,8 +97,9 @@ namespace WcfServiceLibrary
         void RemoveManager(Managers entityToRemove);
         [OperationContract]
         void RemoveManagerById(int entityToRemoveById);
+        #endregion
 
-        //Messages operations
+        #region Messages operations
         [OperationContract]
         void AddMessage(Messages entityToAdd);
         [OperationContract]
@@ -112,8 +118,9 @@ namespace WcfServiceLibrary
         IEnumerable<Messages> GetReceivedMessages(int userId);
         [OperationContract]
         IEnumerable<Messages> GetSentMessages(int userId);
+        #endregion
 
-        //Semesters operations
+        #region Semesters operations
         [OperationContract]
         void AddSemester(Semesters entityToAdd);
         [OperationContract]
@@ -128,8 +135,9 @@ namespace WcfServiceLibrary
         void RemoveSemester(Semesters entityToRemove);
         [OperationContract]
         void RemoveSemesterById(int entityToRemoveById);
+        #endregion
 
-        //Students operations
+        #region Students operations
         [OperationContract]
         void AddStudent(Students entityToAdd);
         [OperationContract]
@@ -144,8 +152,9 @@ namespace WcfServiceLibrary
         void RemoveStudent(Students entityToRemove);
         [OperationContract]
         void RemoveStudentById(int entityToRemoveById);
+        #endregion
 
-        //Subjects operations
+        #region Subjects operations
         [OperationContract]
         void AddSubject(Subjects entityToAdd);
         [OperationContract]
@@ -160,8 +169,9 @@ namespace WcfServiceLibrary
         void RemoveSubject(Subjects entityToRemove);
         [OperationContract]
         void RemoveSubjectById(int entityToRemoveById);
+        #endregion
 
-        //SubjectsUsers operations
+        #region SubjectsUsers operations
         [OperationContract]
         void AddSubjectsUser(SubjectsUsers entityToAdd);
         [OperationContract]
@@ -184,8 +194,9 @@ namespace WcfServiceLibrary
         void RemoveSubjectsUser(SubjectsUsers entityToRemove);
         [OperationContract]
         void RemoveSubjectsUserById(int entityToRemoveById);
+        #endregion
 
-        //Teachers operations
+        #region Teachers operations
         [OperationContract]
         void AddTeacher(Teachers entityToAdd);
         [OperationContract]
@@ -200,8 +211,9 @@ namespace WcfServiceLibrary
         void RemoveTeacher(Teachers entityToRemove);
         [OperationContract]
         void RemoveTeacherById(int entityToRemoveById);
+        #endregion
 
-        //Users operations
+        #region Users operations
         [OperationContract]
         void AddUser(Users entityToAdd);
         [OperationContract]
@@ -222,25 +234,274 @@ namespace WcfServiceLibrary
         IEnumerable<Users> GetTeachersFromUsers();
         [OperationContract]
         bool Login(string eduId, string password);
+        #endregion
 
-        // Other operations
+        #region Other operations
         AppInfo GetAppInfo();
         void SaveChanges();
-
+        #endregion
 
     }
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfServiceLibrary.ContractType".
-
 
     [DataContract]
     public class AppInfo
     {
         [DataMember]
-        public string Version { get; set; } = "0.7";
-        public string AppName { get; set; } = "EducationDatabase";
+        public string Version { get; set; } = "0.8";
+        [DataMember]
+        public string AppName { get; set; } = "EduConnect";
+        [DataMember]
+        public string Maker { get; set; } = "BBB Solutions";
     }
+
+    [DataContract]
+    public class Administrators
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string AdminIdentifier { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Exams
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Exams()
+        {
+        }
+
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> InsertDate { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ModifyDate { get; set; }
+        [DataMember]
+        public Nullable<int> ModifiedBy { get; set; }
+        [DataMember]
+        public string ExamType { get; set; }
+        [DataMember]
+        public Nullable<int> SubjectID { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ExamDate { get; set; }
+        [DataMember]
+        public Nullable<int> Limit { get; set; }
+        [DataMember]
+        public string Description { get; set; }
+        [DataMember]
+        public string Room { get; set; }
+    }
+
+    [DataContract]
+    public class ExamsUsers
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> InsertDate { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ModifyDate { get; set; }
+        [DataMember]
+        public Nullable<int> ModifiedBy { get; set; }
+        [DataMember]
+        public Nullable<int> ExamId { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Grades
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> InsertDate { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ModifyDate { get; set; }
+        [DataMember]
+        public Nullable<int> ModifiedBy { get; set; }
+        [DataMember]
+        public Nullable<short> Grade { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+        [DataMember]
+        public Nullable<int> SubjectId { get; set; }
+        [DataMember]
+        public Nullable<int> ExamId { get; set; }
+    }
+
+    [DataContract]
+    public class Managers
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string ManagerIdentifier { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Messages
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> SentDate { get; set; }
+        [DataMember]
+        public Nullable<int> FromUserId { get; set; }
+        [DataMember]
+        public Nullable<int> ToUserId { get; set; }
+        [DataMember]
+        public string Subject { get; set; }
+        [DataMember]
+        public string Message { get; set; }
+        [DataMember]
+        public Nullable<bool> FromHighlighted { get; set; }
+        [DataMember]
+        public Nullable<bool> ToHighlighted { get; set; }
+        [DataMember]
+        public Nullable<bool> FromDeleted { get; set; }
+        [DataMember]
+        public Nullable<bool> ToDeleted { get; set; }
+        [DataMember]
+        public Nullable<bool> FromDeletedPerm { get; set; }
+        [DataMember]
+        public Nullable<bool> ToDeletedPerm { get; set; }
+        [DataMember]
+        public Nullable<bool> Read { get; set; }
+    }
+
+    [DataContract]
+    public class Semesters
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Semesters()
+        {
+        }
+
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string Description { get; set; }
+    }
+
+    [DataContract]
+    public class Students
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string StudyForm { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Subjects
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Subjects()
+        {
+        }
+
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string SubjectName { get; set; }
+        [DataMember]
+        public Nullable<int> SemesterId { get; set; }
+        [DataMember]
+        public Nullable<byte> Credits { get; set; }
+        [DataMember]
+        public string SubjectCode { get; set; }
+    }
+
+    [DataContract]
+    public class SubjectsUsers
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> EnrollDate { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ModifyDate { get; set; }
+        [DataMember]
+        public Nullable<int> ModifiedBy { get; set; }
+        [DataMember]
+        public Nullable<int> SubjectId { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Teachers
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<int> Rank { get; set; }
+        [DataMember]
+        public Nullable<int> UserId { get; set; }
+    }
+
+    [DataContract]
+    public class Users
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Users()
+        {
+        }
+
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> InsertDate { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> ModifyDate { get; set; }
+        [DataMember]
+        public Nullable<int> ModifiedBy { get; set; }
+        [DataMember]
+        public string EduId { get; set; }
+        [DataMember]
+        public string Password { get; set; }
+        [DataMember]
+        public Nullable<bool> Active { get; set; }
+        [DataMember]
+        public string UserType { get; set; }
+        [DataMember]
+        public string FirstName { get; set; }
+        [DataMember]
+        public string MiddleName { get; set; }
+        [DataMember]
+        public string LastName { get; set; }
+        [DataMember]
+        public string MothersName { get; set; }
+        [DataMember]
+        public Nullable<System.DateTime> BirthDate { get; set; }
+        [DataMember]
+        public string BirthPlace { get; set; }
+        [DataMember]
+        public string Nationality { get; set; }
+        [DataMember]
+        public string PersonalId { get; set; }
+        [DataMember]
+        public string MedicalCardId { get; set; }
+        [DataMember]
+        public Nullable<int> SemesterId { get; set; }
+        [DataMember]
+        public string SemesterState { get; set; }
+        [DataMember]
+        public string EduCardId { get; set; }
+        [DataMember]
+        public string Email { get; set; }
+    }
+
+
+
 
     /*
     [DataContract]
