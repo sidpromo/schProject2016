@@ -1,0 +1,115 @@
+﻿@model Entities.Messages
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Home/Index.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Messages</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromHighlighted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromHighlighted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToHighlighted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToHighlighted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDeleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDeleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromDeletedPerm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromDeletedPerm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToDeletedPerm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDeletedPerm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Read)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Read)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
