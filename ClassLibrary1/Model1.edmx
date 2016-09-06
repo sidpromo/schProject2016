@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EducationDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Administrators">
           <Key>
             <PropertyRef Name="Id" />
@@ -26,6 +26,7 @@
           <Property Name="ExamDate" Type="datetime" />
           <Property Name="Limit" Type="int" />
           <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Room" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ExamsUsers">
           <Key>
@@ -497,8 +498,7 @@
             <End Role="Users1" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EducationDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -528,6 +528,7 @@
           <NavigationProperty Name="Users" Relationship="Self.FK_Exams_ToUsers" FromRole="Exams" ToRole="Users" />
           <NavigationProperty Name="ExamsUsers" Relationship="Self.FK_ExamsUsers_ToExams" FromRole="Exams" ToRole="ExamsUsers" />
           <NavigationProperty Name="Grades" Relationship="Self.FK_Grades_ToExams" FromRole="Exams" ToRole="Grades" />
+          <Property Name="Room" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ExamsUsers">
           <Key>
@@ -1054,6 +1055,7 @@
           <EntitySetMapping Name="Exams">
             <EntityTypeMapping TypeName="EducationDatabaseModel.Exams">
               <MappingFragment StoreEntitySet="Exams">
+                <ScalarProperty Name="Room" ColumnName="Room" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
                 <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />

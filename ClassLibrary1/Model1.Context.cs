@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entities
+namespace ClassLibrary1
 {
     using System;
     using System.Data.Entity;

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entities
+namespace ClassLibrary1
 {
     using System;
     using System.Collections.Generic;
@@ -30,6 +30,7 @@ namespace Entities
         public Nullable<System.DateTime> ExamDate { get; set; }
         public Nullable<int> Limit { get; set; }
         public string Description { get; set; }
+        public string Room { get; set; }
     
         public virtual Subjects Subjects { get; set; }
         public virtual Users Users { get; set; }
