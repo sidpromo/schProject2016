@@ -22,9 +22,9 @@ namespace projektFeladat_WPF.ViewModels
             get { return currentUser; }
             set { currentUser = value; }
         }
-        public MainWindowViewModel(int id)
+        public MainWindowViewModel( )
         {
-            CurrentUser = _service.GetUserById(id);
+            CurrentUser = _service.GetUserById((int)Singleton.Instance.ID);
             CurrentUserInfo = String.Format("{0} {1} {2} ({3})", CurrentUser.FirstName, CurrentUser.MiddleName, CurrentUser.LastName, CurrentUser.EduId);
             WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {_service.GetAppInfo().AppName} v{_service.GetAppInfo().Version}");           
         }

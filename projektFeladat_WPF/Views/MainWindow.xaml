@@ -18,11 +18,7 @@
         </Grid.Background>
         <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch" >
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="17*"/>
-                        <RowDefinition Height="128*"/>
-                    </Grid.RowDefinitions>
+                <Grid>                   
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -30,31 +26,7 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
-                    <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="EduID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="E-mail:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Birthdate: " HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Nationality" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,7,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.FirstName}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MiddleName}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.LastName}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,97,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.EduId}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Email}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,157,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MothersName}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,187,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthDate}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,217,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.BirthPlace}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,247,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.Nationality}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.PersonalId}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MedicalCardId}" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.UserType}" VerticalAlignment="Top" Width="150"/>
+                    <UserControls:PersonalInfoUserControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="297"/>                    
                 </Grid>
 
 
@@ -87,10 +59,7 @@
             <TabItem Header="Exams">
 
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="17*"/>
-                        <RowDefinition Height="128*"/>
-                    </Grid.RowDefinitions>
+
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -98,6 +67,7 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+                    <UserControls:ExamsControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="868"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Messages">

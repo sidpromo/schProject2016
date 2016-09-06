@@ -70,7 +70,7 @@ namespace projektFeladat_WPF
                 {
                     int id =service.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
                     Singleton.Instance.SetId(id);
-                    var windowToOpen = new MainWindow(id);                    
+                    var windowToOpen = new MainWindow();                    
                     windowToOpen.Show();
                     this.Close();
                 }

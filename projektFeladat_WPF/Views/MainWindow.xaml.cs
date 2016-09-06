@@ -24,12 +24,10 @@ namespace projektFeladat_WPF.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(int CurrentUserId)
+        public MainWindow()
         {
-            InitializeComponent();            
-            IService service = new Service();
-            //Users currentUser = service.GetUserById(CurrentUserId);
-            MainWindowViewModel VM = new MainWindowViewModel(CurrentUserId);
+            InitializeComponent();
+            MainWindowViewModel VM = new MainWindowViewModel();
             DataContext = VM;            
             
         }
