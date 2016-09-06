@@ -15,9 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
-using Repository;
 using WcfServiceLibrary;
-using Entities;
 using projektFeladat_WPF.Commands;
 
 namespace projektFeladat_WPF

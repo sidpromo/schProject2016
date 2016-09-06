@@ -1,5 +1,4 @@
-﻿using Entities;
-using projektFeladat_WPF.ViewModels;
+﻿using projektFeladat_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.Views
 {
