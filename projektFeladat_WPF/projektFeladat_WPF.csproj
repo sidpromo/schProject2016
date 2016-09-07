@@ -89,7 +89,6 @@
       <DependentUpon>SubjectsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Bindable.cs" />
-    <Compile Include="ViewModels\ExamControlViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManageUserViewModel.cs" />
     <Compile Include="ViewModels\MessagesControlViewModel.cs" />

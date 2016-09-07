@@ -15,12 +15,12 @@
         <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Lastname:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-        <Label Content="EduID:" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="EduID" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="E-mail:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Mother's name:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Birthdate: " HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
-        <Label Content="Nationality:" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
+        <Label Content="Nationality" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Identity card no.:" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,332,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
