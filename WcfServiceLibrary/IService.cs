@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Entities;
+﻿using Entities;
 using Repository;
 using System;
 using System.Collections.Generic;

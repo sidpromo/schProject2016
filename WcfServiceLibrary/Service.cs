@@ -22,209 +22,209 @@ namespace WcfServiceLibrary
 
         public Service()
         {
-            Mapper.Initialize(x => x.CreateMap<Administrators, Entities.Administrators>());
-            Mapper.Initialize(x => x.CreateMap<Exams, Entities.Exams>());
-            Mapper.Initialize(x => x.CreateMap<ExamsUsers, Entities.ExamsUsers>());
-            Mapper.Initialize(x => x.CreateMap<Grades, Entities.Grades>());
-            Mapper.Initialize(x => x.CreateMap<Managers, Entities.Managers>());
-            Mapper.Initialize(x => x.CreateMap<Messages, Entities.Messages>());
-            Mapper.Initialize(x => x.CreateMap<Semesters, Entities.Semesters>());
-            Mapper.Initialize(x => x.CreateMap<Students, Entities.Students>());
-            Mapper.Initialize(x => x.CreateMap<Subjects, Entities.Subjects>());
-            Mapper.Initialize(x => x.CreateMap<SubjectsUsers, Entities.SubjectsUsers>());
-            Mapper.Initialize(x => x.CreateMap<Teachers, Entities.Teachers>());
-            Mapper.Initialize(x => x.CreateMap<Users, Entities.Users>());
+            Mapper.CreateMap<Administrators, Entities.Administrators>();
+            Mapper.CreateMap<Exams, Entities.Exams>();
+            Mapper.CreateMap<ExamsUsers, Entities.ExamsUsers>();
+            Mapper.CreateMap<Grades, Entities.Grades>();
+            Mapper.CreateMap<Managers, Entities.Managers>();
+            Mapper.CreateMap<Messages, Entities.Messages>();
+            Mapper.CreateMap<Semesters, Entities.Semesters>();
+            Mapper.CreateMap<Students, Entities.Students>();
+            Mapper.CreateMap<Subjects, Entities.Subjects>();
+            Mapper.CreateMap<SubjectsUsers, Entities.SubjectsUsers>();
+            Mapper.CreateMap<Teachers, Entities.Teachers>();
+            Mapper.CreateMap<Users, Entities.Users>();
         }
 
         public void AddAdministrator(Administrators entityToAdd)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
-            Entities.Administrators entityToAdd2 = Mapper.Map<Entities.Administrators>(entityToAdd);
+            Entities.Administrators entityToAdd2 = Mapper.Map<Administrators, Entities.Administrators>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddExam(Exams entityToAdd)
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
-            Entities.Exams entityToAdd2 = Mapper.Map<Entities.Exams>(entityToAdd);
+            Entities.Exams entityToAdd2 = Mapper.Map<Exams, Entities.Exams>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddExamsUser(ExamsUsers entityToAdd)
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
-            Entities.ExamsUsers entityToAdd2 = Mapper.Map<Entities.ExamsUsers>(entityToAdd);
+            Entities.ExamsUsers entityToAdd2 = Mapper.Map<ExamsUsers, Entities.ExamsUsers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddGrade(Grades entityToAdd)
         {
             IGradesRepository repo = new GradesRepository(getEntities());
-            Entities.Grades entityToAdd2 = Mapper.Map<Entities.Grades>(entityToAdd);
+            Entities.Grades entityToAdd2 = Mapper.Map<Grades, Entities.Grades>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddManager(Managers entityToAdd)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
-            Entities.Managers entityToAdd2 = Mapper.Map<Entities.Managers>(entityToAdd);
+            Entities.Managers entityToAdd2 = Mapper.Map<Managers, Entities.Managers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddMessage(Messages entityToAdd)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
-            Entities.Messages entityToAdd2 = Mapper.Map<Entities.Messages>(entityToAdd);
+            Entities.Messages entityToAdd2 = Mapper.Map<Messages, Entities.Messages>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddSemester(Semesters entityToAdd)
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
-            Entities.Semesters entityToAdd2 = Mapper.Map<Entities.Semesters>(entityToAdd);
+            Entities.Semesters entityToAdd2 = Mapper.Map<Semesters, Entities.Semesters>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddStudent(Students entityToAdd)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
-            Entities.Students entityToAdd2 = Mapper.Map<Entities.Students>(entityToAdd);
+            Entities.Students entityToAdd2 = Mapper.Map<Students, Entities.Students>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddSubject(Subjects entityToAdd)
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
-            Entities.Subjects entityToAdd2 = Mapper.Map<Entities.Subjects>(entityToAdd);
+            Entities.Subjects entityToAdd2 = Mapper.Map<Subjects, Entities.Subjects>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddSubjectsUser(SubjectsUsers entityToAdd)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.SubjectsUsers entityToAdd2 = Mapper.Map<Entities.SubjectsUsers>(entityToAdd);
+            Entities.SubjectsUsers entityToAdd2 = Mapper.Map<SubjectsUsers, Entities.SubjectsUsers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddTeacher(Teachers entityToAdd)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
-            Entities.Teachers entityToAdd2 = Mapper.Map<Entities.Teachers>(entityToAdd);
+            Entities.Teachers entityToAdd2 = Mapper.Map<Teachers, Entities.Teachers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public void AddUser(Users entityToAdd)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
-            Entities.Users entityToAdd2 = Mapper.Map<Entities.Users>(entityToAdd);
+            Entities.Users entityToAdd2 = Mapper.Map<Users, Entities.Users>(entityToAdd);
             repo.Add(entityToAdd2);
         }
 
         public IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
-            Expression<Func<Entities.Administrators, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Administrators, bool>>>(filterPredicate);
+            Expression<Func<Entities.Administrators, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Administrators, bool>>, Expression<Func<Entities.Administrators, bool>>>(filterPredicate);
             IEnumerable<Entities.Administrators> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Administrators> returnedValue2 = Mapper.Map<IEnumerable<Administrators>>(returnedValue);
+            IEnumerable<Administrators> returnedValue2 = Mapper.Map< IEnumerable < Entities.Administrators > , IEnumerable <Administrators>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate)
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
-            Expression<Func<Entities.Exams, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Exams, bool>>>(filterPredicate);
+            Expression<Func<Entities.Exams, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Exams, bool>> , Expression <Func<Entities.Exams, bool>>>(filterPredicate);
             IEnumerable<Entities.Exams> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Exams> returnedValue2 = Mapper.Map<IEnumerable<Exams>>(returnedValue);
+            IEnumerable<Exams> returnedValue2 = Mapper.Map< IEnumerable < Entities.Exams >, IEnumerable <Exams>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate)
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
-            Expression<Func<Entities.ExamsUsers, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.ExamsUsers, bool>>>(filterPredicate);
+            Expression<Func<Entities.ExamsUsers, bool>> filterPredicate2 = Mapper.Map< Expression < Func < ExamsUsers, bool>> , Expression <Func<Entities.ExamsUsers, bool>>>(filterPredicate);
             IEnumerable<Entities.ExamsUsers> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map<IEnumerable<ExamsUsers>>(returnedValue);
+            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.ExamsUsers > , IEnumerable <ExamsUsers>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate)
         {
             IGradesRepository repo = new GradesRepository(getEntities());
-            Expression<Func<Entities.Grades, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Grades, bool>>>(filterPredicate);
+            Expression<Func<Entities.Grades, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Grades, bool>> , Expression <Func<Entities.Grades, bool>>>(filterPredicate);
             IEnumerable<Entities.Grades> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Grades> returnedValue2 = Mapper.Map<IEnumerable<Grades>>(returnedValue);
+            IEnumerable<Grades> returnedValue2 = Mapper.Map< IEnumerable < Entities.Grades > , IEnumerable <Grades>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
-            Expression<Func<Entities.Managers, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Managers, bool>>>(filterPredicate);
+            Expression<Func<Entities.Managers, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Managers, bool>> , Expression <Func<Entities.Managers, bool>>>(filterPredicate);
             IEnumerable<Entities.Managers> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Managers> returnedValue2 = Mapper.Map<IEnumerable<Managers>>(returnedValue);
+            IEnumerable<Managers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Managers > , IEnumerable <Managers>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
-            Expression<Func<Entities.Messages, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Messages, bool>>>(filterPredicate);
+            Expression<Func<Entities.Messages, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Messages, bool>> , Expression <Func<Entities.Messages, bool>>>(filterPredicate);
             IEnumerable<Entities.Messages> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate)
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
-            Expression<Func<Entities.Semesters, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Semesters, bool>>>(filterPredicate);
+            Expression<Func<Entities.Semesters, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Semesters, bool>> , Expression <Func<Entities.Semesters, bool>>>(filterPredicate);
             IEnumerable<Entities.Semesters> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Semesters> returnedValue2 = Mapper.Map<IEnumerable<Semesters>>(returnedValue);
+            IEnumerable<Semesters> returnedValue2 = Mapper.Map< IEnumerable < Entities.Semesters > , IEnumerable <Semesters>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
-            Expression<Func<Entities.Students, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Students, bool>>>(filterPredicate);
+            Expression<Func<Entities.Students, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Students, bool>> , Expression <Func<Entities.Students, bool>>>(filterPredicate);
             IEnumerable<Entities.Students> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Students> returnedValue2 = Mapper.Map<IEnumerable<Students>>(returnedValue);
+            IEnumerable<Students> returnedValue2 = Mapper.Map< IEnumerable < Entities.Students > , IEnumerable <Students>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate)
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
-            Expression<Func<Entities.Subjects, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Subjects, bool>>>(filterPredicate);
+            Expression<Func<Entities.Subjects, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Subjects, bool>> , Expression <Func<Entities.Subjects, bool>>>(filterPredicate);
             IEnumerable<Entities.Subjects> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Subjects> returnedValue2 = Mapper.Map<IEnumerable<Subjects>>(returnedValue);
+            IEnumerable<Subjects> returnedValue2 = Mapper.Map< IEnumerable < Entities.Subjects > , IEnumerable <Subjects>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Expression<Func<Entities.SubjectsUsers, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.SubjectsUsers, bool>>>(filterPredicate);
+            Expression<Func<Entities.SubjectsUsers, bool>> filterPredicate2 = Mapper.Map< Expression < Func < SubjectsUsers, bool>> , Expression <Func<Entities.SubjectsUsers, bool>>>(filterPredicate);
             IEnumerable<Entities.SubjectsUsers> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map<IEnumerable<SubjectsUsers>>(returnedValue);
+            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.SubjectsUsers > , IEnumerable <SubjectsUsers>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
-            Expression<Func<Entities.Teachers, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Teachers, bool>>>(filterPredicate);
+            Expression<Func<Entities.Teachers, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Teachers, bool>> , Expression <Func<Entities.Teachers, bool>>>(filterPredicate);
             IEnumerable<Entities.Teachers> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Teachers> returnedValue2 = Mapper.Map<IEnumerable<Teachers>>(returnedValue);
+            IEnumerable<Teachers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Teachers > , IEnumerable <Teachers>>(returnedValue);
             return returnedValue2;
         }
 
         public IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
-            Expression<Func<Entities.Users, bool>> filterPredicate2 = Mapper.Map<Expression<Func<Entities.Users, bool>>>(filterPredicate);
+            Expression<Func<Entities.Users, bool>> filterPredicate2 = Mapper.Map< Expression < Func < Users, bool>> , Expression <Func<Entities.Users, bool>>>(filterPredicate);
             IEnumerable<Entities.Users> returnedValue = repo.Find(filterPredicate2);
-            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Users>>(returnedValue);
+            IEnumerable<Users> returnedValue2 = Mapper.Map< IEnumerable < Entities.Users > , IEnumerable <Users>>(returnedValue);
             return returnedValue2;
         }
 
@@ -232,7 +232,7 @@ namespace WcfServiceLibrary
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
             Entities.Administrators returnedValue = repo.GetById(entityToGetById);
-            Administrators returnedValue2 = Mapper.Map<Administrators>(returnedValue);
+            Administrators returnedValue2 = Mapper.Map<Entities.Administrators, Administrators>(returnedValue);
             return returnedValue2;
         }
 
@@ -240,7 +240,7 @@ namespace WcfServiceLibrary
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
             IEnumerable<Entities.Administrators> returnedValue = repo.GetAll();
-            IEnumerable<Administrators> returnedValue2 = Mapper.Map<IEnumerable<Administrators>>(returnedValue);
+            IEnumerable<Administrators> returnedValue2 = Mapper.Map< IEnumerable < Entities.Administrators > , IEnumerable <Administrators>>(returnedValue);
             return returnedValue2;
         }
 
@@ -248,7 +248,7 @@ namespace WcfServiceLibrary
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
             IEnumerable<Entities.Exams> returnedValue = repo.GetAll();
-            IEnumerable<Exams> returnedValue2 = Mapper.Map<IEnumerable<Exams>>(returnedValue);
+            IEnumerable<Exams> returnedValue2 = Mapper.Map< IEnumerable < Entities.Exams > , IEnumerable <Exams>>(returnedValue);
             return returnedValue2;
         }
 
@@ -256,7 +256,7 @@ namespace WcfServiceLibrary
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
             IEnumerable<Entities.ExamsUsers> returnedValue = repo.GetAll();
-            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map<IEnumerable<ExamsUsers>>(returnedValue);
+            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.ExamsUsers > , IEnumerable <ExamsUsers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -264,7 +264,7 @@ namespace WcfServiceLibrary
         {
             IGradesRepository repo = new GradesRepository(getEntities());
             IEnumerable<Entities.Grades> returnedValue = repo.GetAll();
-            IEnumerable<Grades> returnedValue2 = Mapper.Map<IEnumerable<Grades>>(returnedValue);
+            IEnumerable<Grades> returnedValue2 = Mapper.Map< IEnumerable < Entities.Grades > , IEnumerable <Grades>>(returnedValue);
             return returnedValue2;
         }
 
@@ -272,7 +272,7 @@ namespace WcfServiceLibrary
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
             IEnumerable<Entities.Managers> returnedValue = repo.GetAll();
-            IEnumerable<Managers> returnedValue2 = Mapper.Map<IEnumerable<Managers>>(returnedValue);
+            IEnumerable<Managers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Managers > , IEnumerable <Managers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -280,7 +280,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetAll();
-            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
             return returnedValue2;
         }
 
@@ -288,7 +288,7 @@ namespace WcfServiceLibrary
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
             IEnumerable<Entities.Semesters> returnedValue = repo.GetAll();
-            IEnumerable<Semesters> returnedValue2 = Mapper.Map<IEnumerable<Semesters>>(returnedValue);
+            IEnumerable<Semesters> returnedValue2 = Mapper.Map< IEnumerable < Entities.Semesters > , IEnumerable <Semesters>>(returnedValue);
             return returnedValue2;
         }
 
@@ -296,7 +296,7 @@ namespace WcfServiceLibrary
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
             IEnumerable<Entities.Students> returnedValue = repo.GetAll();
-            IEnumerable<Students> returnedValue2 = Mapper.Map<IEnumerable<Students>>(returnedValue);
+            IEnumerable<Students> returnedValue2 = Mapper.Map< IEnumerable < Entities.Students > , IEnumerable <Students>>(returnedValue);
             return returnedValue2;
         }
 
@@ -304,7 +304,7 @@ namespace WcfServiceLibrary
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
             IEnumerable<Entities.Subjects> returnedValue = repo.GetAll();
-            IEnumerable<Subjects> returnedValue2 = Mapper.Map<IEnumerable<Subjects>>(returnedValue);
+            IEnumerable<Subjects> returnedValue2 = Mapper.Map< IEnumerable < Entities.Subjects > , IEnumerable <Subjects>>(returnedValue);
             return returnedValue2;
         }
 
@@ -312,7 +312,7 @@ namespace WcfServiceLibrary
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             IEnumerable<Entities.SubjectsUsers> returnedValue = repo.GetAll();
-            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map<IEnumerable<SubjectsUsers>>(returnedValue);
+            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.SubjectsUsers > , IEnumerable <SubjectsUsers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -320,7 +320,7 @@ namespace WcfServiceLibrary
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
             IEnumerable<Entities.Teachers> returnedValue = repo.GetAll();
-            IEnumerable<Teachers> returnedValue2 = Mapper.Map<IEnumerable<Teachers>>(returnedValue);
+            IEnumerable<Teachers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Teachers > , IEnumerable <Teachers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -328,7 +328,7 @@ namespace WcfServiceLibrary
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             IEnumerable<Entities.Users> returnedValue = repo.GetAll();
-            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Users>>(returnedValue);
+            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Entities.Users>,IEnumerable<Users>>(returnedValue);
             return returnedValue2;
         }
 
@@ -336,7 +336,7 @@ namespace WcfServiceLibrary
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
             Entities.Exams returnedValue = repo.GetById(entityToGetById);
-            Exams returnedValue2 = Mapper.Map<Exams>(returnedValue);
+            Exams returnedValue2 = Mapper.Map<Entities.Exams, Exams>(returnedValue);
             return returnedValue2;
         }
 
@@ -344,7 +344,7 @@ namespace WcfServiceLibrary
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
             Entities.ExamsUsers returnedValue = repo.GetById(entityToGetById);
-            ExamsUsers returnedValue2 = Mapper.Map<ExamsUsers>(returnedValue);
+            ExamsUsers returnedValue2 = Mapper.Map<Entities.ExamsUsers, ExamsUsers>(returnedValue);
             return returnedValue2;
         }
 
@@ -352,91 +352,91 @@ namespace WcfServiceLibrary
         {
             IGradesRepository repo = new GradesRepository(getEntities());
             Entities.Grades returnedValue = repo.GetById(entityToGetById);
-            Grades returnedValue2 = Mapper.Map<Grades>(returnedValue);
+            Grades returnedValue2 = Mapper.Map<Entities.Grades, Grades>(returnedValue);
             return returnedValue2;
         }
 
         public int GetIdOfAdministrator(Administrators entityToGetId)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
-            Entities.Administrators entityToGetId2 = Mapper.Map<Entities.Administrators>(entityToGetId);
+            Entities.Administrators entityToGetId2 = Mapper.Map<Administrators, Entities.Administrators>(entityToGetId);
             return repo.GetAdminId(entityToGetId2);
         }
 
         public int GetIdOfExam(Exams entityToGetId)
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
-            Entities.Exams entityToGetId2 = Mapper.Map<Entities.Exams>(entityToGetId);
+            Entities.Exams entityToGetId2 = Mapper.Map<Exams, Entities.Exams>(entityToGetId);
             return repo.GetExamId(entityToGetId2);
         }
 
         public int GetIdOfExamsUser(ExamsUsers entityToGetId)
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
-            Entities.ExamsUsers entityToGetId2 = Mapper.Map<Entities.ExamsUsers>(entityToGetId);
+            Entities.ExamsUsers entityToGetId2 = Mapper.Map<ExamsUsers, Entities.ExamsUsers>(entityToGetId);
             return repo.GetExamUserId(entityToGetId2);
         }
 
         public int GetIdOfGrade(Grades entityToGetId)
         {
             IGradesRepository repo = new GradesRepository(getEntities());
-            Entities.Grades entityToGetId2 = Mapper.Map<Entities.Grades>(entityToGetId);
+            Entities.Grades entityToGetId2 = Mapper.Map<Grades, Entities.Grades>(entityToGetId);
             return repo.GetGradeId(entityToGetId2);
         }
 
         public int GetIdOfManager(Managers entityToGetId)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
-            Entities.Managers entityToGetId2 = Mapper.Map<Entities.Managers>(entityToGetId);
+            Entities.Managers entityToGetId2 = Mapper.Map<Managers, Entities.Managers>(entityToGetId);
             return repo.GetManagerId(entityToGetId2);
         }
 
         public int GetIdOfMessage(Messages entityToGetId)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
-            Entities.Messages entityToGetId2 = Mapper.Map<Entities.Messages>(entityToGetId);
+            Entities.Messages entityToGetId2 = Mapper.Map<Messages, Entities.Messages>(entityToGetId);
             return repo.GetMessageId(entityToGetId2);
         }
 
         public int GetIdOfSemester(Semesters entityToGetId)
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
-            Entities.Semesters entityToGetId2 = Mapper.Map<Entities.Semesters>(entityToGetId);
+            Entities.Semesters entityToGetId2 = Mapper.Map<Semesters, Entities.Semesters>(entityToGetId);
             return repo.GetSemesterId(entityToGetId2);
         }
 
         public int GetIdOfStudent(Students entityToGetId)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
-            Entities.Students entityToGetId2 = Mapper.Map<Entities.Students>(entityToGetId);
+            Entities.Students entityToGetId2 = Mapper.Map<Students, Entities.Students>(entityToGetId);
             return repo.GetStudentId(entityToGetId2);
         }
 
         public int GetIdOfSubject(Subjects entityToGetId)
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
-            Entities.Subjects entityToGetId2 = Mapper.Map<Entities.Subjects>(entityToGetId);
+            Entities.Subjects entityToGetId2 = Mapper.Map<Subjects, Entities.Subjects>(entityToGetId);
             return repo.GetSubjectId(entityToGetId2);
         }
 
         public int GetIdOfSubjectsUser(SubjectsUsers entityToGetId)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.SubjectsUsers entityToGetId2 = Mapper.Map<Entities.SubjectsUsers>(entityToGetId);
+            Entities.SubjectsUsers entityToGetId2 = Mapper.Map<SubjectsUsers, Entities.SubjectsUsers>(entityToGetId);
             return repo.GetSubjectUserId(entityToGetId2);
         }
 
         public int GetIdOfTeacher(Teachers entityToGetId)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
-            Entities.Teachers entityToGetId2 = Mapper.Map<Entities.Teachers>(entityToGetId);
+            Entities.Teachers entityToGetId2 = Mapper.Map<Teachers, Entities.Teachers>(entityToGetId);
             return repo.GetTeacherId(entityToGetId2);
         }
 
         public int GetIdOfUser(Users entityToGetId)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
-            Entities.Users entityToGetId2 = Mapper.Map<Entities.Users>(entityToGetId);
+            Entities.Users entityToGetId2 = Mapper.Map<Users, Entities.Users>(entityToGetId);
             return repo.GetUserId(entityToGetId2);
         }
 
@@ -444,7 +444,7 @@ namespace WcfServiceLibrary
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
             Entities.Managers returnedValue = repo.GetById(entityToGetById);
-            Managers returnedValue2 = Mapper.Map<Managers>(returnedValue);
+            Managers returnedValue2 = Mapper.Map<Entities.Managers, Managers>(returnedValue);
             return returnedValue2;
         }
 
@@ -452,7 +452,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             Entities.Messages returnedValue = repo.GetById(entityToGetById);
-            Messages returnedValue2 = Mapper.Map<Messages>(returnedValue);
+            Messages returnedValue2 = Mapper.Map<Entities.Messages, Messages>(returnedValue);
             return returnedValue2;
         }
 
@@ -460,7 +460,7 @@ namespace WcfServiceLibrary
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
             Entities.Semesters returnedValue = repo.GetById(entityToGetById);
-            Semesters returnedValue2 = Mapper.Map<Semesters>(returnedValue);
+            Semesters returnedValue2 = Mapper.Map<Entities.Semesters, Semesters>(returnedValue);
             return returnedValue2;
         }
 
@@ -468,7 +468,7 @@ namespace WcfServiceLibrary
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
             Entities.Students returnedValue = repo.GetById(entityToGetById);
-            Students returnedValue2 = Mapper.Map<Students>(returnedValue);
+            Students returnedValue2 = Mapper.Map<Entities.Students, Students>(returnedValue);
             return returnedValue2;
         }
 
@@ -476,7 +476,7 @@ namespace WcfServiceLibrary
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
             Entities.Subjects returnedValue = repo.GetById(entityToGetById);
-            Subjects returnedValue2 = Mapper.Map<Subjects>(returnedValue);
+            Subjects returnedValue2 = Mapper.Map<Entities.Subjects, Subjects>(returnedValue);
             return returnedValue2;
         }
 
@@ -484,14 +484,14 @@ namespace WcfServiceLibrary
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             Entities.SubjectsUsers returnedValue = repo.GetById(entityToGetById);
-            SubjectsUsers returnedValue2 = Mapper.Map<SubjectsUsers>(returnedValue);
+            SubjectsUsers returnedValue2 = Mapper.Map<Entities.SubjectsUsers, SubjectsUsers>(returnedValue);
             return returnedValue2;
         }
 
         public string GetSubjectTeacherName(Subjects subject)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.Subjects subject2 = Mapper.Map<Entities.Subjects>(subject);
+            Entities.Subjects subject2 = Mapper.Map<Subjects, Entities.Subjects>(subject);
             return repo.GetSubjectTeacherName(subject2);
         }
 
@@ -499,7 +499,7 @@ namespace WcfServiceLibrary
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
             Entities.Teachers returnedValue = repo.GetById(entityToGetById);
-            Teachers returnedValue2 = Mapper.Map<Teachers>(returnedValue);
+            Teachers returnedValue2 = Mapper.Map<Entities.Teachers, Teachers>(returnedValue);
             return returnedValue2;
         }
 
@@ -507,7 +507,7 @@ namespace WcfServiceLibrary
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             IEnumerable<Entities.Users> returnedValue = repo.GetTeachersFromUsers();
-            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Users>>(returnedValue);
+            IEnumerable<Users> returnedValue2 = Mapper.Map< IEnumerable < Entities.Users > , IEnumerable <Users>>(returnedValue);
             return returnedValue2;
         }
 
@@ -515,14 +515,14 @@ namespace WcfServiceLibrary
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             Entities.Users returnedValue = repo.GetById(entityToGetById);
-            Users returnedValue2 = Mapper.Map<Users>(returnedValue);
+            Users returnedValue2 = Mapper.Map<Entities.Users, Users>(returnedValue);
             return returnedValue2;
         }
 
         public int GetUserId(Users user)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
-            Entities.Users user2 = Mapper.Map<Entities.Users>(user);
+            Entities.Users user2 = Mapper.Map<Users, Entities.Users>(user);
             return repo.GetUserId(user2);
         }
 
@@ -535,7 +535,7 @@ namespace WcfServiceLibrary
         public void RemoveAdministrator(Administrators entityToRemove)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
-            Entities.Administrators entityToRemove2 = Mapper.Map<Entities.Administrators>(entityToRemove);
+            Entities.Administrators entityToRemove2 = Mapper.Map<Administrators, Entities.Administrators>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -548,7 +548,7 @@ namespace WcfServiceLibrary
         public void RemoveExam(Exams entityToRemove)
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
-            Entities.Exams entityToRemove2 = Mapper.Map<Entities.Exams>(entityToRemove);
+            Entities.Exams entityToRemove2 = Mapper.Map<Exams, Entities.Exams>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -561,7 +561,7 @@ namespace WcfServiceLibrary
         public void RemoveExamsUser(ExamsUsers entityToRemove)
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
-            Entities.ExamsUsers entityToRemove2 = Mapper.Map<Entities.ExamsUsers>(entityToRemove);
+            Entities.ExamsUsers entityToRemove2 = Mapper.Map<ExamsUsers, Entities.ExamsUsers>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -574,7 +574,7 @@ namespace WcfServiceLibrary
         public void RemoveGrade(Grades entityToRemove)
         {
             IGradesRepository repo = new GradesRepository(getEntities());
-            Entities.Grades entityToRemove2 = Mapper.Map<Entities.Grades>(entityToRemove);
+            Entities.Grades entityToRemove2 = Mapper.Map<Grades, Entities.Grades>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -587,7 +587,7 @@ namespace WcfServiceLibrary
         public void RemoveManager(Managers entityToRemove)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
-            Entities.Managers entityToRemove2 = Mapper.Map<Entities.Managers>(entityToRemove);
+            Entities.Managers entityToRemove2 = Mapper.Map<Managers, Entities.Managers>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -600,7 +600,7 @@ namespace WcfServiceLibrary
         public void RemoveMessage(Messages entityToRemove)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
-            Entities.Messages entityToRemove2 = Mapper.Map<Entities.Messages>(entityToRemove);
+            Entities.Messages entityToRemove2 = Mapper.Map<Messages, Entities.Messages>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -613,7 +613,7 @@ namespace WcfServiceLibrary
         public void RemoveSemester(Semesters entityToRemove)
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
-            Entities.Semesters entityToRemove2 = Mapper.Map<Entities.Semesters>(entityToRemove);
+            Entities.Semesters entityToRemove2 = Mapper.Map<Semesters, Entities.Semesters>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -626,7 +626,7 @@ namespace WcfServiceLibrary
         public void RemoveStudent(Students entityToRemove)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
-            Entities.Students entityToRemove2 = Mapper.Map<Entities.Students>(entityToRemove);
+            Entities.Students entityToRemove2 = Mapper.Map<Students, Entities.Students>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -639,7 +639,7 @@ namespace WcfServiceLibrary
         public void RemoveSubject(Subjects entityToRemove)
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
-            Entities.Subjects entityToRemove2 = Mapper.Map<Entities.Subjects>(entityToRemove);
+            Entities.Subjects entityToRemove2 = Mapper.Map<Subjects, Entities.Subjects>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -652,7 +652,7 @@ namespace WcfServiceLibrary
         public void RemoveSubjectsUser(SubjectsUsers entityToRemove)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.SubjectsUsers entityToRemove2 = Mapper.Map<Entities.SubjectsUsers>(entityToRemove);
+            Entities.SubjectsUsers entityToRemove2 = Mapper.Map<SubjectsUsers, Entities.SubjectsUsers>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -665,7 +665,7 @@ namespace WcfServiceLibrary
         public void RemoveTeacher(Teachers entityToRemove)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
-            Entities.Teachers entityToRemove2 = Mapper.Map<Entities.Teachers>(entityToRemove);
+            Entities.Teachers entityToRemove2 = Mapper.Map<Teachers, Entities.Teachers>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -678,7 +678,7 @@ namespace WcfServiceLibrary
         public void RemoveUser(Users entityToRemove)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
-            Entities.Users entityToRemove2 = Mapper.Map<Entities.Users>(entityToRemove);
+            Entities.Users entityToRemove2 = Mapper.Map<Users, Entities.Users>(entityToRemove);
             repo.Remove(entityToRemove2);
         }
 
@@ -696,22 +696,22 @@ namespace WcfServiceLibrary
         public int GetRegisteredStudentsCount(Subjects subject)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.Subjects subject2 = Mapper.Map<Entities.Subjects>(subject);
+            Entities.Subjects subject2 = Mapper.Map<Subjects, Entities.Subjects>(subject);
             return repo.GetRegisteredStudentsCount(subject2);
         }
 
         public int GetRegisteredTeachersCount(Subjects subject)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.Subjects subject2 = Mapper.Map<Entities.Subjects>(subject);
+            Entities.Subjects subject2 = Mapper.Map<Subjects, Entities.Subjects>(subject);
             return repo.GetRegisteredTeachersCount(subject2);
         }
 
         public void RegisterUserToSubject(Users user, Subjects subject)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
-            Entities.Users user2 = Mapper.Map<Entities.Users>(user);
-            Entities.Subjects subject2 = Mapper.Map<Entities.Subjects>(subject);
+            Entities.Users user2 = Mapper.Map<Users, Entities.Users>(user);
+            Entities.Subjects subject2 = Mapper.Map<Subjects, Entities.Subjects>(subject);
             repo.RegisterUserToSubject(user2, subject2);
         }
 
@@ -719,7 +719,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetReceivedMessages(userId);
-            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
             return returnedValue2;
         }
 
@@ -727,7 +727,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetSentMessages(userId);
-            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
             return returnedValue2;
         }
 
