@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
@@ -16,7 +17,9 @@ namespace projektFeladat_WPF.Converters
             Messages msg = (Messages)value;
             if (msg!=null)
             {
-                IService service = new Service();
+                ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
+                IService service = channelFactory.CreateChannel();
+
                 Users user = service.GetUserById((int)msg.FromUserId);
                 if (user != null)
                 {
