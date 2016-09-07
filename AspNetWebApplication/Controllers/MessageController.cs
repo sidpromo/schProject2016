@@ -11,7 +11,7 @@ using WcfServiceLibrary;
 
 namespace AspNetWebApplication.Controllers
 {
-    public class MessagesController : Controller
+    public class MessageController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         
