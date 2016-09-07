@@ -8,14 +8,14 @@ using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
-    class ExamControlViewModel : Bindable
+    public class ExamControlViewModel : Bindable
     {
         private IEnumerable<Exams> examList;
 
         public IEnumerable<Exams> ExamList
         {
             get { return examList; }
-            set { examList = value;OnPropertyChanged(); }
+            set { examList = value; OnPropertyChanged(); }
         }
 
         private IEnumerable<Users> studentList;
@@ -23,7 +23,7 @@ namespace projektFeladat_WPF.ViewModels
         public IEnumerable<Users> StudentList
         {
             get { return studentList; }
-            set { studentList = value;OnPropertyChanged(); }
+            set { studentList = value; OnPropertyChanged(); }
         }
 
         private Exams selectedExam;
@@ -31,7 +31,7 @@ namespace projektFeladat_WPF.ViewModels
         public Exams SelectedExam
         {
             get { return selectedExam; }
-            set { selectedExam = value;OnPropertyChanged(); }
+            set { selectedExam = value; OnPropertyChanged(); }
         }
 
         private Users selectedStudent;
@@ -39,7 +39,7 @@ namespace projektFeladat_WPF.ViewModels
         public Users SelectedUser
         {
             get { return selectedStudent; }
-            set { selectedStudent = value;OnPropertyChanged(); }
+            set { selectedStudent = value; OnPropertyChanged(); }
         }
 
         public ICommand AddCommand { get; private set; }
@@ -54,7 +54,7 @@ namespace projektFeladat_WPF.ViewModels
             RefreshMethod();
         }
 
-       void RefreshMethod()
+        void RefreshMethod()
         {
             ExamList = new List<Exams>();
             StudentList = new List<Users>();
@@ -70,7 +70,7 @@ namespace projektFeladat_WPF.ViewModels
         {
 
         }
-         void Register()
+        void Register()
         {
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projektFeladat_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace projektFeladat_WPF.Views
     /// </summary>
     public partial class ExamManagerWindow : Window
     {
+        ExamManagerWindowViewModel VM;
         public ExamManagerWindow()
         {
             InitializeComponent();
+            VM = new ExamManagerWindowViewModel();
+            DataContext = VM;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

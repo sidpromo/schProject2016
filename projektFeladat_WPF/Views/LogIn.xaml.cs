@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
 using WcfServiceLibrary;
-using projektFeladat_WPF.Commands;
+using projektFeladat_WPF.Common;
 using System.ServiceModel;
 
 namespace projektFeladat_WPF
