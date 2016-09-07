@@ -16,8 +16,8 @@ namespace WcfServiceLibrary
         #region Administrators operations
         [OperationContract]
         void AddAdministrator(Administrators entityToAdd);
-        [OperationContract]
-        IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Administrators> GetAllAdministrators();
         [OperationContract]
@@ -33,8 +33,8 @@ namespace WcfServiceLibrary
         #region Exams operations
         [OperationContract]
         void AddExam(Exams entityToAdd);
-        [OperationContract]
-        IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Exams> GetAllExams();
         [OperationContract]
@@ -50,8 +50,8 @@ namespace WcfServiceLibrary
         #region ExamsUsers operations
         [OperationContract]
         void AddExamsUser(ExamsUsers entityToAdd);
-        [OperationContract]
-        IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<ExamsUsers> GetAllExamsUsers();
         [OperationContract]
@@ -67,8 +67,8 @@ namespace WcfServiceLibrary
         #region Grades operations
         [OperationContract]
         void AddGrade(Grades entityToAdd);
-        [OperationContract]
-        IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Grades> GetAllGrades();
         [OperationContract]
@@ -84,8 +84,8 @@ namespace WcfServiceLibrary
         #region Managers operations
         [OperationContract]
         void AddManager(Managers entityToAdd);
-        [OperationContract]
-        IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Managers> GetAllManagers();
         [OperationContract]
@@ -101,8 +101,8 @@ namespace WcfServiceLibrary
         #region Messages operations
         [OperationContract]
         void AddMessage(Messages entityToAdd);
-        [OperationContract]
-        IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Messages> GetAllMessages();
         [OperationContract]
@@ -122,8 +122,8 @@ namespace WcfServiceLibrary
         #region Semesters operations
         [OperationContract]
         void AddSemester(Semesters entityToAdd);
-        [OperationContract]
-        IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Semesters> GetAllSemesters();
         [OperationContract]
@@ -139,8 +139,8 @@ namespace WcfServiceLibrary
         #region Students operations
         [OperationContract]
         void AddStudent(Students entityToAdd);
-        [OperationContract]
-        IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Students> GetAllStudents();
         [OperationContract]
@@ -156,8 +156,8 @@ namespace WcfServiceLibrary
         #region Subjects operations
         [OperationContract]
         void AddSubject(Subjects entityToAdd);
-        [OperationContract]
-        IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Subjects> GetAllSubjects();
         [OperationContract]
@@ -173,8 +173,8 @@ namespace WcfServiceLibrary
         #region SubjectsUsers operations
         [OperationContract]
         void AddSubjectsUser(SubjectsUsers entityToAdd);
-        [OperationContract]
-        IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<SubjectsUsers> GetAllSubjectsUsers();
         [OperationContract]
@@ -198,8 +198,8 @@ namespace WcfServiceLibrary
         #region Teachers operations
         [OperationContract]
         void AddTeacher(Teachers entityToAdd);
-        [OperationContract]
-        IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Teachers> GetAllTeachers();
         [OperationContract]
@@ -215,8 +215,8 @@ namespace WcfServiceLibrary
         #region Users operations
         [OperationContract]
         void AddUser(Users entityToAdd);
-        [OperationContract]
-        IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate);
+        //[OperationContract]
+        //IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate);
         [OperationContract]
         IEnumerable<Users> GetAllUsers();
         [OperationContract]

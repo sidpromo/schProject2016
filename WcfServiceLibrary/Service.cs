@@ -34,6 +34,19 @@ namespace WcfServiceLibrary
             Mapper.CreateMap<SubjectsUsers, Entities.SubjectsUsers>();
             Mapper.CreateMap<Teachers, Entities.Teachers>();
             Mapper.CreateMap<Users, Entities.Users>();
+
+            Mapper.CreateMap<Entities.Administrators, Administrators>();
+            Mapper.CreateMap<Entities.Exams, Exams>();
+            Mapper.CreateMap<Entities.ExamsUsers, ExamsUsers>();
+            Mapper.CreateMap<Entities.Grades, Grades>();
+            Mapper.CreateMap<Entities.Managers, Managers>();
+            Mapper.CreateMap<Entities.Messages, Messages>();
+            Mapper.CreateMap<Entities.Semesters, Semesters>();
+            Mapper.CreateMap<Entities.Students, Students>();
+            Mapper.CreateMap<Entities.Subjects, Subjects>();
+            Mapper.CreateMap<Entities.SubjectsUsers, SubjectsUsers>();
+            Mapper.CreateMap<Entities.Teachers, Teachers>();
+            Mapper.CreateMap<Entities.Users, Users>();
         }
 
         public void AddAdministrator(Administrators entityToAdd)
@@ -120,6 +133,8 @@ namespace WcfServiceLibrary
             repo.Add(entityToAdd2);
         }
 
+        #region Find függvények (kikommentelve)
+        /*
         public IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
@@ -227,6 +242,8 @@ namespace WcfServiceLibrary
             IEnumerable<Users> returnedValue2 = Mapper.Map< IEnumerable < Entities.Users > , IEnumerable <Users>>(returnedValue);
             return returnedValue2;
         }
+        */
+        #endregion
 
         public Administrators GetAdministratorById(int entityToGetById)
         {
