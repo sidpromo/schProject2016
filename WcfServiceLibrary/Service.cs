@@ -776,5 +776,12 @@ namespace WcfServiceLibrary
         {
             getEntities().SaveChanges();
         }
+
+        public IEnumerable<Users> GetExamStudents(int examId)
+        {
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            IEnumerable<Entities.Users> returnedValue = repo.GetExamStudents(examId);
+            return Mapper.Map<IEnumerable<Entities.Users>, IEnumerable<Users>>(returnedValue);
+        }
     }
 }
