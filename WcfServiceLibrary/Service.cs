@@ -131,6 +131,7 @@ namespace WcfServiceLibrary
             IUsersRepository repo = new UsersRepository(getEntities());
             Entities.Users entityToAdd2 = Mapper.Map<Users, Entities.Users>(entityToAdd);
             repo.Add(entityToAdd2);
+
             switch(entityToAdd.UserType.ToUpper())
             {
                 case "ADMINISTRATOR":
@@ -718,6 +719,31 @@ namespace WcfServiceLibrary
 
         public void RemoveUser(Users entityToRemove)
         {
+            switch (entityToRemove.UserType.ToUpper())
+            {
+                case "ADMINISTRATOR":
+                    IAdministratorsRepository adminRepo = new AdministratorsRepository(getEntities());
+                    Entities.Administrators returnedObj = adminRepo.GetAll().Where(x => x.UserId == entityToRemove.Id).FirstOrDefault();
+                    adminRepo.Remove(returnedObj);
+                    break;
+                case "MANAGER":
+                    IManagersRepository managerRepo = new ManagersRepository(getEntities());
+                    Entities.Managers returnedObj2 = managerRepo.GetAll().Where(x => x.UserId == entityToRemove.Id).FirstOrDefault();
+                    managerRepo.Remove(returnedObj2);
+                    break;
+                case "STUDENT":
+                    IStudentsRepository studentRepo = new StudentsRepository(getEntities());
+                    Entities.Students returnedObj3 = studentRepo.GetAll().Where(x => x.UserId == entityToRemove.Id).FirstOrDefault();
+                    studentRepo.Remove(returnedObj3);
+                    break;
+                case "TEACHER":
+                    ITeachersRepository teacherRepo = new TeachersRepository(getEntities());
+                    Entities.Teachers returnedObj4 = teacherRepo.GetAll().Where(x => x.UserId == entityToRemove.Id).FirstOrDefault();
+                    teacherRepo.Remove(returnedObj4);
+                    break;
+                default:; break;
+            }
+
             IUsersRepository repo = new UsersRepository(getEntities());
             Entities.Users entityToRemove2 = Mapper.Map<Users, Entities.Users>(entityToRemove);
             repo.Remove(entityToRemove2);
