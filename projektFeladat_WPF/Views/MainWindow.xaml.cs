@@ -1,7 +1,5 @@
-﻿using Entities;
-using projektFeladat_WPF.UserControls;
+﻿using projektFeladat_WPF.UserControls;
 using projektFeladat_WPF.ViewModels;
-using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
