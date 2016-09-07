@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Media;
 using WcfServiceLibrary;
 using projektFeladat_WPF.Commands;
+using System.ServiceModel;
 
 namespace projektFeladat_WPF
 {
@@ -60,8 +61,10 @@ namespace projektFeladat_WPF
             }
             else
             {
+
+                ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
+                IService service = channelFactory.CreateChannel();
                 
-                IService service = new Service();
                 string eduId = textBoxEduId.Text, password = passwordBox1.Password;
 
                 if (service.Login(eduId,password))

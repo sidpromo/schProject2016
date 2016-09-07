@@ -14,8 +14,8 @@ namespace WcfServiceLibrary
     public interface IService
     {
         #region Administrators operations
-        [OperationContract]
-        void AddAdministrator(Administrators entityToAdd);
+        //[OperationContract]
+        //void AddAdministrator(Administrators entityToAdd);
         //[OperationContract]
         //IEnumerable<Administrators> FindAdministrators(Expression<Func<Administrators, bool>> filterPredicate);
         [OperationContract]
@@ -82,8 +82,8 @@ namespace WcfServiceLibrary
         #endregion
 
         #region Managers operations
-        [OperationContract]
-        void AddManager(Managers entityToAdd);
+        //[OperationContract]
+        //void AddManager(Managers entityToAdd);
         //[OperationContract]
         //IEnumerable<Managers> FindManagers(Expression<Func<Managers, bool>> filterPredicate);
         [OperationContract]
@@ -137,8 +137,8 @@ namespace WcfServiceLibrary
         #endregion
 
         #region Students operations
-        [OperationContract]
-        void AddStudent(Students entityToAdd);
+        //[OperationContract]
+        //void AddStudent(Students entityToAdd);
         //[OperationContract]
         //IEnumerable<Students> FindStudents(Expression<Func<Students, bool>> filterPredicate);
         [OperationContract]
@@ -196,8 +196,8 @@ namespace WcfServiceLibrary
         #endregion
 
         #region Teachers operations
-        [OperationContract]
-        void AddTeacher(Teachers entityToAdd);
+        //[OperationContract]
+        //void AddTeacher(Teachers entityToAdd);
         //[OperationContract]
         //IEnumerable<Teachers> FindTeachers(Expression<Func<Teachers, bool>> filterPredicate);
         [OperationContract]

@@ -49,7 +49,7 @@ namespace WcfServiceLibrary
             Mapper.CreateMap<Entities.Users, Users>();
         }
 
-        public void AddAdministrator(Administrators entityToAdd)
+        private void AddAdministrator(Administrators entityToAdd)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
             Entities.Administrators entityToAdd2 = Mapper.Map<Administrators, Entities.Administrators>(entityToAdd);
@@ -77,7 +77,7 @@ namespace WcfServiceLibrary
             repo.Add(entityToAdd2);
         }
 
-        public void AddManager(Managers entityToAdd)
+        private void AddManager(Managers entityToAdd)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
             Entities.Managers entityToAdd2 = Mapper.Map<Managers, Entities.Managers>(entityToAdd);
@@ -98,7 +98,7 @@ namespace WcfServiceLibrary
             repo.Add(entityToAdd2);
         }
 
-        public void AddStudent(Students entityToAdd)
+        private void AddStudent(Students entityToAdd)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
             Entities.Students entityToAdd2 = Mapper.Map<Students, Entities.Students>(entityToAdd);
@@ -119,7 +119,7 @@ namespace WcfServiceLibrary
             repo.Add(entityToAdd2);
         }
 
-        public void AddTeacher(Teachers entityToAdd)
+        private void AddTeacher(Teachers entityToAdd)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
             Entities.Teachers entityToAdd2 = Mapper.Map<Teachers, Entities.Teachers>(entityToAdd);
@@ -131,6 +131,30 @@ namespace WcfServiceLibrary
             IUsersRepository repo = new UsersRepository(getEntities());
             Entities.Users entityToAdd2 = Mapper.Map<Users, Entities.Users>(entityToAdd);
             repo.Add(entityToAdd2);
+            switch(entityToAdd.UserType.ToUpper())
+            {
+                case "ADMINISTRATOR":
+                    IAdministratorsRepository adminRepo = new AdministratorsRepository(getEntities());
+                    Entities.Administrators admin = new Entities.Administrators() { UserId = entityToAdd.Id };
+                    adminRepo.Add(admin);
+                    break;
+                case "MANAGER":
+                    IManagersRepository managerRepo = new ManagersRepository(getEntities());
+                    Entities.Managers manager = new Entities.Managers() { UserId = entityToAdd.Id };
+                    managerRepo.Add(manager);
+                    break;
+                case "STUDENT":
+                    IStudentsRepository studentRepo = new StudentsRepository(getEntities());
+                    Entities.Students student = new Entities.Students() { UserId = entityToAdd.Id };
+                    studentRepo.Add(student);
+                    break;
+                case "TEACHER":
+                    ITeachersRepository teacherRepo = new TeachersRepository(getEntities());
+                    Entities.Teachers teacher = new Entities.Teachers() { UserId = entityToAdd.Id };
+                    teacherRepo.Add(teacher);
+                    break;
+                default:; break;
+            }
         }
 
         #region Find függvények (kikommentelve)
@@ -257,7 +281,7 @@ namespace WcfServiceLibrary
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
             IEnumerable<Entities.Administrators> returnedValue = repo.GetAll();
-            IEnumerable<Administrators> returnedValue2 = Mapper.Map< IEnumerable < Entities.Administrators > , IEnumerable <Administrators>>(returnedValue);
+            IEnumerable<Administrators> returnedValue2 = Mapper.Map<IEnumerable<Entities.Administrators>, IEnumerable<Administrators>>(returnedValue);
             return returnedValue2;
         }
 
@@ -265,7 +289,7 @@ namespace WcfServiceLibrary
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
             IEnumerable<Entities.Exams> returnedValue = repo.GetAll();
-            IEnumerable<Exams> returnedValue2 = Mapper.Map< IEnumerable < Entities.Exams > , IEnumerable <Exams>>(returnedValue);
+            IEnumerable<Exams> returnedValue2 = Mapper.Map<IEnumerable<Entities.Exams>, IEnumerable<Exams>>(returnedValue);
             return returnedValue2;
         }
 
@@ -273,7 +297,7 @@ namespace WcfServiceLibrary
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
             IEnumerable<Entities.ExamsUsers> returnedValue = repo.GetAll();
-            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.ExamsUsers > , IEnumerable <ExamsUsers>>(returnedValue);
+            IEnumerable<ExamsUsers> returnedValue2 = Mapper.Map<IEnumerable<Entities.ExamsUsers>, IEnumerable<ExamsUsers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -281,7 +305,7 @@ namespace WcfServiceLibrary
         {
             IGradesRepository repo = new GradesRepository(getEntities());
             IEnumerable<Entities.Grades> returnedValue = repo.GetAll();
-            IEnumerable<Grades> returnedValue2 = Mapper.Map< IEnumerable < Entities.Grades > , IEnumerable <Grades>>(returnedValue);
+            IEnumerable<Grades> returnedValue2 = Mapper.Map<IEnumerable<Entities.Grades>, IEnumerable<Grades>>(returnedValue);
             return returnedValue2;
         }
 
@@ -289,7 +313,7 @@ namespace WcfServiceLibrary
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
             IEnumerable<Entities.Managers> returnedValue = repo.GetAll();
-            IEnumerable<Managers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Managers > , IEnumerable <Managers>>(returnedValue);
+            IEnumerable<Managers> returnedValue2 = Mapper.Map<IEnumerable<Entities.Managers>, IEnumerable<Managers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -297,7 +321,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetAll();
-            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Entities.Messages>, IEnumerable<Messages>>(returnedValue);
             return returnedValue2;
         }
 
@@ -305,7 +329,7 @@ namespace WcfServiceLibrary
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
             IEnumerable<Entities.Semesters> returnedValue = repo.GetAll();
-            IEnumerable<Semesters> returnedValue2 = Mapper.Map< IEnumerable < Entities.Semesters > , IEnumerable <Semesters>>(returnedValue);
+            IEnumerable<Semesters> returnedValue2 = Mapper.Map<IEnumerable<Entities.Semesters>, IEnumerable<Semesters>>(returnedValue);
             return returnedValue2;
         }
 
@@ -313,7 +337,7 @@ namespace WcfServiceLibrary
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
             IEnumerable<Entities.Students> returnedValue = repo.GetAll();
-            IEnumerable<Students> returnedValue2 = Mapper.Map< IEnumerable < Entities.Students > , IEnumerable <Students>>(returnedValue);
+            IEnumerable<Students> returnedValue2 = Mapper.Map<IEnumerable<Entities.Students>, IEnumerable<Students>>(returnedValue);
             return returnedValue2;
         }
 
@@ -321,7 +345,7 @@ namespace WcfServiceLibrary
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
             IEnumerable<Entities.Subjects> returnedValue = repo.GetAll();
-            IEnumerable<Subjects> returnedValue2 = Mapper.Map< IEnumerable < Entities.Subjects > , IEnumerable <Subjects>>(returnedValue);
+            IEnumerable<Subjects> returnedValue2 = Mapper.Map<IEnumerable<Entities.Subjects>, IEnumerable<Subjects>>(returnedValue);
             return returnedValue2;
         }
 
@@ -329,7 +353,7 @@ namespace WcfServiceLibrary
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             IEnumerable<Entities.SubjectsUsers> returnedValue = repo.GetAll();
-            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map< IEnumerable < Entities.SubjectsUsers > , IEnumerable <SubjectsUsers>>(returnedValue);
+            IEnumerable<SubjectsUsers> returnedValue2 = Mapper.Map<IEnumerable<Entities.SubjectsUsers>, IEnumerable<SubjectsUsers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -337,7 +361,7 @@ namespace WcfServiceLibrary
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
             IEnumerable<Entities.Teachers> returnedValue = repo.GetAll();
-            IEnumerable<Teachers> returnedValue2 = Mapper.Map< IEnumerable < Entities.Teachers > , IEnumerable <Teachers>>(returnedValue);
+            IEnumerable<Teachers> returnedValue2 = Mapper.Map<IEnumerable<Entities.Teachers>, IEnumerable<Teachers>>(returnedValue);
             return returnedValue2;
         }
 
@@ -345,7 +369,7 @@ namespace WcfServiceLibrary
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             IEnumerable<Entities.Users> returnedValue = repo.GetAll();
-            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Entities.Users>,IEnumerable<Users>>(returnedValue);
+            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Entities.Users>, IEnumerable<Users>>(returnedValue);
             return returnedValue2;
         }
 
@@ -524,7 +548,7 @@ namespace WcfServiceLibrary
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             IEnumerable<Entities.Users> returnedValue = repo.GetTeachersFromUsers();
-            IEnumerable<Users> returnedValue2 = Mapper.Map< IEnumerable < Entities.Users > , IEnumerable <Users>>(returnedValue);
+            IEnumerable<Users> returnedValue2 = Mapper.Map<IEnumerable<Entities.Users>, IEnumerable<Users>>(returnedValue);
             return returnedValue2;
         }
 
@@ -736,7 +760,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetReceivedMessages(userId);
-            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Entities.Messages>, IEnumerable<Messages>>(returnedValue);
             return returnedValue2;
         }
 
@@ -744,7 +768,7 @@ namespace WcfServiceLibrary
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             IEnumerable<Entities.Messages> returnedValue = repo.GetSentMessages(userId);
-            IEnumerable<Messages> returnedValue2 = Mapper.Map< IEnumerable < Entities.Messages > , IEnumerable <Messages>>(returnedValue);
+            IEnumerable<Messages> returnedValue2 = Mapper.Map<IEnumerable<Entities.Messages>, IEnumerable<Messages>>(returnedValue);
             return returnedValue2;
         }
 

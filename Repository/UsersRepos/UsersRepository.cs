@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Data.Entity;
 using Entities;
+using System;
 
 namespace Repository
 {
@@ -10,6 +11,7 @@ namespace Repository
         public UsersRepository(DbContext context) : base(context)
         {
         }
+
 
         public IEnumerable<Users> GetTeachersFromUsers()
         {
