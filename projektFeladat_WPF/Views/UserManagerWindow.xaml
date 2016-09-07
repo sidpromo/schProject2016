@@ -23,7 +23,8 @@
             <Label Content="Password:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
             <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding EditedUser.UserType, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Margin="10,0,0,0" ItemsSource="{Binding Path=UserType}" SelectedItem="{Binding Path=EditedUser.UserType}" />
+            <!--<TextBox Text="{Binding EditedUser.UserType, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>-->
             <Label Content="Birthdate::" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.BirthDate, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Birthplace:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>

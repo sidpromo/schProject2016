@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace projektFeladat_WPF.Commands
+namespace projektFeladat_WPF.Common
 {
     class RelayCommand : ICommand
     {

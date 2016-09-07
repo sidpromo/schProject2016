@@ -1,4 +1,4 @@
-﻿using projektFeladat_WPF.Commands;
+﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -39,6 +39,11 @@ namespace projektFeladat_WPF.ViewModels
             EditedUser = _service.GetUserById(userToEdit.Id);
             idToRemove = userToEdit.Id;          
             SaveCommand = new RelayCommand(SaveChanges);
+        }
+
+        public Array UserType
+        {
+            get { return Enum.GetValues(typeof(UserTypes)); }
         }
 
         public void Add()

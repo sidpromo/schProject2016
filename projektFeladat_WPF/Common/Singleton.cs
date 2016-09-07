@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace projektFeladat_WPF.Commands
+namespace projektFeladat_WPF.Common
 {
     public sealed class Singleton
     {
