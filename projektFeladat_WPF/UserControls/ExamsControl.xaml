@@ -11,23 +11,28 @@
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Upcoming exams:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="0"/>
-        <DataGrid Margin="10,50,6,0" VerticalAlignment="Top" Height="389" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0">
+        <DataGrid Margin="10,50,6,0" VerticalAlignment="Top" Height="339" AutoGenerateColumns="False" IsReadOnly="True" Grid.Column="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Subject:" Width="10*" />
-                <DataGridTextColumn Header="Limit:" Width="7*" />
-                <DataGridTextColumn Header="Members:" Width="8*" />
+                <DataGridTextColumn Header="Subject" Width="10*" />
+                <DataGridTextColumn Header="Limit" Width="7*" />
+                <DataGridTextColumn Header="Members" Width="8*" />
                 <DataGridTextColumn Header="Type:" Width="10*" />
-                <DataGridTextColumn Header="Rooms:" Width="10*" />
-                <DataGridTextColumn Header="Lecturer:" Width="10*" />
-                <DataGridTextColumn Header="Date:" Width="10*" />
+                <DataGridTextColumn Header="Rooms" Width="10*" />
+                <DataGridTextColumn Header="Lecturer" Width="10*" />
+                <DataGridTextColumn Header="Date" Width="10*" />
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="450,394,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="370,394,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="290,394,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Registered students:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
-        <DataGrid Grid.Column="1" Margin="10,50,10,0" VerticalAlignment="Top" Height="303" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Grid.Column="1" Margin="10,50,10,0" VerticalAlignment="Top" Height="339" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="EduID:" Width="10*" />
-                <DataGridTextColumn Header="Registration time:" Width="10*" />
+                <DataGridTextColumn Header="EduID" Width="10*" />
+                <DataGridTextColumn Header="Registration time" Width="10*" />
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>        
+        <Button Content="Unregister" Grid.Column="1" HorizontalAlignment="Left" Margin="250,394,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Register" Grid.Column="1" HorizontalAlignment="Left" Margin="170,394,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>
