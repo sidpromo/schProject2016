@@ -10,7 +10,7 @@ using AspNetWebApplication.Models;
 using WcfServiceLibrary;
 using System.ServiceModel;
 using System.Runtime.Serialization;
-using AspNetWebApplication.ServiceReference1;
+using AspNetWebApplication.ServiceReference2;
 
 namespace AspNetWebApplication.Controllers
 {
@@ -29,8 +29,11 @@ namespace AspNetWebApplication.Controllers
             //ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
             //Service service = channelFactory.CreateChannel();
             // IEnumerable<Messages> msg;
-            AspNetWebApplication.ServiceReference1.Service1Client cl = new Service1Client();
-            cl.
+            AspNetWebApplication.ServiceReference2.ServiceClient cl = new ServiceClient();
+
+            cl.GetAllMessages();
+            
+           
 
             return View();
            
