@@ -26,10 +26,11 @@ namespace AspNetWebApplication.Controllers
         {
 
             // Service1Client client = new Service1Client();
-            // ChannelFactory<IService> channelFactory = new ChannelFactory<IService>(????);
-            // IService service = channelFactory.CreateChannel();
+            //ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
+            //Service service = channelFactory.CreateChannel();
             // IEnumerable<Messages> msg;
-
+            AspNetWebApplication.ServiceReference1.Service1Client cl = new Service1Client();
+            cl.
 
             return View();
            
