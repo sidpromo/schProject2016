@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,11 @@
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />
     <Compile Include="Converters\SubjectToTeacherNameConverter.cs" />
     <Compile Include="Converters\UserNameToStringConverter.cs" />
+    <Compile Include="Service References\NeptunServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ExamsControl.xaml.cs">
       <DependentUpon>ExamsControl.xaml</DependentUpon>
     </Compile>
@@ -187,11 +193,34 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Administrators.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.AppInfo.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Exams.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.ExamsUsers.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Grades.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Managers.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Messages.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Semesters.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Students.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Subjects.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.SubjectsUsers.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Teachers.datasource" />
+    <None Include="Properties\DataSources\WcfServiceLibrary.Users.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\NeptunServiceReference\service.wsdl" />
+    <None Include="Service References\NeptunServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeptunServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NeptunServiceReference\WcfServiceLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -207,6 +236,21 @@
       <Project>{91f4cadb-871d-42f9-8644-284402712a8f}</Project>
       <Name>WcfServiceLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\NeptunServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeptunServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeptunServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NeptunServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

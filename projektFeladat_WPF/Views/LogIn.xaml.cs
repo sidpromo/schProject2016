@@ -18,6 +18,7 @@ using System.Media;
 using WcfServiceLibrary;
 using projektFeladat_WPF.Common;
 using System.ServiceModel;
+using projektFeladat_WPF.NeptunServiceReference;
 
 namespace projektFeladat_WPF
 {
@@ -62,25 +63,27 @@ namespace projektFeladat_WPF
             else
             {
 
-                ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
-                IService service = channelFactory.CreateChannel();
-                
+                ServiceClient client = new ServiceClient();
+
+                //ChannelFactory<IService> channelFactory = new ChannelFactory<IService>("ServiceEndpoint");
+                //IService service = channelFactory.CreateChannel();
+
                 string eduId = textBoxEduId.Text, password = passwordBox1.Password;
 
-                if (service.Login(eduId,password))
+                if (client.Login(eduId, password))
                 {
-                    int id =service.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
+                    int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
                     Singleton.Instance.SetId(id);
-                    var windowToOpen = new MainWindow();                    
+                    var windowToOpen = new MainWindow();
                     windowToOpen.Show();
                     this.Close();
+                    // camtasia
                 }
                 else
                 {
                     errormessage.Text = " Invalid EduId or Password!";
                     SystemSounds.Beep.Play();
                 }
-
             }
 
         }

@@ -24,7 +24,7 @@
         </DataGrid>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="446,367,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="366,367,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="286,367,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="286,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=AddCommand}"/>
         <Label Content="Registered students:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
         <DataGrid Grid.Column="1" Margin="10,50,10,0" VerticalAlignment="Top" Height="303" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>

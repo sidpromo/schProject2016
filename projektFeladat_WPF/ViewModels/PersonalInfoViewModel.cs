@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace projektFeladat_WPF.ViewModels
 {
     public class PersonalInfoViewModel
     {
-        IService _service = new Service();
+        ServiceClient client = new ServiceClient();
 
         public string CurrentUserInfo { get; private set; }
         private Users currentUser;
@@ -22,7 +23,7 @@ namespace projektFeladat_WPF.ViewModels
         }
         public PersonalInfoViewModel()
         {
-            CurrentUser = _service.GetUserById((int)Singleton.Instance.ID);
+            CurrentUser = client.GetUserById((int)Singleton.Instance.ID);
         }
     }
 }

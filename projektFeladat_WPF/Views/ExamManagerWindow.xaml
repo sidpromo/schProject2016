@@ -41,7 +41,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="219,277,0,0" TextWrapping="Wrap" Text="{Binding  EditedExam.Room}" VerticalAlignment="Top" Width="248"/>
         <Label Content="Short description:" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,336,0,0" TextWrapping="Wrap" Text="{Binding EditedExam.Description}" VerticalAlignment="Top" Width="457"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" Width="75"  Command="{Binding Path=AddCommand}"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" Width="75"  Command="{Binding Path=SaveCommand}"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="392,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         </Grid>
 </Window>

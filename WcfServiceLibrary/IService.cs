@@ -238,7 +238,10 @@ namespace WcfServiceLibrary
         #endregion
 
         #region Other operations
+        [OperationContract]
         AppInfo GetAppInfo();
+
+        [OperationContract]
         void SaveChanges();
         #endregion
 

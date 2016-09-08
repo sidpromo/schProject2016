@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace projektFeladat_WPF.ViewModels
 {
    public class MainWindowViewModel :  Bindable
     {
-        IService _service = new Service();
+        ServiceClient client = new ServiceClient();
 
         public string CurrentUserInfo { get; private set; }
         public string WindowTitle { get; private set; }
@@ -23,9 +24,9 @@ namespace projektFeladat_WPF.ViewModels
         }
         public MainWindowViewModel( )
         {
-            CurrentUser = _service.GetUserById((int)Singleton.Instance.ID);
+            CurrentUser = client.GetUserById((int)Singleton.Instance.ID);
             CurrentUserInfo = String.Format("{0} {1} {2} ({3})", CurrentUser.FirstName, CurrentUser.MiddleName, CurrentUser.LastName, CurrentUser.EduId);
-            WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {_service.GetAppInfo().AppName} v{_service.GetAppInfo().Version}");           
+            //WindowTitle= String.Format($"{currentUser.FirstName} {currentUser.MiddleName} {currentUser.LastName} - {client.GetAppInfo().AppName} v{client.GetAppInfo().Version}");           
         }
 
         //service locator statikus osztály

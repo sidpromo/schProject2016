@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace projektFeladat_WPF.ViewModels
             set { selectedMessage = value;OnPropertyChanged(); }
         }
 
-        IService _service = new Service();
+        ServiceClient client = new ServiceClient();
         public ICommand DeleteCommand { get; private set; }
         public ICommand SendCommand { get; private set; }
         public MessagesControlViewModel()
@@ -60,18 +61,18 @@ namespace projektFeladat_WPF.ViewModels
             if (SelectedMessage.FromUserId==Singleton.Instance.ID)
             {
                 //SelectedMessage.FromDeleted = true;
-                _service.GetMessageById(SelectedMessage.Id).FromDeleted = true;                
+                client.GetMessageById(SelectedMessage.Id).FromDeleted = true;                
                 MessageBox.Show("Message has been deleted from Sent messages");
             }
             else if (SelectedMessage.ToUserId == Singleton.Instance.ID)
             {
                 //SelectedMessage.ToDeleted = true;
-                _service.GetMessageById(SelectedMessage.Id).ToDeleted = true;
+                client.GetMessageById(SelectedMessage.Id).ToDeleted = true;
                 MessageBox.Show("Message has been deleted from Inbox");
             }
             if (SelectedMessage.ToDeleted==true && SelectedMessage.FromDeleted==true)
             {
-                _service.RemoveMessageById(SelectedMessage.Id);
+                client.RemoveMessageById(SelectedMessage.Id);
             }
             RefreshMethod();
         }
@@ -79,8 +80,8 @@ namespace projektFeladat_WPF.ViewModels
         {
             SentMsgList = new List<Messages>();
             ReceivedMsgList= new List<Messages>();
-            SentMsgList = _service.GetSentMessages((int)Singleton.Instance.ID).Where(m=>m.FromDeleted==false);
-            ReceivedMsgList = _service.GetReceivedMessages((int)Singleton.Instance.ID).Where(m => m.ToDeleted == false);
+            SentMsgList = client.GetSentMessages((int)Singleton.Instance.ID).Where(m=>m.FromDeleted==false);
+            ReceivedMsgList = client.GetReceivedMessages((int)Singleton.Instance.ID).Where(m => m.ToDeleted == false);
         }
 
 

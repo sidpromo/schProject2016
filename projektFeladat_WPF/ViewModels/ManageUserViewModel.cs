@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,8 @@ namespace projektFeladat_WPF.ViewModels
 
         //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
         //static IUsersRepository userRepo = new UsersRepository(ent);
-        IService _service = new Service();
+
+        ServiceClient client = new ServiceClient();
 
         public ICommand DeleteUserCommand { get; private set; }
         public ICommand AddUserCommand { get; private set; }
@@ -49,7 +51,7 @@ namespace projektFeladat_WPF.ViewModels
             {
                 return;
             }
-            _service.RemoveUserById(SelectedUser.Id);            
+            client.RemoveUserById(SelectedUser.Id);            
             RefreshMethod();
         }
 
@@ -73,7 +75,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Users> newList = new List<Users>();
             UserList = newList;
-           UserList =_service.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
+           UserList =client.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
         }
         public ManageUserViewModel()
         {

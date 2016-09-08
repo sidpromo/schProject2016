@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,11 +36,11 @@ namespace projektFeladat_WPF.ViewModels
             set { selectedUser = value;OnPropertyChanged(); }
         }
 
-        IService _service = new Service();
+        ServiceClient client = new ServiceClient();
         public ICommand  SendCommand { get; private set; }
         public MessageWriterWindowViewModel()
         {
-            UserList = _service.GetAllUsers();
+            UserList = client.GetAllUsers();
             SendCommand = new RelayCommand(SendMethod);
             NewMessage = new Messages();
         }
@@ -51,7 +52,7 @@ namespace projektFeladat_WPF.ViewModels
             NewMessage.ToUserId = SelectedUser.Id;
             NewMessage.FromDeleted = false;
             NewMessage.ToDeleted = false;            
-            _service.AddMessage(NewMessage);
+            client.AddMessage(NewMessage);
         }
         void SendMethod()
         {

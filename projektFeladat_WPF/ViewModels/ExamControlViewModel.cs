@@ -1,4 +1,7 @@
-﻿using System;
+﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
+using projektFeladat_WPF.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,17 +51,19 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand RegisterCommand { get; private set; }
         public ICommand UnregisterCommand { get; private set; }
 
-        IService _service = new Service();
+        ServiceClient client = new ServiceClient();
         public ExamControlViewModel()
         {
             RefreshMethod();
+            AddCommand = new RelayCommand(Add);
         }
 
         void RefreshMethod()
         {
             ExamList = new List<Exams>();
             StudentList = new List<Users>();
-            ExamList = _service.GetAllExams();
+            ExamList = client.GetAllExams();
+            StudentList = client.GetExamStudents(SelectedExam.Id);
             // TODO: StudentList=
         }
 
@@ -68,7 +73,8 @@ namespace projektFeladat_WPF.ViewModels
 
         void Add()
         {
-
+            ExamManagerWindow newWindow = new ExamManagerWindow();
+            newWindow.Show();
         }
         void Register()
         {
