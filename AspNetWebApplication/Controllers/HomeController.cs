@@ -26,5 +26,31 @@ namespace AspNetWebApplication.Controllers
 
             return View();
         }
+
+        public ActionResult Messages()
+        {
+            ViewBag.Message = "Messages";
+
+            return View();
+        }
+
+        public ActionResult Subjects()
+        {
+            ViewBag.Message = "Subjects";
+
+            return View();
+        }
+        public ActionResult Exams()
+        {
+            ViewBag.Message = "Exams";
+
+            return View();
+        }
+        public ActionResult Finder()
+        {
+            ViewBag.Message = "Finder";
+
+            return View();
+        }
     }
 }

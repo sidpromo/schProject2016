@@ -8,21 +8,33 @@ using System.Web;
 using System.Web.Mvc;
 using AspNetWebApplication.Models;
 using WcfServiceLibrary;
+using System.ServiceModel;
+using System.Runtime.Serialization;
+using AspNetWebApplication.ServiceReference1;
 
 namespace AspNetWebApplication.Controllers
 {
     public class MessageController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-        
-        
+        //private ApplicationDbContext db = new ApplicationDbContext();
+
+		
 
         // GET: Messages
+       
         public ActionResult Index()
         {
-            return View(db.Messages.ToList());
+
+            // Service1Client client = new Service1Client();
+            // ChannelFactory<IService> channelFactory = new ChannelFactory<IService>(????);
+            // IService service = channelFactory.CreateChannel();
+            // IEnumerable<Messages> msg;
+
+
+            return View();
            
         }
+        
 
         // GET: Messages/Details/5
 
@@ -53,20 +65,20 @@ namespace AspNetWebApplication.Controllers
         // POST: Messages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SentDate,FromUserId,ToUserId,Subject,Message,FromHighlighted,ToHighlighted,FromDeleted,ToDeleted,FromDeletedPerm,ToDeletedPerm,Read")] Messages messages)
-        {
-            if (ModelState.IsValid)
-            {
-                //TODO: Ez itt javítandó! Nem használhatod a db objektumot!
-                //db.Messages.Add(messages);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,SentDate,FromUserId,ToUserId,Subject,Message,FromHighlighted,ToHighlighted,FromDeleted,ToDeleted,FromDeletedPerm,ToDeletedPerm,Read")] Messages messages)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        //TODO: Ez itt javítandó! Nem használhatod a db objektumot!
+        //        //db.Messages.Add(messages);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(messages);
-        }
+        //    return View(messages);
+        //}
 
         // GET: Messages/Edit/5
         //TODO: Ez itt javítandó! Nem használhatod a db objektumot!
@@ -90,18 +102,18 @@ namespace AspNetWebApplication.Controllers
         // POST: Messages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SentDate,FromUserId,ToUserId,Subject,Message,FromHighlighted,ToHighlighted,FromDeleted,ToDeleted,FromDeletedPerm,ToDeletedPerm,Read")] Messages messages)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(messages).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(messages);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "Id,SentDate,FromUserId,ToUserId,Subject,Message,FromHighlighted,ToHighlighted,FromDeleted,ToDeleted,FromDeletedPerm,ToDeletedPerm,Read")] Messages messages)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(messages).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(messages);
+        //}
 
         // GET: Messages/Delete/5
         //TODO: Ez itt javítandó! Nem használhatod a db objektumot!
@@ -135,13 +147,13 @@ namespace AspNetWebApplication.Controllers
         }
         */
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
