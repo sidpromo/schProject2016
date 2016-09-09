@@ -39,7 +39,7 @@ namespace projektFeladat_WPF.ViewModels
 
         private Users selectedStudent;
 
-        public Users SelectedUser
+        public Users SelectedStudent
         {
             get { return selectedStudent; }
             set { selectedStudent = value; OnPropertyChanged(); }
@@ -50,12 +50,20 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand DeleteCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
         public ICommand UnregisterCommand { get; private set; }
+        public ICommand RefreshCommand { get; private set; }
 
         ServiceClient client = new ServiceClient();
         public ExamControlViewModel()
         {
             RefreshMethod();
-            AddCommand = new RelayCommand(Add);
+            AddCommand = new RelayCommand(AddMethod);
+            RefreshCommand = new RelayCommand(RefreshMethod);
+            EditCommand = new RelayCommand(EditMethod);
+            DeleteCommand = new RelayCommand(DeleteMethod);
+            RegisterCommand = new RelayCommand(RegisterMethod);
+            UnregisterCommand = new RelayCommand(UnregisterMethod);
+
+            
         }
 
         void RefreshMethod()
@@ -63,22 +71,60 @@ namespace projektFeladat_WPF.ViewModels
             ExamList = new List<Exams>();
             StudentList = new List<Users>();
             ExamList = client.GetAllExams();
-            StudentList = client.GetExamStudents(SelectedExam.Id);
+            if (SelectedExam != null)
+            {
+                StudentList = client.GetExamStudents(SelectedExam.Id);
+            }
             // TODO: StudentList=
         }
 
         void DeleteMethod()
         {
+            if (SelectedExam != null)
+            {
+                client.RemoveExamById(SelectedExam.Id);
+            }
+            RefreshMethod();
         }
 
-        void Add()
+        void AddMethod()
         {
-            ExamManagerWindow newWindow = new ExamManagerWindow();
-            newWindow.Show();
+            ExamManagerWindow newExamWindow = new ExamManagerWindow();
+            newExamWindow.Show();
         }
-        void Register()
-        {
 
+        void EditMethod()
+        {
+            if (SelectedExam != null)
+            {
+                ExamManagerWindow newExamWindow = new ExamManagerWindow(SelectedExam);
+                newExamWindow.Show();
+            }
+        }
+        void RegisterMethod()
+        {
+            if (SelectedExam!=null)
+            {
+                client.AddExamsUser(
+                    new ExamsUsers {
+                        InsertDate = DateTime.Now,
+                        ModifyDate = DateTime.Now,
+                        ModifiedBy=Singleton.Instance.ID,
+                        ExamId=SelectedExam.Id,
+                        UserId=SelectedStudent.Id     
+                    });
+            }
+        }
+
+        void UnregisterMethod()
+        {
+            if (SelectedStudent != null)
+            {
+                client.RemoveExamsUser
+                    (
+                    client.GetAllExamsUsers().Where(user => user.UserId == SelectedStudent.Id).First()
+                    );
+            }
         }
 
 

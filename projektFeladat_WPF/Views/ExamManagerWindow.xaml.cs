@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.Views
 {
@@ -25,6 +26,13 @@ namespace projektFeladat_WPF.Views
         {
             InitializeComponent();
             VM = new ExamManagerWindowViewModel();
+            DataContext = VM;
+        }
+
+        public ExamManagerWindow(Exams examToEdit)
+        {
+            InitializeComponent();
+            VM = new ExamManagerWindowViewModel(examToEdit);
             DataContext = VM;
         }
 
