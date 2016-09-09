@@ -251,7 +251,7 @@ namespace WcfServiceLibrary
     public class AppInfo
     {
         [DataMember]
-        public string Version { get; set; } = "0.8";
+        public string Version { get; set; } = "0.9";
         [DataMember]
         public string AppName { get; set; } = "EduConnect";
         [DataMember]
