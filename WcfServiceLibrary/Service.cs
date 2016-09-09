@@ -809,5 +809,10 @@ namespace WcfServiceLibrary
             IEnumerable<Entities.Users> returnedValue = repo.GetExamStudents(examId);
             return Mapper.Map<IEnumerable<Entities.Users>, IEnumerable<Users>>(returnedValue);
         }
+
+        public Users GetExamTeacher(int examId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

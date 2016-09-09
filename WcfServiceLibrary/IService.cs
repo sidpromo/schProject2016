@@ -64,6 +64,8 @@ namespace WcfServiceLibrary
         void RemoveExamsUserById(int entityToRemoveById);
         [OperationContract]
         IEnumerable<Users> GetExamStudents(int examId);
+        [OperationContract]
+        Users GetExamTeacher(int examId);
         #endregion
 
         #region Grades operations
