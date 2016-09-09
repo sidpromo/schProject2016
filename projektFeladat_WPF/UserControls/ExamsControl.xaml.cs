@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projektFeladat_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace projektFeladat_WPF.UserControls
     /// </summary>
     public partial class ExamsControl : UserControl
     {
+        ExamControlViewModel VM;
         public ExamsControl()
         {
             InitializeComponent();
+            VM = new ExamControlViewModel();
+            DataContext = VM;
         }
     }
 }
