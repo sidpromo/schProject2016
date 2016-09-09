@@ -100,5 +100,15 @@ namespace Repository
         {
             Context.SaveChanges();
         }
+
+        /// <summary>
+        /// Frissíti és menti az adott objektumot.
+        /// </summary>
+        /// <param name="entityToUpdate"></param>
+        public void Update(TEntity entityToUpdate)
+        {
+            Context.Entry<TEntity>(entityToUpdate).State = EntityState.Modified;
+            SaveChanges();
+        }
     }
 }

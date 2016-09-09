@@ -14,5 +14,6 @@ namespace Repository
         void Remove(TEntity entityToRemove);
         void RemoveById(int entityToRemoveById);
         void SaveChanges();
+        void Update(TEntity entityToUpdate);
     }
 }

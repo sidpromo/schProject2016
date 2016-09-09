@@ -814,5 +814,89 @@ namespace WcfServiceLibrary
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateAdministrator(Administrators entityToUpdate)
+        {
+            IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
+            Entities.Administrators entityToUpdate2 = Mapper.Map<Administrators, Entities.Administrators>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateExam(Exams entityToUpdate)
+        {
+            IExamsRepository repo = new ExamsRepository(getEntities());
+            Entities.Exams entityToUpdate2 = Mapper.Map<Exams, Entities.Exams>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateExamsUser(ExamsUsers entityToUpdate)
+        {
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            Entities.ExamsUsers entityToUpdate2 = Mapper.Map<ExamsUsers, Entities.ExamsUsers>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateGrade(Grades entityToUpdate)
+        {
+            IGradesRepository repo = new GradesRepository(getEntities());
+            Entities.Grades entityToUpdate2 = Mapper.Map<Grades, Entities.Grades>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateManager(Managers entityToUpdate)
+        {
+            IManagersRepository repo = new ManagersRepository(getEntities());
+            Entities.Managers entityToUpdate2 = Mapper.Map<Managers, Entities.Managers>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateMessage(Messages entityToUpdate)
+        {
+            IMessagesRepository repo = new MessagesRepository(getEntities());
+            Entities.Messages entityToUpdate2 = Mapper.Map<Messages, Entities.Messages>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateSemester(Semesters entityToUpdate)
+        {
+            ISemestersRepository repo = new SemestersRepository(getEntities());
+            Entities.Semesters entityToUpdate2 = Mapper.Map<Semesters, Entities.Semesters>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateStudent(Students entityToUpdate)
+        {
+            IStudentsRepository repo = new StudentsRepository(getEntities());
+            Entities.Students entityToUpdate2 = Mapper.Map<Students, Entities.Students>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateSubject(Subjects entityToUpdate)
+        {
+            ISubjectsRepository repo = new SubjectsRepository(getEntities());
+            Entities.Subjects entityToUpdate2 = Mapper.Map<Subjects, Entities.Subjects>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateSubjectsUser(SubjectsUsers entityToUpdate)
+        {
+            ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
+            Entities.SubjectsUsers entityToUpdate2 = Mapper.Map<SubjectsUsers, Entities.SubjectsUsers>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateTeacher(Teachers entityToUpdate)
+        {
+            ITeachersRepository repo = new TeachersRepository(getEntities());
+            Entities.Teachers entityToUpdate2 = Mapper.Map<Teachers, Entities.Teachers>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
+
+        public void UpdateUser(Users entityToUpdate)
+        {
+            IUsersRepository repo = new UsersRepository(getEntities());
+            Entities.Users entityToUpdate2 = Mapper.Map<Users, Entities.Users>(entityToUpdate);
+            repo.Update(entityToUpdate2);
+        }
     }
 }

@@ -28,6 +28,8 @@ namespace WcfServiceLibrary
         void RemoveAdministrator(Administrators entityToRemove);
         [OperationContract]
         void RemoveAdministratorById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateAdministrator(Administrators entityToUpdate);
         #endregion
 
         #region Exams operations
@@ -45,6 +47,8 @@ namespace WcfServiceLibrary
         void RemoveExam(Exams entityToRemove);
         [OperationContract]
         void RemoveExamById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateExam(Exams entityToUpdate);
         #endregion
 
         #region ExamsUsers operations
@@ -66,6 +70,8 @@ namespace WcfServiceLibrary
         IEnumerable<Users> GetExamStudents(int examId);
         [OperationContract]
         Users GetExamTeacher(int examId);
+        [OperationContract]
+        void UpdateExamsUser(ExamsUsers entityToUpdate);
         #endregion
 
         #region Grades operations
@@ -83,6 +89,8 @@ namespace WcfServiceLibrary
         void RemoveGrade(Grades entityToRemove);
         [OperationContract]
         void RemoveGradeById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateGrade(Grades entityToUpdate);
         #endregion
 
         #region Managers operations
@@ -100,6 +108,8 @@ namespace WcfServiceLibrary
         void RemoveManager(Managers entityToRemove);
         [OperationContract]
         void RemoveManagerById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateManager(Managers entityToUpdate);
         #endregion
 
         #region Messages operations
@@ -114,13 +124,15 @@ namespace WcfServiceLibrary
         [OperationContract]
         int GetIdOfMessage(Messages entityToGetId);
         [OperationContract]
+        IEnumerable<Messages> GetReceivedMessages(int userId);
+        [OperationContract]
+        IEnumerable<Messages> GetSentMessages(int userId);
+        [OperationContract]
         void RemoveMessage(Messages entityToRemove);
         [OperationContract]
         void RemoveMessageById(int entityToRemoveById);
         [OperationContract]
-        IEnumerable<Messages> GetReceivedMessages(int userId);
-        [OperationContract]
-        IEnumerable<Messages> GetSentMessages(int userId);
+        void UpdateMessage(Messages entityToUpdate);
         #endregion
 
         #region Semesters operations
@@ -138,6 +150,8 @@ namespace WcfServiceLibrary
         void RemoveSemester(Semesters entityToRemove);
         [OperationContract]
         void RemoveSemesterById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateSemester(Semesters entityToUpdate);
         #endregion
 
         #region Students operations
@@ -155,6 +169,8 @@ namespace WcfServiceLibrary
         void RemoveStudent(Students entityToRemove);
         [OperationContract]
         void RemoveStudentById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateStudent(Students entityToUpdate);
         #endregion
 
         #region Subjects operations
@@ -172,6 +188,8 @@ namespace WcfServiceLibrary
         void RemoveSubject(Subjects entityToRemove);
         [OperationContract]
         void RemoveSubjectById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateSubject(Subjects entityToUpdate);
         #endregion
 
         #region SubjectsUsers operations
@@ -197,6 +215,8 @@ namespace WcfServiceLibrary
         void RemoveSubjectsUser(SubjectsUsers entityToRemove);
         [OperationContract]
         void RemoveSubjectsUserById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateSubjectsUser(SubjectsUsers entityToUpdate);
         #endregion
 
         #region Teachers operations
@@ -214,6 +234,8 @@ namespace WcfServiceLibrary
         void RemoveTeacher(Teachers entityToRemove);
         [OperationContract]
         void RemoveTeacherById(int entityToRemoveById);
+        [OperationContract]
+        void UpdateTeacher(Teachers entityToUpdate);
         #endregion
 
         #region Users operations
@@ -237,14 +259,15 @@ namespace WcfServiceLibrary
         IEnumerable<Users> GetTeachersFromUsers();
         [OperationContract]
         bool Login(string eduId, string password);
+        [OperationContract]
+        void UpdateUser(Users entityToUpdate);
         #endregion
 
         #region Other operations
         [OperationContract]
         AppInfo GetAppInfo();
-
-        [OperationContract]
-        void SaveChanges();
+        //[OperationContract]
+        //void SaveChanges();
         #endregion
 
     }
