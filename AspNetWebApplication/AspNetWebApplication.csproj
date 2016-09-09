@@ -356,10 +356,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repository\Repository.csproj">
-      <Project>{68bdea95-9bdd-49d5-8b81-cf8a21cb53f1}</Project>
-      <Name>Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WcfServiceLibrary\WcfServiceLibrary.csproj">
       <Project>{91f4cadb-871d-42f9-8644-284402712a8f}</Project>
       <Name>WcfServiceLibrary</Name>
