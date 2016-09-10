@@ -37,6 +37,7 @@
         <Button Content="Edit" Grid.Column="1" Margin="0,346,87,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=EditUserCommand}" />
         <Button Content="Delete" Grid.Column="1" Margin="0,346,7,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=DeleteUserCommand}"/>
         <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=RefreshComnand}"/>
+        <Button x:Name="button" Content="Generate user" Grid.Column="1" HorizontalAlignment="Left" Margin="10,259,0,0" VerticalAlignment="Top" Width="329" Command="{Binding Path=GenerateCommand}"/>
 
     </Grid>
 </UserControl>

@@ -96,6 +96,7 @@
     <Compile Include="Common\MyEnums.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\Singleton.cs" />
+    <Compile Include="Common\UserGenerator.cs" />
     <Compile Include="Converters\ExamIdToLecturerNameConverter.cs" />
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />
     <Compile Include="Converters\SubjectIdToSubjectNameConverter.cs" />
@@ -118,6 +119,9 @@
     </Compile>
     <Compile Include="UserControls\PersonalInfoUserControl.xaml.cs">
       <DependentUpon>PersonalInfoUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SemesterInfoUserControl.xaml.cs">
+      <DependentUpon>SemesterInfoUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SubjectsControl.xaml.cs">
       <DependentUpon>SubjectsControl.xaml</DependentUpon>
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\PersonalInfoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SemesterInfoUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

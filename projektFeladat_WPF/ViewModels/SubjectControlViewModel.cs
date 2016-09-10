@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
+using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
 using System;
 using System.Collections;
@@ -40,7 +41,7 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand RefreshCommand { get; private set; }
 
 
-        IService _service = new Service(); //nem service példány, csak egy kliens
+        ServiceClient client = new ServiceClient(); //nem service példány, csak egy kliens
          
         public SubjectControlViewModel()
         {
@@ -55,7 +56,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Subjects> newList = new List<Subjects>();
             SubjectList = newList;
-            SubjectList = _service.GetAllSubjects();            
+            SubjectList = client.GetAllSubjects();            
         }
 
         public void AddMethod()
@@ -78,7 +79,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             if (SelectedItem != null)
             {
-                _service.RemoveSubjectById(SelectedItem.Id); //<== ezzel a módszerrel töröl
+                client.RemoveSubjectById(SelectedItem.Id); //<== ezzel a módszerrel töröl
                 //_service.RemoveSubject(SelectedItem);      //ez a módszer hiát dob
                 RefreshMethod();
             }

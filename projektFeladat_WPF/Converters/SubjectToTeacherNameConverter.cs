@@ -17,7 +17,10 @@ namespace projektFeladat_WPF.Converters
             {
                 ServiceClient service = new ServiceClient();
                 var teacher = service.GetSubjectTeacher(subject);
-                return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}"; 
+                if (teacher!=null)
+                {
+                    return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";  
+                }
             }
             return "SubjectToTeacherName error";
         }

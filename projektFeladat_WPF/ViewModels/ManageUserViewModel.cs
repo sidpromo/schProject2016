@@ -9,17 +9,17 @@ using WcfServiceLibrary;
 namespace projektFeladat_WPF.ViewModels
 {
     public class ManageUserViewModel : Bindable
-    {      
+    {
         private IEnumerable<Users> userList;
 
         public IEnumerable<Users> UserList
         {
             get { return userList; }
-            set { userList = value;OnPropertyChanged(); }
+            set { userList = value; OnPropertyChanged(); }
         }
 
         private Users selectedUser;
-       
+
         public Users SelectedUser
         {
             get { return selectedUser; }
@@ -29,7 +29,7 @@ namespace projektFeladat_WPF.ViewModels
                 OnPropertyChanged();
             }
         }
-        
+
 
         ServiceClient client = new ServiceClient();
 
@@ -37,6 +37,14 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand AddUserCommand { get; private set; }
         public ICommand RefreshComnand { get; private set; }
         public ICommand EditUserCommand { get; private set; }
+        public ICommand GenerateCommand { get; private set; }
+
+        public void GenerateUser()
+        {
+            UserGenerator gen = new UserGenerator();
+            client.AddUser(gen.GenerateUser());
+            RefreshMethod();
+        }
 
         public void DeleteMethod()
         {
@@ -44,7 +52,7 @@ namespace projektFeladat_WPF.ViewModels
             {
                 return;
             }
-            client.RemoveUserById(SelectedUser.Id);            
+            client.RemoveUserById(SelectedUser.Id);
             RefreshMethod();
         }
 
@@ -56,7 +64,7 @@ namespace projektFeladat_WPF.ViewModels
 
         public void EditMethod()
         {
-            if (SelectedUser==null)
+            if (SelectedUser == null)
             {
                 return;
             }
@@ -68,7 +76,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Users> newList = new List<Users>();
             UserList = newList;
-           UserList =client.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
+            UserList = client.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
         }
         public ManageUserViewModel()
         {
@@ -77,6 +85,7 @@ namespace projektFeladat_WPF.ViewModels
             AddUserCommand = new RelayCommand(AddMethod);
             RefreshComnand = new RelayCommand(RefreshMethod);
             EditUserCommand = new RelayCommand(EditMethod);
+            GenerateCommand = new RelayCommand(GenerateUser);
         }
     }
 }

@@ -80,6 +80,7 @@ namespace projektFeladat_WPF.ViewModels
                 client.UpdateSubject(subject);
                 
             }
+            EditedSubject = new Subjects();
         }
 
     }
