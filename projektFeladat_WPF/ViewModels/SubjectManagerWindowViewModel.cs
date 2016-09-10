@@ -1,23 +1,19 @@
 ﻿using projektFeladat_WPF.Common;
-using System;
+using projektFeladat_WPF.NeptunServiceReference;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
-   public class SubjectManagerWindowViewModel : Bindable
+    public class SubjectManagerWindowViewModel : Bindable
     {
         private IEnumerable<Users> teacherList;
 
         public IEnumerable<Users> TeacherList
         {
             get { return teacherList; }
-            set { teacherList = value;OnPropertyChanged(); }
+            set { teacherList = value; OnPropertyChanged(); }
         }
 
         private Users selectedTeacher;
@@ -25,7 +21,7 @@ namespace projektFeladat_WPF.ViewModels
         public Users SelectedTeacher
         {
             get { return selectedTeacher; }
-            set { selectedTeacher = value;OnPropertyChanged(); }
+            set { selectedTeacher = value; OnPropertyChanged(); }
         }
 
         private Subjects editedSubject;
@@ -33,17 +29,16 @@ namespace projektFeladat_WPF.ViewModels
         public Subjects EditedSubject
         {
             get { return editedSubject; }
-            set { editedSubject = value;OnPropertyChanged(); }
-        }       
+            set { editedSubject = value; OnPropertyChanged(); }
+        }
 
-        IService _service = new Service();
-        int idToRemove=0;
+        ServiceClient client = new ServiceClient();
 
         public ICommand SaveCommand { get; private set; }
 
         void CommonMethods()
         {
-            TeacherList = _service.GetTeachersFromUsers();
+            TeacherList = client.GetTeachersFromUsers();
             SaveCommand = new RelayCommand(SaveMethod);
         }
 
@@ -52,32 +47,39 @@ namespace projektFeladat_WPF.ViewModels
             CommonMethods();
             EditedSubject = new Subjects();
         }
-       
+
         public SubjectManagerWindowViewModel(Subjects subjectToEdit)
         {
             CommonMethods();
             EditedSubject = new Subjects();
-            EditedSubject = _service.GetSubjectById(subjectToEdit.Id);
-            //TODO: Betölteni az aktuális tanárt            
-            idToRemove = subjectToEdit.Id;
+            EditedSubject = client.GetSubjectById(subjectToEdit.Id);
             
+            //TODO: Betölteni az aktuális tanárt            
+
+
         }
         void Add()
         {
-            if (idToRemove!=0)
-            {
-                _service.RemoveSubjectById(idToRemove);
-            }
-            
-            _service.AddSubject(EditedSubject);            
-            _service.RegisterUserToSubject(SelectedTeacher, EditedSubject);
-            //TODO: Regisztrálni tanárt hozzá!!!!
-            
+            client.AddSubject(EditedSubject);
+            client.RegisterUserToSubject(SelectedTeacher, EditedSubject);
         }
         void SaveMethod()
         {
-            Add();
-            EditedSubject = new Subjects();
+            if (client.GetSubjectById(EditedSubject.Id)==null)
+            {
+                Add();
+            }
+            else
+            {
+                var subject = client.GetSubjectById(EditedSubject.Id);
+                if (client.GetSubjectTeacher(EditedSubject)!=SelectedTeacher)
+                {
+                    client.RegisterUserToSubject(SelectedTeacher, EditedSubject);
+                }
+                subject = EditedSubject;
+                client.UpdateSubject(subject);
+                
+            }
         }
 
     }

@@ -1,45 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="Users">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
-      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EduCardId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EduId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="InsertDate" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MedicalCardId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="ModifyDate" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="MothersName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PersonalId" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SemesterId" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="SemesterState" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Users" nillable="true" type="tns:Users" />
-  <xs:complexType name="ArrayOfUsers">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUsers" nillable="true" type="tns:ArrayOfUsers" />
-  <xs:complexType name="AppInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Maker" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AppInfo" nillable="true" type="tns:AppInfo" />
   <xs:complexType name="ArrayOfAdministrators">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Administrators" nillable="true" type="tns:Administrators" />
@@ -92,6 +52,38 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfExamsUsers" nillable="true" type="tns:ArrayOfExamsUsers" />
+  <xs:complexType name="ArrayOfUsers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsers" nillable="true" type="tns:ArrayOfUsers" />
+  <xs:complexType name="Users">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EduCardId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EduId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InsertDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MedicalCardId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifyDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MothersName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SemesterId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SemesterState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Users" nillable="true" type="tns:Users" />
   <xs:complexType name="Grades">
     <xs:sequence>
       <xs:element minOccurs="0" name="ExamId" nillable="true" type="xs:int" />
@@ -223,4 +215,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Teachers" nillable="true" type="tns:Teachers" />
+  <xs:complexType name="AppInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Maker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppInfo" nillable="true" type="tns:AppInfo" />
 </xs:schema>

@@ -15,9 +15,8 @@ namespace projektFeladat_WPF.Converters
         {
             int id = (int)value;
             ServiceClient client = new ServiceClient();
-            
-            //TODO...
-            return "Converter err..";
+            var teacher = client.GetExamTeacher(id);           
+            return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

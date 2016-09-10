@@ -15,48 +15,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NeptunServiceReference.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUser", ReplyAction="http://tempuri.org/IService/RemoveUserResponse")]
-        void RemoveUser(WcfServiceLibrary.Users entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUser", ReplyAction="http://tempuri.org/IService/RemoveUserResponse")]
-        System.Threading.Tasks.Task RemoveUserAsync(WcfServiceLibrary.Users entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUserById", ReplyAction="http://tempuri.org/IService/RemoveUserByIdResponse")]
-        void RemoveUserById(int entityToRemoveById);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUserById", ReplyAction="http://tempuri.org/IService/RemoveUserByIdResponse")]
-        System.Threading.Tasks.Task RemoveUserByIdAsync(int entityToRemoveById);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUserId", ReplyAction="http://tempuri.org/IService/GetUserIdResponse")]
-        int GetUserId(WcfServiceLibrary.Users user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUserId", ReplyAction="http://tempuri.org/IService/GetUserIdResponse")]
-        System.Threading.Tasks.Task<int> GetUserIdAsync(WcfServiceLibrary.Users user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTeachersFromUsers", ReplyAction="http://tempuri.org/IService/GetTeachersFromUsersResponse")]
-        WcfServiceLibrary.Users[] GetTeachersFromUsers();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTeachersFromUsers", ReplyAction="http://tempuri.org/IService/GetTeachersFromUsersResponse")]
-        System.Threading.Tasks.Task<WcfServiceLibrary.Users[]> GetTeachersFromUsersAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
-        bool Login(string eduId, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string eduId, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateUser", ReplyAction="http://tempuri.org/IService/UpdateUserResponse")]
-        void UpdateUser(WcfServiceLibrary.Users entityToUpdate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateUser", ReplyAction="http://tempuri.org/IService/UpdateUserResponse")]
-        System.Threading.Tasks.Task UpdateUserAsync(WcfServiceLibrary.Users entityToUpdate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAppInfo", ReplyAction="http://tempuri.org/IService/GetAppInfoResponse")]
-        WcfServiceLibrary.AppInfo GetAppInfo();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAppInfo", ReplyAction="http://tempuri.org/IService/GetAppInfoResponse")]
-        System.Threading.Tasks.Task<WcfServiceLibrary.AppInfo> GetAppInfoAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllAdministrators", ReplyAction="http://tempuri.org/IService/GetAllAdministratorsResponse")]
         WcfServiceLibrary.Administrators[] GetAllAdministrators();
         
@@ -74,12 +32,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfAdministrator", ReplyAction="http://tempuri.org/IService/GetIdOfAdministratorResponse")]
         System.Threading.Tasks.Task<int> GetIdOfAdministratorAsync(WcfServiceLibrary.Administrators entityToGetId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveAdministrator", ReplyAction="http://tempuri.org/IService/RemoveAdministratorResponse")]
-        void RemoveAdministrator(WcfServiceLibrary.Administrators entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveAdministrator", ReplyAction="http://tempuri.org/IService/RemoveAdministratorResponse")]
-        System.Threading.Tasks.Task RemoveAdministratorAsync(WcfServiceLibrary.Administrators entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveAdministratorById", ReplyAction="http://tempuri.org/IService/RemoveAdministratorByIdResponse")]
         void RemoveAdministratorById(int entityToRemoveById);
@@ -117,12 +69,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfExam", ReplyAction="http://tempuri.org/IService/GetIdOfExamResponse")]
         System.Threading.Tasks.Task<int> GetIdOfExamAsync(WcfServiceLibrary.Exams entityToGetId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExam", ReplyAction="http://tempuri.org/IService/RemoveExamResponse")]
-        void RemoveExam(WcfServiceLibrary.Exams entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExam", ReplyAction="http://tempuri.org/IService/RemoveExamResponse")]
-        System.Threading.Tasks.Task RemoveExamAsync(WcfServiceLibrary.Exams entityToRemove);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExamById", ReplyAction="http://tempuri.org/IService/RemoveExamByIdResponse")]
         void RemoveExamById(int entityToRemoveById);
         
@@ -158,12 +104,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfExamsUser", ReplyAction="http://tempuri.org/IService/GetIdOfExamsUserResponse")]
         System.Threading.Tasks.Task<int> GetIdOfExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToGetId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExamsUser", ReplyAction="http://tempuri.org/IService/RemoveExamsUserResponse")]
-        void RemoveExamsUser(WcfServiceLibrary.ExamsUsers entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExamsUser", ReplyAction="http://tempuri.org/IService/RemoveExamsUserResponse")]
-        System.Threading.Tasks.Task RemoveExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveExamsUserById", ReplyAction="http://tempuri.org/IService/RemoveExamsUserByIdResponse")]
         void RemoveExamsUserById(int entityToRemoveById);
@@ -213,12 +153,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfGrade", ReplyAction="http://tempuri.org/IService/GetIdOfGradeResponse")]
         System.Threading.Tasks.Task<int> GetIdOfGradeAsync(WcfServiceLibrary.Grades entityToGetId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveGrade", ReplyAction="http://tempuri.org/IService/RemoveGradeResponse")]
-        void RemoveGrade(WcfServiceLibrary.Grades entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveGrade", ReplyAction="http://tempuri.org/IService/RemoveGradeResponse")]
-        System.Threading.Tasks.Task RemoveGradeAsync(WcfServiceLibrary.Grades entityToRemove);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveGradeById", ReplyAction="http://tempuri.org/IService/RemoveGradeByIdResponse")]
         void RemoveGradeById(int entityToRemoveById);
         
@@ -248,12 +182,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfManager", ReplyAction="http://tempuri.org/IService/GetIdOfManagerResponse")]
         System.Threading.Tasks.Task<int> GetIdOfManagerAsync(WcfServiceLibrary.Managers entityToGetId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveManager", ReplyAction="http://tempuri.org/IService/RemoveManagerResponse")]
-        void RemoveManager(WcfServiceLibrary.Managers entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveManager", ReplyAction="http://tempuri.org/IService/RemoveManagerResponse")]
-        System.Threading.Tasks.Task RemoveManagerAsync(WcfServiceLibrary.Managers entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveManagerById", ReplyAction="http://tempuri.org/IService/RemoveManagerByIdResponse")]
         void RemoveManagerById(int entityToRemoveById);
@@ -303,12 +231,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSentMessages", ReplyAction="http://tempuri.org/IService/GetSentMessagesResponse")]
         System.Threading.Tasks.Task<WcfServiceLibrary.Messages[]> GetSentMessagesAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveMessage", ReplyAction="http://tempuri.org/IService/RemoveMessageResponse")]
-        void RemoveMessage(WcfServiceLibrary.Messages entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveMessage", ReplyAction="http://tempuri.org/IService/RemoveMessageResponse")]
-        System.Threading.Tasks.Task RemoveMessageAsync(WcfServiceLibrary.Messages entityToRemove);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveMessageById", ReplyAction="http://tempuri.org/IService/RemoveMessageByIdResponse")]
         void RemoveMessageById(int entityToRemoveById);
         
@@ -345,12 +267,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfSemester", ReplyAction="http://tempuri.org/IService/GetIdOfSemesterResponse")]
         System.Threading.Tasks.Task<int> GetIdOfSemesterAsync(WcfServiceLibrary.Semesters entityToGetId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSemester", ReplyAction="http://tempuri.org/IService/RemoveSemesterResponse")]
-        void RemoveSemester(WcfServiceLibrary.Semesters entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSemester", ReplyAction="http://tempuri.org/IService/RemoveSemesterResponse")]
-        System.Threading.Tasks.Task RemoveSemesterAsync(WcfServiceLibrary.Semesters entityToRemove);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSemesterById", ReplyAction="http://tempuri.org/IService/RemoveSemesterByIdResponse")]
         void RemoveSemesterById(int entityToRemoveById);
         
@@ -380,12 +296,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfStudent", ReplyAction="http://tempuri.org/IService/GetIdOfStudentResponse")]
         System.Threading.Tasks.Task<int> GetIdOfStudentAsync(WcfServiceLibrary.Students entityToGetId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveStudent", ReplyAction="http://tempuri.org/IService/RemoveStudentResponse")]
-        void RemoveStudent(WcfServiceLibrary.Students entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveStudent", ReplyAction="http://tempuri.org/IService/RemoveStudentResponse")]
-        System.Threading.Tasks.Task RemoveStudentAsync(WcfServiceLibrary.Students entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveStudentById", ReplyAction="http://tempuri.org/IService/RemoveStudentByIdResponse")]
         void RemoveStudentById(int entityToRemoveById);
@@ -423,12 +333,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfSubject", ReplyAction="http://tempuri.org/IService/GetIdOfSubjectResponse")]
         System.Threading.Tasks.Task<int> GetIdOfSubjectAsync(WcfServiceLibrary.Subjects entityToGetId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubject", ReplyAction="http://tempuri.org/IService/RemoveSubjectResponse")]
-        void RemoveSubject(WcfServiceLibrary.Subjects entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubject", ReplyAction="http://tempuri.org/IService/RemoveSubjectResponse")]
-        System.Threading.Tasks.Task RemoveSubjectAsync(WcfServiceLibrary.Subjects entityToRemove);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubjectById", ReplyAction="http://tempuri.org/IService/RemoveSubjectByIdResponse")]
         void RemoveSubjectById(int entityToRemoveById);
         
@@ -465,11 +369,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetRegisteredTeachersCount", ReplyAction="http://tempuri.org/IService/GetRegisteredTeachersCountResponse")]
         System.Threading.Tasks.Task<int> GetRegisteredTeachersCountAsync(WcfServiceLibrary.Subjects subject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSubjectTeacherName", ReplyAction="http://tempuri.org/IService/GetSubjectTeacherNameResponse")]
-        string GetSubjectTeacherName(WcfServiceLibrary.Subjects subject);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSubjectTeacher", ReplyAction="http://tempuri.org/IService/GetSubjectTeacherResponse")]
+        WcfServiceLibrary.Users GetSubjectTeacher(WcfServiceLibrary.Subjects subject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSubjectTeacherName", ReplyAction="http://tempuri.org/IService/GetSubjectTeacherNameResponse")]
-        System.Threading.Tasks.Task<string> GetSubjectTeacherNameAsync(WcfServiceLibrary.Subjects subject);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSubjectTeacher", ReplyAction="http://tempuri.org/IService/GetSubjectTeacherResponse")]
+        System.Threading.Tasks.Task<WcfServiceLibrary.Users> GetSubjectTeacherAsync(WcfServiceLibrary.Subjects subject);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSubjectsUserById", ReplyAction="http://tempuri.org/IService/GetSubjectsUserByIdResponse")]
         WcfServiceLibrary.SubjectsUsers GetSubjectsUserById(int entityToGetById);
@@ -488,12 +392,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RegisterUserToSubject", ReplyAction="http://tempuri.org/IService/RegisterUserToSubjectResponse")]
         System.Threading.Tasks.Task RegisterUserToSubjectAsync(WcfServiceLibrary.Users user, WcfServiceLibrary.Subjects subject);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubjectsUser", ReplyAction="http://tempuri.org/IService/RemoveSubjectsUserResponse")]
-        void RemoveSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubjectsUser", ReplyAction="http://tempuri.org/IService/RemoveSubjectsUserResponse")]
-        System.Threading.Tasks.Task RemoveSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveSubjectsUserById", ReplyAction="http://tempuri.org/IService/RemoveSubjectsUserByIdResponse")]
         void RemoveSubjectsUserById(int entityToRemoveById);
@@ -524,12 +422,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfTeacher", ReplyAction="http://tempuri.org/IService/GetIdOfTeacherResponse")]
         System.Threading.Tasks.Task<int> GetIdOfTeacherAsync(WcfServiceLibrary.Teachers entityToGetId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveTeacher", ReplyAction="http://tempuri.org/IService/RemoveTeacherResponse")]
-        void RemoveTeacher(WcfServiceLibrary.Teachers entityToRemove);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveTeacher", ReplyAction="http://tempuri.org/IService/RemoveTeacherResponse")]
-        System.Threading.Tasks.Task RemoveTeacherAsync(WcfServiceLibrary.Teachers entityToRemove);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveTeacherById", ReplyAction="http://tempuri.org/IService/RemoveTeacherByIdResponse")]
         void RemoveTeacherById(int entityToRemoveById);
@@ -566,6 +458,42 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetIdOfUser", ReplyAction="http://tempuri.org/IService/GetIdOfUserResponse")]
         System.Threading.Tasks.Task<int> GetIdOfUserAsync(WcfServiceLibrary.Users entityToGetId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUserById", ReplyAction="http://tempuri.org/IService/RemoveUserByIdResponse")]
+        void RemoveUserById(int entityToRemoveById);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveUserById", ReplyAction="http://tempuri.org/IService/RemoveUserByIdResponse")]
+        System.Threading.Tasks.Task RemoveUserByIdAsync(int entityToRemoveById);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUserId", ReplyAction="http://tempuri.org/IService/GetUserIdResponse")]
+        int GetUserId(WcfServiceLibrary.Users user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUserId", ReplyAction="http://tempuri.org/IService/GetUserIdResponse")]
+        System.Threading.Tasks.Task<int> GetUserIdAsync(WcfServiceLibrary.Users user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTeachersFromUsers", ReplyAction="http://tempuri.org/IService/GetTeachersFromUsersResponse")]
+        WcfServiceLibrary.Users[] GetTeachersFromUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTeachersFromUsers", ReplyAction="http://tempuri.org/IService/GetTeachersFromUsersResponse")]
+        System.Threading.Tasks.Task<WcfServiceLibrary.Users[]> GetTeachersFromUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
+        bool Login(string eduId, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Login", ReplyAction="http://tempuri.org/IService/LoginResponse")]
+        System.Threading.Tasks.Task<bool> LoginAsync(string eduId, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateUser", ReplyAction="http://tempuri.org/IService/UpdateUserResponse")]
+        void UpdateUser(WcfServiceLibrary.Users entityToUpdate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/UpdateUser", ReplyAction="http://tempuri.org/IService/UpdateUserResponse")]
+        System.Threading.Tasks.Task UpdateUserAsync(WcfServiceLibrary.Users entityToUpdate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAppInfo", ReplyAction="http://tempuri.org/IService/GetAppInfoResponse")]
+        WcfServiceLibrary.AppInfo GetAppInfo();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAppInfo", ReplyAction="http://tempuri.org/IService/GetAppInfoResponse")]
+        System.Threading.Tasks.Task<WcfServiceLibrary.AppInfo> GetAppInfoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -595,62 +523,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void RemoveUser(WcfServiceLibrary.Users entityToRemove) {
-            base.Channel.RemoveUser(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveUserAsync(WcfServiceLibrary.Users entityToRemove) {
-            return base.Channel.RemoveUserAsync(entityToRemove);
-        }
-        
-        public void RemoveUserById(int entityToRemoveById) {
-            base.Channel.RemoveUserById(entityToRemoveById);
-        }
-        
-        public System.Threading.Tasks.Task RemoveUserByIdAsync(int entityToRemoveById) {
-            return base.Channel.RemoveUserByIdAsync(entityToRemoveById);
-        }
-        
-        public int GetUserId(WcfServiceLibrary.Users user) {
-            return base.Channel.GetUserId(user);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetUserIdAsync(WcfServiceLibrary.Users user) {
-            return base.Channel.GetUserIdAsync(user);
-        }
-        
-        public WcfServiceLibrary.Users[] GetTeachersFromUsers() {
-            return base.Channel.GetTeachersFromUsers();
-        }
-        
-        public System.Threading.Tasks.Task<WcfServiceLibrary.Users[]> GetTeachersFromUsersAsync() {
-            return base.Channel.GetTeachersFromUsersAsync();
-        }
-        
-        public bool Login(string eduId, string password) {
-            return base.Channel.Login(eduId, password);
-        }
-        
-        public System.Threading.Tasks.Task<bool> LoginAsync(string eduId, string password) {
-            return base.Channel.LoginAsync(eduId, password);
-        }
-        
-        public void UpdateUser(WcfServiceLibrary.Users entityToUpdate) {
-            base.Channel.UpdateUser(entityToUpdate);
-        }
-        
-        public System.Threading.Tasks.Task UpdateUserAsync(WcfServiceLibrary.Users entityToUpdate) {
-            return base.Channel.UpdateUserAsync(entityToUpdate);
-        }
-        
-        public WcfServiceLibrary.AppInfo GetAppInfo() {
-            return base.Channel.GetAppInfo();
-        }
-        
-        public System.Threading.Tasks.Task<WcfServiceLibrary.AppInfo> GetAppInfoAsync() {
-            return base.Channel.GetAppInfoAsync();
-        }
-        
         public WcfServiceLibrary.Administrators[] GetAllAdministrators() {
             return base.Channel.GetAllAdministrators();
         }
@@ -673,14 +545,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfAdministratorAsync(WcfServiceLibrary.Administrators entityToGetId) {
             return base.Channel.GetIdOfAdministratorAsync(entityToGetId);
-        }
-        
-        public void RemoveAdministrator(WcfServiceLibrary.Administrators entityToRemove) {
-            base.Channel.RemoveAdministrator(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveAdministratorAsync(WcfServiceLibrary.Administrators entityToRemove) {
-            return base.Channel.RemoveAdministratorAsync(entityToRemove);
         }
         
         public void RemoveAdministratorById(int entityToRemoveById) {
@@ -731,14 +595,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetIdOfExamAsync(entityToGetId);
         }
         
-        public void RemoveExam(WcfServiceLibrary.Exams entityToRemove) {
-            base.Channel.RemoveExam(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveExamAsync(WcfServiceLibrary.Exams entityToRemove) {
-            return base.Channel.RemoveExamAsync(entityToRemove);
-        }
-        
         public void RemoveExamById(int entityToRemoveById) {
             base.Channel.RemoveExamById(entityToRemoveById);
         }
@@ -785,14 +641,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToGetId) {
             return base.Channel.GetIdOfExamsUserAsync(entityToGetId);
-        }
-        
-        public void RemoveExamsUser(WcfServiceLibrary.ExamsUsers entityToRemove) {
-            base.Channel.RemoveExamsUser(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToRemove) {
-            return base.Channel.RemoveExamsUserAsync(entityToRemove);
         }
         
         public void RemoveExamsUserById(int entityToRemoveById) {
@@ -859,14 +707,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetIdOfGradeAsync(entityToGetId);
         }
         
-        public void RemoveGrade(WcfServiceLibrary.Grades entityToRemove) {
-            base.Channel.RemoveGrade(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveGradeAsync(WcfServiceLibrary.Grades entityToRemove) {
-            return base.Channel.RemoveGradeAsync(entityToRemove);
-        }
-        
         public void RemoveGradeById(int entityToRemoveById) {
             base.Channel.RemoveGradeById(entityToRemoveById);
         }
@@ -905,14 +745,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfManagerAsync(WcfServiceLibrary.Managers entityToGetId) {
             return base.Channel.GetIdOfManagerAsync(entityToGetId);
-        }
-        
-        public void RemoveManager(WcfServiceLibrary.Managers entityToRemove) {
-            base.Channel.RemoveManager(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveManagerAsync(WcfServiceLibrary.Managers entityToRemove) {
-            return base.Channel.RemoveManagerAsync(entityToRemove);
         }
         
         public void RemoveManagerById(int entityToRemoveById) {
@@ -979,14 +811,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetSentMessagesAsync(userId);
         }
         
-        public void RemoveMessage(WcfServiceLibrary.Messages entityToRemove) {
-            base.Channel.RemoveMessage(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveMessageAsync(WcfServiceLibrary.Messages entityToRemove) {
-            return base.Channel.RemoveMessageAsync(entityToRemove);
-        }
-        
         public void RemoveMessageById(int entityToRemoveById) {
             base.Channel.RemoveMessageById(entityToRemoveById);
         }
@@ -1035,14 +859,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetIdOfSemesterAsync(entityToGetId);
         }
         
-        public void RemoveSemester(WcfServiceLibrary.Semesters entityToRemove) {
-            base.Channel.RemoveSemester(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveSemesterAsync(WcfServiceLibrary.Semesters entityToRemove) {
-            return base.Channel.RemoveSemesterAsync(entityToRemove);
-        }
-        
         public void RemoveSemesterById(int entityToRemoveById) {
             base.Channel.RemoveSemesterById(entityToRemoveById);
         }
@@ -1081,14 +897,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfStudentAsync(WcfServiceLibrary.Students entityToGetId) {
             return base.Channel.GetIdOfStudentAsync(entityToGetId);
-        }
-        
-        public void RemoveStudent(WcfServiceLibrary.Students entityToRemove) {
-            base.Channel.RemoveStudent(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveStudentAsync(WcfServiceLibrary.Students entityToRemove) {
-            return base.Channel.RemoveStudentAsync(entityToRemove);
         }
         
         public void RemoveStudentById(int entityToRemoveById) {
@@ -1139,14 +947,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetIdOfSubjectAsync(entityToGetId);
         }
         
-        public void RemoveSubject(WcfServiceLibrary.Subjects entityToRemove) {
-            base.Channel.RemoveSubject(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveSubjectAsync(WcfServiceLibrary.Subjects entityToRemove) {
-            return base.Channel.RemoveSubjectAsync(entityToRemove);
-        }
-        
         public void RemoveSubjectById(int entityToRemoveById) {
             base.Channel.RemoveSubjectById(entityToRemoveById);
         }
@@ -1195,12 +995,12 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.GetRegisteredTeachersCountAsync(subject);
         }
         
-        public string GetSubjectTeacherName(WcfServiceLibrary.Subjects subject) {
-            return base.Channel.GetSubjectTeacherName(subject);
+        public WcfServiceLibrary.Users GetSubjectTeacher(WcfServiceLibrary.Subjects subject) {
+            return base.Channel.GetSubjectTeacher(subject);
         }
         
-        public System.Threading.Tasks.Task<string> GetSubjectTeacherNameAsync(WcfServiceLibrary.Subjects subject) {
-            return base.Channel.GetSubjectTeacherNameAsync(subject);
+        public System.Threading.Tasks.Task<WcfServiceLibrary.Users> GetSubjectTeacherAsync(WcfServiceLibrary.Subjects subject) {
+            return base.Channel.GetSubjectTeacherAsync(subject);
         }
         
         public WcfServiceLibrary.SubjectsUsers GetSubjectsUserById(int entityToGetById) {
@@ -1225,14 +1025,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task RegisterUserToSubjectAsync(WcfServiceLibrary.Users user, WcfServiceLibrary.Subjects subject) {
             return base.Channel.RegisterUserToSubjectAsync(user, subject);
-        }
-        
-        public void RemoveSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToRemove) {
-            base.Channel.RemoveSubjectsUser(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToRemove) {
-            return base.Channel.RemoveSubjectsUserAsync(entityToRemove);
         }
         
         public void RemoveSubjectsUserById(int entityToRemoveById) {
@@ -1273,14 +1065,6 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfTeacherAsync(WcfServiceLibrary.Teachers entityToGetId) {
             return base.Channel.GetIdOfTeacherAsync(entityToGetId);
-        }
-        
-        public void RemoveTeacher(WcfServiceLibrary.Teachers entityToRemove) {
-            base.Channel.RemoveTeacher(entityToRemove);
-        }
-        
-        public System.Threading.Tasks.Task RemoveTeacherAsync(WcfServiceLibrary.Teachers entityToRemove) {
-            return base.Channel.RemoveTeacherAsync(entityToRemove);
         }
         
         public void RemoveTeacherById(int entityToRemoveById) {
@@ -1329,6 +1113,54 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         
         public System.Threading.Tasks.Task<int> GetIdOfUserAsync(WcfServiceLibrary.Users entityToGetId) {
             return base.Channel.GetIdOfUserAsync(entityToGetId);
+        }
+        
+        public void RemoveUserById(int entityToRemoveById) {
+            base.Channel.RemoveUserById(entityToRemoveById);
+        }
+        
+        public System.Threading.Tasks.Task RemoveUserByIdAsync(int entityToRemoveById) {
+            return base.Channel.RemoveUserByIdAsync(entityToRemoveById);
+        }
+        
+        public int GetUserId(WcfServiceLibrary.Users user) {
+            return base.Channel.GetUserId(user);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetUserIdAsync(WcfServiceLibrary.Users user) {
+            return base.Channel.GetUserIdAsync(user);
+        }
+        
+        public WcfServiceLibrary.Users[] GetTeachersFromUsers() {
+            return base.Channel.GetTeachersFromUsers();
+        }
+        
+        public System.Threading.Tasks.Task<WcfServiceLibrary.Users[]> GetTeachersFromUsersAsync() {
+            return base.Channel.GetTeachersFromUsersAsync();
+        }
+        
+        public bool Login(string eduId, string password) {
+            return base.Channel.Login(eduId, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginAsync(string eduId, string password) {
+            return base.Channel.LoginAsync(eduId, password);
+        }
+        
+        public void UpdateUser(WcfServiceLibrary.Users entityToUpdate) {
+            base.Channel.UpdateUser(entityToUpdate);
+        }
+        
+        public System.Threading.Tasks.Task UpdateUserAsync(WcfServiceLibrary.Users entityToUpdate) {
+            return base.Channel.UpdateUserAsync(entityToUpdate);
+        }
+        
+        public WcfServiceLibrary.AppInfo GetAppInfo() {
+            return base.Channel.GetAppInfo();
+        }
+        
+        public System.Threading.Tasks.Task<WcfServiceLibrary.AppInfo> GetAppInfoAsync() {
+            return base.Channel.GetAppInfoAsync();
         }
     }
 }
