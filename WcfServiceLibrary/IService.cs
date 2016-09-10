@@ -26,8 +26,8 @@ namespace WcfServiceLibrary
         int GetIdOfAdministrator(Administrators entityToGetId);
         //[OperationContract]
         //void RemoveAdministrator(Administrators entityToRemove);
-        [OperationContract]
-        void RemoveAdministratorById(int entityToRemoveById);
+        //[OperationContract]
+        //void RemoveAdministratorById(int entityToRemoveById);
         [OperationContract]
         void UpdateAdministrator(Administrators entityToUpdate);
         #endregion
@@ -106,8 +106,8 @@ namespace WcfServiceLibrary
         int GetIdOfManager(Managers entityToGetId);
         //[OperationContract]
         //void RemoveManager(Managers entityToRemove);
-        [OperationContract]
-        void RemoveManagerById(int entityToRemoveById);
+        //[OperationContract]
+        //void RemoveManagerById(int entityToRemoveById);
         [OperationContract]
         void UpdateManager(Managers entityToUpdate);
         #endregion
@@ -167,8 +167,8 @@ namespace WcfServiceLibrary
         int GetIdOfStudent(Students entityToGetId);
         //[OperationContract]
         //void RemoveStudent(Students entityToRemove);
-        [OperationContract]
-        void RemoveStudentById(int entityToRemoveById);
+        //[OperationContract]
+        //void RemoveStudentById(int entityToRemoveById);
         [OperationContract]
         void UpdateStudent(Students entityToUpdate);
         #endregion
@@ -232,8 +232,8 @@ namespace WcfServiceLibrary
         int GetIdOfTeacher(Teachers entityToGetId);
         //[OperationContract]
         //void RemoveTeacher(Teachers entityToRemove);
-        [OperationContract]
-        void RemoveTeacherById(int entityToRemoveById);
+        //[OperationContract]
+        //void RemoveTeacherById(int entityToRemoveById);
         [OperationContract]
         void UpdateTeacher(Teachers entityToUpdate);
         #endregion
