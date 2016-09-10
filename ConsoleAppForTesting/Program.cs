@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WcfServiceLibrary;
 using System.Threading;
+using ConsoleAppForTesting.ServiceReference;
 
 namespace ConsoleAppForTesting
 {

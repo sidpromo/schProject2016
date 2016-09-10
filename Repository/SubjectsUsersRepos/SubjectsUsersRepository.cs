@@ -25,7 +25,7 @@ namespace Repository
             return suRepo.GetAll().Where(x => x.SubjectId == subject.Id).Where(x => x.Users.UserType == "Teacher").Count();
         }
 
-        public string GetSubjectTeacherName(Subjects subject)
+        public Users GetSubjectTeacher(Subjects subject)
         {
             SubjectsUsers subjUser = new SubjectsUsers();
             subjUser = GetAll().Where(u => u.SubjectId == subject.Id).FirstOrDefault();
@@ -39,8 +39,7 @@ namespace Repository
             if (teacher != null)
             {
                 Users CurrentUser = userRepo.GetAll().Where(u => u.Id == teacher.UserId).FirstOrDefault();
-                string name = $"{CurrentUser.FirstName} {CurrentUser.MiddleName} {CurrentUser.LastName}";
-                return name;
+                return CurrentUser;
             }
             return null;
         }

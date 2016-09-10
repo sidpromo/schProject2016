@@ -204,7 +204,7 @@ namespace WcfServiceLibrary
         [OperationContract]
         int GetRegisteredTeachersCount(Subjects subject);
         [OperationContract]
-        string GetSubjectTeacherName(Subjects subject);
+        Users GetSubjectTeacher(Subjects subject);
         [OperationContract]
         SubjectsUsers GetSubjectsUserById(int entityToGetById);
         [OperationContract]

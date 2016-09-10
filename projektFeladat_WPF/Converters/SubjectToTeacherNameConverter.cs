@@ -18,7 +18,7 @@ namespace projektFeladat_WPF.Converters
             if (subject!=null)
             {
                 IService service = new Service();
-                string name = service.GetSubjectTeacherName(subject);
+                string name = service.GetSubjectTeacher(subject);
 
                 if (name != null)
                 {

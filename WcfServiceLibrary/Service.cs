@@ -530,11 +530,13 @@ namespace WcfServiceLibrary
             return returnedValue2;
         }
 
-        public string GetSubjectTeacherName(Subjects subject)
+        public Users GetSubjectTeacher(Subjects subject)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             Entities.Subjects subject2 = Mapper.Map<Subjects, Entities.Subjects>(subject);
-            return repo.GetSubjectTeacherName(subject2);
+            Entities.Users returnedValue = repo.GetSubjectTeacher(subject2);
+            Users returnedValue2 = Mapper.Map<Entities.Users, Users>(returnedValue);
+            return returnedValue2;
         }
 
         public Teachers GetTeacherById(int entityToGetById)
