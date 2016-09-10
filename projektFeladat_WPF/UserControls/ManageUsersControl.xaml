@@ -14,7 +14,7 @@
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <!--<ListBox HorizontalAlignment="Stretch" Height="auto " Margin="10,10,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path=UserList}" SelectedItem="{Binding Path=SelectedUser}" DisplayMemberPath="EduId" />-->
-        <DataGrid x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"  RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" >
+        <DataGrid x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"  RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" IsReadOnly="True">
             <DataGrid.Columns>
                 <!--<DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
                 <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>

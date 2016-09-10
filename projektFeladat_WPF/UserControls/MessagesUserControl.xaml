@@ -23,14 +23,14 @@
         <DataGrid x:Name="InboxDataGrid"  Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" IsReadOnly="True">
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>-->
-                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*"/>
-                <DataGridTextColumn Binding="{Binding SentDate}" Header="Recieve date:" Width="15*"/>
+                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject" Width="15*"/>
+                <DataGridTextColumn Binding="{Binding SentDate}" Header="Recieve date" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="sentMessagesDataGrid"  Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,45,0,0"  VerticalAlignment="Top" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject:" Width="15*" />
+                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient" Width="10*" />
+                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject" Width="15*" />
                 <DataGridTextColumn Binding="{Binding SentDate}" Header="Date sent" Width="15*" />
             </DataGrid.Columns>
         </DataGrid>

@@ -79,8 +79,8 @@ namespace projektFeladat_WPF.ViewModels
         {
             if (SelectedItem != null)
             {
-                client.RemoveSubjectById(SelectedItem.Id); //<== ezzel a módszerrel töröl
-                //_service.RemoveSubject(SelectedItem);      //ez a módszer hiát dob
+                client.RemoveSubjectById(SelectedItem.Id); 
+               
                 RefreshMethod();
             }
            

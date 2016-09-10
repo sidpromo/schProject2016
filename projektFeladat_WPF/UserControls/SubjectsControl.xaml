@@ -47,7 +47,7 @@
         <DataGrid x:Name="subjectInfoDataGrid"  Margin="25,0,0,0" Grid.Column="1" Grid.RowSpan="2" RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="subjNameColumn" Binding="{Binding SubjectName}" Header="Subject name" />
-                <DataGridTextColumn x:Name="subjCodeColumn" Binding="{Binding SubjectCode}" Header="Subject code:" />
+                <DataGridTextColumn x:Name="subjCodeColumn" Binding="{Binding SubjectCode}" Header="Subject code" />
                 <DataGridTextColumn x:Name="creditColumn" Binding="{Binding Credits}" Header="Credit" />
             </DataGrid.Columns>
         </DataGrid>
