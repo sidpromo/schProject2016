@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -7,6 +7,48 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserById" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTeachersFromUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersFromUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTeachersFromUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeachersFromUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAppInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAppInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetAllAdministrators_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAdministrators" />
   </wsdl:message>
@@ -36,6 +78,12 @@
   </wsdl:message>
   <wsdl:message name="IService_RemoveAdministratorById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveAdministratorByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateAdministrator_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdministrator" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateAdministrator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdministratorResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AddExam_InputMessage">
     <wsdl:part name="parameters" element="tns:AddExam" />
@@ -72,6 +120,12 @@
   </wsdl:message>
   <wsdl:message name="IService_RemoveExamById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveExamByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateExam_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExam" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateExam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExamResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AddExamsUser_InputMessage">
     <wsdl:part name="parameters" element="tns:AddExamsUser" />
@@ -115,6 +169,18 @@
   <wsdl:message name="IService_GetExamStudents_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetExamStudentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetExamTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExamTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExamTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExamTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateExamsUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExamsUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateExamsUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExamsUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddGrade_InputMessage">
     <wsdl:part name="parameters" element="tns:AddGrade" />
   </wsdl:message>
@@ -151,6 +217,12 @@
   <wsdl:message name="IService_RemoveGradeById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveGradeByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_UpdateGrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGrade" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateGrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGradeResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetAllManagers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllManagers" />
   </wsdl:message>
@@ -181,6 +253,12 @@
   <wsdl:message name="IService_RemoveManagerById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveManagerByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_UpdateManager_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManager" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateManager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateManagerResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMessage" />
   </wsdl:message>
@@ -205,6 +283,18 @@
   <wsdl:message name="IService_GetIdOfMessage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIdOfMessageResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetReceivedMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceivedMessages" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetReceivedMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceivedMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSentMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSentMessages" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSentMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSentMessagesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_RemoveMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:RemoveMessage" />
   </wsdl:message>
@@ -217,17 +307,11 @@
   <wsdl:message name="IService_RemoveMessageById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveMessageByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetReceivedMessages_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetReceivedMessages" />
+  <wsdl:message name="IService_UpdateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessage" />
   </wsdl:message>
-  <wsdl:message name="IService_GetReceivedMessages_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetReceivedMessagesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSentMessages_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSentMessages" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSentMessages_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSentMessagesResponse" />
+  <wsdl:message name="IService_UpdateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AddSemester_InputMessage">
     <wsdl:part name="parameters" element="tns:AddSemester" />
@@ -265,6 +349,12 @@
   <wsdl:message name="IService_RemoveSemesterById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveSemesterByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_UpdateSemester_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSemester" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateSemester_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSemesterResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetAllStudents_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllStudents" />
   </wsdl:message>
@@ -294,6 +384,12 @@
   </wsdl:message>
   <wsdl:message name="IService_RemoveStudentById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveStudentByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudent" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudentResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AddSubject_InputMessage">
     <wsdl:part name="parameters" element="tns:AddSubject" />
@@ -330,6 +426,12 @@
   </wsdl:message>
   <wsdl:message name="IService_RemoveSubjectById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveSubjectByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubject" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubjectResponse" />
   </wsdl:message>
   <wsdl:message name="IService_AddSubjectsUser_InputMessage">
     <wsdl:part name="parameters" element="tns:AddSubjectsUser" />
@@ -391,6 +493,12 @@
   <wsdl:message name="IService_RemoveSubjectsUserById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveSubjectsUserByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_UpdateSubjectsUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubjectsUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateSubjectsUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubjectsUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetAllTeachers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTeachers" />
   </wsdl:message>
@@ -421,6 +529,12 @@
   <wsdl:message name="IService_RemoveTeacherById_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveTeacherByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_UpdateTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTeacherResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddUser_InputMessage">
     <wsdl:part name="parameters" element="tns:AddUser" />
   </wsdl:message>
@@ -445,49 +559,35 @@
   <wsdl:message name="IService_GetIdOfUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIdOfUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_RemoveUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveUser" />
-  </wsdl:message>
-  <wsdl:message name="IService_RemoveUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_RemoveUserById_InputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveUserById" />
-  </wsdl:message>
-  <wsdl:message name="IService_RemoveUserById_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RemoveUserByIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetUserId_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserId" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetUserId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetTeachersFromUsers_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTeachersFromUsers" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetTeachersFromUsers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTeachersFromUsersResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Login_InputMessage">
-    <wsdl:part name="parameters" element="tns:Login" />
-  </wsdl:message>
-  <wsdl:message name="IService_Login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoginResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetAppInfo_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAppInfo" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetAppInfo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAppInfoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveChanges_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveChanges" />
-  </wsdl:message>
-  <wsdl:message name="IService_SaveChanges_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveChangesResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveUser" message="tns:IService_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveUserResponse" message="tns:IService_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveUserById" message="tns:IService_RemoveUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveUserByIdResponse" message="tns:IService_RemoveUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUserId" message="tns:IService_GetUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUserIdResponse" message="tns:IService_GetUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersFromUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTeachersFromUsers" message="tns:IService_GetTeachersFromUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTeachersFromUsersResponse" message="tns:IService_GetTeachersFromUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateUser" message="tns:IService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateUserResponse" message="tns:IService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAppInfo" message="tns:IService_GetAppInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAppInfoResponse" message="tns:IService_GetAppInfo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllAdministrators">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllAdministrators" message="tns:IService_GetAllAdministrators_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllAdministratorsResponse" message="tns:IService_GetAllAdministrators_OutputMessage" />
@@ -507,6 +607,10 @@
     <wsdl:operation name="RemoveAdministratorById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveAdministratorById" message="tns:IService_RemoveAdministratorById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveAdministratorByIdResponse" message="tns:IService_RemoveAdministratorById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdministrator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateAdministrator" message="tns:IService_UpdateAdministrator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateAdministratorResponse" message="tns:IService_UpdateAdministrator_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddExam">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddExam" message="tns:IService_AddExam_InputMessage" />
@@ -531,6 +635,10 @@
     <wsdl:operation name="RemoveExamById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveExamById" message="tns:IService_RemoveExamById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveExamByIdResponse" message="tns:IService_RemoveExamById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateExam" message="tns:IService_UpdateExam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateExamResponse" message="tns:IService_UpdateExam_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddExamsUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddExamsUser" message="tns:IService_AddExamsUser_InputMessage" />
@@ -560,6 +668,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExamStudents" message="tns:IService_GetExamStudents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExamStudentsResponse" message="tns:IService_GetExamStudents_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetExamTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExamTeacher" message="tns:IService_GetExamTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExamTeacherResponse" message="tns:IService_GetExamTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExamsUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateExamsUser" message="tns:IService_UpdateExamsUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateExamsUserResponse" message="tns:IService_UpdateExamsUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddGrade">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddGrade" message="tns:IService_AddGrade_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AddGradeResponse" message="tns:IService_AddGrade_OutputMessage" />
@@ -584,6 +700,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveGradeById" message="tns:IService_RemoveGradeById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveGradeByIdResponse" message="tns:IService_RemoveGradeById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateGrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateGrade" message="tns:IService_UpdateGrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateGradeResponse" message="tns:IService_UpdateGrade_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllManagers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllManagers" message="tns:IService_GetAllManagers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllManagersResponse" message="tns:IService_GetAllManagers_OutputMessage" />
@@ -604,6 +724,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveManagerById" message="tns:IService_RemoveManagerById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveManagerByIdResponse" message="tns:IService_RemoveManagerById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateManager">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateManager" message="tns:IService_UpdateManager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateManagerResponse" message="tns:IService_UpdateManager_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddMessage" message="tns:IService_AddMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AddMessageResponse" message="tns:IService_AddMessage_OutputMessage" />
@@ -620,6 +744,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIdOfMessage" message="tns:IService_GetIdOfMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIdOfMessageResponse" message="tns:IService_GetIdOfMessage_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetReceivedMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetReceivedMessages" message="tns:IService_GetReceivedMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetReceivedMessagesResponse" message="tns:IService_GetReceivedMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSentMessages" message="tns:IService_GetSentMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSentMessagesResponse" message="tns:IService_GetSentMessages_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="RemoveMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveMessage" message="tns:IService_RemoveMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveMessageResponse" message="tns:IService_RemoveMessage_OutputMessage" />
@@ -628,13 +760,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveMessageById" message="tns:IService_RemoveMessageById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveMessageByIdResponse" message="tns:IService_RemoveMessageById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetReceivedMessages">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetReceivedMessages" message="tns:IService_GetReceivedMessages_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetReceivedMessagesResponse" message="tns:IService_GetReceivedMessages_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSentMessages">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSentMessages" message="tns:IService_GetSentMessages_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSentMessagesResponse" message="tns:IService_GetSentMessages_OutputMessage" />
+    <wsdl:operation name="UpdateMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateMessage" message="tns:IService_UpdateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateMessageResponse" message="tns:IService_UpdateMessage_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddSemester">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSemester" message="tns:IService_AddSemester_InputMessage" />
@@ -660,6 +788,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveSemesterById" message="tns:IService_RemoveSemesterById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveSemesterByIdResponse" message="tns:IService_RemoveSemesterById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateSemester">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateSemester" message="tns:IService_UpdateSemester_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateSemesterResponse" message="tns:IService_UpdateSemester_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllStudents">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllStudents" message="tns:IService_GetAllStudents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllStudentsResponse" message="tns:IService_GetAllStudents_OutputMessage" />
@@ -679,6 +811,10 @@
     <wsdl:operation name="RemoveStudentById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveStudentById" message="tns:IService_RemoveStudentById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveStudentByIdResponse" message="tns:IService_RemoveStudentById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateStudent" message="tns:IService_UpdateStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateStudentResponse" message="tns:IService_UpdateStudent_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddSubject">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSubject" message="tns:IService_AddSubject_InputMessage" />
@@ -703,6 +839,10 @@
     <wsdl:operation name="RemoveSubjectById">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveSubjectById" message="tns:IService_RemoveSubjectById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveSubjectByIdResponse" message="tns:IService_RemoveSubjectById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateSubject" message="tns:IService_UpdateSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateSubjectResponse" message="tns:IService_UpdateSubject_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddSubjectsUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddSubjectsUser" message="tns:IService_AddSubjectsUser_InputMessage" />
@@ -744,6 +884,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveSubjectsUserById" message="tns:IService_RemoveSubjectsUserById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveSubjectsUserByIdResponse" message="tns:IService_RemoveSubjectsUserById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateSubjectsUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateSubjectsUser" message="tns:IService_UpdateSubjectsUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateSubjectsUserResponse" message="tns:IService_UpdateSubjectsUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllTeachers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllTeachers" message="tns:IService_GetAllTeachers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllTeachersResponse" message="tns:IService_GetAllTeachers_OutputMessage" />
@@ -764,6 +908,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveTeacherById" message="tns:IService_RemoveTeacherById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveTeacherByIdResponse" message="tns:IService_RemoveTeacherById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateTeacher" message="tns:IService_UpdateTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateTeacherResponse" message="tns:IService_UpdateTeacher_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddUser" message="tns:IService_AddUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AddUserResponse" message="tns:IService_AddUser_OutputMessage" />
@@ -780,37 +928,72 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIdOfUser" message="tns:IService_GetIdOfUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIdOfUserResponse" message="tns:IService_GetIdOfUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RemoveUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveUser" message="tns:IService_RemoveUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveUserResponse" message="tns:IService_RemoveUser_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RemoveUserById">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveUserById" message="tns:IService_RemoveUserById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveUserByIdResponse" message="tns:IService_RemoveUserById_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetUserId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUserId" message="tns:IService_GetUserId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUserIdResponse" message="tns:IService_GetUserId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTeachersFromUsers">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTeachersFromUsers" message="tns:IService_GetTeachersFromUsers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTeachersFromUsersResponse" message="tns:IService_GetTeachersFromUsers_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Login" message="tns:IService_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAppInfo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAppInfo" message="tns:IService_GetAppInfo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAppInfoResponse" message="tns:IService_GetAppInfo_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveChanges">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveChanges" message="tns:IService_SaveChanges_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveChangesResponse" message="tns:IService_SaveChanges_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceEndpoint" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserById">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeachersFromUsers">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTeachersFromUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAppInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAdministrators">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllAdministrators" style="document" />
       <wsdl:input>
@@ -849,6 +1032,15 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveAdministratorById">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveAdministratorById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdministrator">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateAdministrator" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -903,6 +1095,15 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveExamById">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveExamById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExam">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateExam" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -973,6 +1174,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetExamTeacher">
+      <soap:operation soapAction="http://tempuri.org/IService/GetExamTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExamsUser">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateExamsUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddGrade">
       <soap:operation soapAction="http://tempuri.org/IService/AddGrade" style="document" />
       <wsdl:input>
@@ -1027,6 +1246,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateGrade">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateGrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllManagers">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllManagers" style="document" />
       <wsdl:input>
@@ -1072,6 +1300,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateManager">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddMessage">
       <soap:operation soapAction="http://tempuri.org/IService/AddMessage" style="document" />
       <wsdl:input>
@@ -1108,6 +1345,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetReceivedMessages">
+      <soap:operation soapAction="http://tempuri.org/IService/GetReceivedMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSentMessages">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSentMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RemoveMessage">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveMessage" style="document" />
       <wsdl:input>
@@ -1126,17 +1381,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetReceivedMessages">
-      <soap:operation soapAction="http://tempuri.org/IService/GetReceivedMessages" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSentMessages">
-      <soap:operation soapAction="http://tempuri.org/IService/GetSentMessages" style="document" />
+    <wsdl:operation name="UpdateMessage">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateMessage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1198,6 +1444,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateSemester">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateSemester" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllStudents">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllStudents" style="document" />
       <wsdl:input>
@@ -1236,6 +1491,15 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveStudentById">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveStudentById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateStudent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1290,6 +1554,15 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveSubjectById">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveSubjectById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubject">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateSubject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1387,6 +1660,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateSubjectsUser">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateSubjectsUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllTeachers">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllTeachers" style="document" />
       <wsdl:input>
@@ -1432,6 +1714,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateTeacher">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddUser">
       <soap:operation soapAction="http://tempuri.org/IService/AddUser" style="document" />
       <wsdl:input>
@@ -1461,69 +1752,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetIdOfUser">
       <soap:operation soapAction="http://tempuri.org/IService/GetIdOfUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RemoveUser">
-      <soap:operation soapAction="http://tempuri.org/IService/RemoveUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="RemoveUserById">
-      <soap:operation soapAction="http://tempuri.org/IService/RemoveUserById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetUserId">
-      <soap:operation soapAction="http://tempuri.org/IService/GetUserId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTeachersFromUsers">
-      <soap:operation soapAction="http://tempuri.org/IService/GetTeachersFromUsers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/IService/Login" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAppInfo">
-      <soap:operation soapAction="http://tempuri.org/IService/GetAppInfo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveChanges">
-      <soap:operation soapAction="http://tempuri.org/IService/SaveChanges" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

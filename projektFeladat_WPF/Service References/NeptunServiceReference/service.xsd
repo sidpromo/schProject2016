@@ -1,6 +1,95 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" />
+  <xs:element name="RemoveUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q1:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="user" nillable="true" type="q2:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeachersFromUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTeachersFromUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetTeachersFromUsersResult" nillable="true" type="q3:ArrayOfUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eduId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q4:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAppInfoResult" nillable="true" type="q5:AppInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllAdministrators">
     <xs:complexType>
       <xs:sequence />
@@ -9,7 +98,7 @@
   <xs:element name="GetAllAdministratorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllAdministratorsResult" nillable="true" type="q1:ArrayOfAdministrators" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllAdministratorsResult" nillable="true" type="q6:ArrayOfAdministrators" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,14 +112,14 @@
   <xs:element name="GetAdministratorByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAdministratorByIdResult" nillable="true" type="q2:Administrators" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAdministratorByIdResult" nillable="true" type="q7:Administrators" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfAdministrator">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q3:Administrators" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q8:Administrators" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -44,7 +133,7 @@
   <xs:element name="RemoveAdministrator">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q4:Administrators" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q9:Administrators" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,10 +154,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateAdministrator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q10:Administrators" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdministratorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddExam">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q5:Exams" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q11:Exams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -85,7 +186,7 @@
   <xs:element name="GetAllExamsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllExamsResult" nillable="true" type="q6:ArrayOfExams" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllExamsResult" nillable="true" type="q12:ArrayOfExams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -99,14 +200,14 @@
   <xs:element name="GetExamByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamByIdResult" nillable="true" type="q7:Exams" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamByIdResult" nillable="true" type="q13:Exams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfExam">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q8:Exams" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q14:Exams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,7 +221,7 @@
   <xs:element name="RemoveExam">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q9:Exams" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q15:Exams" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -141,10 +242,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateExam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q16:Exams" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExamResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddExamsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q10:ExamsUsers" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q17:ExamsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -161,7 +274,7 @@
   <xs:element name="GetAllExamsUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllExamsUsersResult" nillable="true" type="q11:ArrayOfExamsUsers" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllExamsUsersResult" nillable="true" type="q18:ArrayOfExamsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -175,14 +288,14 @@
   <xs:element name="GetExamsUserByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamsUserByIdResult" nillable="true" type="q12:ExamsUsers" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamsUserByIdResult" nillable="true" type="q19:ExamsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfExamsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q13:ExamsUsers" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q20:ExamsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -196,7 +309,7 @@
   <xs:element name="RemoveExamsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q14:ExamsUsers" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q21:ExamsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -227,14 +340,40 @@
   <xs:element name="GetExamStudentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamStudentsResult" nillable="true" type="q15:ArrayOfUsers" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamStudentsResult" nillable="true" type="q22:ArrayOfUsers" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExamTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="examId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExamTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetExamTeacherResult" nillable="true" type="q23:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExamsUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q24:ExamsUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateExamsUserResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="AddGrade">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q16:Grades" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q25:Grades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -251,7 +390,7 @@
   <xs:element name="GetAllGradesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllGradesResult" nillable="true" type="q17:ArrayOfGrades" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllGradesResult" nillable="true" type="q26:ArrayOfGrades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -265,14 +404,14 @@
   <xs:element name="GetGradeByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetGradeByIdResult" nillable="true" type="q18:Grades" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetGradeByIdResult" nillable="true" type="q27:Grades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfGrade">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q19:Grades" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q28:Grades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -286,7 +425,7 @@
   <xs:element name="RemoveGrade">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q20:Grades" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q29:Grades" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -307,6 +446,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateGrade">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q30:Grades" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateGradeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllManagers">
     <xs:complexType>
       <xs:sequence />
@@ -315,7 +466,7 @@
   <xs:element name="GetAllManagersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllManagersResult" nillable="true" type="q21:ArrayOfManagers" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllManagersResult" nillable="true" type="q31:ArrayOfManagers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -329,14 +480,14 @@
   <xs:element name="GetManagerByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetManagerByIdResult" nillable="true" type="q22:Managers" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetManagerByIdResult" nillable="true" type="q32:Managers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfManager">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q23:Managers" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q33:Managers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -350,7 +501,7 @@
   <xs:element name="RemoveManager">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q24:Managers" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q34:Managers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -371,10 +522,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateManager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q35:Managers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateManagerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q25:Messages" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q36:Messages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -391,7 +554,7 @@
   <xs:element name="GetAllMessagesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllMessagesResult" nillable="true" type="q26:ArrayOfMessages" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllMessagesResult" nillable="true" type="q37:ArrayOfMessages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -405,14 +568,14 @@
   <xs:element name="GetMessageByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetMessageByIdResult" nillable="true" type="q27:Messages" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetMessageByIdResult" nillable="true" type="q38:Messages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q28:Messages" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q39:Messages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -423,10 +586,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetReceivedMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetReceivedMessagesResult" nillable="true" type="q40:ArrayOfMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSentMessagesResult" nillable="true" type="q41:ArrayOfMessages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RemoveMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q29:Messages" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q42:Messages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -447,38 +638,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetReceivedMessages">
+  <xs:element name="UpdateMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q43:Messages" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetReceivedMessagesResponse">
+  <xs:element name="UpdateMessageResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetReceivedMessagesResult" nillable="true" type="q30:ArrayOfMessages" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSentMessages">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="userId" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSentMessagesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSentMessagesResult" nillable="true" type="q31:ArrayOfMessages" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="AddSemester">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q32:Semesters" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q44:Semesters" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -495,7 +670,7 @@
   <xs:element name="GetAllSemestersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSemestersResult" nillable="true" type="q33:ArrayOfSemesters" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSemestersResult" nillable="true" type="q45:ArrayOfSemesters" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -509,14 +684,14 @@
   <xs:element name="GetSemesterByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSemesterByIdResult" nillable="true" type="q34:Semesters" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSemesterByIdResult" nillable="true" type="q46:Semesters" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfSemester">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q35:Semesters" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q47:Semesters" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -530,7 +705,7 @@
   <xs:element name="RemoveSemester">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q36:Semesters" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q48:Semesters" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -551,6 +726,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateSemester">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q49:Semesters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSemesterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllStudents">
     <xs:complexType>
       <xs:sequence />
@@ -559,7 +746,7 @@
   <xs:element name="GetAllStudentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllStudentsResult" nillable="true" type="q37:ArrayOfStudents" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllStudentsResult" nillable="true" type="q50:ArrayOfStudents" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -573,14 +760,14 @@
   <xs:element name="GetStudentByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetStudentByIdResult" nillable="true" type="q38:Students" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetStudentByIdResult" nillable="true" type="q51:Students" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfStudent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q39:Students" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q52:Students" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -594,7 +781,7 @@
   <xs:element name="RemoveStudent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q40:Students" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q53:Students" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -615,10 +802,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateStudent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q54:Students" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStudentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddSubject">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q41:Subjects" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q55:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -635,7 +834,7 @@
   <xs:element name="GetAllSubjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSubjectsResult" nillable="true" type="q42:ArrayOfSubjects" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSubjectsResult" nillable="true" type="q56:ArrayOfSubjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -649,14 +848,14 @@
   <xs:element name="GetSubjectByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSubjectByIdResult" nillable="true" type="q43:Subjects" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSubjectByIdResult" nillable="true" type="q57:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfSubject">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q44:Subjects" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q58:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -670,7 +869,7 @@
   <xs:element name="RemoveSubject">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q45:Subjects" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q59:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -691,10 +890,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateSubject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q60:Subjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddSubjectsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q46:SubjectsUsers" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q61:SubjectsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -711,14 +922,14 @@
   <xs:element name="GetAllSubjectsUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSubjectsUsersResult" nillable="true" type="q47:ArrayOfSubjectsUsers" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllSubjectsUsersResult" nillable="true" type="q62:ArrayOfSubjectsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetRegisteredStudentsCount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q48:Subjects" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q63:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -732,7 +943,7 @@
   <xs:element name="GetRegisteredTeachersCount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q49:Subjects" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q64:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -746,7 +957,7 @@
   <xs:element name="GetSubjectTeacherName">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q50:Subjects" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q65:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -767,14 +978,14 @@
   <xs:element name="GetSubjectsUserByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSubjectsUserByIdResult" nillable="true" type="q51:SubjectsUsers" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetSubjectsUserByIdResult" nillable="true" type="q66:SubjectsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfSubjectsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q52:SubjectsUsers" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q67:SubjectsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -788,8 +999,8 @@
   <xs:element name="RegisterUserToSubject">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="user" nillable="true" type="q53:Users" />
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q54:Subjects" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="user" nillable="true" type="q68:Users" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="subject" nillable="true" type="q69:Subjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -801,7 +1012,7 @@
   <xs:element name="RemoveSubjectsUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q55:SubjectsUsers" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q70:SubjectsUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -822,6 +1033,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateSubjectsUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q71:SubjectsUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubjectsUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllTeachers">
     <xs:complexType>
       <xs:sequence />
@@ -830,7 +1053,7 @@
   <xs:element name="GetAllTeachersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllTeachersResult" nillable="true" type="q56:ArrayOfTeachers" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllTeachersResult" nillable="true" type="q72:ArrayOfTeachers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -844,14 +1067,14 @@
   <xs:element name="GetTeacherByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetTeacherByIdResult" nillable="true" type="q57:Teachers" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetTeacherByIdResult" nillable="true" type="q73:Teachers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfTeacher">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q58:Teachers" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q74:Teachers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -865,7 +1088,7 @@
   <xs:element name="RemoveTeacher">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q59:Teachers" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q75:Teachers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -886,10 +1109,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToUpdate" nillable="true" type="q76:Teachers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTeacherResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q60:Users" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToAdd" nillable="true" type="q77:Users" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -906,7 +1141,7 @@
   <xs:element name="GetAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q61:ArrayOfUsers" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q78:ArrayOfUsers" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -920,14 +1155,14 @@
   <xs:element name="GetUserByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetUserByIdResult" nillable="true" type="q62:Users" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetUserByIdResult" nillable="true" type="q79:Users" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIdOfUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q63:Users" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToGetId" nillable="true" type="q80:Users" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -936,93 +1171,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="GetIdOfUserResult" type="xs:int" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="entityToRemove" nillable="true" type="q64:Users" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveUserResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveUserById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveUserByIdResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUserId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="user" nillable="true" type="q65:Users" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUserIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetUserIdResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTeachersFromUsers">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTeachersFromUsersResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetTeachersFromUsersResult" nillable="true" type="q66:ArrayOfUsers" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Login">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="eduId" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="LoginResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAppInfo">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAppInfoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/WcfServiceLibrary" minOccurs="0" name="GetAppInfoResult" nillable="true" type="q67:AppInfo" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SaveChanges">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SaveChangesResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

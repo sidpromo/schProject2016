@@ -61,15 +61,25 @@ namespace projektFeladat_WPF.ViewModels
             if (SelectedMessage.FromUserId==Singleton.Instance.ID)
             {
                 //SelectedMessage.FromDeleted = true;
-                client.GetMessageById(SelectedMessage.Id).FromDeleted = true;
-                client.SaveChanges();             
+
+                //client.GetMessageById(SelectedMessage.Id).FromDeleted = true;                
+                //client.UpdateMessage(client.GetMessageById(SelectedMessage.Id));
+
+                Messages msg = client.GetMessageById(SelectedMessage.Id);
+                msg.FromDeleted = true;
+                client.UpdateMessage(msg);
+                             
                 MessageBox.Show("Message has been deleted from Sent messages");
             }
             else if (SelectedMessage.ToUserId == Singleton.Instance.ID)
             {
                 //SelectedMessage.ToDeleted = true;
-                client.GetMessageById(SelectedMessage.Id).ToDeleted = true;
-                client.SaveChanges();
+                //client.GetMessageById(SelectedMessage.Id).ToDeleted = true;
+
+                Messages msg = client.GetMessageById(SelectedMessage.Id);
+                msg.ToDeleted = true;
+                client.UpdateMessage(msg);
+
                 MessageBox.Show("Message has been deleted from Inbox");
             }
             if (SelectedMessage.ToDeleted==true && SelectedMessage.FromDeleted==true)

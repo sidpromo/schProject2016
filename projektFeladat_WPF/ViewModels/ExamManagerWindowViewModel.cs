@@ -107,8 +107,8 @@ namespace projektFeladat_WPF.ViewModels
             }
             else
             {
-                
-                client.SaveChanges();
+
+                client.UpdateExam(EditedExam);
             }
             EditedExam = new Exams();
             //SelectedTeacher = new Users();
