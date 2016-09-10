@@ -842,7 +842,9 @@ namespace WcfServiceLibrary
 
         public Users GetExamTeacher(int examId)
         {
-            throw new NotImplementedException();
+            IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
+            Entities.Users returnedValue = repo.Find(x => x.ExamId == examId).FirstOrDefault().Users;
+            return Mapper.Map<Entities.Users, Users>(returnedValue);
         }
 
         public void UpdateAdministrator(Administrators entityToUpdate)
