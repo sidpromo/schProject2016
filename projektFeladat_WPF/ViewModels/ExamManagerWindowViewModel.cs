@@ -1,12 +1,9 @@
 ﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
-using projektFeladat_WPF.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
@@ -111,8 +108,7 @@ namespace projektFeladat_WPF.ViewModels
                 client.UpdateExam(EditedExam);
             }
             EditedExam = new Exams();
-            //SelectedTeacher = new Users();
-            //SelectedSubject = new Subjects();
+           
             
         }
 

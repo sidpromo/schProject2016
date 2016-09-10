@@ -1,20 +1,15 @@
 ﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
     public class ManageUserViewModel : Bindable
-    {
-       // public IEnumerable<Users> UserList { get; private set; }
+    {      
         private IEnumerable<Users> userList;
 
         public IEnumerable<Users> UserList
@@ -24,7 +19,7 @@ namespace projektFeladat_WPF.ViewModels
         }
 
         private Users selectedUser;
-        //public string FullName { get;  set; }
+       
         public Users SelectedUser
         {
             get { return selectedUser; }
@@ -34,9 +29,7 @@ namespace projektFeladat_WPF.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        //static EducationDatabaseEntities ent = new EducationDatabaseEntities();
-        //static IUsersRepository userRepo = new UsersRepository(ent);
+        
 
         ServiceClient client = new ServiceClient();
 

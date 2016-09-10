@@ -1,10 +1,5 @@
 ﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels

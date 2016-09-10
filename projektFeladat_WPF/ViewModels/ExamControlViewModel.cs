@@ -1,11 +1,8 @@
 ﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
@@ -103,26 +100,26 @@ namespace projektFeladat_WPF.ViewModels
         }
         void RegisterMethod()
         {
-            if (SelectedExam!=null)
-            {
-                client.AddExamsUser(
-                    new ExamsUsers {
-                        InsertDate = DateTime.Now,
-                        ModifyDate = DateTime.Now,
-                        ModifiedBy=Singleton.Instance.ID,
-                        ExamId=SelectedExam.Id,
-                        UserId=SelectedStudent.Id     
-                    });
-            }
+            //if (SelectedExam!=null)
+            //{
+            //    client.AddExamsUser(
+            //        new ExamsUsers {
+            //            InsertDate = DateTime.Now,
+            //            ModifyDate = DateTime.Now,
+            //            ModifiedBy=Singleton.Instance.ID,
+            //            ExamId=SelectedExam.Id,
+            //            UserId=SelectedStudent.Id     
+            //        });
+            //}
         }
 
         void UnregisterMethod()
         {
             if (SelectedStudent != null)
             {
-                client.RemoveExamsUser
+                client.RemoveExamById
                     (
-                    client.GetAllExamsUsers().Where(user => user.UserId == SelectedStudent.Id).First()
+                    client.GetAllExamsUsers().Where(user => user.UserId == SelectedStudent.Id).First().Id
                     );
             }
         }
