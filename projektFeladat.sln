@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projektFeladat_WPF", "projektFeladat_WPF\projektFeladat_WPF.csproj", "{C98A5B5A-1763-402F-AD02-B20FB073C832}"
 EndProject
@@ -16,6 +16,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "ClassLibrary1\Entities.csproj", "{EA89D1CB-F926-4A49-8A27-4F91FF41411F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppForTesting", "ConsoleAppForTesting\ConsoleAppForTesting.csproj", "{7C68EC85-FF8A-492E-A25A-40B53A7353E9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91F4CADB-871D-42F9-8644-284402712A8F} = {91F4CADB-871D-42F9-8644-284402712A8F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

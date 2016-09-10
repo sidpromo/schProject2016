@@ -24,8 +24,8 @@ namespace WcfServiceLibrary
         Administrators GetAdministratorById(int entityToGetById);
         [OperationContract]
         int GetIdOfAdministrator(Administrators entityToGetId);
-        [OperationContract]
-        void RemoveAdministrator(Administrators entityToRemove);
+        //[OperationContract]
+        //void RemoveAdministrator(Administrators entityToRemove);
         [OperationContract]
         void RemoveAdministratorById(int entityToRemoveById);
         [OperationContract]
@@ -43,8 +43,8 @@ namespace WcfServiceLibrary
         Exams GetExamById(int entityToGetById);
         [OperationContract]
         int GetIdOfExam(Exams entityToGetId);
-        [OperationContract]
-        void RemoveExam(Exams entityToRemove);
+        //[OperationContract]
+        //void RemoveExam(Exams entityToRemove);
         [OperationContract]
         void RemoveExamById(int entityToRemoveById);
         [OperationContract]
@@ -62,8 +62,8 @@ namespace WcfServiceLibrary
         ExamsUsers GetExamsUserById(int entityToGetById);
         [OperationContract]
         int GetIdOfExamsUser(ExamsUsers entityToGetId);
-        [OperationContract]
-        void RemoveExamsUser(ExamsUsers entityToRemove);
+        //[OperationContract]
+        //void RemoveExamsUser(ExamsUsers entityToRemove);
         [OperationContract]
         void RemoveExamsUserById(int entityToRemoveById);
         [OperationContract]
@@ -85,8 +85,8 @@ namespace WcfServiceLibrary
         Grades GetGradeById(int entityToGetById);
         [OperationContract]
         int GetIdOfGrade(Grades entityToGetId);
-        [OperationContract]
-        void RemoveGrade(Grades entityToRemove);
+        //[OperationContract]
+        //void RemoveGrade(Grades entityToRemove);
         [OperationContract]
         void RemoveGradeById(int entityToRemoveById);
         [OperationContract]
@@ -104,8 +104,8 @@ namespace WcfServiceLibrary
         Managers GetManagerById(int entityToGetById);
         [OperationContract]
         int GetIdOfManager(Managers entityToGetId);
-        [OperationContract]
-        void RemoveManager(Managers entityToRemove);
+        //[OperationContract]
+        //void RemoveManager(Managers entityToRemove);
         [OperationContract]
         void RemoveManagerById(int entityToRemoveById);
         [OperationContract]
@@ -127,8 +127,8 @@ namespace WcfServiceLibrary
         IEnumerable<Messages> GetReceivedMessages(int userId);
         [OperationContract]
         IEnumerable<Messages> GetSentMessages(int userId);
-        [OperationContract]
-        void RemoveMessage(Messages entityToRemove);
+        //[OperationContract]
+        //void RemoveMessage(Messages entityToRemove);
         [OperationContract]
         void RemoveMessageById(int entityToRemoveById);
         [OperationContract]
@@ -146,8 +146,8 @@ namespace WcfServiceLibrary
         Semesters GetSemesterById(int entityToGetById);
         [OperationContract]
         int GetIdOfSemester(Semesters entityToGetId);
-        [OperationContract]
-        void RemoveSemester(Semesters entityToRemove);
+        //[OperationContract]
+        //void RemoveSemester(Semesters entityToRemove);
         [OperationContract]
         void RemoveSemesterById(int entityToRemoveById);
         [OperationContract]
@@ -165,8 +165,8 @@ namespace WcfServiceLibrary
         Students GetStudentById(int entityToGetById);
         [OperationContract]
         int GetIdOfStudent(Students entityToGetId);
-        [OperationContract]
-        void RemoveStudent(Students entityToRemove);
+        //[OperationContract]
+        //void RemoveStudent(Students entityToRemove);
         [OperationContract]
         void RemoveStudentById(int entityToRemoveById);
         [OperationContract]
@@ -184,8 +184,8 @@ namespace WcfServiceLibrary
         Subjects GetSubjectById(int entityToGetById);
         [OperationContract]
         int GetIdOfSubject(Subjects entityToGetId);
-        [OperationContract]
-        void RemoveSubject(Subjects entityToRemove);
+        //[OperationContract]
+        //void RemoveSubject(Subjects entityToRemove);
         [OperationContract]
         void RemoveSubjectById(int entityToRemoveById);
         [OperationContract]
@@ -211,8 +211,8 @@ namespace WcfServiceLibrary
         int GetIdOfSubjectsUser(SubjectsUsers entityToGetId);
         [OperationContract]
         void RegisterUserToSubject(Users user, Subjects subject);
-        [OperationContract]
-        void RemoveSubjectsUser(SubjectsUsers entityToRemove);
+        //[OperationContract]
+        //void RemoveSubjectsUser(SubjectsUsers entityToRemove);
         [OperationContract]
         void RemoveSubjectsUserById(int entityToRemoveById);
         [OperationContract]
@@ -230,8 +230,8 @@ namespace WcfServiceLibrary
         Teachers GetTeacherById(int entityToGetById);
         [OperationContract]
         int GetIdOfTeacher(Teachers entityToGetId);
-        [OperationContract]
-        void RemoveTeacher(Teachers entityToRemove);
+        //[OperationContract]
+        //void RemoveTeacher(Teachers entityToRemove);
         [OperationContract]
         void RemoveTeacherById(int entityToRemoveById);
         [OperationContract]
@@ -249,8 +249,8 @@ namespace WcfServiceLibrary
         Users GetUserById(int entityToGetById);
         [OperationContract]
         int GetIdOfUser(Users entityToGetId);
-        [OperationContract]
-        void RemoveUser(Users entityToRemove);
+        //[OperationContract]
+        //void RemoveUser(Users entityToRemove);
         [OperationContract]
         void RemoveUserById(int entityToRemoveById);
         [OperationContract]
