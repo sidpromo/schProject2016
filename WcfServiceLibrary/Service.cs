@@ -136,22 +136,22 @@ namespace WcfServiceLibrary
             {
                 case "ADMINISTRATOR":
                     IAdministratorsRepository adminRepo = new AdministratorsRepository(getEntities());
-                    Entities.Administrators admin = new Entities.Administrators() { UserId = entityToAdd.Id };
+                    Entities.Administrators admin = new Entities.Administrators() { UserId = entityToAdd2.Id };
                     adminRepo.Add(admin);
                     break;
                 case "MANAGER":
                     IManagersRepository managerRepo = new ManagersRepository(getEntities());
-                    Entities.Managers manager = new Entities.Managers() { UserId = entityToAdd.Id };
+                    Entities.Managers manager = new Entities.Managers() { UserId = entityToAdd2.Id };
                     managerRepo.Add(manager);
                     break;
                 case "STUDENT":
                     IStudentsRepository studentRepo = new StudentsRepository(getEntities());
-                    Entities.Students student = new Entities.Students() { UserId = entityToAdd.Id };
+                    Entities.Students student = new Entities.Students() { UserId = entityToAdd2.Id };
                     studentRepo.Add(student);
                     break;
                 case "TEACHER":
                     ITeachersRepository teacherRepo = new TeachersRepository(getEntities());
-                    Entities.Teachers teacher = new Entities.Teachers() { UserId = entityToAdd.Id };
+                    Entities.Teachers teacher = new Entities.Teachers() { UserId = entityToAdd2.Id };
                     teacherRepo.Add(teacher);
                     break;
                 default:; break;
