@@ -13,9 +13,9 @@
     <Grid>
         <DataGrid Margin="349,10,0,0" VerticalAlignment="Top" Height="75" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" HorizontalAlignment="Left" Width="235" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="sdf" Binding="{Binding FirstName}" Header="Firstname:" Width="15*"/>
-                <DataGridTextColumn x:Name="fdfd" Binding="{Binding LastName}" Header="Lastname:" Width="15*"/>
-                <DataGridTextColumn x:Name="sttdf" Binding="{Binding EduId}" Header="EduID:" Width="15*"/>
+                <DataGridTextColumn x:Name="sdf" Binding="{Binding FirstName}" Header="Firstname" Width="15*"/>
+                <DataGridTextColumn x:Name="fdfd" Binding="{Binding LastName}" Header="Lastname" Width="15*"/>
+                <DataGridTextColumn x:Name="sttdf" Binding="{Binding EduId}" Header="EduID" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="509,339,0,0" Width="75" Click="Button_Click" Height="20" VerticalAlignment="Top"/>

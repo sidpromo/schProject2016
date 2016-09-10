@@ -14,14 +14,14 @@
     <Grid>
         <Label Content="Subject name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding SelectedSubject.SubjectName}" VerticalAlignment="Top" Width="194" IsReadOnly="True"/>
-        <DataGrid x:Name="subjectInfoDataGrid"  Margin="219,10,0,273" Height="113"  EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding Path=SelectedSubject}">
+        <DataGrid x:Name="subjectInfoDataGrid"  Margin="219,10,0,273" Height="113"  EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding Path=SelectedSubject}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="subjNameColumn" Binding="{Binding SubjectName}" Header="Subject name" Width="15*"/>
                 <DataGridTextColumn x:Name="subjCodeColumn" Binding="{Binding SubjectCode}" Header="Subject code" Width="12*" />
                 <DataGridTextColumn x:Name="creditColumn" Binding="{Binding Credits}" Header="Credit" Width="7*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="219,128,0,0" VerticalAlignment="Top" Height="109" Width="258" ItemsSource="{Binding TeacherList}" SelectedItem="{Binding Path=SelectedTeacher}" AutoGenerateColumns="False">
+        <DataGrid HorizontalAlignment="Left" Margin="219,128,0,0" VerticalAlignment="Top" Height="109" Width="258" ItemsSource="{Binding TeacherList}" SelectedItem="{Binding Path=SelectedTeacher}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
                 <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>

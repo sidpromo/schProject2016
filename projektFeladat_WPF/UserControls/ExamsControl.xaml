@@ -20,13 +20,13 @@
         <Label Content="Upcoming exams:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="0"/>
         <DataGrid Margin="10,50,6,0" VerticalAlignment="Top" Height="303" AutoGenerateColumns="False" ItemsSource="{Binding ExamList}" SelectedItem="{Binding SelectedExam}" IsReadOnly="True" Grid.Column="0"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectID, Converter={StaticResource SubjectIdToSubjectNameConverter}}" Header="Subject:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Limit}" Header="Limit:" Width="7*" />
-                <DataGridTextColumn  Header="Members:" Width="8*" />
-                <DataGridTextColumn Binding="{Binding ExamType}" Header="Type:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Room}" Header="Rooms:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Id,Converter={StaticResource ExamIdToLecturerNameConverter}}" Header="Lecturer:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding ExamDate}" Header="Date:" Width="10*" />
+                <DataGridTextColumn Binding="{Binding SubjectID, Converter={StaticResource SubjectIdToSubjectNameConverter}}" Header="Subject" Width="10*" />
+                <DataGridTextColumn Binding="{Binding Limit}" Header="Limit" Width="7*" />
+                <DataGridTextColumn  Header="Members" Width="8*" />
+                <DataGridTextColumn Binding="{Binding ExamType}" Header="Type" Width="10*" />
+                <DataGridTextColumn Binding="{Binding Room}" Header="Rooms" Width="10*" />
+                <DataGridTextColumn Binding="{Binding Id,Converter={StaticResource ExamIdToLecturerNameConverter}}" Header="Lecturer" Width="10*" />
+                <DataGridTextColumn Binding="{Binding ExamDate}" Header="Date" Width="10*" />
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="446,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCommand}"/>
@@ -35,8 +35,8 @@
         <Label Content="Registered students:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
         <DataGrid Grid.Column="1" Margin="10,50,10,0" VerticalAlignment="Top" Height="303" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding StudentList}" SelectedItem="{Binding SelectedStudent}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding EduId}" Header="EduID:" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Id,Converter={StaticResource UserIdToRegistrationTimeConverter}}" Header="Registration time:" Width="10*" />
+                <DataGridTextColumn Binding="{Binding EduId}" Header="EduID" Width="10*" />
+                <DataGridTextColumn Binding="{Binding Id,Converter={StaticResource UserIdToRegistrationTimeConverter}}" Header="Registration time" Width="10*" />
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Register" Grid.Column="1" HorizontalAlignment="Left" Margin="170,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding RegisterCommand}"/>
