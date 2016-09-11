@@ -762,22 +762,22 @@ namespace WcfServiceLibrary
                 case "ADMINISTRATOR":
                     IAdministratorsRepository adminRepo = new AdministratorsRepository(getEntities());
                     Entities.Administrators returnedObj = adminRepo.GetAll().Where(x => x.UserId == userToRemove2.Id).FirstOrDefault();
-                    adminRepo.Remove(returnedObj);
+                    if(returnedObj != null) adminRepo.Remove(returnedObj);
                     break;
                 case "MANAGER":
                     IManagersRepository managerRepo = new ManagersRepository(getEntities());
                     Entities.Managers returnedObj2 = managerRepo.GetAll().Where(x => x.UserId == userToRemove2.Id).FirstOrDefault();
-                    managerRepo.Remove(returnedObj2);
+                    if (returnedObj2 != null) managerRepo.Remove(returnedObj2);
                     break;
                 case "STUDENT":
                     IStudentsRepository studentRepo = new StudentsRepository(getEntities());
                     Entities.Students returnedObj3 = studentRepo.GetAll().Where(x => x.UserId == userToRemove2.Id).FirstOrDefault();
-                    studentRepo.Remove(returnedObj3);
+                    if (returnedObj3 != null) studentRepo.Remove(returnedObj3);
                     break;
                 case "TEACHER":
                     ITeachersRepository teacherRepo = new TeachersRepository(getEntities());
                     Entities.Teachers returnedObj4 = teacherRepo.GetAll().Where(x => x.UserId == userToRemove2.Id).FirstOrDefault();
-                    teacherRepo.Remove(returnedObj4);
+                    if (returnedObj4 != null) teacherRepo.Remove(returnedObj4);
                     break;
                 default:; break;
             }
