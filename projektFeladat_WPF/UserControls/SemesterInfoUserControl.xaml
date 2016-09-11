@@ -7,6 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <ListBox ItemsSource="{Binding TopicList}" Height="177" HorizontalAlignment="Left" Margin="34,54,0,0" Name="listTopics" VerticalAlignment="Top" Width="236" Background="#0B000000">
+            <ListBox.ItemTemplate>
+                <HierarchicalDataTemplate>
+                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                </HierarchicalDataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

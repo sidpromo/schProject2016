@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Media;
 using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
+using System.Threading.Tasks;
 
 namespace projektFeladat_WPF
 {
@@ -21,9 +22,11 @@ namespace projektFeladat_WPF
             textBoxEduId.Focus();
         }
 
-        private void LogInButton_Click(object sender, RoutedEventArgs e)
+        private async void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            LoginProcedure();
+            //LoginProcedure();
+            await Login();
+           
         }
 
         private void TextChanged(object sender, TextChangedEventArgs e)
@@ -75,6 +78,45 @@ namespace projektFeladat_WPF
             }
 
         }
+
+        private Task Login()
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
+                    {
+                        errormessage.Text = " EduId and Password are required!";
+                        SystemSounds.Beep.Play();
+                    }
+                    else
+                    {
+
+                        ServiceClient client = new ServiceClient();
+                        string eduId = textBoxEduId.Text, password = passwordBox1.Password;
+
+                        if (client.Login(eduId, password))
+                        {
+                            int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
+                            Singleton.Instance.SetId(id);
+                            var windowToOpen = new MainWindow();
+                            windowToOpen.Show();
+                            this.Close();
+                            // camtasia
+                        }
+                        else
+                        {
+                            errormessage.Text = " Invalid EduId or Password!";
+                            SystemSounds.Beep.Play();
+                        }
+                    }
+                });
+            });
+        }
+
+
+
 
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {

@@ -41,18 +41,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveAdministratorById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveAdministratorByIdResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="UpdateAdministrator">
     <xs:complexType>
       <xs:sequence>
@@ -361,18 +349,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RemoveManagerById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveManagerByIdResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="UpdateManager">
     <xs:complexType>
       <xs:sequence>
@@ -603,18 +579,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="GetIdOfStudentResult" type="xs:int" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveStudentById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveStudentByIdResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateStudent">
@@ -874,18 +838,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="GetIdOfTeacherResult" type="xs:int" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveTeacherById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="entityToRemoveById" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RemoveTeacherByIdResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateTeacher">
