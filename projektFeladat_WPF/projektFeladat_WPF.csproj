@@ -96,6 +96,7 @@
     <Compile Include="Common\MyEnums.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\Singleton.cs" />
+    <Compile Include="Common\SubjectGenerator.cs" />
     <Compile Include="Common\UserGenerator.cs" />
     <Compile Include="Converters\ExamIdToLecturerNameConverter.cs" />
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />

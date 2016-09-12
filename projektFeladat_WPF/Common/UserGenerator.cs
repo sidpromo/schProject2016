@@ -5,7 +5,7 @@ using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.Common
 {
-    class UserGenerator
+    class UserGenerator 
     {
         #region VezeteknevLista
         string[] VEZETEK_NEV_LISTA = new string[]{
@@ -528,6 +528,7 @@ namespace projektFeladat_WPF.Common
             user.Email = GenerateEmail(user.FirstName,user.LastName);
             return user;
         }
+
          string EduIdGenerator(int length = 6)
         {
 
