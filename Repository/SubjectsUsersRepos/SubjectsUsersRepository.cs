@@ -58,8 +58,8 @@ namespace Repository
         {
             EducationDatabaseEntities ent = new EducationDatabaseEntities();
             ISubjectsUsersRepository suRepo = new SubjectsUsersRepository(ent);
-            bool allowOperation = (suRepo.GetAll().Where(x => x.UserId == user.Id).Where(x => x.SubjectId == subject.Id).Count() > 0); // Szerepel már benne?
-            if (allowOperation)
+            bool containsRow = (suRepo.GetAll().Where(x => x.UserId == user.Id).Where(x => x.SubjectId == subject.Id).Count() > 0); // Szerepel már benne?
+            if (!containsRow)
             {
                 suRepo.Add(new SubjectsUsers()
                 {
