@@ -5,6 +5,7 @@ namespace projektFeladat_WPF.Common
     {
         private static Singleton instance = null;
         private static readonly object padlock = new object();
+        private bool idHasBeenSet = false;
         public int? ID { get; private set; } 
 
         Singleton()
@@ -28,9 +29,10 @@ namespace projektFeladat_WPF.Common
 
        public void SetId(int id)
         {
-            if (ID==null)
+            if (!idHasBeenSet)
             {
                 ID = id;
+                idHasBeenSet = true;
                 //MessageBox.Show($"ID has been set:{ID}");
             }
         }

@@ -24,9 +24,7 @@ namespace projektFeladat_WPF
 
         private async void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            //LoginProcedure();
             await Login();
-           
         }
 
         private void TextChanged(object sender, TextChangedEventArgs e)
@@ -103,7 +101,7 @@ namespace projektFeladat_WPF
                             var windowToOpen = new MainWindow();
                             windowToOpen.Show();
                             this.Close();
-                            // camtasia
+                            //camtasia                           
                         }
                         else
                         {
@@ -117,11 +115,58 @@ namespace projektFeladat_WPF
 
 
 
-
         private void fieldGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             if (sender is TextBox) (sender as TextBox).SelectAll();
             if (sender is PasswordBox) (sender as PasswordBox).SelectAll();
         }
+
+
+
+
+        //private Task<bool> Login()
+        //{
+        //    return Task.Factory.StartNew<bool>(() =>
+        //    {
+        //        bool result=false;
+        //        Dispatcher.Invoke(() =>
+        //        {
+        //            if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
+        //            {
+        //                errormessage.Text = " EduId and Password are required!";
+        //                SystemSounds.Beep.Play();
+        //                result= false;
+        //            }
+        //            else
+        //            {
+
+        //                ServiceClient client = new ServiceClient();
+        //                string eduId = textBoxEduId.Text, password = passwordBox1.Password;
+
+        //                if (client.Login(eduId, password))
+        //                {
+        //                    int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
+        //                    Singleton.Instance.SetId(id);
+        //                    //var windowToOpen = new MainWindow();
+        //                    //windowToOpen.Show();
+        //                    //this.Close();
+        //                    result= true;
+        //                    // camtasia
+        //                }
+        //                else
+        //                {
+        //                    errormessage.Text = " Invalid EduId or Password!";
+        //                    SystemSounds.Beep.Play();
+        //                    result= false;
+        //                }
+
+        //            }
+
+        //        });
+        //        return result;
+        //    });            
+        //}     
+
+
     }
 }

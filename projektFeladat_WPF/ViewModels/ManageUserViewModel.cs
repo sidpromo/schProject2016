@@ -42,7 +42,7 @@ namespace projektFeladat_WPF.ViewModels
         public void GenerateUser()
         {
             UserGenerator gen = new UserGenerator();
-            client.AddUser(gen.GenerateUser());
+            client.AddUser(gen.GenerateUser());            
             RefreshMethod();
         }
 
@@ -76,7 +76,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             List<Users> newList = new List<Users>();
             UserList = newList;
-            UserList = client.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMIN");
+            UserList = client.GetAllUsers().Where(x => (x.UserType).ToUpper() != "ADMINISTRATOR");
         }
         public ManageUserViewModel()
         {

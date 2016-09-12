@@ -39,6 +39,7 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand EdiCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+        public ICommand GenerateSubjectCommand { get; private set; }
 
 
         ServiceClient client = new ServiceClient(); //nem service példány, csak egy kliens
@@ -50,12 +51,13 @@ namespace projektFeladat_WPF.ViewModels
             AddCommand = new RelayCommand(AddMethod);
             EdiCommand = new RelayCommand(EditMethod);
             DeleteCommand = new RelayCommand(DeleteMethod);
+            GenerateSubjectCommand = new RelayCommand(GenerateSubject);
         }
 
         void RefreshMethod()
         {
             List<Subjects> newList = new List<Subjects>();
-            SubjectList = newList;
+            SubjectList = newList;            
             SubjectList = client.GetAllSubjects();            
         }
 
@@ -86,9 +88,11 @@ namespace projektFeladat_WPF.ViewModels
            
         }
 
-        void MoveNextMethod()
+        void GenerateSubject()
         {
-            
+            SubjectGenerator subjgen = new SubjectGenerator();
+            subjgen.GenerateSubject();
+            RefreshMethod();
         }
     }
 }
