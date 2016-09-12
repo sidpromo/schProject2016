@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using WcfServiceLibrary;
@@ -90,8 +91,14 @@ namespace projektFeladat_WPF.ViewModels
 
         void GenerateSubject()
         {
+            Random rand = new Random();
             SubjectGenerator subjgen = new SubjectGenerator();
-            subjgen.GenerateSubject();
+            Subjects subj= subjgen.GenerateSubject();
+            int length = client.GetTeachersFromUsers().ToList().Count();
+            var user = client.GetTeachersFromUsers().ToList()[rand.Next() % length];
+            client.AddSubject(subj);
+            //client.RegisterUserToSubject(user, subj);
+            MessageBox.Show(user.FirstName + " " + user.LastName);
             RefreshMethod();
         }
     }

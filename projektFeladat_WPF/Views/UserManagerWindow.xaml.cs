@@ -16,10 +16,10 @@ namespace projektFeladat_WPF.Views
             DataContext = VM;
         }
 
-        public UserManagerWindow(Users user)
+        public UserManagerWindow(Users user,bool isPersonalInfo=false)
         {
             InitializeComponent();
-            UserManagerWindowViewModel VM = new UserManagerWindowViewModel(user);
+            UserManagerWindowViewModel VM = new UserManagerWindowViewModel(user,isPersonalInfo);
             DataContext = VM;
         }
         private void Button_Click(object sender, RoutedEventArgs e)

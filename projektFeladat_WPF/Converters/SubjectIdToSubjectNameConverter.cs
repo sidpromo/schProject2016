@@ -10,9 +10,12 @@ namespace projektFeladat_WPF.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             ServiceClient client = new ServiceClient();
-            int id = (int)value;
-            return client.GetSubjectById(id).SubjectName;
-
+            if (value!=null)
+            {
+                int id = (int)value;
+                return client.GetSubjectById(id).SubjectName; 
+            }
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

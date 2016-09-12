@@ -13,16 +13,16 @@ namespace projektFeladat_WPF.Converters
         {
             Subjects subject = (Subjects)value;
 
-            if (subject!=null)
+            if (subject != null)
             {
                 ServiceClient service = new ServiceClient();
                 var teacher = service.GetSubjectTeacher(subject);
-                if (teacher!=null)
+                if (teacher != null)
                 {
-                    return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";  
+                    return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";
                 }
             }
-            return "SubjectToTeacherName error";
+            return " ";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

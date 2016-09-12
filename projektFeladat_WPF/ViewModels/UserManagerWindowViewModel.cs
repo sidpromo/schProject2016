@@ -1,6 +1,7 @@
 ﻿using projektFeladat_WPF.Common;
 using projektFeladat_WPF.NeptunServiceReference;
 using System;
+using System.Windows;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
@@ -16,6 +17,7 @@ namespace projektFeladat_WPF.ViewModels
             set { editedUser = value; OnPropertyChanged(); }
         }
 
+        public Visibility Visib { get; private set; } = Visibility.Visible;
 
         ServiceClient client = new ServiceClient();       
 
@@ -28,10 +30,14 @@ namespace projektFeladat_WPF.ViewModels
 
         }
 
-        public UserManagerWindowViewModel(Users userToEdit)
+        public UserManagerWindowViewModel(Users userToEdit,bool fromPersonalInfo=false)
         {
             EditedUser = client.GetUserById(userToEdit.Id);            
             SaveCommand = new RelayCommand(SaveChanges);
+            if (fromPersonalInfo)
+            {
+                Visib = Visibility.Collapsed;
+            }
         }
 
         public Array UserType

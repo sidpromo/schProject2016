@@ -18,7 +18,7 @@
         </Grid.Background>
         <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch" >
             <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
-                <Grid>                   
+                <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                             <GradientStop Color="#FFFCFFFC"/>
@@ -26,7 +26,7 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                    <UserControls:PersonalInfoUserControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="297"/>                    
+                    <UserControls:PersonalInfoUserControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="868"/>
                 </Grid>
 
 

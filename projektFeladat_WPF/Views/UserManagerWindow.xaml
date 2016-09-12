@@ -22,8 +22,8 @@
             <TextBox Text="{Binding EditedUser.EduId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Password:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
-            <Label Content="Usertype:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Margin="10,0,0,0" ItemsSource="{Binding Path=UserType}" SelectedItem="{Binding Path=EditedUser.UserType}" />
+            <Label Visibility="{Binding Path=Visib}" Content="Usertype:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <ComboBox Visibility="{Binding Path=Visib}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Margin="10,0,0,0" ItemsSource="{Binding Path=UserType}" SelectedItem="{Binding Path=EditedUser.UserType}" />
             <!--<TextBox Text="{Binding EditedUser.UserType, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>-->
             <Label Content="Birthdate::" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.BirthDate, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
@@ -42,12 +42,12 @@
             <TextBox Text="{Binding EditedUser.PersonalId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label  Content="Medical card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.MedicalCardId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
-            <Label Content="Student card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding EditedUser.EduCardId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
-            <Label Content="SemesterID:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding EditedUser.SemesterId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
-            <Label Content="Semester state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding EditedUser.SemesterState, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Visibility="{Binding Path=Visib}" Content="Student card no.:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Visibility="{Binding Path=Visib}"  Text="{Binding EditedUser.EduCardId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Visibility="{Binding Path=Visib}" Content="SemesterID:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Visibility="{Binding Path=Visib}" Text="{Binding EditedUser.SemesterId, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
+            <Label Visibility="{Binding Path=Visib}" Content="Semester state:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox Visibility="{Binding Path=Visib}" Text="{Binding EditedUser.SemesterState, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
             <Label Content="Active user:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox Text="{Binding EditedUser.Active, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="272"/>
         </StackPanel>

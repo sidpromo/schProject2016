@@ -36,14 +36,14 @@
                 <Button Margin="0,0,10,0" Content="Refresh" Command="{Binding Path=RefreshCommand}"></Button>
                 <Button Margin="0,0,10,0" Content="Add" Command="{Binding Path=AddCommand}"></Button>
                 <Button Margin="0,0,10,0" Content="Edit" Command="{Binding Path=EdiCommand}"></Button>
-                <Button Margin="10,0,10,0" Content="Delete" Command="{Binding Path=DeleteCommand}" ></Button>
+                <Button Margin="10,0,0,0" Content="Delete" Command="{Binding DeleteCommand}" />
             </UniformGrid>
 
         </StackPanel>
 
 
-        <Button Content="&lt;--" HorizontalAlignment="Left" Padding="10,2,10,2"  VerticalAlignment="Top" Command="{Binding PreviousEvent}" />
-        <Button Content="--&gt;" HorizontalAlignment="Right" Padding="10,2,10,2" VerticalAlignment="Top" Command="{Binding NextEvent}" />
+        <!--<Button Content="&lt;-" HorizontalAlignment="Left" Padding="10,2,10,2"  VerticalAlignment="Top" Command="{Binding PreviousEvent}" />-->
+        <!--<Button Content="-&gt;" HorizontalAlignment="Right" Padding="10,2,10,2" VerticalAlignment="Top" Command="{Binding NextEvent}" />-->
 
         <DataGrid x:Name="subjectInfoDataGrid"  Margin="25,0,0,0" Grid.Column="1" Grid.RowSpan="2" RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding SelectedItem}" IsReadOnly="True">
             <DataGrid.Columns>

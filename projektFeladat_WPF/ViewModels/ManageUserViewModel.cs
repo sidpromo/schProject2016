@@ -3,6 +3,7 @@ using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
@@ -30,6 +31,7 @@ namespace projektFeladat_WPF.ViewModels
             }
         }
 
+     
 
         ServiceClient client = new ServiceClient();
 

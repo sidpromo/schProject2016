@@ -232,7 +232,7 @@ namespace projektFeladat_WPF.Common
             return sb.ToString();
         }
 
-        public void GenerateSubject()
+        public Subjects GenerateSubject()
         {
             Subjects subj = new Subjects();
             Teachers teacher = new Teachers();
@@ -241,11 +241,8 @@ namespace projektFeladat_WPF.Common
             subj.SubjectName = GenerateSubjName();
             subj.SubjectCode = GenerateSubjCode();
             subj.Credits = (byte)rand.Next(3, 10);
-            
-           int length=client.GetTeachersFromUsers().ToList().Count();
-           var user= client.GetTeachersFromUsers().ToList()[rand.Next() % length];
-            client.AddSubject(subj);
-            client.RegisterUserToSubject(user, subj);  
+
+            return subj;          
         }
     }
 }

@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="17*"/>
             <RowDefinition Height="128*"/>
-        </Grid.RowDefinitions>        
+        </Grid.RowDefinitions>
         <Label Content="Personal information:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="0"/>
         <Label Content="Firstname:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
         <Label Content="Middlename:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="Auto" Grid.Row="1"/>
@@ -36,5 +36,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="115,277,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.PersonalId}" VerticalAlignment="Top" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Margin="115,307,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.MedicalCardId}" VerticalAlignment="Top" Width="150"/>
         <TextBlock HorizontalAlignment="Left" Margin="115,337,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding CurrentUser.UserType}" VerticalAlignment="Top" Width="150"/>
+        <Button  Content="Edit" Margin="0,343,10,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=EditCommand}"/>
     </Grid>
 </UserControl>
