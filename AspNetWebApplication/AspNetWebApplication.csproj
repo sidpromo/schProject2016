@@ -232,7 +232,7 @@
     <Compile Include="Models\MessageModels.cs" />
     <Compile Include="Models\SubjectModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ServiceReference2\Reference.cs">
+    <Compile Include="Service References\EduService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -266,9 +266,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
-    <None Include="Service References\ServiceReference2\Reference.svcmap">
+    <None Include="Service References\EduService\configuration91.svcinfo" />
+    <None Include="Service References\EduService\configuration.svcinfo" />
+    <None Include="Service References\EduService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -318,14 +318,14 @@
     <Content Include="Views\Subject\Index.cshtml" />
     <Content Include="Views\Exam\Index.cshtml" />
     <Content Include="Views\Finder\Index.cshtml" />
-    <None Include="Service References\ServiceReference2\service.wsdl" />
-    <None Include="Service References\ServiceReference2\service.xsd">
+    <None Include="Service References\EduService\service.wsdl" />
+    <None Include="Service References\EduService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference2\service1.xsd">
+    <None Include="Service References\EduService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference2\WcfServiceLibrary.xsd">
+    <None Include="Service References\EduService\WcfServiceLibrary.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Datasources\WcfServiceLibrary.Administrators.datasource" />
@@ -340,6 +340,7 @@
     <Content Include="Datasources\WcfServiceLibrary.SubjectsUsers.datasource" />
     <Content Include="Datasources\WcfServiceLibrary.Teachers.datasource" />
     <Content Include="Datasources\WcfServiceLibrary.Users.datasource" />
+    <Content Include="WcfServiceLibrary.AppInfo.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -362,7 +363,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
+    <WCFMetadataStorage Include="Service References\EduService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
