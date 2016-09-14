@@ -110,7 +110,24 @@
         </TabControl>
         <Label Content="You are logged in as:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" TextOptions.TextFormattingMode="Display" FontSize="14"/>
         <Label x:Name="currentUserLabel" Content="{Binding CurrentUserInfo}" HorizontalAlignment="Left" Margin="148,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" FontStyle="Italic" Background="{x:Null}" Foreground="#FF23D6A5" TextOptions.TextFormattingMode="Display"/>
+        <Button  HorizontalAlignment="Left" Margin="799,75,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=LogOutCommand}" Cursor="Hand" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+            <Grid Height="23"  HorizontalAlignment="Right" Width="75">
+                <Label x:Name="lbl_lgout" Content="LOGOUT" FontSize="12" Foreground="White" FontFamily="Calibri" HorizontalAlignment="Left" Width="Auto" Margin="0,0,0,0"/>
+                <Image Source="../images/logout.ico" Height="21" HorizontalAlignment="Right" Margin="0,0,0,0" />
 
-
+            </Grid>
+        </Button>
     </Grid>
 </Window>

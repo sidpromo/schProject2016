@@ -5,10 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projektFeladat_WPF.UserControls"
              xmlns:Converters="clr-namespace:projektFeladat_WPF.Converters"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="900" Height="449" MaxHeight="600">
     <UserControl.Resources>
-        <Converters:MessageToSenderNameConverter x:Key="MessageToSenderNameConverter"/>
+        <Converters:MessageToSenderNameConverter x:Key="MessageToSenderNameConverter"/>        
+        <Converters:MessageToFontWeightConverter x:Key="MessageToFontWeightConverter"/>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -20,20 +22,34 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="InboxDataGrid"  Margin="0,40,0,0" Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" IsReadOnly="True">
-            <DataGrid.Columns>
-                <!--<DataGridTextColumn Binding="{Binding SubjectName}" Header="Sender:" Width="10*"/>-->
-                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject" Width="15*"/>
-                <DataGridTextColumn Binding="{Binding SentDate}" Header="Recieve date" Width="15*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="sentMessagesDataGrid"  Grid.Column="0"  AutoGenerateColumns="False" ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" HorizontalAlignment="Left" Width="Auto" Grid.Row="1" Margin="0,45,0,0"  VerticalAlignment="Top" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding SubjectName}" Header="Recipient" Width="10*" />
-                <DataGridTextColumn Binding="{Binding Subject}" Header="Subject" Width="15*" />
-                <DataGridTextColumn Binding="{Binding SentDate}" Header="Date sent" Width="15*" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <ListView x:Name="InboxDataGrid" MaxHeight="180"  Margin="0,40,0,0" Grid.Column="0" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="Auto" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="FontWeight" Value="{Binding SelectedMessage,Converter={StaticResource MessageToFontWeightConverter}}"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListView.View>
+                <GridView  ScrollViewer.CanContentScroll="True" >
+                    <GridViewColumn DisplayMemberBinding="{Binding FromUserId,Converter={StaticResource MessageToSenderNameConverter}}" Header="From" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Subject}" Header="Subject" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding SentDate}" Header="Recieve date" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="sentMessagesDataGrid" HorizontalAlignment="Stretch"  Grid.Column="0" MaxHeight="180"   ItemsSource="{Binding SentMsgList}" SelectedItem="{Binding SelectedMessage}" Width="Auto" Grid.Row="1" Margin="0,45,0,0"  VerticalAlignment="Top" >
+            <ListView.View>
+                <GridView  ScrollViewer.CanContentScroll="True" >
+                    <GridViewColumn DisplayMemberBinding="{Binding ToUserId,Converter={StaticResource MessageToSenderNameConverter}}" Header="Recipient" Width="Auto" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Subject}" Header="Subject" Width="Auto" />
+                    <GridViewColumn DisplayMemberBinding="{Binding SentDate}" Header="Date sent" Width="Auto" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Label Content="Inbox:" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15"/>
         <Label Content="Sent messages" HorizontalAlignment="Left" Margin="10,10,0,0" Width="180" FontSize="15" Grid.Row="1" Height="35" VerticalAlignment="Top"/>
         <RichTextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10,40,0,60"  IsReadOnly="True" Grid.RowSpan="2" >

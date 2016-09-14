@@ -11,15 +11,15 @@ namespace projektFeladat_WPF.Views
         public MainWindow()
         {
             InitializeComponent();
-            MainWindowViewModel VM = new MainWindowViewModel();
+            MainWindowViewModel VM = new MainWindowViewModel(this);
             DataContext = VM;            
             
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Application app = Application.Current;
-            app.Shutdown();
+            //Application app = Application.Current;
+            //app.Shutdown();            
         }
     }
 }

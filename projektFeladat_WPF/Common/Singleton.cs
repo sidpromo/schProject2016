@@ -36,5 +36,10 @@ namespace projektFeladat_WPF.Common
                 //MessageBox.Show($"ID has been set:{ID}");
             }
         }
+
+        public void Logout()
+        {
+            idHasBeenSet = false;
+        }
     }
 }

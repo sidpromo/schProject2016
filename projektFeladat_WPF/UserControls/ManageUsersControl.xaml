@@ -14,17 +14,26 @@
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <!--<ListBox HorizontalAlignment="Stretch" Height="auto " Margin="10,10,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path=UserList}" SelectedItem="{Binding Path=SelectedUser}" DisplayMemberPath="EduId" />-->
-        <DataGrid x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"  RowDetailsVisibilityMode="VisibleWhenSelected" EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" IsReadOnly="True">
-            <DataGrid.Columns>
-                <!--<DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
+        <ListView x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"   ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}">
+            <ListView.View >
+                <GridView  ScrollViewer.CanContentScroll="True" >
+                    <!--<DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
                 <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>
                 <DataGridTextColumn x:Name="lastNameColumn" Binding="{Binding LastName}" Header="Lastname" Width="Auto"/>-->
-                <DataGridTextColumn x:Name="eduIdColumn" Binding="{Binding EduId}" Header="EduID" Width="15*"/>
-                <DataGridTextColumn x:Name="userTypeColumn" Binding="{Binding UserType}" Header="Usertype" Width="13*"/>
-                <DataGridTextColumn x:Name="userStateColumn" Binding="{Binding Active}" Header="Active " Width="10*"/>
-                <DataGridTextColumn x:Name="insertDateColumn" Binding="{Binding InsertDate}" Header="Inserted" Width="15*"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                    <GridViewColumn x:Name="eduIdColumn" DisplayMemberBinding="{Binding EduId}" Header="EduID" Width="Auto" />
+                    <GridViewColumn x:Name="userTypeColumn" DisplayMemberBinding="{Binding UserType}" Header="Usertype" Width="Auto"/>
+                    <GridViewColumn x:Name="emailTypeColumn"  Header="Email" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Email}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="userStateColumn" DisplayMemberBinding="{Binding Active}" Header="Active " Width="Auto"/>
+                    <GridViewColumn x:Name="insertDateColumn" DisplayMemberBinding="{Binding InsertDate}" Header="Inserted" Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Label Content="Firstname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Lastname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
         <Label Content="Email:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
