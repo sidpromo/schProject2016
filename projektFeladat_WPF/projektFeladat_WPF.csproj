@@ -64,6 +64,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WinSCPnet, Version=1.3.5.6958, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinSCP.5.9.2\lib\WinSCPnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
       <Private>True</Private>
@@ -115,6 +119,9 @@
     <Compile Include="UserControls\ExamsControl.xaml.cs">
       <DependentUpon>ExamsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FileSharingUserControl.xaml.cs">
+      <DependentUpon>FileSharingUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ManageUsersControl.xaml.cs">
       <DependentUpon>ManageUsersControl.xaml</DependentUpon>
     </Compile>
@@ -133,6 +140,7 @@
     <Compile Include="ViewModels\Bindable.cs" />
     <Compile Include="ViewModels\ExamControlViewModel.cs" />
     <Compile Include="ViewModels\ExamManagerWindowViewModel.cs" />
+    <Compile Include="ViewModels\FileSharingViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ManageUserViewModel.cs" />
     <Compile Include="ViewModels\MessagesControlViewModel.cs" />
@@ -157,6 +165,10 @@
       <DependentUpon>UserManagerWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControls\ExamsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FileSharingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -293,6 +305,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\logout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WinSCP.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

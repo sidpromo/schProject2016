@@ -1,7 +1,6 @@
 ﻿using projektFeladat_WPF.NeptunServiceReference;
 using System;
 using System.Globalization;
-using System.ServiceModel;
 using System.Windows.Data;
 using WcfServiceLibrary;
 
@@ -13,9 +12,9 @@ namespace projektFeladat_WPF.Converters
         {            
             if (value!=null)
             {
-                int id = (int)value;
+                int? id = (int?)value;
                 ServiceClient service = new ServiceClient();
-                Users user = service.GetUserById(id);
+                Users user = service.GetUserById((int)id);
                 if (user != null)
                 {
                     string name = $"{user.FirstName} {user.MiddleName} {user.LastName}";

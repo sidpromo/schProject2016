@@ -25,6 +25,7 @@ namespace projektFeladat_WPF
         private async void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             await Login();
+            //LoginProcedure();
         }
 
         private void TextChanged(object sender, TextChangedEventArgs e)

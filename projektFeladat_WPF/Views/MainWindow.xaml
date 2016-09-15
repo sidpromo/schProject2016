@@ -28,10 +28,8 @@
                     </Grid.Background>
                     <UserControls:PersonalInfoUserControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="449" Width="868"/>
                 </Grid>
-
-
             </TabItem>
-            <TabItem Header="Semester info" >
+            <TabItem Header="Semester info" Visibility="Collapsed" >
                 <Grid>
 
                     <Grid.Background>
@@ -96,7 +94,7 @@
                     <UserControls:ManageUsersControl HorizontalAlignment="Stretch" Margin="10,80,0,0" VerticalAlignment="Top" Height="379" Width="Auto" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Search Documents"  Visibility="Hidden">
+            <TabItem Header="Documents"  >
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -105,6 +103,7 @@
                             <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
                         </LinearGradientBrush>
                     </Grid.Background>
+                    <UserControls:FileSharingUserControl/>
                 </Grid>
             </TabItem>
         </TabControl>

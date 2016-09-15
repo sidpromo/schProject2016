@@ -23,7 +23,7 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <ListView x:Name="InboxDataGrid" MaxHeight="180"  Margin="0,40,0,0" Grid.Column="0" ItemsSource="{Binding ReceivedMsgList}" SelectedItem="{Binding SelectedMessage}"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="Auto" >
-            <ListView.ItemContainerStyle>
+            <!--<ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="FontWeight" Value="{Binding SelectedMessage,Converter={StaticResource MessageToFontWeightConverter}}"/>
                 </Style>
@@ -32,7 +32,7 @@
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding SelectedItemChangedCommand}"/>
                 </i:EventTrigger>
-            </i:Interaction.Triggers>
+            </i:Interaction.Triggers>-->
             <ListView.View>
                 <GridView  ScrollViewer.CanContentScroll="True" >
                     <GridViewColumn DisplayMemberBinding="{Binding FromUserId,Converter={StaticResource MessageToSenderNameConverter}}" Header="From" Width="Auto"/>

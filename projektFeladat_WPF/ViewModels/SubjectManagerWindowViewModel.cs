@@ -72,10 +72,10 @@ namespace projektFeladat_WPF.ViewModels
             else
             {
                 var subject = client.GetSubjectById(EditedSubject.Id);
-                if (client.GetSubjectTeacher(EditedSubject)!=SelectedTeacher)
-                {
-                    client.RegisterUserToSubject(SelectedTeacher, EditedSubject);
-                }
+                //if (client.GetSubjectTeacher(EditedSubject)!=SelectedTeacher)
+                //{
+                //    client.RegisterUserToSubject(SelectedTeacher, EditedSubject);
+                //}
                 subject = EditedSubject;
                 client.UpdateSubject(subject);
                 

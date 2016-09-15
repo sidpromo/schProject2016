@@ -2,19 +2,15 @@
 using projektFeladat_WPF.NeptunServiceReference;
 using projektFeladat_WPF.Views;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Input;
 using WcfServiceLibrary;
 
 namespace projektFeladat_WPF.ViewModels
 {
-   public class SubjectControlViewModel : Bindable
+    public class SubjectControlViewModel : Bindable
     {
         private IEnumerable<Subjects> subjectList;
 
@@ -35,6 +31,7 @@ namespace projektFeladat_WPF.ViewModels
                 OnPropertyChanged();
             }
         }
+        public int RegisteredStudentNo { get; private set; }
 
         public ICommand AddCommand { get; private set; }
         public ICommand EdiCommand { get; private set; }
@@ -53,6 +50,7 @@ namespace projektFeladat_WPF.ViewModels
             EdiCommand = new RelayCommand(EditMethod);
             DeleteCommand = new RelayCommand(DeleteMethod);
             GenerateSubjectCommand = new RelayCommand(GenerateSubject);
+            RegisteredStudentNo = 24;
         }
 
         void RefreshMethod()
@@ -97,7 +95,7 @@ namespace projektFeladat_WPF.ViewModels
             int length = client.GetTeachersFromUsers().ToList().Count();
             var user = client.GetTeachersFromUsers().ToList()[rand.Next() % length];
             client.AddSubject(subj);
-            //client.RegisterUserToSubject(user, subj);
+            client.RegisterUserToSubject(user, subj);
             MessageBox.Show(user.FirstName + " " + user.LastName);
             RefreshMethod();
         }
