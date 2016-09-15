@@ -31,15 +31,13 @@ namespace Repository
             subjUser = GetAll().Where(u => u.SubjectId == subject.Id).FirstOrDefault();
 
             EducationDatabaseEntities ent = new EducationDatabaseEntities();
-            ITeachersRepository teacherRepo = new TeachersRepository(ent);
             IUsersRepository userRepo = new UsersRepository(ent);
 
-            Teachers teacher = new Teachers();
-            teacher = teacherRepo.GetAll().Where(t => t.UserId == subjUser.UserId).FirstOrDefault();
-            if (teacher != null)
+            Users user = new Users();
+            if (subjUser != null)
             {
-                Users CurrentUser = userRepo.GetAll().Where(u => u.Id == teacher.UserId).FirstOrDefault();
-                return CurrentUser;
+                user = userRepo.GetAll().Where(u => u.Id == subjUser.UserId).FirstOrDefault();
+                if (user != null) return user;
             }
             return null;
         }

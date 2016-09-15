@@ -22,7 +22,10 @@ namespace projektFeladat_WPF.Views
         public SubjectManagerWindow(Subjects subjectToEdit)
         {
             InitializeComponent();
-            teacherTextBox.Text = client.GetSubjectTeacher(subjectToEdit).EduId;
+            if (client.GetSubjectTeacher(subjectToEdit) != null)
+            {
+                teacherTextBox.Text = client.GetSubjectTeacher(subjectToEdit).EduId;
+            }
             VM = new SubjectManagerWindowViewModel(subjectToEdit);            
             DataContext = VM;
         }

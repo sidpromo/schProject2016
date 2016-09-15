@@ -36,14 +36,7 @@ namespace Repository
         /// <returns></returns>
         public bool Login(string eduId, string password)
         {
-            IEnumerable<Users> Users = GetAll();
-            foreach (var user in Users)
-            {
-                if(eduId == user.EduId && password == user.Password)
-                {
-                    return true;
-                }
-            }
+            if (Find(x => (x.EduId == eduId) && (x.Password == password)).Count() > 0) return true;
             return false;
         }
     }
