@@ -315,6 +315,9 @@
     <Resource Include="images\logout.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\BBB_Solutions_small.png" />
+    <Resource Include="images\EduConnect_ICON_small.png" />
+    <Resource Include="images\EduConnect_LOGO_small.png" />
     <Content Include="WinSCP.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
