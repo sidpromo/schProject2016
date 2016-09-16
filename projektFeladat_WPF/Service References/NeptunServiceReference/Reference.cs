@@ -867,7 +867,7 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateStudentAsync(entityToUpdate);
         }
         
-        public void AddSubject(WcfServiceLibrary.Subjects entityToAdd) {
+        public void AddSubject(WcfServiceLibrary.Subjects entityToAdd) {  //int legyen ID-t adja vissza
             base.Channel.AddSubject(entityToAdd);
         }
         

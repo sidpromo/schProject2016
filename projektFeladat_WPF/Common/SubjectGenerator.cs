@@ -241,6 +241,7 @@ namespace projektFeladat_WPF.Common
             subj.SubjectName = GenerateSubjName();
             subj.SubjectCode = GenerateSubjCode();
             subj.Credits = (byte)rand.Next(3, 10);
+            //subj.Id = rand.Next(40,50);
 
             return subj;          
         }
