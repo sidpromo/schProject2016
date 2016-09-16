@@ -49,84 +49,106 @@ namespace WcfServiceLibrary
             Mapper.CreateMap<Entities.Users, Users>();
         }
 
+        /*
         private void AddAdministrator(Administrators entityToAdd)
         {
             IAdministratorsRepository repo = new AdministratorsRepository(getEntities());
             Entities.Administrators entityToAdd2 = Mapper.Map<Administrators, Entities.Administrators>(entityToAdd);
             repo.Add(entityToAdd2);
         }
+        */
 
-        public void AddExam(Exams entityToAdd)
+        public int AddExam(Exams entityToAdd)
         {
             IExamsRepository repo = new ExamsRepository(getEntities());
             Entities.Exams entityToAdd2 = Mapper.Map<Exams, Entities.Exams>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
-        public void AddExamsUser(ExamsUsers entityToAdd)
+        public int AddExamsUser(ExamsUsers entityToAdd)
         {
             IExamsUsersRepository repo = new ExamsUsersRepository(getEntities());
             Entities.ExamsUsers entityToAdd2 = Mapper.Map<ExamsUsers, Entities.ExamsUsers>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
-        public void AddGrade(Grades entityToAdd)
+        public int AddGrade(Grades entityToAdd)
         {
             IGradesRepository repo = new GradesRepository(getEntities());
             Entities.Grades entityToAdd2 = Mapper.Map<Grades, Entities.Grades>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
+        /*
         private void AddManager(Managers entityToAdd)
         {
             IManagersRepository repo = new ManagersRepository(getEntities());
             Entities.Managers entityToAdd2 = Mapper.Map<Managers, Entities.Managers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
+        */
 
-        public void AddMessage(Messages entityToAdd)
+        public int AddMessage(Messages entityToAdd)
         {
             IMessagesRepository repo = new MessagesRepository(getEntities());
             Entities.Messages entityToAdd2 = Mapper.Map<Messages, Entities.Messages>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
-        public void AddSemester(Semesters entityToAdd)
+        public int AddSemester(Semesters entityToAdd)
         {
             ISemestersRepository repo = new SemestersRepository(getEntities());
             Entities.Semesters entityToAdd2 = Mapper.Map<Semesters, Entities.Semesters>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
+        /*
         private void AddStudent(Students entityToAdd)
         {
             IStudentsRepository repo = new StudentsRepository(getEntities());
             Entities.Students entityToAdd2 = Mapper.Map<Students, Entities.Students>(entityToAdd);
             repo.Add(entityToAdd2);
         }
+        */
 
-        public void AddSubject(Subjects entityToAdd)
+        public int AddSubject(Subjects entityToAdd)
         {
             ISubjectsRepository repo = new SubjectsRepository(getEntities());
             Entities.Subjects entityToAdd2 = Mapper.Map<Subjects, Entities.Subjects>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
-        public void AddSubjectsUser(SubjectsUsers entityToAdd)
+        public int AddSubjectsUser(SubjectsUsers entityToAdd)
         {
             ISubjectsUsersRepository repo = new SubjectsUsersRepository(getEntities());
             Entities.SubjectsUsers entityToAdd2 = Mapper.Map<SubjectsUsers, Entities.SubjectsUsers>(entityToAdd);
             repo.Add(entityToAdd2);
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
+        /*
         private void AddTeacher(Teachers entityToAdd)
         {
             ITeachersRepository repo = new TeachersRepository(getEntities());
             Entities.Teachers entityToAdd2 = Mapper.Map<Teachers, Entities.Teachers>(entityToAdd);
             repo.Add(entityToAdd2);
         }
+        */
 
-        public void AddUser(Users entityToAdd)
+        public int AddUser(Users entityToAdd)
         {
             IUsersRepository repo = new UsersRepository(getEntities());
             Entities.Users entityToAdd2 = Mapper.Map<Users, Entities.Users>(entityToAdd);
@@ -156,6 +178,9 @@ namespace WcfServiceLibrary
                     break;
                 default:; break;
             }
+
+            if (entityToAdd2 != null) return entityToAdd2.Id;
+            return 0;
         }
 
         #region Find függvények (kikommentelve)

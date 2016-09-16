@@ -34,7 +34,7 @@ namespace WcfServiceLibrary
 
         #region Exams operations
         [OperationContract]
-        void AddExam(Exams entityToAdd);
+        int AddExam(Exams entityToAdd);
         //[OperationContract]
         //IEnumerable<Exams> FindExams(Expression<Func<Exams, bool>> filterPredicate);
         [OperationContract]
@@ -53,7 +53,7 @@ namespace WcfServiceLibrary
 
         #region ExamsUsers operations
         [OperationContract]
-        void AddExamsUser(ExamsUsers entityToAdd);
+        int AddExamsUser(ExamsUsers entityToAdd);
         //[OperationContract]
         //IEnumerable<ExamsUsers> FindExamsUsers(Expression<Func<ExamsUsers, bool>> filterPredicate);
         [OperationContract]
@@ -76,7 +76,7 @@ namespace WcfServiceLibrary
 
         #region Grades operations
         [OperationContract]
-        void AddGrade(Grades entityToAdd);
+        int AddGrade(Grades entityToAdd);
         //[OperationContract]
         //IEnumerable<Grades> FindGrades(Expression<Func<Grades, bool>> filterPredicate);
         [OperationContract]
@@ -114,7 +114,7 @@ namespace WcfServiceLibrary
 
         #region Messages operations
         [OperationContract]
-        void AddMessage(Messages entityToAdd);
+        int AddMessage(Messages entityToAdd);
         //[OperationContract]
         //IEnumerable<Messages> FindMessages(Expression<Func<Messages, bool>> filterPredicate);
         [OperationContract]
@@ -137,7 +137,7 @@ namespace WcfServiceLibrary
 
         #region Semesters operations
         [OperationContract]
-        void AddSemester(Semesters entityToAdd);
+        int AddSemester(Semesters entityToAdd);
         //[OperationContract]
         //IEnumerable<Semesters> FindSemesters(Expression<Func<Semesters, bool>> filterPredicate);
         [OperationContract]
@@ -175,7 +175,7 @@ namespace WcfServiceLibrary
 
         #region Subjects operations
         [OperationContract]
-        void AddSubject(Subjects entityToAdd);
+        int AddSubject(Subjects entityToAdd);
         //[OperationContract]
         //IEnumerable<Subjects> FindSubjects(Expression<Func<Subjects, bool>> filterPredicate);
         [OperationContract]
@@ -194,7 +194,7 @@ namespace WcfServiceLibrary
 
         #region SubjectsUsers operations
         [OperationContract]
-        void AddSubjectsUser(SubjectsUsers entityToAdd);
+        int AddSubjectsUser(SubjectsUsers entityToAdd);
         //[OperationContract]
         //IEnumerable<SubjectsUsers> FindSubjectsUsers(Expression<Func<SubjectsUsers, bool>> filterPredicate);
         [OperationContract]
@@ -240,7 +240,7 @@ namespace WcfServiceLibrary
 
         #region Users operations
         [OperationContract]
-        void AddUser(Users entityToAdd);
+        int AddUser(Users entityToAdd);
         //[OperationContract]
         //IEnumerable<Users> FindUsers(Expression<Func<Users, bool>> filterPredicate);
         [OperationContract]
