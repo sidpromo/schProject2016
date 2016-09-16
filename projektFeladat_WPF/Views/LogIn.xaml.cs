@@ -82,12 +82,14 @@ namespace projektFeladat_WPF
         {
             return Task.Factory.StartNew(() =>
             {
-                Dispatcher.Invoke(() =>
+                Dispatcher.Invoke(async() =>
                 {
+                    button1.IsEnabled = false;
                     if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
                     {
                         errormessage.Text = " EduId and Password are required!";
                         SystemSounds.Beep.Play();
+                        button1.IsEnabled = true;
                     }
                     else
                     {
@@ -95,7 +97,7 @@ namespace projektFeladat_WPF
                         ServiceClient client = new ServiceClient();
                         string eduId = textBoxEduId.Text, password = passwordBox1.Password;
 
-                        if (client.Login(eduId, password))
+                        if (await client.LoginAsync(eduId, password))
                         {
                             int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
                             Singleton.Instance.SetId(id);
@@ -108,6 +110,7 @@ namespace projektFeladat_WPF
                         {
                             errormessage.Text = " Invalid EduId or Password!";
                             SystemSounds.Beep.Play();
+                            button1.IsEnabled = true;
                         }
                     }
                 });
@@ -121,8 +124,6 @@ namespace projektFeladat_WPF
             if (sender is TextBox) (sender as TextBox).SelectAll();
             if (sender is PasswordBox) (sender as PasswordBox).SelectAll();
         }
-
-
 
 
         //private Task<bool> Login()
