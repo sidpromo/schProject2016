@@ -45,7 +45,7 @@ namespace projektFeladat_WPF.ViewModels
             Protocol = Protocol.Sftp,
             HostName = "home.sch.bme.hu",
             UserName = "sidpromo",
-            Password = System.IO.File.ReadAllText(@"C:\auth.txt"),
+            Password =System.IO.File.ReadAllText(@"C:\auth.txt"),
             SshHostKeyFingerprint = "ssh-rsa 2048 ce:35:d7:6b:73:c4:94:66:c3:21:f2:cf:59:6c:0b:80"
         };
 
@@ -104,7 +104,8 @@ namespace projektFeladat_WPF.ViewModels
                     foreach (TransferEventArgs transfer in transferResult.Transfers)
                     {
                         MessageBox.Show($"Download of {transfer.FileName} succeeded");
-                    }
+                    }                    
+                    session.Close();
                     Process.Start(downloads);
                 }
             }
@@ -146,6 +147,7 @@ namespace projektFeladat_WPF.ViewModels
                     {
                         Console.WriteLine($"Upload of {transfer.FileName} succeeded");
                     }
+                    session.Close();
                 }
             }
             List();

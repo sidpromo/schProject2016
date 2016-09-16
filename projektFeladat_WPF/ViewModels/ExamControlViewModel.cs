@@ -100,24 +100,18 @@ namespace projektFeladat_WPF.ViewModels
         }
         void RegisterMethod()
         {
-            //if (SelectedExam!=null)
-            //{
-            //    client.AddExamsUser(
-            //        new ExamsUsers {
-            //            InsertDate = DateTime.Now,
-            //            ModifyDate = DateTime.Now,
-            //            ModifiedBy=Singleton.Instance.ID,
-            //            ExamId=SelectedExam.Id,
-            //            UserId=SelectedStudent.Id     
-            //        });
-            //}
+            if (SelectedExam!=null)
+            {
+                RegisterStudentWindow regWindow = new RegisterStudentWindow(SelectedExam.Id);
+                regWindow.Show();
+            }            
         }
 
         void UnregisterMethod()
         {
             if (SelectedStudent != null)
             {
-                client.RemoveExamById
+                client.RemoveExamsUserById
                     (
                     client.GetAllExamsUsers().Where(user => user.UserId == SelectedStudent.Id).First().Id
                     );

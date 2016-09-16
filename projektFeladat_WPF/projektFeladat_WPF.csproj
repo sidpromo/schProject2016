@@ -146,6 +146,7 @@
     <Compile Include="ViewModels\MessagesControlViewModel.cs" />
     <Compile Include="ViewModels\MessageWriterWindowViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoViewModel.cs" />
+    <Compile Include="ViewModels\RegisterStudentViewModel.cs" />
     <Compile Include="ViewModels\SubjectManagerWindowViewModel.cs" />
     <Compile Include="ViewModels\SubjectControlViewModel.cs" />
     <Compile Include="ViewModels\UserManagerWindowViewModel.cs" />
@@ -157,6 +158,9 @@
     </Compile>
     <Compile Include="Views\MessageWriterWindow.xaml.cs">
       <DependentUpon>MessageWriterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterStudentWindow.xaml.cs">
+      <DependentUpon>RegisterStudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubjectManagerWindow.xaml.cs">
       <DependentUpon>SubjectManagerWindow.xaml</DependentUpon>
@@ -213,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MessageWriterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterStudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

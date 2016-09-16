@@ -29,9 +29,9 @@
                 <DataGridTextColumn Binding="{Binding ExamDate}" Header="Date" Width="10*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="446,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCommand}"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="366,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding EditCommand}"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="286,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding AddCommand}"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="446,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=DeleteCommand}"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="366,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=EditCommand}"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="286,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=AddCommand}"/>
         <Label Content="Registered students:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="180" Grid.Row="0" FontSize="15" Grid.Column="1"/>
         <DataGrid Grid.Column="1" Margin="10,50,10,0" VerticalAlignment="Top" Height="303" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding StudentList}" SelectedItem="{Binding SelectedStudent}">
             <DataGrid.Columns>
@@ -39,8 +39,8 @@
                 <DataGridTextColumn Binding="{Binding Id,Converter={StaticResource UserIdToRegistrationTimeConverter}}" Header="Registration time" Width="10*" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Register" Grid.Column="1" HorizontalAlignment="Left" Margin="170,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding RegisterCommand}"/>
-        <Button Content="Unregister" Grid.Column="1" HorizontalAlignment="Left" Margin="250,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding UnregisterCommand}"/>
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="10,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding RefreshCommand}"/>
+        <Button Content="Register" Grid.Column="1" HorizontalAlignment="Left" Margin="170,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=RegisterCommand}"/>
+        <Button Content="Unregister" Grid.Column="1" HorizontalAlignment="Left" Margin="250,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=UnregisterCommand}"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="10,367,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=RefreshCommand}"/>
     </Grid>
 </UserControl>

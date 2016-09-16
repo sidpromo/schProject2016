@@ -56,7 +56,7 @@
             <FlowDocument>
                 <Paragraph>
                     <Run Text="From:"/>
-                    <Run Text="{Binding SelectedMessage,Converter={StaticResource MessageToSenderNameConverter}}"/>
+                    <Run Text="{Binding SelectedMessage.FromUserId,Converter={StaticResource MessageToSenderNameConverter}}"/>
                 </Paragraph>
                 <Paragraph>
                     <Run Text="Subject:"/>

@@ -1,4 +1,5 @@
 ﻿using projektFeladat_WPF.ViewModels;
+using System.IO;
 using System.Windows.Controls;
 
 namespace projektFeladat_WPF.UserControls
@@ -13,8 +14,11 @@ namespace projektFeladat_WPF.UserControls
         public FileSharingUserControl()
         {
             InitializeComponent();
-            VM = new FileSharingViewModel();
-            DataContext = VM;
+            if (File.Exists(@"C:\auth.txt"))
+            {
+                VM = new FileSharingViewModel();
+                DataContext = VM; 
+            }
         }
     }
 }

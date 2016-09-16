@@ -1,0 +1,24 @@
+﻿<Window x:Class="projektFeladat_WPF.Views.RegisterStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projektFeladat_WPF.Views"
+        mc:Ignorable="d"
+        Title="RegisterStudentWindow" Height="340.601" Width="304.511" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <ListView x:Name="manageUsernDataGrid" ItemsSource="{Binding StudentList}" SelectedItem="{Binding Path=SelectedStudent}" Height="262" VerticalAlignment="Top" Margin="10,0">
+            <ListView.View >
+                <GridView  ScrollViewer.CanContentScroll="True" >
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
+                    <GridViewColumn  DisplayMemberBinding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Lastname" Width="Auto"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EduId}" Header="EduID" Width="Auto" />
+                    <!--<GridViewColumn DisplayMemberBinding="{Binding UserType}" Header="Usertype" Width="Auto"/>-->
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=AddCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="212,280,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>
