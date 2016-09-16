@@ -10,8 +10,8 @@
              d:DesignHeight="378.587" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="592.173">
     <Grid Margin="0,0,10,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="229*"/>
         </Grid.ColumnDefinitions>
         <!--<ListBox HorizontalAlignment="Stretch" Height="auto " Margin="10,10,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path=UserList}" SelectedItem="{Binding Path=SelectedUser}" DisplayMemberPath="EduId" />-->
         <ListView x:Name="manageUsernDataGrid"  Margin="0,0,0,0" Grid.Column="0"   ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}">
@@ -34,19 +34,19 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Firstname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Lastname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
-        <Label Content="Middlename:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Firstname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+        <Label Content="Lastname:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Height="26" Width="63"/>
+        <Label Content="Email:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Height="26" Width="41"/>
+        <Label Content="Middlename:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Height="26" Width="79"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,36,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.FirstName}"   VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,154,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.LastName}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="22" Margin="10,213,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.Email}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,95,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.MiddleName}"   VerticalAlignment="Top" Width="Auto"  IsReadOnly="True"/>
-        <Button Content="Add" Grid.Column="1" Margin="0,346,167,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=AddUserCommand}"/>
-        <Button Content="Edit" Grid.Column="1" Margin="0,346,87,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=EditUserCommand}" />
-        <Button Content="Delete" Grid.Column="1" Margin="0,346,7,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding Path=DeleteUserCommand}"/>
-        <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" Width="75" Command="{Binding Path=RefreshComnand}"/>
-        <Button x:Name="button" Content="Generate user" Grid.Column="1" Margin="10,259,10,0" VerticalAlignment="Top" Command="{Binding Path=GenerateCommand}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,149,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.LastName}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="22" Margin="10,208,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.Email}" VerticalAlignment="Top" Width="Auto" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,90,10,0" TextWrapping="Wrap" Text="{Binding Path=SelectedUser.MiddleName}"   VerticalAlignment="Top" Width="Auto"  IsReadOnly="True"/>
+        <Button Content="Add" Grid.Column="1" Margin="10,300,10,0" VerticalAlignment="Top" Command="{Binding Path=AddUserCommand}" Height="22"/>
+        <Button Content="Edit" Grid.Column="1" Margin="10,350,10,0" VerticalAlignment="Top" Command="{Binding Path=EditUserCommand}" Height="22" />
+        <Button Content="Delete" Grid.Column="1" Margin="10,325,10,0" VerticalAlignment="Top" Command="{Binding Path=DeleteUserCommand}" Height="22"/>
+        <Button Content="Refresh" Grid.Column="1" Margin="10,275,10,0" VerticalAlignment="Top" Command="{Binding Path=RefreshComnand}" Height="22"/>
+        <Button x:Name="button" Content="Generate user" Grid.Column="1" Margin="10,250,10,0" VerticalAlignment="Top" Command="{Binding Path=GenerateCommand}" Height="22"/>
 
     </Grid>
 </UserControl>

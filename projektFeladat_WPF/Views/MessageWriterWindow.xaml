@@ -6,31 +6,31 @@
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         xmlns:Converters="clr-namespace:projektFeladat_WPF.Converters"
         mc:Ignorable="d"
-        Title="New message" Height="411.278" Width="600" ResizeMode="NoResize">
+        Title="New message" Height="479.278" Width="600" ResizeMode="CanMinimize" Icon="/projektFeladat_WPF;component/images/EduConnect_ICON_small.png" ShowInTaskbar="False" Topmost="True" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Converters:UserNameToStringConverter x:Key="UserNameToStringConverter"/>
     </Window.Resources>
     <Grid>
-        <DataGrid Margin="349,10,0,0" VerticalAlignment="Top" Height="75" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" HorizontalAlignment="Left" Width="235" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Margin="286,10,0,0" VerticalAlignment="Top" Height="132" ItemsSource="{Binding UserList}" SelectedItem="{Binding Path=SelectedUser}" HorizontalAlignment="Left" Width="298" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="sdf" Binding="{Binding FirstName}" Header="Firstname" Width="15*"/>
                 <DataGridTextColumn x:Name="fdfd" Binding="{Binding LastName}" Header="Lastname" Width="15*"/>
                 <DataGridTextColumn x:Name="sttdf" Binding="{Binding EduId}" Header="EduID" Width="15*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="509,339,0,0" Width="75" Click="Button_Click" Height="20" VerticalAlignment="Top"/>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="10,339,0,0" Width="75" Command="{Binding SendCommand}" Height="20" VerticalAlignment="Top"/>
-        <RichTextBox Margin="10,90,0,0" Height="244" VerticalAlignment="Top" HorizontalAlignment="Left" Width="574"  >
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="484,408,0,0" Width="100" Click="Button_Click" Height="24" VerticalAlignment="Top"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="373,408,0,0" Width="100" Command="{Binding SendCommand}" Height="24" VerticalAlignment="Top"/>
+        <RichTextBox Margin="10,152,0,0" Height="244" VerticalAlignment="Top" HorizontalAlignment="Left" Width="574"  >
             <FlowDocument >
                 <Paragraph >
                     <Run Text="{Binding Path=NewMessage.Message}" />
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <TextBox Height="23" Margin="67,14,0,0" TextWrapping="Wrap" Text="{Binding SelectedUser ,Converter={StaticResource UserNameToStringConverter}}" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Left" Width="279"/>
-        <Label Content="To:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Subject:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <TextBox Height="23" Margin="67,45,0,0" TextWrapping="Wrap" Text="{Binding Path=NewMessage.Subject}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="279"/>
+        <TextBox Height="23" Margin="64,38,0,0" TextWrapping="Wrap" Text="{Binding SelectedUser ,Converter={StaticResource UserNameToStringConverter}}" VerticalAlignment="Top" IsReadOnly="True" HorizontalAlignment="Left" Width="214"/>
+        <Label Content="To:" HorizontalAlignment="Left" Margin="34,34,0,0" VerticalAlignment="Top" Width="25"/>
+        <Label Content="Subject:" HorizontalAlignment="Left" Margin="7,69,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="23" Margin="64,73,0,0" TextWrapping="Wrap" Text="{Binding Path=NewMessage.Subject}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="214"/>
 
     </Grid>
 </Window>

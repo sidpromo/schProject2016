@@ -7,21 +7,21 @@
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         xmlns:Converters="clr-namespace:projektFeladat_WPF.Converters"
         mc:Ignorable="d"
-        Title="New exam" Height="427.444" Width="484.963">
+        Title="New exam" Height="415.444" Width="720.963" ResizeMode="CanMinimize" ShowInTaskbar="False" Topmost="True" WindowStartupLocation="CenterOwner" Icon="/projektFeladat_WPF;component/images/EduConnect_ICON_small.png">
     <Window.Resources>
         <Converters:UserNameToStringConverter x:Key="UserNameToStringConverter"/>
     </Window.Resources>
     <Grid>
-        <Label Content="Subject name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding SelectedSubject.SubjectName}" VerticalAlignment="Top" Width="194" IsReadOnly="True"/>
-        <DataGrid x:Name="subjectInfoDataGrid"  Margin="219,10,0,273" Height="113"  EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding Path=SelectedSubject}" IsReadOnly="True">
+        <Label Content="Subject name:" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding SelectedSubject.SubjectName}" VerticalAlignment="Top" Width="253" IsReadOnly="True"/>
+        <DataGrid x:Name="subjectInfoDataGrid"  Margin="301,10,10,0" Height="113"  EnableRowVirtualization="True" AutoGenerateColumns="False" ItemsSource="{Binding SubjectList}" SelectedItem="{Binding Path=SelectedSubject}" IsReadOnly="True" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="subjNameColumn" Binding="{Binding SubjectName}" Header="Subject name" Width="15*"/>
                 <DataGridTextColumn x:Name="subjCodeColumn" Binding="{Binding SubjectCode}" Header="Subject code" Width="12*" />
                 <DataGridTextColumn x:Name="creditColumn" Binding="{Binding Credits}" Header="Credit" Width="7*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="219,128,0,0" VerticalAlignment="Top" Height="109" Width="258" ItemsSource="{Binding TeacherList}" SelectedItem="{Binding Path=SelectedTeacher}" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Margin="301,128,10,0" VerticalAlignment="Top" Height="109" ItemsSource="{Binding TeacherList}" SelectedItem="{Binding Path=SelectedTeacher}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="firstNameColumn" Binding="{Binding FirstName}" Header="Firstname" Width="Auto"/>
                 <DataGridTextColumn x:Name="midleNameColumn" Binding="{Binding MiddleName}" Header="MiddleName" Width="Auto"/>
@@ -29,21 +29,21 @@
                 <DataGridTextColumn x:Name="eduIdColumn" Binding="{Binding EduId}" Header="EduID" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Exam type:" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="194" ItemsSource="{Binding Path=ExamType}" SelectedItem="{Binding Path=EditedExam.ExamType}" />
-        <Label Content="Lecturer" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,158,0,0" TextWrapping="Wrap" Text="{Binding SelectedTeacher ,Converter={StaticResource UserNameToStringConverter}}" VerticalAlignment="Top" Width="194" IsReadOnly="True"/>
-        <Label Content="Limit" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,273,0,0" TextWrapping="Wrap" Text="{Binding EditedExam.Limit}" VerticalAlignment="Top" Width="194"/>
-        <Label Content="Exam date:" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top"/>
+        <Label Content="Exam type:" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="253" ItemsSource="{Binding Path=ExamType}" SelectedItem="{Binding Path=EditedExam.ExamType}" />
+        <Label Content="Lecturer:" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,158,0,0" TextWrapping="Wrap" Text="{Binding SelectedTeacher ,Converter={StaticResource UserNameToStringConverter}}" VerticalAlignment="Top" Width="253" IsReadOnly="True"/>
+        <Label Content="Limit:" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,273,0,0" TextWrapping="Wrap" Text="{Binding EditedExam.Limit}" VerticalAlignment="Top" Width="253"/>
+        <Label Content="Exam date:" HorizontalAlignment="Left" Margin="10,191,0,0" VerticalAlignment="Top"/>
         <!--<DatePicker  HorizontalAlignment="Left" Height="23" Margin="10,218,0,0"  VerticalAlignment="Top" Width="194" SelectedDate="{Binding EditedExam.ExamDate}" SelectedDateFormat="Long" DisplayDateStart="{Binding Now, Mode=OneTime}" />-->
-        <xctk:DateTimePicker HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="194" Value="{Binding EditedExam.ExamDate}" Format="FullDateTime" DefaultValue="{Binding EditedExam.ExamDate,Mode=OneWay}" />
-        <Label Content="Room" HorizontalAlignment="Left" Margin="219,242,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="219,273,0,0" TextWrapping="Wrap" Text="{Binding  EditedExam.Room}" VerticalAlignment="Top" Width="248"/>
-        <Label Content="Short description:" HorizontalAlignment="Left" Margin="10,301,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,332,0,0" TextWrapping="Wrap" Text="{Binding EditedExam.Description}" VerticalAlignment="Top" Width="457"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" Width="75"  Command="{Binding Path=SaveCommand}"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="392,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        
+        <xctk:DateTimePicker HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="253" Value="{Binding EditedExam.ExamDate}" Format="FullDateTime" DefaultValue="{Binding EditedExam.ExamDate,Mode=OneWay}" />
+        <Label Content="Room:" HorizontalAlignment="Left" Margin="301,247,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="301,273,0,0" TextWrapping="Wrap" Text="{Binding  EditedExam.Room}" VerticalAlignment="Top" Width="248"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="10,306,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,332,0,0" TextWrapping="Wrap" Text="{Binding EditedExam.Description}" VerticalAlignment="Top" Width="693"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="585,247,0,0" VerticalAlignment="Top" Width="111"  Command="{Binding Path=SaveCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="585,274,0,0" VerticalAlignment="Top" Width="111" Click="Button_Click"/>
+
     </Grid>
 </Window>

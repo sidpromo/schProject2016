@@ -7,7 +7,7 @@
         xmlns:projektFeladat_WPF="clr-namespace:projektFeladat_WPF" xmlns:UserControls="clr-namespace:projektFeladat_WPF.UserControls" x:Class="projektFeladat_WPF.Views.MainWindow"
         xmlns:ViewModels="clr-namespace:projektFeladat_WPF.ViewModels"    
     mc:Ignorable="d"
-        Title="{Binding WindowTitle}" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/login_background.jpg" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="{Binding WindowTitle}" Height="600" Width="900" TextOptions.TextFormattingMode="Display" Icon="/projektFeladat_WPF;component/images/EduConnect_ICON_small.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Grid>
         <Grid.Background>
@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TabControl Height="Auto" Margin="0,75,0,0" VerticalAlignment="Stretch" >
-            <TabItem Header="Personal Information" Height="Auto" TextOptions.TextFormattingMode="Display">
+            <TabItem Header="Personal information" Height="Auto" TextOptions.TextFormattingMode="Display">
                 <Grid>
                     <Grid.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -104,6 +104,23 @@
                         </LinearGradientBrush>
                     </Grid.Background>
                     <UserControls:FileSharingUserControl/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="About" Height="Auto" TextOptions.TextFormattingMode="Display">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFCFFFC"/>
+                            <GradientStop Color="#FFCBEEC6" Offset="1"/>
+                            <GradientStop Color="#FFBCDCF1" Offset="0.506"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Image HorizontalAlignment="Left" Height="134" Margin="260,31,0,0" VerticalAlignment="Top" Width="364" Source="/projektFeladat_WPF;component/images/BBB_Solutions_small.png"/>
+                    <Image HorizontalAlignment="Left" Height="94" Margin="275,165,0,0" VerticalAlignment="Top" Width="341" Source="/projektFeladat_WPF;component/images/EduConnect_LOGO_small.png"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="10,264,5,0" TextWrapping="Wrap" Text="EduConnect version 1.0" VerticalAlignment="Top" Width="869" TextAlignment="Center" FontWeight="Bold"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="10,313,5,0" TextWrapping="Wrap" Text="Bence Bihari" VerticalAlignment="Top" Width="869" TextAlignment="Center"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="10,341,5,0" TextWrapping="Wrap" Text="Bernát Bede" VerticalAlignment="Top" Width="869" TextAlignment="Center"/>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Margin="10,369,5,0" TextWrapping="Wrap" Text="István Balog" VerticalAlignment="Top" Width="869" TextAlignment="Center"/>
                 </Grid>
             </TabItem>
         </TabControl>

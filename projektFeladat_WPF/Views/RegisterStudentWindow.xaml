@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projektFeladat_WPF.Views"
         mc:Ignorable="d"
-        Title="RegisterStudentWindow" Height="340.601" Width="304.511" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="RegisterStudentWindow" Height="340.601" Width="304.511" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
     <Grid>
         <ListView x:Name="manageUsernDataGrid" ItemsSource="{Binding StudentList}" SelectedItem="{Binding Path=SelectedStudent}" Height="262" VerticalAlignment="Top" Margin="10,0">
             <ListView.View >

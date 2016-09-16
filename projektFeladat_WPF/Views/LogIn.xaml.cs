@@ -19,6 +19,7 @@ namespace projektFeladat_WPF
         public LogInWindow()
         {
             InitializeComponent();
+            Title = "EduConnect Login";
             textBoxEduId.Focus();
         }
 
@@ -38,11 +39,12 @@ namespace projektFeladat_WPF
             errormessage.Text = String.Empty;
         }
 
-        private void KeyDownEnter(object sender, KeyEventArgs e)
+        private async void KeyDownEnter(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter) LoginProcedure();
+            if (e.Key == Key.Enter) await Login();
         }
 
+        /*
         private void LoginProcedure()
         {
             if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
@@ -75,8 +77,8 @@ namespace projektFeladat_WPF
                     SystemSounds.Beep.Play();
                 }
             }
-
         }
+        */
 
         private Task Login()
         {
@@ -84,8 +86,10 @@ namespace projektFeladat_WPF
             {
                 Dispatcher.Invoke(() =>
                 {
+                    button1.IsEnabled = false;
                     if (textBoxEduId.Text.Trim() == String.Empty || passwordBox1.Password.Trim() == String.Empty)
                     {
+                        button1.IsEnabled = true;
                         errormessage.Text = " EduId and Password are required!";
                         SystemSounds.Beep.Play();
                     }
@@ -100,12 +104,14 @@ namespace projektFeladat_WPF
                             int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == eduId).Id;
                             Singleton.Instance.SetId(id);
                             var windowToOpen = new MainWindow();
+                            button1.IsEnabled = true;
                             windowToOpen.Show();
                             this.Close();
                             //camtasia                           
                         }
                         else
                         {
+                            button1.IsEnabled = true;
                             errormessage.Text = " Invalid EduId or Password!";
                             SystemSounds.Beep.Play();
                         }

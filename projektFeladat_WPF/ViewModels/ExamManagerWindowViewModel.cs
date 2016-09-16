@@ -67,7 +67,7 @@ namespace projektFeladat_WPF.ViewModels
         {
             CommonMethod();
             EditedExam = client.GetExamById(examToEdit.Id);
-            SelectedSubject = client.GetAllSubjects().Where(s => s.Id == examToEdit.SubjectID).First();           
+            SelectedSubject = client.GetAllSubjects().Where(s => s.Id == examToEdit.SubjectID).FirstOrDefault();           
             //TODO: SelectedTeacher=...
 
         }
