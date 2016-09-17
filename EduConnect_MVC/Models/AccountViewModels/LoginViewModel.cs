@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using EduServiceReference;
 
 namespace EduConnect_MVC.Models.AccountViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : Users
     {
         [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        //[EmailAddress]
+        public string EduID { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
