@@ -24,7 +24,7 @@ namespace projektFeladat_WPF.Views
         public RegisterStudentWindow(int exmaID)
         {
             InitializeComponent();
-            VM = new RegisterStudentViewModel(exmaID);
+            VM = new RegisterStudentViewModel(exmaID,this);
             DataContext = VM;
         }
 

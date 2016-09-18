@@ -84,14 +84,14 @@ namespace projektFeladat_WPF.ViewModels
             EditedExam.ModifiedBy = Singleton.Instance.ID;
             EditedExam.ModifyDate = DateTime.Now;
             EditedExam.InsertDate = DateTime.Now;
-            client.AddExam(EditedExam);
+            int id=client.AddExam(EditedExam);
             client.AddExamsUser(
                 new ExamsUsers
                 {
                     InsertDate = DateTime.Now,
                     ModifyDate = DateTime.Now,
                     ModifiedBy=Singleton.Instance.ID,
-                    ExamId=EditedExam.Id,
+                    ExamId=id,
                     UserId=SelectedTeacher.Id
                 });
         }
@@ -108,7 +108,12 @@ namespace projektFeladat_WPF.ViewModels
                 client.UpdateExam(EditedExam);
             }
             EditedExam = new Exams();
-           
+
+           //Limit - registered stud no.
+           //exam gen
+           //charts..
+           //conv  check
+           //documents not only pdf
             
         }
 

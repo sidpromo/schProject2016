@@ -1,35 +1,33 @@
 ﻿using projektFeladat_WPF.NeptunServiceReference;
 using System;
-using System.Globalization;
-using System.Windows.Data;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using WcfServiceLibrary;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Data;
 
 namespace projektFeladat_WPF.Converters
 {
-    class ExamIdToLecturerNameConverter : IValueConverter
+    class ExamIdToRegisteredStudentNoConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {            
+        {
             if (value != null)
             {
                 int id = (int)value;
                 ServiceClient client = new ServiceClient();
-                Users teacher = new Users();
+               int count=0;
                 var EUList = client.GetAllExamsUsers().Where(eu => eu.ExamId == id);
                 foreach (var item in EUList)
-                {                    
+                {
                     var usr = client.GetUserById((int)item.UserId);
-                    if (usr.UserType.ToUpper()=="TEACHER")
+                    if (usr.UserType.ToUpper() == "STUDENT")
                     {
-                        teacher = usr;
-                        break;
+                        count++;
                     }
                 }
-                
-                return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";
-                //return "converter err";
+                return count;
             }
             else return null;
         }

@@ -44,7 +44,8 @@ namespace projektFeladat_WPF.ViewModels
         public void GenerateUser()
         {
             UserGenerator gen = new UserGenerator();
-            client.AddUser(gen.GenerateUser());            
+            var user = gen.GenerateUser();
+            client.AddUser(user);            
             RefreshMethod();
         }
 

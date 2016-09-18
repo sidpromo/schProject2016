@@ -16,13 +16,13 @@ namespace projektFeladat_WPF.Converters
             if (subject != null)
             {
                 ServiceClient service = new ServiceClient();
-                //var teacher = service.GetSubjectTeacher(subject);
-                //if (teacher != null)
-                //{
-                //    return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";
-                //}
+                var teacher = service.GetSubjectTeacher(subject);
+                if (teacher != null)
+                {
+                    return $"{teacher.FirstName} {teacher.MiddleName} {teacher.LastName}";
+                }
             }
-            return "DOMINIK BORBELY";
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

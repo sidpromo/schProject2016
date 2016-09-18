@@ -40,10 +40,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateAdministratorAsync(WcfServiceLibrary.Administrators entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddExam", ReplyAction="http://tempuri.org/IService/AddExamResponse")]
-        void AddExam(WcfServiceLibrary.Exams entityToAdd);
+        int AddExam(WcfServiceLibrary.Exams entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddExam", ReplyAction="http://tempuri.org/IService/AddExamResponse")]
-        System.Threading.Tasks.Task AddExamAsync(WcfServiceLibrary.Exams entityToAdd);
+        System.Threading.Tasks.Task<int> AddExamAsync(WcfServiceLibrary.Exams entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllExams", ReplyAction="http://tempuri.org/IService/GetAllExamsResponse")]
         WcfServiceLibrary.Exams[] GetAllExams();
@@ -76,10 +76,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateExamAsync(WcfServiceLibrary.Exams entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddExamsUser", ReplyAction="http://tempuri.org/IService/AddExamsUserResponse")]
-        void AddExamsUser(WcfServiceLibrary.ExamsUsers entityToAdd);
+        int AddExamsUser(WcfServiceLibrary.ExamsUsers entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddExamsUser", ReplyAction="http://tempuri.org/IService/AddExamsUserResponse")]
-        System.Threading.Tasks.Task AddExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToAdd);
+        System.Threading.Tasks.Task<int> AddExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllExamsUsers", ReplyAction="http://tempuri.org/IService/GetAllExamsUsersResponse")]
         WcfServiceLibrary.ExamsUsers[] GetAllExamsUsers();
@@ -124,10 +124,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddGrade", ReplyAction="http://tempuri.org/IService/AddGradeResponse")]
-        void AddGrade(WcfServiceLibrary.Grades entityToAdd);
+        int AddGrade(WcfServiceLibrary.Grades entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddGrade", ReplyAction="http://tempuri.org/IService/AddGradeResponse")]
-        System.Threading.Tasks.Task AddGradeAsync(WcfServiceLibrary.Grades entityToAdd);
+        System.Threading.Tasks.Task<int> AddGradeAsync(WcfServiceLibrary.Grades entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllGrades", ReplyAction="http://tempuri.org/IService/GetAllGradesResponse")]
         WcfServiceLibrary.Grades[] GetAllGrades();
@@ -184,10 +184,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateManagerAsync(WcfServiceLibrary.Managers entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddMessage", ReplyAction="http://tempuri.org/IService/AddMessageResponse")]
-        void AddMessage(WcfServiceLibrary.Messages entityToAdd);
+        int AddMessage(WcfServiceLibrary.Messages entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddMessage", ReplyAction="http://tempuri.org/IService/AddMessageResponse")]
-        System.Threading.Tasks.Task AddMessageAsync(WcfServiceLibrary.Messages entityToAdd);
+        System.Threading.Tasks.Task<int> AddMessageAsync(WcfServiceLibrary.Messages entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllMessages", ReplyAction="http://tempuri.org/IService/GetAllMessagesResponse")]
         WcfServiceLibrary.Messages[] GetAllMessages();
@@ -232,10 +232,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateMessageAsync(WcfServiceLibrary.Messages entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSemester", ReplyAction="http://tempuri.org/IService/AddSemesterResponse")]
-        void AddSemester(WcfServiceLibrary.Semesters entityToAdd);
+        int AddSemester(WcfServiceLibrary.Semesters entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSemester", ReplyAction="http://tempuri.org/IService/AddSemesterResponse")]
-        System.Threading.Tasks.Task AddSemesterAsync(WcfServiceLibrary.Semesters entityToAdd);
+        System.Threading.Tasks.Task<int> AddSemesterAsync(WcfServiceLibrary.Semesters entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllSemesters", ReplyAction="http://tempuri.org/IService/GetAllSemestersResponse")]
         WcfServiceLibrary.Semesters[] GetAllSemesters();
@@ -292,10 +292,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateStudentAsync(WcfServiceLibrary.Students entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSubject", ReplyAction="http://tempuri.org/IService/AddSubjectResponse")]
-        void AddSubject(WcfServiceLibrary.Subjects entityToAdd);
+        int AddSubject(WcfServiceLibrary.Subjects entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSubject", ReplyAction="http://tempuri.org/IService/AddSubjectResponse")]
-        System.Threading.Tasks.Task AddSubjectAsync(WcfServiceLibrary.Subjects entityToAdd);
+        System.Threading.Tasks.Task<int> AddSubjectAsync(WcfServiceLibrary.Subjects entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllSubjects", ReplyAction="http://tempuri.org/IService/GetAllSubjectsResponse")]
         WcfServiceLibrary.Subjects[] GetAllSubjects();
@@ -328,10 +328,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateSubjectAsync(WcfServiceLibrary.Subjects entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSubjectsUser", ReplyAction="http://tempuri.org/IService/AddSubjectsUserResponse")]
-        void AddSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToAdd);
+        int AddSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddSubjectsUser", ReplyAction="http://tempuri.org/IService/AddSubjectsUserResponse")]
-        System.Threading.Tasks.Task AddSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToAdd);
+        System.Threading.Tasks.Task<int> AddSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllSubjectsUsers", ReplyAction="http://tempuri.org/IService/GetAllSubjectsUsersResponse")]
         WcfServiceLibrary.SubjectsUsers[] GetAllSubjectsUsers();
@@ -412,10 +412,10 @@ namespace projektFeladat_WPF.NeptunServiceReference {
         System.Threading.Tasks.Task UpdateTeacherAsync(WcfServiceLibrary.Teachers entityToUpdate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddUser", ReplyAction="http://tempuri.org/IService/AddUserResponse")]
-        void AddUser(WcfServiceLibrary.Users entityToAdd);
+        int AddUser(WcfServiceLibrary.Users entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddUser", ReplyAction="http://tempuri.org/IService/AddUserResponse")]
-        System.Threading.Tasks.Task AddUserAsync(WcfServiceLibrary.Users entityToAdd);
+        System.Threading.Tasks.Task<int> AddUserAsync(WcfServiceLibrary.Users entityToAdd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAllUsers", ReplyAction="http://tempuri.org/IService/GetAllUsersResponse")]
         WcfServiceLibrary.Users[] GetAllUsers();
@@ -531,11 +531,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateAdministratorAsync(entityToUpdate);
         }
         
-        public void AddExam(WcfServiceLibrary.Exams entityToAdd) {
-            base.Channel.AddExam(entityToAdd);
+        public int AddExam(WcfServiceLibrary.Exams entityToAdd) {
+            return base.Channel.AddExam(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddExamAsync(WcfServiceLibrary.Exams entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddExamAsync(WcfServiceLibrary.Exams entityToAdd) {
             return base.Channel.AddExamAsync(entityToAdd);
         }
         
@@ -579,11 +579,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateExamAsync(entityToUpdate);
         }
         
-        public void AddExamsUser(WcfServiceLibrary.ExamsUsers entityToAdd) {
-            base.Channel.AddExamsUser(entityToAdd);
+        public int AddExamsUser(WcfServiceLibrary.ExamsUsers entityToAdd) {
+            return base.Channel.AddExamsUser(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddExamsUserAsync(WcfServiceLibrary.ExamsUsers entityToAdd) {
             return base.Channel.AddExamsUserAsync(entityToAdd);
         }
         
@@ -643,11 +643,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateExamsUserAsync(entityToUpdate);
         }
         
-        public void AddGrade(WcfServiceLibrary.Grades entityToAdd) {
-            base.Channel.AddGrade(entityToAdd);
+        public int AddGrade(WcfServiceLibrary.Grades entityToAdd) {
+            return base.Channel.AddGrade(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddGradeAsync(WcfServiceLibrary.Grades entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddGradeAsync(WcfServiceLibrary.Grades entityToAdd) {
             return base.Channel.AddGradeAsync(entityToAdd);
         }
         
@@ -723,11 +723,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateManagerAsync(entityToUpdate);
         }
         
-        public void AddMessage(WcfServiceLibrary.Messages entityToAdd) {
-            base.Channel.AddMessage(entityToAdd);
+        public int AddMessage(WcfServiceLibrary.Messages entityToAdd) {
+            return base.Channel.AddMessage(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddMessageAsync(WcfServiceLibrary.Messages entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddMessageAsync(WcfServiceLibrary.Messages entityToAdd) {
             return base.Channel.AddMessageAsync(entityToAdd);
         }
         
@@ -787,11 +787,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateMessageAsync(entityToUpdate);
         }
         
-        public void AddSemester(WcfServiceLibrary.Semesters entityToAdd) {
-            base.Channel.AddSemester(entityToAdd);
+        public int AddSemester(WcfServiceLibrary.Semesters entityToAdd) {
+            return base.Channel.AddSemester(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddSemesterAsync(WcfServiceLibrary.Semesters entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddSemesterAsync(WcfServiceLibrary.Semesters entityToAdd) {
             return base.Channel.AddSemesterAsync(entityToAdd);
         }
         
@@ -867,11 +867,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateStudentAsync(entityToUpdate);
         }
         
-        public void AddSubject(WcfServiceLibrary.Subjects entityToAdd) {  //int legyen ID-t adja vissza
-            base.Channel.AddSubject(entityToAdd);
+        public int AddSubject(WcfServiceLibrary.Subjects entityToAdd) {
+            return base.Channel.AddSubject(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddSubjectAsync(WcfServiceLibrary.Subjects entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddSubjectAsync(WcfServiceLibrary.Subjects entityToAdd) {
             return base.Channel.AddSubjectAsync(entityToAdd);
         }
         
@@ -915,11 +915,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateSubjectAsync(entityToUpdate);
         }
         
-        public void AddSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToAdd) {
-            base.Channel.AddSubjectsUser(entityToAdd);
+        public int AddSubjectsUser(WcfServiceLibrary.SubjectsUsers entityToAdd) {
+            return base.Channel.AddSubjectsUser(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddSubjectsUserAsync(WcfServiceLibrary.SubjectsUsers entityToAdd) {
             return base.Channel.AddSubjectsUserAsync(entityToAdd);
         }
         
@@ -1027,11 +1027,11 @@ namespace projektFeladat_WPF.NeptunServiceReference {
             return base.Channel.UpdateTeacherAsync(entityToUpdate);
         }
         
-        public void AddUser(WcfServiceLibrary.Users entityToAdd) {
-            base.Channel.AddUser(entityToAdd);
+        public int AddUser(WcfServiceLibrary.Users entityToAdd) {
+            return base.Channel.AddUser(entityToAdd);
         }
         
-        public System.Threading.Tasks.Task AddUserAsync(WcfServiceLibrary.Users entityToAdd) {
+        public System.Threading.Tasks.Task<int> AddUserAsync(WcfServiceLibrary.Users entityToAdd) {
             return base.Channel.AddUserAsync(entityToAdd);
         }
         

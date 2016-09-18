@@ -98,12 +98,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\ExamGenerator.cs" />
     <Compile Include="Common\MyEnums.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\Singleton.cs" />
     <Compile Include="Common\SubjectGenerator.cs" />
     <Compile Include="Common\UserGenerator.cs" />
     <Compile Include="Converters\ExamIdToLecturerNameConverter.cs" />
+    <Compile Include="Converters\ExamIdToRegisteredStudentNoConverter.cs" />
     <Compile Include="Converters\MessageToFontWeightConverter.cs" />
     <Compile Include="Converters\MessageToRecipentNameConverter.cs" />
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />

@@ -31,7 +31,7 @@ namespace projektFeladat_WPF.ViewModels
         public Exams SelectedExam
         {
             get { return selectedExam; }
-            set { selectedExam = value; OnPropertyChanged(); }
+            set { selectedExam = value; OnPropertyChanged();OnPropertyChanged("StudentList"); }
         }
 
         private Users selectedStudent;
@@ -48,6 +48,8 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand RegisterCommand { get; private set; }
         public ICommand UnregisterCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+        public ICommand GenerateCommand { get; private set; }
+        public ICommand ShowCommand { get; private set; }
 
         ServiceClient client = new ServiceClient();
         public ExamControlViewModel()
@@ -59,27 +61,44 @@ namespace projektFeladat_WPF.ViewModels
             DeleteCommand = new RelayCommand(DeleteMethod);
             RegisterCommand = new RelayCommand(RegisterMethod);
             UnregisterCommand = new RelayCommand(UnregisterMethod);
-
-            
+            GenerateCommand = new RelayCommand(GenerateRandExamMethod);
+            ShowCommand = new RelayCommand(ShowMethod);
         }
 
         void RefreshMethod()
         {
-            ExamList = new List<Exams>();
-            StudentList = new List<Users>();
+            ExamList = new List<Exams>();           
             ExamList = client.GetAllExams();
-            if (SelectedExam != null)
+        }
+
+        List<Users> GetStudentList()
+        {
+            List<Users> userList = new List<Users>();
+            var list = client.GetAllExamsUsers().Where(u => u.ExamId == SelectedExam.Id);
+            foreach (var item in list)
             {
-                StudentList = client.GetExamStudents(SelectedExam.Id);
+                var usr = client.GetUserById((int)item.UserId);
+                if (usr.UserType.ToUpper() == "STUDENT")
+                {
+                    userList.Add(usr);
+                };
             }
-            // TODO: StudentList=
+            return userList;
+        }
+
+        void ShowMethod()
+        {
+            if (SelectedExam!=null)
+            {
+                StudentList = GetStudentList();
+            }
         }
 
         void DeleteMethod()
         {
             if (SelectedExam != null)
             {
-                client.RemoveExamById(SelectedExam.Id);
+                client.RemoveExamById(SelectedExam.Id); 
             }
             RefreshMethod();
         }
@@ -100,11 +119,11 @@ namespace projektFeladat_WPF.ViewModels
         }
         void RegisterMethod()
         {
-            if (SelectedExam!=null)
+            if (SelectedExam != null)
             {
                 RegisterStudentWindow regWindow = new RegisterStudentWindow(SelectedExam.Id);
                 regWindow.Show();
-            }            
+            }
         }
 
         void UnregisterMethod()
@@ -118,9 +137,11 @@ namespace projektFeladat_WPF.ViewModels
             }
         }
 
-
-
-
-
+        void GenerateRandExamMethod()
+        {
+            ExamGenerator examGen = new ExamGenerator();
+            examGen.GenerateExam();
+            RefreshMethod();
+        }
     }
 }

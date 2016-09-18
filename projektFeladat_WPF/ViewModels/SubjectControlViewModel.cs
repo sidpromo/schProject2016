@@ -39,6 +39,7 @@ namespace projektFeladat_WPF.ViewModels
         public ICommand RefreshCommand { get; private set; }
         public ICommand GenerateSubjectCommand { get; private set; }
 
+        Random rand = new Random();
 
         ServiceClient client = new ServiceClient(); //nem service példány, csak egy kliens
          
@@ -88,14 +89,13 @@ namespace projektFeladat_WPF.ViewModels
         }
 
         void GenerateSubject()
-        {
-            Random rand = new Random();
+        {            
             SubjectGenerator subjgen = new SubjectGenerator();
             Subjects subj= subjgen.GenerateSubject();
             int length = client.GetTeachersFromUsers().ToList().Count();
             var user = client.GetTeachersFromUsers().ToList()[rand.Next() % length];
-            client.AddSubject(subj);
-            client.RegisterUserToSubject(user, subj);
+            int id=client.AddSubject(subj);
+            client.RegisterUserToSubject(user, client.GetSubjectById(id));
             MessageBox.Show(user.FirstName + " " + user.LastName);
             RefreshMethod();
         }
