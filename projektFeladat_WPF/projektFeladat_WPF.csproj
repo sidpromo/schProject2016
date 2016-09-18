@@ -111,6 +111,7 @@
     <Compile Include="Converters\MessageToSenderNameConverter.cs" />
     <Compile Include="Converters\SubjectIdToSubjectNameConverter.cs" />
     <Compile Include="Converters\SubjectToTeacherNameConverter.cs" />
+    <Compile Include="Converters\SubjIdToStudentNo.cs" />
     <Compile Include="Converters\UserIdToRegistrationTimeConverter.cs" />
     <Compile Include="Converters\UserNameToStringConverter.cs" />
     <Compile Include="Service References\NeptunServiceReference\Reference.cs">

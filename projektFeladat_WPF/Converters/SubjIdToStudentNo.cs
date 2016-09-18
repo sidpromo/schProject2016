@@ -6,7 +6,7 @@ using System.Windows.Data;
 
 namespace projektFeladat_WPF.Converters
 {
-    class ExamIdToRegisteredStudentNoConverter : IValueConverter
+    class SubjIdToStudentNo : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -14,9 +14,9 @@ namespace projektFeladat_WPF.Converters
             {
                 int id = (int)value;
                 ServiceClient client = new ServiceClient();
-               int count=0;
-                var EUList = client.GetAllExamsUsers().Where(eu => eu.ExamId == id);
-                foreach (var item in EUList)
+                int count = 0;
+                var SUList = client.GetAllSubjectsUsers().Where(eu => eu.SubjectId == id);
+                foreach (var item in SUList)
                 {
                     var usr = client.GetUserById((int)item.UserId);
                     if (usr.UserType.ToUpper() == "STUDENT")
