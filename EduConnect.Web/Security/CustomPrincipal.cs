@@ -4,18 +4,25 @@ using System.Security.Principal;
 using System.Linq;
 using System.Web;
 using EduConnect.Web.Models;
+using EduConnect.Web.EduServiceReference;
 
 namespace EduConnect.Web.Security
 {
     public class CustomPrincipal : IPrincipal
     {
         private Account Account;
-        private AccountModel am = new AccountModel();
+        private Users users;
 
-        public CustomPrincipal(string username)
+        public CustomPrincipal(Users users)
         {
-            this.Account = am.find(username);
-            this.Identity = new GenericIdentity(username);
+            this.users = users;
+            this.Identity = new GenericIdentity(users.EduId);
+        }
+
+        public CustomPrincipal(Account account)
+        {
+            this.Account = account;
+            this.Identity = new GenericIdentity(account.Username);
 
         }
         public IIdentity Identity

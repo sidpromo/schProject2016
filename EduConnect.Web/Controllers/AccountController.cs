@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using EduConnect.Web.Models;
 using EduConnect.Web.ViewModels;
+using EduConnect.Web.Security;
+using EduConnect.Web.EduServiceReference;
 
 namespace EduConnect.Web.Controllers
 {
@@ -25,7 +27,17 @@ namespace EduConnect.Web.Controllers
                 ViewBag.Error = "Account's Invalid";
                 return View("Index");
             }
+            SessionPersister.Username = avm.Account.Username;
             return View("Success");
+        }
+
+
+
+
+        public ActionResult Logout()
+        {
+            SessionPersister.Username = string.Empty;
+            return RedirectToAction("Index");
         }
 
     }
