@@ -10,7 +10,6 @@ namespace EduConnect_MVC.Models.AccountViewModels
     public class LoginViewModel : Users
     {
         [Required]
-        //[EmailAddress]
         public string EduID { get; set; }
 
         [Required]

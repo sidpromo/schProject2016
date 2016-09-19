@@ -42,7 +42,10 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "System.Linq": "4.1.0",
+    "System.Interactive.Async": "3.0.0",
+    "Microsoft.AspNetCore.Identity": "1.0.0"
   },
   "tools": {
     "BundlerMinifier.Core": "2.0.238",

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using EduConnect_MVC.Models;
 using EduConnect_MVC.Models.AccountViewModels;
 using EduConnect_MVC.Services;
+using EduServiceReference;
 
 namespace EduConnect_MVC.Controllers
 {
@@ -67,6 +68,8 @@ namespace EduConnect_MVC.Controllers
 
                 if (result)
                 {
+
+                    
                     _logger.LogInformation(1, "User logged in.");
                     return RedirectToLocal(returnUrl);
                 }

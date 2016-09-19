@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using EduConnect_MVC.Models;
+using EduServiceReference;
 
 namespace EduConnect_MVC.Data
 {
@@ -22,5 +23,9 @@ namespace EduConnect_MVC.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Messages> Messages { get; set; }
+
+        public DbSet<Users> Users { get; set; }
     }
 }
