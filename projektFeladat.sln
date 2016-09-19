@@ -19,6 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppForTesting", "Con
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduConnect.Web", "EduConnect.Web\EduConnect.Web.csproj", "{3DA9273B-8C04-436D-82BC-B1C1464DAE58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91F4CADB-871D-42F9-8644-284402712A8F} = {91F4CADB-871D-42F9-8644-284402712A8F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
