@@ -1,5 +1,4 @@
-﻿@using EduConnect.Web.Security;
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,7 +9,7 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        @*<div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -27,16 +26,16 @@
                     <li>@Html.ActionLink("Exams", "Index", "Exams")</li>
                     <li>@Html.ActionLink("Finder", "Index", "Finder")</li>
                 </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { @class = "navbar-right" }))
-                {
-                    <li>
-                        <font color="white">Hello @SessionPersister.Username</font> <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
-                    </li>
-                }
-            </ul>
-        </div>
-        </div>
+                <ul class="nav navbar-nav navbar-right">
+                    @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { @class = "navbar-right" }))
+                    {
+                        <li>
+                            Hello @SessionPersister.Username <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>*@
     </div>
     <div class="container body-content">
         @RenderBody()

@@ -28,7 +28,7 @@ namespace EduConnect.Web.Controllers
                 return View("Index");
             }
             SessionPersister.Username = avm.Account.Username;
-            return View("Success");
+            return RedirectToAction("Index", "Home");
         }
 
 
