@@ -1,7 +1,12 @@
-﻿
+﻿@model List<EduConnect.Web.EduServiceReference.Messages>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Messages</h2>
+@foreach(var msg in Model)
+{
+<span>@msg.Subject</span>
+}
 

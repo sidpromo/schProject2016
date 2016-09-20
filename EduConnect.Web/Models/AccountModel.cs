@@ -33,15 +33,7 @@ namespace EduConnect.Web.Models
             return u;
         }
 
-        public string SetRole(Users u)
-        {
-            string s = u.UserType;
-            
 
-
-
-            return s;
-        }
 
         //public Account login(string username, string password)
         //{
