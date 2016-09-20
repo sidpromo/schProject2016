@@ -16,19 +16,19 @@ namespace EduConnect.Web.Controllers
             return View();
         }
 
-        [CustomAuthorize(Roles="superadmin")]
+        [CustomAuthorize(Roles="admin")]
         public ActionResult Work1()
         {
             return View("Work1");
         }
 
-        [CustomAuthorize(Roles = "superadmin,admin")]
+        [CustomAuthorize(Roles = "admin,teacher")]
         public ActionResult Work2()
         {
             return View("Work2");
         }
 
-        [CustomAuthorize(Roles = "superadmin,admin,employee")]
+        [CustomAuthorize(Roles = "admin,teacher,student")]
         public ActionResult Work3()
         {
             return View("Work3");

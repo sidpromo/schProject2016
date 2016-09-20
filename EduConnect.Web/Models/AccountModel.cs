@@ -8,7 +8,9 @@ namespace EduConnect.Web.Models
 {
     public class AccountModel
     {
-        //private List<Account> listAccounts = new List<Account>();
+        ServiceClient client = new ServiceClient();
+
+        private List<Account> listAccounts = new List<Account>();
 
         //public AccountModel()
         //{
@@ -19,8 +21,6 @@ namespace EduConnect.Web.Models
 
 
         //}
-
-        ServiceClient client = new ServiceClient();
 
         //public Account find(string username)
         //{
@@ -33,6 +33,16 @@ namespace EduConnect.Web.Models
             return u;
         }
 
+        public string SetRole(Users u)
+        {
+            string s = u.UserType;
+            
+
+
+
+            return s;
+        }
+
         //public Account login(string username, string password)
         //{
         //    return listAccounts.Where(acc => acc.Username.Equals(username) && acc.Password.Equals(password)).FirstOrDefault();
@@ -40,9 +50,9 @@ namespace EduConnect.Web.Models
 
         public Users login(string username, string password)
         {
-          //bool result = client.Login(username, password);
-            Users u=client.GetAllUsers().FirstOrDefault(x => x.EduId == username && x.Password==password);
-          //int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == username).Id;
+            //bool result = client.Login(username, password);
+            //int id = client.GetAllUsers().FirstOrDefault(x => x.EduId == username).Id;
+            Users u = client.GetAllUsers().FirstOrDefault(x => x.EduId == username && x.Password == password);
             return u;
 
         }
