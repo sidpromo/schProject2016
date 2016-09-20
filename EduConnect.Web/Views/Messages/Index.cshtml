@@ -5,8 +5,20 @@
 }
 
 <h2>Messages</h2>
+<hr />
+<tr>
+    <th><font size="4">Sent Date</font></th> <th><font size="4">Subject</font></th>
+</tr>
+<br />
 @foreach(var msg in Model)
 {
-<span>@msg.Subject</span>
+<tr>
+    <th>
+        @msg.SentDate
+    </th>
+    <th>
+        @msg.Subject
+    </th>
+</tr>
+<br />
 }
-
