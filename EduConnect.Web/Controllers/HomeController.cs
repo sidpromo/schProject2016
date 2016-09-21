@@ -10,9 +10,10 @@ namespace EduConnect.Web.Controllers
 {
     public class HomeController : Controller
     {
+        ServiceClient client = new ServiceClient();
         public ActionResult Index()
         {
-            ServiceClient client = new ServiceClient();
+            
             Users u = client.GetAllUsers().FirstOrDefault(x => x.EduId == SessionPersister.Username);
             
 

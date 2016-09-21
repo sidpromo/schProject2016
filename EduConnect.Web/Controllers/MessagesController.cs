@@ -10,14 +10,18 @@ namespace EduConnect.Web.Controllers
 {
     public class MessagesController : Controller
     {
+        ServiceClient client = new ServiceClient();
         // GET: Message
         public ActionResult Index()
         {
-            ServiceClient client = new ServiceClient();
+            
             int userId = client.GetAllUsers().FirstOrDefault(x => x.EduId == SessionPersister.Username).Id;
 
             IEnumerable<Messages> messagesListByIdWhere = client.GetAllMessages().Where(x => x.ToUserId == userId);
             List<Messages> messagesList = messagesListByIdWhere.ToList();
+            IEnumerable<Messages> sent = client.GetAllMessages().Where(x => x.FromUserId == userId);
+            List<Messages> Sent = sent.ToList();
+            messagesList.AddRange(Sent);
 
             return View(messagesList);
         }

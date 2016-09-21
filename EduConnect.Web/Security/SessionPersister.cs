@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using EduConnect.Web.EduServiceReference;
 
 namespace EduConnect.Web.Security
 {
     public class SessionPersister
     {
         static string usernameSessionvar = "username";
+        
         public static string Username
         {
             get
@@ -20,6 +22,20 @@ namespace EduConnect.Web.Security
             set
             {
                 HttpContext.Current.Session[usernameSessionvar] = value;
+            }
+        }
+        public static int UserID
+        {
+            get
+            {
+                ServiceClient client = new ServiceClient();
+                if (HttpContext.Current == null) return 0;
+                var sessionVar = client.GetAllUsers().FirstOrDefault(x => x.EduId == Username).Id;
+                return sessionVar;
+            }
+            set
+            {
+                UserID = value;                
             }
         }
     }

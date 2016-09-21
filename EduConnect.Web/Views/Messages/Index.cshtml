@@ -1,24 +1,64 @@
-﻿@model List<EduConnect.Web.EduServiceReference.Messages>
+﻿@using EduConnect.Web.Security
+@model List<EduConnect.Web.EduServiceReference.Messages>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Messages";
 }
+
+
 
 <h2>Messages</h2>
 <hr />
-<tr>
-    <th><font size="4">Sent Date</font></th> <th><font size="4">Subject</font></th>
-</tr>
-<br />
-@foreach(var msg in Model)
-{
-<tr>
-    <th>
-        @msg.SentDate
-    </th>
-    <th>
-        @msg.Subject
-    </th>
-</tr>
-<br />
-}
+
+<h4>Inbox</h4>
+<table border="1">
+    <tr>
+        <th>From</th>
+        <th>Date</th>
+        <th>Subject</th>
+    </tr>
+    @foreach (var msg in Model)
+    {
+        if (msg.FromUserId != SessionPersister.UserID)
+        {
+            <tr>
+                <td>@msg.ToUserId</td>
+                <td>@msg.SentDate</td>
+                <td>@msg.Subject</td>
+            </tr>
+        }
+
+    }
+</table>
+
+<h4>Sent</h4>
+<table border="1">
+    <tr>
+        <th>To</th>
+        <th>Date</th>
+        <th>Subject</th>
+    </tr>
+    @foreach (var msg in Model)
+    {
+        if (msg.ToUserId!=SessionPersister.UserID)
+        {
+            <tr>
+                <td>@msg.ToUserId</td>
+                <td>@msg.SentDate</td>
+                <td>@msg.Subject</td>
+            </tr>
+        }
+        
+    }
+</table>
+
+<hr />
+
+<textarea name="Text1" cols="40" rows="5"></textarea>
+<p>
+    To: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+    <input type="submit" value="Search" />
+</p>
+<td><input type="submit" value="Send" class="btn btn-default" /></td>
+
+

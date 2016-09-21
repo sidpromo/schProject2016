@@ -19,12 +19,12 @@ namespace EduConnect.Web.Security
             this.Identity = new GenericIdentity(user.EduId);
         }
 
-        public CustomPrincipal(Account account)
-        {
-            this.Account = account;
-            this.Identity = new GenericIdentity(account.Username);
+        //public CustomPrincipal(Account account)
+        //{
+        //    this.Account = account;
+        //    this.Identity = new GenericIdentity(account.Username);
 
-        }
+        //}
         public IIdentity Identity
         {
             get;

@@ -1,7 +1,48 @@
-﻿
+﻿@model List<EduConnect.Web.EduServiceReference.Subjects>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Subjects</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            Subject Code
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Credits
+        </th>
+        <th>
+            Semester
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemesterId)
+            </td>
+            <td>
+                @Html.ActionLink("Apply", "Apply", "")  |
+                @Html.ActionLink("Details", "Details", "") |
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,7 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Finder -";
 }
 
-<h2>Index</h2>
+<h2>Find users</h2>
 
+@using (Html.BeginForm("", "", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}

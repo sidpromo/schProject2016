@@ -1,7 +1,53 @@
-﻿
+﻿@model List<EduConnect.Web.EduServiceReference.Exams>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Exams</h2>
 
+<table class="table">
+    <tr>
+        <th>
+            SubjectID
+        </th>
+        <th>
+            Exam Type
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Limit
+        </th>
+        <th>
+            Room
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExamType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Limit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room)
+            </td>
+            <td>
+                @Html.ActionLink("Apply", "Apply", "")  |
+                @Html.ActionLink("Details", "Details", "") |
+            </td>
+        </tr>
+    }
+
+</table>
