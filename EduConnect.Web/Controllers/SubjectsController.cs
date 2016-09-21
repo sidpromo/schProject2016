@@ -12,12 +12,10 @@ namespace EduConnect.Web.Controllers
         ServiceClient client = new ServiceClient();
         public ActionResult Index()
         {
-            Subjects[] s = client.GetAllSubjects();
-            List<Subjects> SubjectList = new List<Subjects>();
-            for (int i = 0; i < s.Length; i++)
-            {
-                SubjectList.Add(s[i]);
-            }
+            IEnumerable<Subjects> SubjectList = new List<Subjects>();
+            SubjectList = client.GetAllSubjects().ToList();
+
+
             return View(SubjectList);
         }
     }

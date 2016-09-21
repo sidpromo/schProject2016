@@ -13,12 +13,11 @@ namespace EduConnect.Web.Controllers
         ServiceClient client = new ServiceClient();
         public ActionResult Index()
         {
-            Exams[] e = client.GetAllExams();
-            List<Exams> ExamList=new List<Exams>();
-            for (int i = 0; i < e.Length; i++)
-            {
-                ExamList.Add(e[i]);
-            }
+
+            IEnumerable<Exams> ExamList=new List<Exams>();
+            ExamList = client.GetAllExams().ToList();
+
+
             return View(ExamList);
         }
     }
