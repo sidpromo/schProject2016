@@ -25,5 +25,18 @@ namespace EduConnect.Web.Controllers
 
             return View(messagesList);
         }
+
     }
+
+    public class Converter
+    {
+        ServiceClient client = new ServiceClient();
+        public string idToName(int? userId)
+        {
+            string userName = string.Empty;
+            userName = client.GetAllUsers().FirstOrDefault(x => x.Id == userId).FirstName +" "+ client.GetAllUsers().FirstOrDefault(x => x.Id == userId).LastName;
+            return userName;
+        }
+    }
+
 }

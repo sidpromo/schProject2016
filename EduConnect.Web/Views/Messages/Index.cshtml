@@ -1,4 +1,5 @@
 ﻿@using EduConnect.Web.Security
+@using EduConnect.Web.Controllers
 @model List<EduConnect.Web.EduServiceReference.Messages>
 
 @{
@@ -19,10 +20,12 @@
     </tr>
     @foreach (var msg in Model)
     {
+        Converter c = new Converter();
+
         if (msg.FromUserId != SessionPersister.UserID)
         {
             <tr>
-                <td>@msg.ToUserId</td>
+                <td>@c.idToName(msg.ToUserId)</td>
                 <td>@msg.SentDate</td>
                 <td>@msg.Subject</td>
             </tr>
@@ -40,10 +43,13 @@
     </tr>
     @foreach (var msg in Model)
     {
+        Converter c = new Converter();
+
         if (msg.ToUserId!=SessionPersister.UserID)
         {
+
             <tr>
-                <td>@msg.ToUserId</td>
+                <td>@c.idToName(msg.ToUserId)</td>
                 <td>@msg.SentDate</td>
                 <td>@msg.Subject</td>
             </tr>
