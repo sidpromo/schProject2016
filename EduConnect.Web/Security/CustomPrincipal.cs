@@ -10,7 +10,6 @@ namespace EduConnect.Web.Security
 {
     public class CustomPrincipal : IPrincipal
     {
-        //private Account Account;
         private Users User;
 
         public CustomPrincipal(Users user)
