@@ -22,7 +22,8 @@ namespace EduConnect.Web.Controllers
         public ActionResult Login(AccountViewModel avm)
         {
             AccountModel am = new AccountModel();
-            if (string.IsNullOrEmpty(avm.Account.Username) || string.IsNullOrEmpty(avm.Account.Password) || am.login(avm.Account.Username, avm.Account.Password) == null)
+            if (string.IsNullOrEmpty(avm.Account.Username) || string.IsNullOrEmpty(avm.Account.Password) ||
+                am.login(avm.Account.Username, avm.Account.Password) == null)
             {
                 ViewBag.Error = "Account's Invalid";
                 return View("Index");
