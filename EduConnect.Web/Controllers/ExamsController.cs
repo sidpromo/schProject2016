@@ -14,7 +14,12 @@ namespace EduConnect.Web.Controllers
         public ActionResult Index()
         {
             Exams[] e = client.GetAllExams();
-            return View(e);
+            List<Exams> ExamList=new List<Exams>();
+            for (int i = 0; i < e.Length; i++)
+            {
+                ExamList.Add(e[i]);
+            }
+            return View(ExamList);
         }
     }
 }

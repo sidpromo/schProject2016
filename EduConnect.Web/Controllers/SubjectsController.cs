@@ -13,7 +13,12 @@ namespace EduConnect.Web.Controllers
         public ActionResult Index()
         {
             Subjects[] s = client.GetAllSubjects();
-            return View(s);
+            List<Subjects> SubjectList = new List<Subjects>();
+            for (int i = 0; i < s.Length; i++)
+            {
+                SubjectList.Add(s[i]);
+            }
+            return View(SubjectList);
         }
     }
 }
