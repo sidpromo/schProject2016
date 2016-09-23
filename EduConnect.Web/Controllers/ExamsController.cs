@@ -20,11 +20,11 @@ namespace EduConnect.Web.Controllers
 
             return View(ExamList);
         }
-        public ActionResult Apply(Exams e) //TODO
+        public ActionResult Apply(string examid) //TODO
         {
             ExamsUsers eu = new ExamsUsers();
             eu.UserId = SessionPersister.UserID;
-            eu.ExamId = e.Id;
+            eu.ExamId = int.Parse(examid);
             client.AddExamsUser(eu);
             return View();
         }

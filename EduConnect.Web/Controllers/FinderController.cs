@@ -19,7 +19,12 @@ namespace EduConnect.Web.Controllers
         {
             Users u = new Users();
             u=client.GetAllUsers().FirstOrDefault(x => x.FirstName == s);
-            return View(u);
+            if (u != null)
+            {
+                return View(u);
+            }
+            else ViewBag.Error("Nincs ilyen user");
+            return View();
         }
     }
 }

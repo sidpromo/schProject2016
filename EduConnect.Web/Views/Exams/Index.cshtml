@@ -29,6 +29,7 @@
     {
         <tr>
             <td>
+
                 @Html.DisplayFor(modelItem => item.SubjectID)
             </td>
             <td>
@@ -44,7 +45,10 @@
                 @Html.DisplayFor(modelItem => item.Room)
             </td>
             <td>
-                @Html.ActionLink("Apply", "Apply", "Exams")
+
+                    @Html.ActionLink(item.SubjectID.ToString(), "Apply", "Exams",
+        new { examid = item.SubjectID.ToString() }, null)
+
             </td>
         </tr>
     }
