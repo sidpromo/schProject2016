@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EduConnect.Web.EduServiceReference;
+using EduConnect.Web.Security;
 
 namespace EduConnect.Web.Controllers
 {
@@ -17,6 +18,15 @@ namespace EduConnect.Web.Controllers
 
 
             return View(SubjectList);
+        }
+
+        public ActionResult Apply(Subjects s)
+        {
+            SubjectsUsers su = new SubjectsUsers();
+            su.UserId = SessionPersister.UserID;
+            su.SubjectId = s.Id;
+            client.AddSubjectsUser(su);
+            return View();
         }
     }
 }

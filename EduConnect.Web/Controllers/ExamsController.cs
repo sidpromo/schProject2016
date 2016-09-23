@@ -20,5 +20,13 @@ namespace EduConnect.Web.Controllers
 
             return View(ExamList);
         }
+        public ActionResult Apply(Exams e)
+        {
+            ExamsUsers eu = new ExamsUsers();
+            eu.UserId = SessionPersister.UserID;
+            eu.ExamId = e.Id;
+            client.AddExamsUser(eu);
+            return View();
+        }
     }
 }

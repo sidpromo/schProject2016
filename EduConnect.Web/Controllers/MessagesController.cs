@@ -26,6 +26,24 @@ namespace EduConnect.Web.Controllers
             return View(messagesList);
         }
 
+        [HttpPost]
+        public ActionResult NewMessage(Messages m)
+        {
+            client.AddMessage(m);
+            ViewBag.Message("Message sent!");
+            return View("Index");
+        }
+
+        public ActionResult New()
+        {
+            return View("View");
+        }
+
+        public ActionResult Read()
+        {
+            return View("Read");
+        }
+
     }
 
     public class Converter

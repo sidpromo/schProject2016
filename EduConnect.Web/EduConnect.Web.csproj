@@ -281,6 +281,9 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\Messages\View.cshtml" />
+    <Content Include="Views\Messages\Read.cshtml" />
+    <Content Include="Views\Finder\Find.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
