@@ -22,9 +22,7 @@ namespace EduConnect.Web.Controllers
         }
         public ActionResult Apply(string examid) //TODO
         {
-            ExamsUsers eu = new ExamsUsers();
-            eu.UserId = SessionPersister.UserID;
-            eu.ExamId = int.Parse(examid);
+            ExamsUsers eu = new ExamsUsers{ UserId = SessionPersister.UserID, ExamId = int.Parse(examid) }; //more info needed
             client.AddExamsUser(eu);
             return View();
         }
