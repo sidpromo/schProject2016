@@ -27,7 +27,7 @@ namespace EduConnect.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewMessage(Messages m)
+        public ActionResult NewMessage(Messages m) //TODO
         {
             client.AddMessage(m);
             ViewBag.Message("Message sent!");

@@ -20,7 +20,7 @@ namespace EduConnect.Web.Controllers
 
             return View(ExamList);
         }
-        public ActionResult Apply(Exams e)
+        public ActionResult Apply(Exams e) //TODO
         {
             ExamsUsers eu = new ExamsUsers();
             eu.UserId = SessionPersister.UserID;

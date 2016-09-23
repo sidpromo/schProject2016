@@ -15,7 +15,7 @@ namespace EduConnect.Web.Controllers
             return View();
         }
 
-        public ActionResult Find(string s)
+        public ActionResult Find(string s) //TODO
         {
             Users u = new Users();
             u=client.GetAllUsers().FirstOrDefault(x => x.FirstName == s);
