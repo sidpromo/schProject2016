@@ -33,7 +33,8 @@
                 @Html.DisplayFor(modelItem => item.Credits)
             </td>
             <td>
-                @Html.ActionLink("Apply", "Apply", "Subject")
+                @Html.ActionLink("Apply id:" + item.SubjectCode.ToString(), "Apply", "Subject",
+        new { examid = item.SubjectCode.ToString() }, null)
             </td>
         </tr>
     }

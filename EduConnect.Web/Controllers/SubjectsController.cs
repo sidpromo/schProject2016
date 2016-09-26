@@ -20,13 +20,17 @@ namespace EduConnect.Web.Controllers
             return View(SubjectList);
         }
 
-        public ActionResult Apply(Subjects s) //TODO
+        public ActionResult Apply(string subjectId) //TODO
         {
-            SubjectsUsers su = new SubjectsUsers();
-            su.UserId = SessionPersister.UserID;
-            su.SubjectId = s.Id;
-            su.EnrollDate = DateTime.Now;
-            client.AddSubjectsUser(su);
+            client.AddSubjectsUser(new SubjectsUsers
+            {
+                EnrollDate = DateTime.Now,
+                ModifyDate = DateTime.Now,
+                ModifiedBy = SessionPersister.UserID,
+                SubjectId = int.Parse(subjectId),
+                UserId = SessionPersister.UserID
+            });
+
             return View();
         }
     }

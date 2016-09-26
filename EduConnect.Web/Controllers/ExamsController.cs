@@ -20,12 +20,18 @@ namespace EduConnect.Web.Controllers
 
             return View(ExamList);
         }
-        public ActionResult Apply(string examid) //TODO
+        public ActionResult Apply(string examid) //TODO ?? repo save fail
         {
-            ExamsUsers eu = new ExamsUsers(){ UserId = SessionPersister.UserID, ExamId = int.Parse(examid), ModifiedBy=SessionPersister.UserID, InsertDate=DateTime.Now, ModifyDate=DateTime.Now }; //more info needed waiting for backend
-            client.AddExamsUser(eu);
 
- 
+            client.AddExamsUser(new ExamsUsers
+    {
+        InsertDate = DateTime.Now,
+        ModifyDate = DateTime.Now,
+        ModifiedBy = SessionPersister.UserID,
+        ExamId = int.Parse(examid),
+        UserId = SessionPersister.UserID
+    });
+
             return View();
         }
     }

@@ -46,7 +46,7 @@
             </td>
             <td>
 
-                    @Html.ActionLink(item.SubjectID.ToString(), "Apply", "Exams",
+                    @Html.ActionLink("Apply id:"+ item.SubjectID.ToString(), "Apply", "Exams",
         new { examid = item.SubjectID.ToString() }, null)
 
             </td>
